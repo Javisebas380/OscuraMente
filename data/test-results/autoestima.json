@@ -1,0 +1,350 @@
+{
+  "id": "autoestima",
+  "schemaVersion": 2,
+  "traitMap": {
+    "autovaloracion": "valoracion",
+    "confianza_social": "confianza",
+    "resiliencia_emocional": "aceptacion"
+  },
+  "titulo": "Autoestima",
+  "nivel": "basico",
+  "visual": "radar",
+  "rasgos": ["valoracion", "confianza", "aceptacion"],
+  "arquetipos": [
+    {
+      "clave": "valoracion",
+      "label": "El Valorado",
+      "descripcion": "Reconoces tu propio valor y te tratas con el respeto que mereces"
+    },
+    {
+      "clave": "confianza",
+      "label": "El Confiado",
+      "descripcion": "Confías en tus habilidades y capacidades para enfrentar desafíos"
+    },
+    {
+      "clave": "aceptacion",
+      "label": "El Aceptado",
+      "descripcion": "Abrazas tanto tus fortalezas como tus imperfecciones con compasión"
+    }
+  ],
+  "bands": {
+    "valoracion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a subestimar tu valor personal y puedes ser muy crítico contigo mismo",
+        "ad_unlock": {
+          "fortalezas": ["Humildad genuina", "Motivación para mejorar", "Capacidad de autocrítica constructiva"],
+          "debilidades": ["Autocrítica excesiva", "Dificultad para reconocer logros", "Comparación constante con otros"],
+          "recomendaciones_breves": ["Practica el diálogo interno positivo", "Registra tus logros diarios", "Evita comparaciones destructivas"]
+        },
+        "premium": {
+          "detalle": "Tu baja autovaloración puede estar limitando tu potencial y bienestar. Aunque la humildad es valiosa, necesitas desarrollar un reconocimiento saludable de tu valor personal para prosperar en la vida.",
+          "mejorar": ["Practica afirmaciones positivas diarias", "Lleva un diario de logros y fortalezas", "Busca feedback positivo de personas de confianza", "Desarrolla autocompasión"],
+          "alertas": ["Rechazar cumplidos o minimizar logros", "Autosabotaje por sentirse indigno", "Aceptar tratamiento irrespetuoso de otros"],
+          "oportunidades": ["Desarrollo de autoestima saludable", "Relaciones más equilibradas", "Mayor bienestar emocional"],
+          "impacto_relaciones": ["Riesgo de relaciones desequilibradas donde das más de lo que recibes", "Dificultad para establecer límites por sentir que no los mereces"],
+          "plan_7_dias": [
+            "Día 1: Escribe 5 cualidades positivas que tienes",
+            "Día 2: Registra 3 logros del día, por pequeños que sean",
+            "Día 3: Practica aceptar un cumplido sin minimizarlo",
+            "Día 4: Identifica y desafía un pensamiento autocrítico",
+            "Día 5: Haz algo que disfrutes solo por ti",
+            "Día 6: Pide feedback positivo a alguien de confianza",
+            "Día 7: Reflexiona sobre tu progreso y celebra pequeños avances"
+          ],
+          "cita": "Tu valor no depende de tus logros, sino de tu existencia misma"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes una autovaloración moderada con momentos de confianza y otros de duda",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio entre humildad y confianza", "Capacidad de crecimiento", "Autocrítica constructiva"],
+          "debilidades": ["Fluctuaciones en la autoestima", "Sensibilidad a la crítica externa", "Dudas ocasionales sobre tu valor"],
+          "recomendaciones_breves": ["Fortalece tu diálogo interno", "Desarrolla independencia de la validación externa", "Practica la autocompasión"]
+        },
+        "premium": {
+          "detalle": "Tu autovaloración moderada indica que estás en proceso de desarrollo. Tienes una base sólida que puedes fortalecer para lograr una autoestima más estable y menos dependiente de factores externos.",
+          "mejorar": ["Desarrolla un sistema de autoevaluación interno", "Practica la independencia emocional", "Fortalece tu identidad personal", "Cultiva la estabilidad emocional"],
+          "alertas": ["Autoestima que fluctúa según circunstancias externas", "Buscar validación constante de otros", "Dudar de tu valor en momentos de estrés"],
+          "oportunidades": ["Desarrollo de autoestima estable", "Liderazgo auténtico", "Relaciones más equilibradas"],
+          "impacto_relaciones": ["Relaciones generalmente saludables con momentos de inseguridad", "Capacidad de crecimiento en intimidad"],
+          "plan_7_dias": [
+            "Día 1: Identifica patrones en tus fluctuaciones de autoestima",
+            "Día 2: Practica validarte a ti mismo antes de buscar validación externa",
+            "Día 3: Desarrolla una afirmación personal poderosa",
+            "Día 4: Reflexiona sobre tus valores fundamentales",
+            "Día 5: Practica la autocompasión en un momento difícil",
+            "Día 6: Establece un límite basado en tu valor personal",
+            "Día 7: Celebra tu progreso hacia mayor estabilidad emocional"
+          ],
+          "cita": "La autoestima verdadera es independiente de las circunstancias externas"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tienes una autovaloración saludable y reconoces tu valor personal de manera equilibrada",
+        "ad_unlock": {
+          "fortalezas": ["Autoestima saludable", "Reconocimiento de logros", "Resistencia a críticas destructivas"],
+          "debilidades": ["Posible arrogancia ocasional", "Expectativas altas hacia otros"],
+          "recomendaciones_breves": ["Mantén la humildad", "Usa tu confianza para ayudar a otros", "Continúa creciendo sin complacencia"]
+        },
+        "premium": {
+          "detalle": "Tu alta autovaloración es una fortaleza que te permite navegar la vida con confianza y establecer relaciones saludables. El desafío es mantener esta autoestima sin caer en arrogancia y usar tu fortaleza para elevar a otros.",
+          "mejorar": ["Desarrolla humildad consciente", "Practica el liderazgo de servicio", "Cultiva la empatía hacia quienes luchan con autoestima", "Mantén crecimiento continuo"],
+          "alertas": ["Arrogancia que aleja a otros", "Falta de empatía hacia inseguridades ajenas", "Complacencia en el crecimiento personal"],
+          "oportunidades": ["Liderazgo inspiracional", "Mentoría en desarrollo personal", "Construcción de equipos confiados"],
+          "impacto_relaciones": ["Relaciones equilibradas y saludables", "Capacidad de inspirar confianza en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu autoestima beneficia a otros",
+            "Día 2: Ayuda a alguien a reconocer su propio valor",
+            "Día 3: Practica la humildad reconociendo un área de crecimiento",
+            "Día 4: Comparte tu experiencia de desarrollo de autoestima",
+            "Día 5: Usa tu confianza para defender a alguien vulnerable",
+            "Día 6: Practica la empatía hacia alguien con baja autoestima",
+            "Día 7: Planifica cómo usar tu autoestima para impacto positivo"
+          ],
+          "cita": "La autoestima verdadera se multiplica cuando la compartes"
+        }
+      }
+    ],
+    "confianza": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Dudas frecuentemente de tus habilidades y te cuesta confiar en tu capacidad para lograr objetivos",
+        "ad_unlock": {
+          "fortalezas": ["Precaución que evita errores", "Humildad para aprender", "Búsqueda de apoyo"],
+          "debilidades": ["Evitación de desafíos", "Procrastinación por miedo al fracaso", "Dependencia de validación externa"],
+          "recomendaciones_breves": ["Empieza con desafíos pequeños", "Celebra cada pequeño éxito", "Desarrolla habilidades paso a paso"]
+        },
+        "premium": {
+          "detalle": "Tu baja autoconfianza puede estar impidiéndote aprovechar oportunidades y alcanzar tu potencial. Aunque la precaución tiene valor, necesitas desarrollar confianza en tus capacidades para crecer y prosperar.",
+          "mejorar": ["Establece metas pequeñas y alcanzables", "Practica habilidades en entornos seguros", "Busca evidencia de tus capacidades pasadas", "Desarrolla una mentalidad de crecimiento"],
+          "alertas": ["Evitar oportunidades por miedo al fracaso", "Procrastinar en decisiones importantes", "Depender excesivamente de la aprobación ajena"],
+          "oportunidades": ["Desarrollo gradual de competencias", "Construcción de confianza a través de la experiencia", "Crecimiento personal significativo"],
+          "impacto_relaciones": ["Necesidad de mucho apoyo y aliento", "Riesgo de dependencia emocional en relaciones"],
+          "plan_7_dias": [
+            "Día 1: Identifica una habilidad que ya posees y úsala",
+            "Día 2: Toma una decisión pequeña sin consultar a otros",
+            "Día 3: Completa una tarea que has estado posponiendo",
+            "Día 4: Practica una habilidad nueva durante 15 minutos",
+            "Día 5: Acepta un desafío pequeño pero significativo",
+            "Día 6: Reflexiona sobre evidencias de tu competencia",
+            "Día 7: Celebra tu progreso y planifica el siguiente paso"
+          ],
+          "cita": "La confianza se construye acción por acción, éxito por éxito"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes confianza en algunas áreas pero dudas en otras, especialmente ante nuevos desafíos",
+        "ad_unlock": {
+          "fortalezas": ["Confianza situacional", "Capacidad de aprendizaje", "Equilibrio entre precaución y acción"],
+          "debilidades": ["Inconsistencia en la confianza", "Dudas ante lo desconocido", "Dependencia del contexto"],
+          "recomendaciones_breves": ["Identifica tus áreas de mayor confianza", "Transfiere confianza entre contextos", "Practica salir de tu zona de confort gradualmente"]
+        },
+        "premium": {
+          "detalle": "Tu autoconfianza moderada te permite funcionar bien en áreas conocidas, pero puedes desarrollar mayor consistencia y valentía para enfrentar nuevos desafíos y expandir tu zona de confort.",
+          "mejorar": ["Desarrolla confianza transferible entre contextos", "Practica la toma de riesgos calculados", "Fortalece tu narrativa personal de competencia", "Cultiva la confianza en tu capacidad de aprender"],
+          "alertas": ["Limitarse a áreas de comodidad conocidas", "Perder oportunidades por falta de confianza en lo nuevo", "Inconsistencia que confunde a otros"],
+          "oportunidades": ["Expansión de zona de confort", "Liderazgo en áreas de expertise", "Desarrollo de versatilidad"],
+          "impacto_relaciones": ["Confianza que inspira en áreas conocidas", "Necesidad de apoyo en territorios nuevos"],
+          "plan_7_dias": [
+            "Día 1: Identifica 3 áreas donde te sientes más confiado",
+            "Día 2: Aplica esa confianza a una situación nueva pero similar",
+            "Día 3: Toma un riesgo pequeño en un área de menor confianza",
+            "Día 4: Reflexiona sobre transferencias exitosas de confianza",
+            "Día 5: Busca apoyo para expandir tu zona de confort",
+            "Día 6: Practica autoafirmaciones antes de situaciones desafiantes",
+            "Día 7: Evalúa tu progreso en construcción de confianza"
+          ],
+          "cita": "La confianza verdadera es saber que puedes aprender lo que necesites"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Confías fuertemente en tus habilidades y te sientes capaz de enfrentar la mayoría de desafíos",
+        "ad_unlock": {
+          "fortalezas": ["Confianza sólida", "Disposición a tomar riesgos", "Liderazgo natural"],
+          "debilidades": ["Posible sobreconfianza", "Subestimación de riesgos", "Impaciencia con quienes dudan"],
+          "recomendaciones_breves": ["Balancea confianza con humildad", "Ayuda a otros a desarrollar confianza", "Mantén apertura al aprendizaje"]
+        },
+        "premium": {
+          "detalle": "Tu alta autoconfianza es una fortaleza poderosa que te permite tomar riesgos y liderar con valentía. El desafío es mantener esta confianza equilibrada con humildad y usarla para empoderar a otros.",
+          "mejorar": ["Desarrolla humildad consciente", "Practica la escucha de perspectivas diferentes", "Cultiva la paciencia con procesos ajenos", "Usa tu confianza para elevar a otros"],
+          "alertas": ["Sobreconfianza que lleva a errores evitables", "Impaciencia con quienes necesitan más tiempo", "Arrogancia que aleja a colaboradores"],
+          "oportunidades": ["Liderazgo transformacional", "Emprendimiento y innovación", "Mentoría en desarrollo de confianza"],
+          "impacto_relaciones": ["Inspiración y posible intimidación", "Capacidad de generar confianza en equipos"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu confianza puede empoderar a otros",
+            "Día 2: Practica la humildad reconociendo algo que no sabes",
+            "Día 3: Ayuda a alguien a desarrollar confianza en una habilidad",
+            "Día 4: Busca feedback sobre cómo otros perciben tu confianza",
+            "Día 5: Practica la paciencia con alguien menos confiado",
+            "Día 6: Usa tu confianza para defender una causa importante",
+            "Día 7: Planifica cómo usar tu confianza para impacto positivo duradero"
+          ],
+          "cita": "La confianza más poderosa es la que se comparte generosamente"
+        }
+      }
+    ],
+    "aceptacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta aceptar tus imperfecciones y tiendes a ser muy duro contigo mismo",
+        "ad_unlock": {
+          "fortalezas": ["Motivación para mejorar", "Altos estándares personales", "Búsqueda de excelencia"],
+          "debilidades": ["Autocrítica severa", "Perfeccionismo paralizante", "Dificultad para perdonarte errores"],
+          "recomendaciones_breves": ["Practica la autocompasión", "Acepta que los errores son parte del aprendizaje", "Desarrolla un diálogo interno más amable"]
+        },
+        "premium": {
+          "detalle": "Tu baja autoaceptación puede estar creando un ciclo de autocrítica que limita tu bienestar y crecimiento. Aunque buscar la mejora es valioso, necesitas desarrollar compasión hacia tu humanidad imperfecta.",
+          "mejorar": ["Practica técnicas de autocompasión", "Desarrolla tolerancia a la imperfección", "Aprende de los errores sin castigarte", "Cultiva la paciencia contigo mismo"],
+          "alertas": ["Perfeccionismo que paraliza la acción", "Autocrítica destructiva que daña la autoestima", "Evitar intentar cosas nuevas por miedo al fracaso"],
+          "oportunidades": ["Desarrollo de autocompasión", "Liberación del perfeccionismo", "Mayor bienestar emocional"],
+          "impacto_relaciones": ["Dificultad para aceptar amor incondicional", "Proyección de altos estándares en otros"],
+          "plan_7_dias": [
+            "Día 1: Practica hablarte como le hablarías a un buen amigo",
+            "Día 2: Identifica un error reciente y encuentra el aprendizaje",
+            "Día 3: Haz algo imperfecto pero con intención positiva",
+            "Día 4: Practica perdonarte por un error pasado",
+            "Día 5: Acepta un cumplido sobre algo que consideras imperfecto",
+            "Día 6: Comparte una imperfección con alguien de confianza",
+            "Día 7: Reflexiona sobre cómo la autoaceptación mejora tu vida"
+          ],
+          "cita": "La perfección es el enemigo del progreso y la paz interior"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Generalmente te aceptas como eres, aunque a veces luchas con aspectos específicos de ti mismo",
+        "ad_unlock": {
+          "fortalezas": ["Autoaceptación general", "Capacidad de crecimiento", "Equilibrio entre mejora y aceptación"],
+          "debilidades": ["Autocrítica ocasional", "Dificultad con aspectos específicos", "Perfeccionismo selectivo"],
+          "recomendaciones_breves": ["Profundiza en la autoaceptación", "Trabaja en áreas específicas de autocrítica", "Practica la compasión total"]
+        },
+        "premium": {
+          "detalle": "Tu autoaceptación moderada te permite vivir con relativa paz interior, pero hay aspectos específicos donde aún luchas contigo mismo. Profundizar en la autoaceptación total te dará mayor libertad emocional.",
+          "mejorar": ["Identifica y trabaja en áreas específicas de autocrítica", "Desarrolla compasión hacia tus aspectos más desafiantes", "Practica la aceptación radical", "Cultiva la gratitud por tu totalidad"],
+          "alertas": ["Autocrítica selectiva que limita el crecimiento", "Resistencia a aceptar ciertos aspectos de ti", "Perfeccionismo en áreas específicas"],
+          "oportunidades": ["Autoaceptación completa", "Mayor libertad emocional", "Liderazgo auténtico"],
+          "impacto_relaciones": ["Relaciones auténticas con momentos de inseguridad específica", "Capacidad de modelar autoaceptación"],
+          "plan_7_dias": [
+            "Día 1: Identifica un aspecto de ti que te cuesta aceptar",
+            "Día 2: Explora las raíces de esa autocrítica específica",
+            "Día 3: Practica compasión hacia ese aspecto de ti",
+            "Día 4: Busca el valor o propósito en esa característica",
+            "Día 5: Comparte esa vulnerabilidad con alguien de confianza",
+            "Día 6: Practica gratitud por tu totalidad, incluyendo imperfecciones",
+            "Día 7: Celebra tu progreso hacia autoaceptación completa"
+          ],
+          "cita": "Aceptarte completamente es el regalo más grande que puedes darte"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Abrazas tanto tus fortalezas como tus imperfecciones con compasión y sabiduría",
+        "ad_unlock": {
+          "fortalezas": ["Autoaceptación profunda", "Paz interior", "Autenticidad radical"],
+          "debilidades": ["Posible complacencia", "Falta de motivación para cambiar"],
+          "recomendaciones_breves": ["Mantén crecimiento sin perder autoaceptación", "Inspira autoaceptación en otros", "Equilibra aceptación con evolución"]
+        },
+        "premium": {
+          "detalle": "Tu alta autoaceptación es un logro extraordinario que te permite vivir con autenticidad y paz interior. Esta es una sabiduría que puedes compartir para ayudar a otros en su camino hacia la autoaceptación.",
+          "mejorar": ["Desarrolla habilidades de coaching en autoaceptación", "Practica el equilibrio entre aceptación y crecimiento", "Cultiva la compasión hacia quienes luchan", "Mantén humildad en tu sabiduría"],
+          "alertas": ["Complacencia que impide crecimiento necesario", "Falta de empatía hacia quienes luchan con autoaceptación", "Estancamiento por exceso de aceptación"],
+          "oportunidades": ["Liderazgo en bienestar emocional", "Terapia y coaching", "Construcción de comunidades de aceptación"],
+          "impacto_relaciones": ["Relaciones profundamente auténticas", "Capacidad de crear espacios seguros para otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu autoaceptación inspira a otros",
+            "Día 2: Ayuda a alguien a aceptar un aspecto difícil de sí mismo",
+            "Día 3: Practica el equilibrio entre aceptación y crecimiento",
+            "Día 4: Comparte tu experiencia de autoaceptación con vulnerabilidad",
+            "Día 5: Identifica un área donde aún puedes crecer sin autocrítica",
+            "Día 6: Crea un espacio seguro para que otros practiquen autoaceptación",
+            "Día 7: Planifica cómo usar tu sabiduría para sanar a otros"
+          ],
+          "cita": "La autoaceptación radical es la puerta a la libertad interior"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Autoestima revela cómo tu autovaloración, autoconfianza y autoaceptación se comparan con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la autenticidad y la comunicación emocional equilibrada", "Quienes buscan relaciones basadas en respeto mutuo y crecimiento personal", "Perfiles que abrazan tanto las fortalezas como las vulnerabilidades humanas"],
+        "dificil": ["Quienes buscan relaciones basadas en dependencia o control emocional", "Personas que se sienten amenazadas por la autoestima saludable", "Perfiles que mantienen dinámicas tóxicas o de comparación constante"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la confianza personal y la comunicación asertiva", "Culturas que premian la iniciativa, el crecimiento y la colaboración equilibrada", "Espacios que fomentan el desarrollo personal y reconocen el valor individual"],
+        "dificil": ["Ambientes que minimizan o atacan la autoestima para mantener control", "Culturas tóxicas que fomentan la inseguridad y la competencia destructiva", "Estructuras que penalizan la confianza personal o la asertividad saludable"]
+      },
+      "amistades": {
+        "facil": ["Personas que celebran los éxitos mutuos sin competencia destructiva", "Quienes valoran la autenticidad y el crecimiento personal conjunto", "Perfiles que buscan relaciones equilibradas basadas en apoyo mutuo"],
+        "dificil": ["Quienes se sienten amenazados por tu confianza o éxitos personales", "Personas que mantienen dinámicas de comparación o competencia tóxica", "Perfiles que buscan relaciones donde puedan sentirse superiores"]
+      },
+      "insights": [
+        "Comparte tu proceso de desarrollo de autoestima para inspirar crecimiento en otros",
+        "Equilibra tu confianza personal con humildad y apertura al aprendizaje continuo",
+        "Usa tu autoestima saludable para crear espacios seguros donde otros puedan desarrollar la suya"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren confianza personal y toma de riesgos",
+        "prediccion": "Tu nivel de autoestima determinará tu disposición a aprovechar oportunidades y enfrentar desafíos",
+        "consejo": "Usa tu autoconfianza para inspirar valentía en otros, no solo para destacar personalmente"
+      },
+      {
+        "escenario": "En relaciones que requieren límites saludables y comunicación asertiva",
+        "prediccion": "Tu autoestima influirá en tu capacidad de establecer límites y comunicar necesidades claramente",
+        "consejo": "Modela límites saludables para enseñar a otros sobre el respeto mutuo y la dignidad personal"
+      },
+      {
+        "escenario": "En momentos de crítica o feedback que desafían tu autoimagen",
+        "prediccion": "Tu nivel de autoaceptación determinará cómo recibes y procesas la retroalimentación",
+        "consejo": "Usa tu estabilidad emocional para recibir feedback constructivamente y ayudar a otros a hacer lo mismo"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "autovaloracion_equilibrada",
+        "cita": "Tu valor no depende de tus logros, sino de tu existencia misma",
+        "reflexion": "Tu capacidad de reconocer tu valor intrínseco te permite construir relaciones desde la abundancia, no desde la carencia"
+      },
+      {
+        "rasgo": "autoconfianza_generosa",
+        "cita": "La confianza más poderosa es la que se comparte generosamente con otros",
+        "reflexion": "Tu autoconfianza se multiplica cuando la usas para empoderar y desarrollar la confianza de quienes te rodean"
+      },
+      {
+        "rasgo": "autoaceptacion_liberadora",
+        "cita": "Aceptarte completamente es el regalo más grande que puedes darte y dar al mundo",
+        "reflexion": "Tu autoaceptación radical crea un modelo de libertad interior que inspira a otros a abrazar su propia humanidad"
+      }
+    ]
+  },
+  "related_tests": ["psychological-shadow", "inteligencia_emocional", "estilo_apego"]
+}

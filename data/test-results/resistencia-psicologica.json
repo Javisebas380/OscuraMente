@@ -1,0 +1,350 @@
+{
+  "id": "resistencia_psicologica",
+  "schemaVersion": 2,
+  "traitMap": {
+    "resistencia_emocional": "resistencia",
+    "adaptabilidad": "adaptacion",
+    "apoyo_social": "fortaleza"
+  },
+  "titulo": "Resistencia Psicológica",
+  "nivel": "intermedio",
+  "visual": "radar",
+  "rasgos": ["resistencia", "adaptacion", "fortaleza"],
+  "arquetipos": [
+    {
+      "clave": "resistencia",
+      "label": "El Resiliente",
+      "descripcion": "Te recuperas rápidamente de adversidades y mantienes tu equilibrio emocional ante desafíos"
+    },
+    {
+      "clave": "adaptacion",
+      "label": "El Adaptable",
+      "descripcion": "Ajustas tu comportamiento y estrategias efectivamente ante cambios y situaciones imprevistas"
+    },
+    {
+      "clave": "fortaleza",
+      "label": "El Inquebrantable",
+      "descripcion": "Mantienes tu determinación y valores fundamentales incluso bajo presión extrema"
+    }
+  ],
+  "bands": {
+    "resistencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta recuperarte de adversidades y puedes sentirte abrumado por desafíos prolongados",
+        "ad_unlock": {
+          "fortalezas": ["Sensibilidad emocional", "Capacidad de pedir ayuda", "Procesamiento profundo de experiencias"],
+          "debilidades": ["Recuperación lenta de setbacks", "Tendencia al desánimo", "Vulnerabilidad al estrés crónico"],
+          "recomendaciones_breves": ["Desarrolla una red de apoyo sólida", "Practica técnicas de manejo del estrés", "Celebra pequeños logros diarios"]
+        },
+        "premium": {
+          "detalle": "Tu baja resiliencia puede deberse a experiencias pasadas o falta de herramientas de afrontamiento. Aunque tu sensibilidad puede ser una fortaleza, necesitas desarrollar estrategias para recuperarte más efectivamente de los desafíos.",
+          "mejorar": ["Desarrolla rutinas de autocuidado", "Practica mindfulness y meditación", "Construye una red de apoyo diversa", "Aprende técnicas de reestructuración cognitiva"],
+          "alertas": ["Evitar desafíos por miedo al fracaso", "Rumiar excesivamente sobre problemas", "Aislarse durante períodos difíciles"],
+          "oportunidades": ["Desarrollo de fortaleza interior", "Conexiones profundas con otros que han sufrido", "Crecimiento a través de la adversidad"],
+          "impacto_relaciones": ["Necesidad de apoyo emocional constante", "Capacidad de empatizar profundamente con el sufrimiento ajeno"],
+          "plan_7_dias": [
+            "Día 1: Identifica tres fuentes de apoyo en tu vida",
+            "Día 2: Practica 10 minutos de respiración profunda diaria",
+            "Día 3: Escribe tres cosas por las que estás agradecido",
+            "Día 4: Desarrolla una rutina matutina que te dé fuerza",
+            "Día 5: Comparte una dificultad con alguien de confianza",
+            "Día 6: Practica reencuadrar un pensamiento negativo",
+            "Día 7: Celebra tu progreso y planifica el siguiente paso"
+          ],
+          "cita": "La resiliencia no es evitar caer, sino aprender a levantarse"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Te recuperas moderadamente bien de adversidades, aunque algunos desafíos pueden afectarte más que otros",
+        "ad_unlock": {
+          "fortalezas": ["Recuperación gradual", "Aprendizaje de experiencias", "Equilibrio emocional general"],
+          "debilidades": ["Inconsistencia en la recuperación", "Vulnerabilidad a estrés acumulado", "Dependencia del tipo de adversidad"],
+          "recomendaciones_breves": ["Fortalece tus estrategias de afrontamiento", "Desarrolla mayor autoconfianza", "Practica la anticipación positiva"]
+        },
+        "premium": {
+          "detalle": "Tu resiliencia moderada te permite manejar la mayoría de desafíos de la vida, pero hay espacio para desarrollar mayor consistencia y velocidad en tu recuperación emocional.",
+          "mejorar": ["Desarrolla un toolkit de estrategias de afrontamiento", "Practica la visualización positiva", "Fortalece tu narrativa personal de superación", "Cultiva el optimismo realista"],
+          "alertas": ["Acumulación de estrés sin procesamiento adecuado", "Inconsistencia en respuestas a diferentes tipos de crisis"],
+          "oportunidades": ["Liderazgo en situaciones moderadamente desafiantes", "Mentoría de otros en desarrollo de resiliencia"],
+          "impacto_relaciones": ["Estabilidad emocional general", "Capacidad de apoyar a otros en crisis"],
+          "plan_7_dias": [
+            "Día 1: Identifica tus estrategias de afrontamiento más efectivas",
+            "Día 2: Practica visualización de superación de un desafío actual",
+            "Día 3: Escribe sobre una vez que superaste algo difícil",
+            "Día 4: Desarrolla un mantra personal de fortaleza",
+            "Día 5: Practica encontrar oportunidades en problemas actuales",
+            "Día 6: Busca apoyo proactivamente antes de necesitarlo urgentemente",
+            "Día 7: Crea un plan de acción para fortalecer tu resiliencia"
+          ],
+          "cita": "La resiliencia se construye día a día, decisión a decisión"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una capacidad excepcional para recuperarte de adversidades y mantener tu equilibrio emocional",
+        "ad_unlock": {
+          "fortalezas": ["Recuperación rápida", "Estabilidad emocional", "Crecimiento a través de adversidades"],
+          "debilidades": ["Posible subestimación de problemas", "Expectativas altas hacia otros", "Riesgo de burnout por exceso de confianza"],
+          "recomendaciones_breves": ["Usa tu fortaleza para ayudar a otros", "Mantén humildad ante los desafíos", "Practica el autocuidado preventivo"]
+        },
+        "premium": {
+          "detalle": "Tu alta resiliencia es una fortaleza extraordinaria que te permite no solo sobrevivir sino prosperar ante adversidades. Esta capacidad te convierte en un líder natural en crisis y un modelo para otros.",
+          "mejorar": ["Desarrolla habilidades de coaching en resiliencia", "Practica la vulnerabilidad apropiada", "Cultiva la paciencia con procesos ajenos", "Mantén conexión con tu humanidad"],
+          "alertas": ["Minimizar el impacto real de problemas serios", "Frustración con quienes se recuperan más lentamente", "Burnout por asumir demasiadas cargas"],
+          "oportunidades": ["Liderazgo en crisis", "Coaching y mentoría", "Construcción de equipos resilientes"],
+          "impacto_relaciones": ["Fuente de fortaleza para otros", "Riesgo de ser visto como inaccesible emocionalmente"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu resiliencia puede servir a otros",
+            "Día 2: Comparte una estrategia de superación con alguien que lucha",
+            "Día 3: Practica mostrar vulnerabilidad apropiada",
+            "Día 4: Identifica señales tempranas de tu propio agotamiento",
+            "Día 5: Desarrolla paciencia con el proceso de recuperación ajeno",
+            "Día 6: Crea un sistema de autocuidado preventivo",
+            "Día 7: Planifica cómo usar tu fortaleza para impacto positivo"
+          ],
+          "cita": "La verdadera resiliencia incluye la sabiduría de cuándo descansar"
+        }
+      }
+    ],
+    "adaptacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Prefieres rutinas establecidas y te cuesta ajustarte a cambios inesperados o nuevas situaciones",
+        "ad_unlock": {
+          "fortalezas": ["Consistencia", "Profundidad en áreas conocidas", "Estabilidad"],
+          "debilidades": ["Rigidez ante cambios", "Estrés por imprevistos", "Resistencia a nuevas experiencias"],
+          "recomendaciones_breves": ["Practica pequeños cambios diarios", "Desarrolla tolerancia a la incertidumbre", "Busca oportunidades de aprendizaje"]
+        },
+        "premium": {
+          "detalle": "Tu baja adaptabilidad puede ser una fortaleza en entornos estables, pero en un mundo cambiante, desarrollar flexibilidad te permitirá aprovechar oportunidades y manejar mejor los desafíos inesperados.",
+          "mejorar": ["Practica cambios pequeños y graduales", "Desarrolla curiosidad por lo nuevo", "Cultiva la mentalidad de crecimiento", "Aprende técnicas de manejo de la incertidumbre"],
+          "alertas": ["Perder oportunidades por resistencia al cambio", "Estrés excesivo ante situaciones nuevas", "Quedarse atrás en entornos dinámicos"],
+          "oportunidades": ["Especialización profunda", "Liderazgo en estabilidad", "Construcción de sistemas duraderos"],
+          "impacto_relaciones": ["Confiabilidad y consistencia", "Posible frustración de otros por rigidez"],
+          "plan_7_dias": [
+            "Día 1: Cambia una pequeña rutina diaria",
+            "Día 2: Prueba una actividad completamente nueva",
+            "Día 3: Practica decir 'sí' a una invitación inesperada",
+            "Día 4: Explora una perspectiva diferente sobre un tema conocido",
+            "Día 5: Adapta tu enfoque en una situación que no salió como esperabas",
+            "Día 6: Busca feedback sobre tu flexibilidad",
+            "Día 7: Reflexiona sobre los beneficios de ser más adaptable"
+          ],
+          "cita": "La adaptabilidad es la clave de la supervivencia en un mundo cambiante"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Te adaptas moderadamente bien a cambios, aunque prefieres tener tiempo para ajustarte",
+        "ad_unlock": {
+          "fortalezas": ["Flexibilidad situacional", "Equilibrio entre estabilidad y cambio", "Capacidad de aprendizaje"],
+          "debilidades": ["Necesidad de tiempo para adaptarse", "Estrés inicial ante cambios grandes", "Preferencia por lo conocido"],
+          "recomendaciones_breves": ["Acelera tu proceso de adaptación", "Practica improvisación", "Desarrolla confianza en situaciones nuevas"]
+        },
+        "premium": {
+          "detalle": "Tu adaptabilidad moderada te permite manejar la mayoría de cambios con tiempo suficiente. Para el siguiente nivel, necesitas desarrollar mayor velocidad y confianza en tu capacidad de ajuste.",
+          "mejorar": ["Practica improvisación y pensamiento rápido", "Desarrolla confianza en tu capacidad de aprender", "Cultiva la curiosidad por lo desconocido", "Mejora tu tolerancia a la ambigüedad"],
+          "alertas": ["Lentitud en adaptación que puede costarte oportunidades", "Estrés innecesario por resistencia inicial al cambio"],
+          "oportunidades": ["Liderazgo en transiciones", "Gestión de cambio organizacional", "Facilitación de procesos de adaptación"],
+          "impacto_relaciones": ["Equilibrio entre estabilidad y flexibilidad", "Capacidad de ayudar a otros en transiciones"],
+          "plan_7_dias": [
+            "Día 1: Identifica patrones en tu proceso de adaptación",
+            "Día 2: Practica tomar decisiones rápidas en situaciones nuevas",
+            "Día 3: Busca activamente una experiencia fuera de tu zona de confort",
+            "Día 4: Practica improvisación en una situación segura",
+            "Día 5: Desarrolla confianza en tu capacidad de aprender rápido",
+            "Día 6: Ayuda a alguien más a adaptarse a un cambio",
+            "Día 7: Reflexiona sobre cómo la adaptabilidad puede expandir tus oportunidades"
+          ],
+          "cita": "La adaptabilidad es el superpoder del siglo XXI"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Te adaptas excepcionalmente bien a cambios y prosperas en entornos dinámicos e inciertos",
+        "ad_unlock": {
+          "fortalezas": ["Flexibilidad excepcional", "Prosperidad en el caos", "Innovación constante"],
+          "debilidades": ["Posible falta de consistencia", "Dificultad con rutinas", "Impaciencia con procesos lentos"],
+          "recomendaciones_breves": ["Balancea adaptabilidad con consistencia", "Desarrolla paciencia con procesos graduales", "Usa tu flexibilidad para ayudar a otros"]
+        },
+        "premium": {
+          "detalle": "Tu alta adaptabilidad es un superpoder en el mundo moderno. Puedes prosperar donde otros luchan, pero debes cuidar mantener cierta estabilidad y no cambiar por el simple hecho de cambiar.",
+          "mejorar": ["Desarrolla discernimiento sobre cuándo cambiar vs. mantener", "Practica la paciencia con procesos graduales", "Cultiva la profundidad además de la amplitud", "Ayuda a otros a desarrollar adaptabilidad"],
+          "alertas": ["Cambiar constantemente sin dirección clara", "Impaciencia con quienes necesitan más tiempo", "Falta de profundidad por exceso de cambio"],
+          "oportunidades": ["Liderazgo en transformación", "Innovación y emprendimiento", "Consultoría en gestión del cambio"],
+          "impacto_relaciones": ["Inspiración para otros", "Posible frustración con ritmos más lentos"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre el equilibrio entre cambio y estabilidad",
+            "Día 2: Identifica un área donde podrías beneficiarte de más consistencia",
+            "Día 3: Practica la paciencia con alguien que se adapta más lentamente",
+            "Día 4: Usa tu adaptabilidad para resolver un problema de alguien más",
+            "Día 5: Desarrolla una rutina que te dé estabilidad sin limitarte",
+            "Día 6: Enseña a alguien una técnica de adaptación",
+            "Día 7: Planifica cómo usar tu flexibilidad para impacto duradero"
+          ],
+          "cita": "La adaptabilidad sabia sabe cuándo cambiar y cuándo permanecer"
+        }
+      }
+    ],
+    "fortaleza": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Puedes sentirte abrumado por presión intensa y tiendes a ceder en tus valores cuando las cosas se ponen difíciles",
+        "ad_unlock": {
+          "fortalezas": ["Flexibilidad de valores", "Capacidad de compromiso", "Evita conflictos innecesarios"],
+          "debilidades": ["Cede bajo presión", "Inconsistencia en valores", "Baja tolerancia al estrés"],
+          "recomendaciones_breves": ["Define tus valores fundamentales no negociables", "Practica mantener posiciones en situaciones de baja presión", "Desarrolla técnicas de manejo del estrés"]
+        },
+        "premium": {
+          "detalle": "Tu baja fortaleza mental puede llevarte a comprometer valores importantes bajo presión. Aunque la flexibilidad tiene valor, necesitas desarrollar un núcleo firme de principios que te guíen en momentos difíciles.",
+          "mejorar": ["Define claramente tus valores fundamentales", "Practica técnicas de fortalecimiento mental", "Desarrolla un sistema de apoyo para momentos difíciles", "Cultiva la autocompasión durante el proceso"],
+          "alertas": ["Comprometer valores importantes por evitar conflicto", "Sentirse perdido sin dirección clara", "Ceder en decisiones importantes por presión"],
+          "oportunidades": ["Desarrollo de carácter", "Liderazgo auténtico", "Construcción de integridad personal"],
+          "impacto_relaciones": ["Flexibilidad que puede ser vista como falta de principios", "Necesidad de apoyo en decisiones difíciles"],
+          "plan_7_dias": [
+            "Día 1: Escribe tus 5 valores más importantes",
+            "Día 2: Identifica una situación donde cediste en un valor importante",
+            "Día 3: Practica mantener una posición menor pero firme",
+            "Día 4: Desarrolla una frase personal de fortaleza",
+            "Día 5: Busca ejemplos de personas con fortaleza que admires",
+            "Día 6: Practica decir no a algo que va contra tus valores",
+            "Día 7: Reflexiona sobre cómo la fortaleza puede mejorar tu vida"
+          ],
+          "cita": "La fortaleza no es rigidez, es flexibilidad con principios"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Mantienes tus valores y posiciones en la mayoría de situaciones, aunque la presión extrema puede hacerte dudar",
+        "ad_unlock": {
+          "fortalezas": ["Principios generalmente firmes", "Resistencia moderada a presión", "Equilibrio entre firmeza y flexibilidad"],
+          "debilidades": ["Dudas bajo presión extrema", "Inconsistencia en situaciones muy desafiantes", "Necesidad de apoyo en crisis"],
+          "recomendaciones_breves": ["Fortalece tu confianza en momentos de presión", "Desarrolla estrategias para situaciones extremas", "Practica la toma de decisiones bajo estrés"]
+        },
+        "premium": {
+          "detalle": "Tu fortaleza moderada te permite mantener tus principios en la mayoría de situaciones. Para el siguiente nivel, necesitas desarrollar mayor confianza y estrategias para los momentos de máxima presión.",
+          "mejorar": ["Desarrolla técnicas de manejo de presión extrema", "Practica la toma de decisiones bajo estrés", "Fortalece tu narrativa personal de valores", "Cultiva la confianza en tu juicio"],
+          "alertas": ["Dudar de tus valores en momentos críticos", "Inconsistencia que confunde a otros", "Ceder en decisiones importantes por agotamiento"],
+          "oportunidades": ["Liderazgo en situaciones desafiantes", "Mentoría en desarrollo de carácter", "Construcción de equipos resilientes"],
+          "impacto_relaciones": ["Confianza general en tu integridad", "Apoyo necesario en momentos de máxima presión"],
+          "plan_7_dias": [
+            "Día 1: Identifica situaciones que más desafían tu fortaleza",
+            "Día 2: Desarrolla estrategias específicas para esos momentos",
+            "Día 3: Practica técnicas de respiración para mantener calma bajo presión",
+            "Día 4: Busca ejemplos de líderes que mantuvieron principios en crisis",
+            "Día 5: Practica comunicar tus valores con confianza",
+            "Día 6: Desarrolla un sistema de recordatorios de tus principios",
+            "Día 7: Reflexiona sobre cómo tu fortaleza puede inspirar a otros"
+          ],
+          "cita": "La fortaleza verdadera se revela en los momentos más oscuros"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una fortaleza mental excepcional que te permite mantener tus principios incluso bajo presión extrema",
+        "ad_unlock": {
+          "fortalezas": ["Principios inquebrantables", "Liderazgo en crisis", "Inspiración para otros"],
+          "debilidades": ["Posible rigidez excesiva", "Dificultad para comprometerse", "Expectativas altas hacia otros"],
+          "recomendaciones_breves": ["Balancea firmeza con flexibilidad apropiada", "Usa tu fortaleza para empoderar a otros", "Mantén humildad en tu fuerza"]
+        },
+        "premium": {
+          "detalle": "Tu fortaleza mental excepcional te convierte en un líder natural en crisis y un modelo de integridad. Esta es una responsabilidad que requiere uso sabio y compasivo de tu poder interior.",
+          "mejorar": ["Desarrolla liderazgo compasivo", "Practica la flexibilidad sin comprometer principios", "Cultiva la paciencia con procesos ajenos", "Enseña fortaleza a otros"],
+          "alertas": ["Rigidez que impide crecimiento", "Juicio hacia quienes son menos fuertes", "Aislamiento por estándares muy altos"],
+          "oportunidades": ["Liderazgo transformacional", "Mentoría en desarrollo de carácter", "Construcción de movimientos basados en principios"],
+          "impacto_relaciones": ["Respeto profundo y posible intimidación", "Capacidad de inspirar fortaleza en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre la responsabilidad de tu fortaleza",
+            "Día 2: Identifica un área donde podrías ser más flexible sin comprometer principios",
+            "Día 3: Practica la compasión hacia alguien que lucha con fortaleza",
+            "Día 4: Usa tu fortaleza para defender a alguien vulnerable",
+            "Día 5: Enseña una técnica de fortaleza mental a alguien",
+            "Día 6: Practica la humildad reconociendo tus propias luchas pasadas",
+            "Día 7: Compromete tu fortaleza con una causa mayor que tú mismo"
+          ],
+          "cita": "La fortaleza más noble es la que protege a los vulnerables"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Resistencia Psicológica revela cómo tu resiliencia, adaptabilidad y fortaleza mental se comparan con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la estabilidad emocional y la fortaleza mental", "Quienes aprecian la capacidad de superación y el crecimiento a través de adversidades", "Perfiles que buscan apoyo mutuo en momentos difíciles y celebran la resistencia"],
+        "dificil": ["Quienes se sienten intimidados por la fortaleza mental o la ven como frialdad", "Personas que evitan hablar de dificultades o prefieren la negación", "Perfiles que interpretan la resistencia como falta de sensibilidad emocional"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la estabilidad bajo presión y la gestión de crisis", "Culturas que premian la adaptabilidad y la capacidad de recuperación", "Espacios que requieren liderazgo en momentos difíciles y transformación"],
+        "dificil": ["Ambientes que penalizan mostrar vulnerabilidad o pedir ayuda", "Culturas que no reconocen el valor de la resistencia mental", "Estructuras que explotan la fortaleza sin ofrecer apoyo o reconocimiento"]
+      },
+      "amistades": {
+        "facil": ["Personas que han pasado por sus propias adversidades y valoran la superación", "Quienes buscan inspiración y apoyo mutuo en el crecimiento personal", "Perfiles que abrazan tanto la fortaleza como la vulnerabilidad apropiada"],
+        "dificil": ["Quienes evitan hablar de dificultades o desafíos personales", "Personas que se sienten inadecuadas ante tu capacidad de resistencia", "Perfiles que mantienen relaciones superficiales para evitar la profundidad emocional"]
+      },
+      "insights": [
+        "Comparte tu experiencia de superación para inspirar esperanza en otros",
+        "Equilibra tu fortaleza con momentos de vulnerabilidad que permitan conexión auténtica",
+        "Usa tu resistencia para crear espacios seguros donde otros puedan desarrollar su propia fortaleza"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En crisis personales o profesionales que requieren liderazgo estable",
+        "prediccion": "Tu combinación de resiliencia, adaptabilidad y fortaleza te posicionará como líder natural en la recuperación",
+        "consejo": "Usa tu estabilidad para tranquilizar a otros, pero también modela que está bien pedir ayuda cuando se necesita"
+      },
+      {
+        "escenario": "En cambios organizacionales o transiciones importantes",
+        "prediccion": "Tu adaptabilidad y fortaleza te permitirán no solo sobrevivir sino prosperar durante transformaciones",
+        "consejo": "Balancea tu capacidad de adaptación con paciencia hacia quienes necesitan más tiempo para ajustarse"
+      },
+      {
+        "escenario": "En relaciones que requieren apoyo emocional y vulnerabilidad mutua",
+        "prediccion": "Tu fortaleza puede crear una dinámica donde siempre eres el que apoya sin recibir apoyo",
+        "consejo": "Practica mostrar vulnerabilidad apropiada para permitir que otros también te cuiden y apoyen"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "resiliencia_inspiradora",
+        "cita": "La resiliencia no es evitar caer, sino convertir cada caída en sabiduría",
+        "reflexion": "Tu capacidad de recuperación no solo te fortalece a ti, sino que inspira esperanza y coraje en quienes te rodean"
+      },
+      {
+        "rasgo": "adaptabilidad_consciente",
+        "cita": "La adaptabilidad sabia sabe cuándo cambiar y cuándo permanecer firme",
+        "reflexion": "Tu flexibilidad mental te permite navegar la incertidumbre mientras mantienes tus valores fundamentales intactos"
+      },
+      {
+        "rasgo": "fortaleza_compasiva",
+        "cita": "La fortaleza más noble es la que protege a los vulnerables sin juzgar su fragilidad",
+        "reflexion": "Tu resistencia mental te convierte en un refugio seguro para otros, donde la fortaleza se combina con la compasión"
+      }
+    ]
+  },
+  "related_tests": ["psychological-shadow", "inteligencia_emocional", "test_liderazgo"]
+}

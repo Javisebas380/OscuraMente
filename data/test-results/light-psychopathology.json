@@ -1,0 +1,345 @@
+{
+  "id": "light-psychopathology",
+  "schemaVersion": 1,
+  "titulo": "Psicopatología Ligera",
+  "nivel": "avanzado",
+  "visual": "radar",
+  "rasgos": ["ansiedad", "paranoia", "impulsividad"],
+  "arquetipos": [
+    {
+      "clave": "ansiedad",
+      "label": "El Vigilante",
+      "descripcion": "Mantienes un estado de alerta constante que puede generar preocupación excesiva"
+    },
+    {
+      "clave": "paranoia",
+      "label": "El Desconfiado",
+      "descripcion": "Tiendes a interpretar las intenciones ajenas con cautela y sospecha"
+    },
+    {
+      "clave": "impulsividad",
+      "label": "El Espontáneo",
+      "descripcion": "Actúas rápidamente siguiendo impulsos sin considerar completamente las consecuencias"
+    }
+  ],
+  "bands": {
+    "ansiedad": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Mantienes la calma y relajación en la mayoría de situaciones",
+        "ad_unlock": {
+          "fortalezas": ["Tranquilidad natural", "Capacidad de relajación", "Estabilidad emocional"],
+          "debilidades": ["Posible falta de preparación ante riesgos", "Menor sensibilidad a señales de alerta"],
+          "recomendaciones_breves": ["Mantén un nivel saludable de precaución", "Desarrolla planes de contingencia básicos"]
+        },
+        "premium": {
+          "detalle": "Tu baja ansiedad te permite mantener la calma y tomar decisiones racionales bajo presión, lo que es una gran fortaleza en situaciones de estrés",
+          "mejorar": ["Desarrolla sensibilidad a riesgos reales", "Practica técnicas de evaluación de amenazas", "Mantén un equilibrio entre calma y preparación"],
+          "alertas": ["Subestimar riesgos genuinos", "Falta de preparación ante crisis", "Posible complacencia"],
+          "oportunidades": ["Liderazgo en crisis", "Toma de decisiones bajo presión", "Mediación en conflictos"],
+          "impacto_relaciones": ["Generas tranquilidad en otros", "Puedes ser visto como demasiado relajado en situaciones serias"],
+          "plan_7_dias": [
+            "Día 1: Identifica una situación que requiera más atención",
+            "Día 2: Practica técnicas de evaluación de riesgos",
+            "Día 3: Desarrolla un plan de contingencia simple",
+            "Día 4: Observa señales de estrés en tu entorno",
+            "Día 5: Practica escucha activa de preocupaciones ajenas",
+            "Día 6: Equilibra optimismo con realismo",
+            "Día 7: Evalúa tu nivel de preparación general"
+          ],
+          "cita": "La calma es fortaleza cuando se combina con sabiduría"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Experimentas ansiedad moderada que puede ser adaptativa en ciertas situaciones",
+        "ad_unlock": {
+          "fortalezas": ["Sensibilidad a riesgos", "Motivación para prepararse", "Capacidad de anticipación"],
+          "debilidades": ["Preocupación excesiva ocasional", "Dificultad para relajarse completamente"],
+          "recomendaciones_breves": ["Practica técnicas de relajación", "Distingue entre preocupaciones útiles e inútiles"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de ansiedad puede ser adaptativo, ayudándote a prepararte y anticipar problemas, pero necesitas gestionarla para que no interfiera con tu bienestar",
+          "mejorar": ["Técnicas de respiración profunda", "Mindfulness para el presente", "Reestructuración cognitiva de pensamientos catastróficos"],
+          "alertas": ["Rumiación excesiva", "Evitación de situaciones por ansiedad", "Somatización del estrés"],
+          "oportunidades": ["Planificación efectiva", "Detección temprana de problemas", "Empatía con otros ansiosos"],
+          "impacto_relaciones": ["Puedes ser visto como cuidadoso y previsor", "Riesgo de transmitir ansiedad a otros"],
+          "plan_7_dias": [
+            "Día 1: Practica respiración 4-7-8 durante 5 minutos",
+            "Día 2: Identifica 3 preocupaciones útiles vs inútiles",
+            "Día 3: Implementa una rutina de relajación nocturna",
+            "Día 4: Practica mindfulness durante 10 minutos",
+            "Día 5: Desafía un pensamiento catastrófico",
+            "Día 6: Programa tiempo de preocupación limitado",
+            "Día 7: Evalúa tu progreso en manejo de ansiedad"
+          ],
+          "cita": "La ansiedad bien gestionada es intuición en acción"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Experimentas niveles altos de ansiedad que pueden interferir con tu funcionamiento diario",
+        "ad_unlock": {
+          "fortalezas": ["Alta sensibilidad", "Capacidad de detección de problemas", "Motivación para el cambio"],
+          "debilidades": ["Preocupación constante", "Dificultad para relajarse", "Posible evitación"],
+          "recomendaciones_breves": ["Busca apoyo profesional", "Practica técnicas de relajación diarias"]
+        },
+        "premium": {
+          "detalle": "Tu alta ansiedad requiere atención y manejo activo. Aunque puede indicar alta sensibilidad, cuando es excesiva interfiere con tu calidad de vida y toma de decisiones",
+          "mejorar": ["Terapia cognitivo-conductual", "Técnicas de grounding", "Ejercicio regular para liberar tensión", "Establecer rutinas predecibles"],
+          "alertas": ["Evitación de situaciones importantes", "Ataques de pánico", "Insomnio por preocupación"],
+          "oportunidades": ["Desarrollo de resiliencia", "Mayor autoconocimiento", "Empatía profunda con otros"],
+          "impacto_relaciones": ["Puedes necesitar mucha tranquilización", "Riesgo de sobreprotección o control"],
+          "plan_7_dias": [
+            "Día 1: Consulta con un profesional de salud mental",
+            "Día 2: Implementa técnica de grounding 5-4-3-2-1",
+            "Día 3: Establece una rutina matutina calmante",
+            "Día 4: Practica ejercicio suave diario",
+            "Día 5: Limita consumo de noticias/redes sociales",
+            "Día 6: Desarrolla un mantra personal de calma",
+            "Día 7: Evalúa qué técnicas te funcionan mejor"
+          ],
+          "cita": "La ansiedad es energía que busca dirección constructiva"
+        }
+      }
+    ],
+    "paranoia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Confías en las personas y tiendes a ver intenciones positivas en los demás",
+        "ad_unlock": {
+          "fortalezas": ["Confianza en otros", "Relaciones abiertas", "Optimismo social"],
+          "debilidades": ["Posible ingenuidad", "Vulnerabilidad a manipulación"],
+          "recomendaciones_breves": ["Mantén un equilibrio saludable de confianza", "Desarrolla intuición social"]
+        },
+        "premium": {
+          "detalle": "Tu baja paranoia te permite formar relaciones genuinas y confiar en otros, lo que facilita la colaboración y el bienestar social",
+          "mejorar": ["Desarrolla discernimiento sin perder confianza", "Aprende a leer señales sociales sutiles", "Mantén límites saludables"],
+          "alertas": ["Confianza ciega en situaciones de riesgo", "Ignorar señales de alerta legítimas"],
+          "oportunidades": ["Liderazgo colaborativo", "Construcción de equipos", "Mediación y diplomacia"],
+          "impacto_relaciones": ["Generas confianza y apertura en otros", "Puedes ser visto como ingenuo ocasionalmente"],
+          "plan_7_dias": [
+            "Día 1: Practica escucha activa de intuiciones sociales",
+            "Día 2: Observa lenguaje no verbal en interacciones",
+            "Día 3: Establece un límite pequeño pero claro",
+            "Día 4: Valida información importante antes de actuar",
+            "Día 5: Practica decir no de manera amable",
+            "Día 6: Reflexiona sobre una situación donde la confianza fue mal colocada",
+            "Día 7: Equilibra apertura con discernimiento"
+          ],
+          "cita": "La confianza sabia es un puente, no una puerta abierta"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Mantienes un equilibrio entre confianza y cautela en las relaciones",
+        "ad_unlock": {
+          "fortalezas": ["Discernimiento social", "Protección personal", "Evaluación de riesgos"],
+          "debilidades": ["Dudas ocasionales", "Posible sobreinterpretación de señales"],
+          "recomendaciones_breves": ["Verifica tus interpretaciones con otros", "Practica dar el beneficio de la duda"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de paranoia te ayuda a mantener límites saludables y protegerte, pero debes cuidar que no se vuelva excesiva y dañe relaciones genuinas",
+          "mejorar": ["Verificación de percepciones con terceros", "Técnicas de comunicación asertiva", "Desarrollo de confianza gradual"],
+          "alertas": ["Sobreinterpretar gestos neutros", "Aislamiento por exceso de cautela"],
+          "oportunidades": ["Evaluación de riesgos", "Protección de equipos", "Detección de problemas"],
+          "impacto_relaciones": ["Equilibrio entre apertura y protección", "Puedes ayudar a otros a ser más cautelosos"],
+          "plan_7_dias": [
+            "Día 1: Verifica una interpretación negativa con la persona",
+            "Día 2: Practica dar el beneficio de la duda",
+            "Día 3: Identifica una relación donde puedas ser más abierto",
+            "Día 4: Observa evidencias que contradigan tus sospechas",
+            "Día 5: Practica comunicación directa sobre dudas",
+            "Día 6: Reflexiona sobre el costo de la desconfianza",
+            "Día 7: Equilibra protección con conexión"
+          ],
+          "cita": "La cautela inteligente protege sin aislar"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Experimentas desconfianza significativa que puede afectar tus relaciones y bienestar",
+        "ad_unlock": {
+          "fortalezas": ["Detección de amenazas", "Autoprotección", "Independencia"],
+          "debilidades": ["Aislamiento social", "Estrés constante", "Dificultad para confiar"],
+          "recomendaciones_breves": ["Busca apoyo terapéutico", "Practica técnicas de verificación de realidad"]
+        },
+        "premium": {
+          "detalle": "Tu alta paranoia puede estar protegiéndote de amenazas reales o percibidas, pero cuando es excesiva interfiere con tu capacidad de formar relaciones saludables y disfrutar la vida",
+          "mejorar": ["Terapia para explorar orígenes de la desconfianza", "Técnicas de verificación de realidad", "Exposición gradual a situaciones de confianza"],
+          "alertas": ["Aislamiento social progresivo", "Interpretación hostil de acciones neutras", "Estrés crónico por hipervigilancia"],
+          "oportunidades": ["Desarrollo de discernimiento genuino", "Protección de otros vulnerables", "Investigación y análisis"],
+          "impacto_relaciones": ["Dificultad para formar vínculos profundos", "Otros pueden sentirse juzgados o rechazados"],
+          "plan_7_dias": [
+            "Día 1: Busca apoyo profesional especializado",
+            "Día 2: Practica técnica de verificación de realidad",
+            "Día 3: Identifica una persona de confianza parcial",
+            "Día 4: Cuestiona una interpretación negativa automática",
+            "Día 5: Practica relajación para reducir hipervigilancia",
+            "Día 6: Explora orígenes de tu desconfianza",
+            "Día 7: Da un pequeño paso hacia mayor apertura"
+          ],
+          "cita": "La verdadera protección viene del discernimiento, no del miedo"
+        }
+      }
+    ],
+    "impulsividad": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a ser reflexivo y considerar las consecuencias antes de actuar",
+        "ad_unlock": {
+          "fortalezas": ["Decisiones meditadas", "Autocontrol", "Planificación efectiva"],
+          "debilidades": ["Posible exceso de análisis", "Lentitud en la toma de decisiones"],
+          "recomendaciones_breves": ["Practica tomar decisiones rápidas en situaciones de bajo riesgo", "Confía más en tu intuición"]
+        },
+        "premium": {
+          "detalle": "Tu baja impulsividad te permite tomar decisiones reflexivas y evitar errores costosos, pero debes cuidar no caer en la parálisis por análisis",
+          "mejorar": ["Desarrolla confianza en decisiones rápidas", "Practica intuición en situaciones seguras", "Establece límites de tiempo para decisiones"],
+          "alertas": ["Perder oportunidades por exceso de análisis", "Frustración por lentitud en decisiones"],
+          "oportunidades": ["Planificación estratégica", "Gestión de riesgos", "Asesoramiento y consultoría"],
+          "impacto_relaciones": ["Eres visto como confiable y estable", "Otros pueden impacientarse con tu ritmo"],
+          "plan_7_dias": [
+            "Día 1: Toma una decisión pequeña en menos de 5 minutos",
+            "Día 2: Practica confiar en tu primera intuición",
+            "Día 3: Establece límites de tiempo para decisiones",
+            "Día 4: Identifica una oportunidad que requiera acción rápida",
+            "Día 5: Practica decir sí a algo espontáneo",
+            "Día 6: Reflexiona sobre decisiones rápidas exitosas del pasado",
+            "Día 7: Equilibra reflexión con acción"
+          ],
+          "cita": "La reflexión sin acción es estancamiento"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras espontaneidad con reflexión según la situación",
+        "ad_unlock": {
+          "fortalezas": ["Flexibilidad en decisiones", "Capacidad de adaptación", "Equilibrio entre reflexión y acción"],
+          "debilidades": ["Inconsistencia ocasional", "Arrepentimiento por algunas decisiones impulsivas"],
+          "recomendaciones_breves": ["Desarrolla criterios claros para cuándo ser impulsivo", "Practica la pausa antes de actuar"]
+        },
+        "premium": {
+          "detalle": "Tu impulsividad moderada te permite ser espontáneo cuando es apropiado y reflexivo cuando es necesario, pero debes desarrollar mejor discernimiento sobre cuándo usar cada enfoque",
+          "mejorar": ["Desarrolla criterios de decisión", "Practica la regla de 24 horas para decisiones importantes", "Mejora autoconciencia emocional"],
+          "alertas": ["Decisiones importantes tomadas en estados emocionales intensos", "Falta de consistencia en patrones de decisión"],
+          "oportunidades": ["Liderazgo adaptativo", "Innovación y creatividad", "Respuesta rápida a oportunidades"],
+          "impacto_relaciones": ["Eres visto como dinámico pero a veces impredecible", "Puedes inspirar espontaneidad en otros"],
+          "plan_7_dias": [
+            "Día 1: Define criterios para decisiones rápidas vs lentas",
+            "Día 2: Practica la pausa de 10 segundos antes de responder",
+            "Día 3: Identifica tus triggers emocionales para impulsividad",
+            "Día 4: Implementa la regla 24h para una decisión importante",
+            "Día 5: Reflexiona sobre una decisión impulsiva reciente",
+            "Día 6: Practica espontaneidad controlada en algo seguro",
+            "Día 7: Evalúa tu equilibrio reflexión-acción"
+          ],
+          "cita": "La sabiduría está en saber cuándo saltar y cuándo mirar"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tiendes a actuar rápidamente sin considerar completamente las consecuencias",
+        "ad_unlock": {
+          "fortalezas": ["Acción rápida", "Espontaneidad", "Capacidad de aprovechar oportunidades"],
+          "debilidades": ["Decisiones precipitadas", "Arrepentimiento frecuente", "Posibles consecuencias negativas"],
+          "recomendaciones_breves": ["Implementa pausas obligatorias antes de actuar", "Busca apoyo para desarrollar autocontrol"]
+        },
+        "premium": {
+          "detalle": "Tu alta impulsividad puede llevarte a oportunidades únicas pero también a consecuencias no deseadas. Es crucial desarrollar estrategias de autocontrol sin perder tu espontaneidad natural",
+          "mejorar": ["Técnicas de pausa y respiración", "Desarrollo de autoconciencia emocional", "Creación de sistemas de verificación antes de actuar"],
+          "alertas": ["Decisiones financieras o relacionales precipitadas", "Patrones de autosabotaje", "Conflictos por reacciones impulsivas"],
+          "oportunidades": ["Emprendimiento y innovación", "Respuesta rápida en crisis", "Liderazgo en cambios"],
+          "impacto_relaciones": ["Puedes ser emocionante pero impredecible", "Riesgo de herir a otros con reacciones rápidas"],
+          "plan_7_dias": [
+            "Día 1: Implementa la regla de contar hasta 10",
+            "Día 2: Identifica tus principales triggers de impulsividad",
+            "Día 3: Practica técnicas de respiración antes de actuar",
+            "Día 4: Busca un compañero de accountability",
+            "Día 5: Reflexiona sobre consecuencias de decisiones pasadas",
+            "Día 6: Practica la pausa en situaciones de bajo riesgo",
+            "Día 7: Desarrolla un sistema personal de verificación"
+          ],
+          "cita": "El autocontrol no mata la espontaneidad, la dirige"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Psicopatología Ligera muestra tus tendencias hacia ansiedad, paranoia e impulsividad comparado con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que comprenden la ansiedad y la sensibilidad", "Quienes valoran la honestidad sobre las luchas internas", "Perfiles que abrazan la vulnerabilidad y el crecimiento personal"],
+        "dificil": ["Quienes minimizan o juzgan los problemas de salud mental", "Personas que evitan conversaciones sobre emociones difíciles", "Perfiles que exigen perfección emocional constante"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran el bienestar mental y la autenticidad", "Culturas que permiten flexibilidad y comprensión", "Espacios que apoyan el equilibrio vida-trabajo"],
+        "dificil": ["Ambientes de alta presión sin apoyo emocional", "Culturas que estigmatizan la vulnerabilidad", "Estructuras rígidas que no permiten adaptación"]
+      },
+      "amistades": {
+        "facil": ["Personas en su propio camino de sanación y crecimiento", "Quienes valoran la autenticidad sobre la perfección", "Perfiles que entienden las luchas internas"],
+        "dificil": ["Quienes evitan hablar de temas profundos o difíciles", "Personas que juzgan la ansiedad o impulsividad", "Perfiles que mantienen solo relaciones superficiales"]
+      },
+      "insights": [
+        "Comparte tu proceso de manejo de ansiedad para normalizar las luchas mentales",
+        "Equilibra tu intensidad emocional con momentos de calma y estabilidad",
+        "Usa tu experiencia con desafíos internos para ayudar a otros en situaciones similares"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones de alta presión o estrés",
+        "prediccion": "Tu ansiedad puede intensificarse, pero también puede alertarte sobre riesgos reales",
+        "consejo": "Desarrolla técnicas de grounding y respiración para manejar la activación sin perder la información útil"
+      },
+      {
+        "escenario": "En relaciones que requieren confianza profunda",
+        "prediccion": "Tu paranoia puede crear barreras iniciales, pero una vez superadas, formas vínculos muy auténticos",
+        "consejo": "Comunica tus necesidades de seguridad y tiempo para construir confianza gradualmente"
+      },
+      {
+        "escenario": "En momentos que requieren decisiones rápidas",
+        "prediccion": "Tu impulsividad puede llevarte a actuar sin considerar todas las consecuencias",
+        "consejo": "Implementa una pausa de 10 segundos y pregúntate '¿qué pasaría si espero un momento?'"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "ansiedad_adaptativa",
+        "cita": "La ansiedad es energía que busca dirección constructiva",
+        "reflexion": "Tu sensibilidad ansiosa, bien canalizada, puede convertirse en intuición poderosa y capacidad de anticipación"
+      },
+      {
+        "rasgo": "paranoia_protectora",
+        "cita": "La verdadera protección viene del discernimiento, no del miedo",
+        "reflexion": "Tu cautela natural puede transformarse en sabiduría para detectar situaciones genuinamente problemáticas"
+      },
+      {
+        "rasgo": "impulsividad_creativa",
+        "cita": "El autocontrol no mata la espontaneidad, la dirige sabiamente",
+        "reflexion": "Tu energía impulsiva, cuando se canaliza conscientemente, puede ser fuente de creatividad y acción valiente"
+      }
+    ]
+  },
+  "related_tests": ["dark-triad", "psychological-shadow", "inteligencia_emocional"]
+}

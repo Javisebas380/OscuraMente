@@ -1,0 +1,345 @@
+{
+  "id": "psychological-shadow",
+  "schemaVersion": 1,
+  "titulo": "Sombra Psicológica",
+  "nivel": "avanzado",
+  "visual": "radar",
+  "rasgos": ["autenticidad", "aceptacion", "integracion"],
+  "arquetipos": [
+    {
+      "clave": "autenticidad",
+      "label": "El Ser Auténtico",
+      "descripcion": "Vives en coherencia con tu verdad interior, liberándote de máscaras y expectativas externas"
+    },
+    {
+      "clave": "aceptacion",
+      "label": "El Integrador de Sombras",
+      "descripcion": "Abrazas tus aspectos ocultos, transformando la oscuridad en sabiduría y plenitud"
+    },
+    {
+      "clave": "integracion",
+      "label": "El Alquimista Interior",
+      "descripcion": "Transformas tus desafíos internos en oro psicológico, logrando una profunda unidad personal"
+    }
+  ],
+  "bands": {
+    "autenticidad": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a ocultar aspectos de ti mismo para encajar o evitar el juicio, lo que puede generar una sensación de inautenticidad",
+        "ad_unlock": {
+          "fortalezas": ["Adaptabilidad social", "Evita conflictos directos", "Protección emocional"],
+          "debilidades": ["Dificultad para expresar tu verdadero yo", "Sentimientos de vacío o desconexión", "Miedo al rechazo"],
+          "recomendaciones_breves": ["Identifica una pequeña área donde puedas ser más tú mismo", "Practica decir 'no' a lo que no resuena contigo", "Explora tus valores fundamentales"]
+        },
+        "premium": {
+          "detalle": "La baja autenticidad puede llevar a una vida guiada por las expectativas externas, lo que a largo plazo erosiona tu sentido de identidad y bienestar. Es crucial empezar a alinear tu ser interior con tu expresión exterior.",
+          "mejorar": ["Journaling para explorar valores personales", "Establecer límites claros", "Buscar entornos de apoyo donde te sientas seguro para ser tú mismo", "Practicar la expresión gradual de tu verdad"],
+          "alertas": ["Sentir que 'actúas' un papel constantemente", "Agotamiento por mantener una fachada", "Resentimiento hacia los demás por no 'verte' realmente"],
+          "oportunidades": ["Desarrollo de una autoimagen sólida", "Relaciones más profundas y significativas", "Mayor energía y vitalidad al vivir en coherencia"],
+          "impacto_relaciones": ["Las relaciones pueden sentirse superficiales o condicionales", "Dificultad para formar vínculos genuinos basados en la confianza mutua"],
+          "plan_7_dias": [
+            "Día 1: Escribe 3 valores fundamentales que te definen",
+            "Día 2: Identifica una situación reciente donde no fuiste auténtico y reflexiona por qué",
+            "Día 3: Practica una pequeña acción que refleje uno de tus valores",
+            "Día 4: Observa tus reacciones emocionales cuando intentas complacer a otros",
+            "Día 5: Comparte un pensamiento genuino con alguien de confianza",
+            "Día 6: Dedica 15 minutos a visualizarte viviendo plenamente auténtico",
+            "Día 7: Evalúa cómo te sentiste esta semana al dar pequeños pasos hacia tu autenticidad"
+          ],
+          "cita": "La autenticidad no es lo que dices, sino lo que haces cuando nadie te ve"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Buscas la autenticidad, pero a veces te cuesta mantenerla en situaciones de presión social o conflicto",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia de la importancia de la autenticidad", "Capacidad de ser genuino en entornos seguros", "Búsqueda activa de coherencia"],
+          "debilidades": ["Oscilación entre la expresión genuina y la conformidad", "Sensibilidad a la crítica o al juicio", "Inconsistencia en diferentes contextos"],
+          "recomendaciones_breves": ["Fortalece tu autoconfianza", "Practica la asertividad en situaciones de baja presión", "Desarrolla tolerancia a la incomodidad"]
+        },
+        "premium": {
+          "detalle": "Estás en un camino prometedor hacia una mayor autenticidad, pero aún hay resistencias internas o externas que te impiden vivir plenamente alineado. Reconocer estas barreras es el primer paso para superarlas.",
+          "mejorar": ["Técnicas de mindfulness para observar tus impulsos de conformidad", "Desarrollo de un 'círculo de confianza' que apoye tu autenticidad", "Exposición gradual a situaciones que te desafíen a ser más tú mismo", "Práctica de comunicación asertiva"],
+          "alertas": ["Sentir culpa después de haber sido auténtico", "Dudar de tus decisiones cuando difieren de la norma", "Buscar validación externa para tus expresiones genuinas"],
+          "oportunidades": ["Convertirte en un modelo de autenticidad para otros", "Experimentar una mayor satisfacción personal y profesional", "Atraer relaciones y oportunidades que resuenen con tu verdadero ser"],
+          "impacto_relaciones": ["Las relaciones se vuelven más honestas, aunque a veces incómodas al principio", "Puedes inspirar a otros a ser más auténticos"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre una situación donde te sentiste inauténtico y qué te detuvo",
+            "Día 2: Elige una creencia limitante sobre la autenticidad y desafíala",
+            "Día 3: Practica la 'escucha activa' de tu intuición antes de tomar una decisión",
+            "Día 4: Identifica un pequeño riesgo que puedas tomar para expresar una opinión genuina",
+            "Día 5: Escribe un 'manifiesto personal' de tu autenticidad",
+            "Día 6: Busca ejemplos de personas auténticas que admires y analiza sus cualidades",
+            "Día 7: Celebra un pequeño logro de autenticidad de la semana y planifica el siguiente paso"
+          ],
+          "cita": "La autenticidad es un viaje, no un destino. Cada paso te acerca a tu esencia"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Vives en gran coherencia con tu verdadero yo, lo que te otorga una profunda sensación de libertad y plenitud",
+        "ad_unlock": {
+          "fortalezas": ["Fuerte sentido de identidad", "Resistencia a la presión social", "Capacidad de inspirar a otros"],
+          "debilidades": ["Puede ser percibido como 'demasiado' directo o confrontativo", "Dificultad para tolerar la inautenticidad en otros", "Posible aislamiento por intensidad"],
+          "recomendaciones_breves": ["Practica la empatía hacia quienes luchan con su autenticidad", "Aprende a comunicar tu verdad con compasión", "Equilibra directness con diplomacia"]
+        },
+        "premium": {
+          "detalle": "Tu alta autenticidad es una fuente de poder y magnetismo. Has integrado gran parte de tu sombra, permitiendo que tu luz brille sin restricciones. Tu desafío ahora es mantener esta coherencia y usarla para el bien mayor.",
+          "mejorar": ["Desarrollo de habilidades de comunicación no violenta", "Cultivar la paciencia y la comprensión hacia los procesos de los demás", "Explorar nuevas formas de expresión creativa", "Practicar la vulnerabilidad estratégica"],
+          "alertas": ["Caer en la arrogancia o el juicio hacia la inautenticidad ajena", "Aislarte si sientes que no encuentras personas 'a tu nivel'", "Descuidar la diplomacia en aras de la 'verdad' absoluta"],
+          "oportunidades": ["Liderazgo transformador", "Creación de comunidades basadas en la verdad y la conexión genuina", "Impacto positivo en tu entorno al modelar la integridad"],
+          "impacto_relaciones": ["Relaciones profundas y significativas, basadas en la confianza y el respeto mutuo", "Puedes ser un catalizador para el crecimiento de otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu autenticidad ha impactado positivamente tu vida y la de otros",
+            "Día 2: Identifica una situación donde podrías haber comunicado tu verdad con más compasión",
+            "Día 3: Practica la 'escucha profunda' sin juicio en una conversación difícil",
+            "Día 4: Escribe una carta de comprensión a alguien que te desafía a ser auténtico",
+            "Día 5: Dedica tiempo a una actividad creativa que exprese tu ser más profundo",
+            "Día 6: Busca una oportunidad para ser mentor de alguien que busca su autenticidad",
+            "Día 7: Celebra tu camino y visualiza cómo puedes expandir tu influencia auténtica"
+          ],
+          "cita": "La autenticidad es el eco de tu alma en el mundo"
+        }
+      }
+    ],
+    "aceptacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a rechazar o reprimir tus aspectos 'oscuros' o 'negativos', lo que puede generar conflictos internos y proyecciones",
+        "ad_unlock": {
+          "fortalezas": ["Fuerte autoimagen idealizada", "Motivación para mejorar", "Altos estándares personales"],
+          "debilidades": ["Autocrítica severa", "Proyección de tus sombras en otros", "Ansiedad y culpa por aspectos rechazados"],
+          "recomendaciones_breves": ["Identifica un rasgo que no te gusta de ti y obsérvalo sin juicio", "Practica la auto-compasión", "Explora el origen de tu autocrítica"]
+        },
+        "premium": {
+          "detalle": "La baja aceptación de tu sombra te mantiene en un estado de fragmentación interna. Lo que rechazas de ti mismo no desaparece, sino que opera desde el inconsciente, manifestándose en patrones autodestructivos o en juicios hacia los demás.",
+          "mejorar": ["Journaling de sombras: escribe sobre lo que te avergüenza", "Técnicas de 'diálogo con la sombra'", "Identificar tus 'triggers' como posibles proyecciones", "Práctica de autocompasión radical"],
+          "alertas": ["Sentir que 'nunca eres suficiente'", "Reacciones exageradas ante defectos ajenos", "Patrones repetitivos de autosabotaje"],
+          "oportunidades": ["Liberación de energía reprimida", "Mayor autoconocimiento y paz interior", "Relaciones más auténticas al reducir las proyecciones"],
+          "impacto_relaciones": ["Dificultad para aceptar los defectos de los demás", "Tendencia a juzgar o criticar", "Relaciones basadas en una imagen idealizada"],
+          "plan_7_dias": [
+            "Día 1: Nombra un rasgo de tu sombra que rechaces y escríbelo",
+            "Día 2: Reflexiona sobre cuándo y cómo aprendiste a rechazar ese rasgo",
+            "Día 3: Observa a alguien que te irrite y pregúntate si esa cualidad existe en ti",
+            "Día 4: Escribe una carta de aceptación a esa parte de tu sombra",
+            "Día 5: Practica la 'meditación de la sombra': visualiza y acepta tu sombra",
+            "Día 6: Identifica una acción para integrar ese rasgo de forma saludable",
+            "Día 7: Reflexiona sobre cómo te sientes al haber dado espacio a tu sombra"
+          ],
+          "cita": "Lo que niegas te somete; lo que aceptas te transforma"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Estás en el proceso de reconocer y aceptar tus aspectos sombríos, aunque a veces te resistes o te sientes incómodo",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia de la sombra", "Voluntad de autoexploración", "Mayor empatía hacia los demás"],
+          "debilidades": ["Lucha interna entre la aceptación y el rechazo", "Puede sentirse abrumado por la intensidad", "Resistencia ocasional al proceso"],
+          "recomendaciones_breves": ["Busca apoyo en un terapeuta o grupo de confianza", "Practica la observación sin juicio de tus emociones", "Sé paciente con tu proceso"]
+        },
+        "premium": {
+          "detalle": "Has iniciado un valiente viaje hacia la aceptación de tu sombra. Este proceso puede ser desafiante, pero cada paso te acerca a una mayor integridad y libertad. La clave es la paciencia y la compasión contigo mismo.",
+          "mejorar": ["Técnicas de mindfulness para observar tus impulsos de conformidad", "Desarrollo de un 'círculo de confianza' que apoye tu autenticidad", "Exposición gradual a situaciones que te desafíen a ser más tú mismo", "Práctica de comunicación asertiva"],
+          "alertas": ["Sentir culpa después de haber sido auténtico", "Dudar de tus decisiones cuando difieren de la norma", "Buscar validación externa para tus expresiones genuinas"],
+          "oportunidades": ["Convertirte en un modelo de autenticidad para otros", "Experimentar una mayor satisfacción personal y profesional", "Atraer relaciones y oportunidades que resuenen con tu verdadero ser"],
+          "impacto_relaciones": ["Las relaciones se vuelven más honestas, aunque a veces incómodas al principio", "Puedes inspirar a otros a ser más auténticos"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre una situación donde te sentiste inauténtico y qué te detuvo",
+            "Día 2: Elige una creencia limitante sobre la autenticidad y desafíala",
+            "Día 3: Practica la 'escucha activa' de tu intuición antes de tomar una decisión",
+            "Día 4: Identifica un pequeño riesgo que puedas tomar para expresar una opinión genuina",
+            "Día 5: Escribe un 'manifiesto personal' de tu autenticidad",
+            "Día 6: Busca ejemplos de personas auténticas que admires y analiza sus cualidades",
+            "Día 7: Celebra un pequeño logro de autenticidad de la semana y planifica el siguiente paso"
+          ],
+          "cita": "La sombra no es un monstruo a temer, sino un tesoro a descubrir"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Has integrado gran parte de tu sombra, lo que te permite vivir con mayor autenticidad, compasión y plenitud",
+        "ad_unlock": {
+          "fortalezas": ["Profundo autoconocimiento", "Alta resiliencia emocional", "Empatía radical"],
+          "debilidades": ["Puede ser abrumador para otros que no han hecho su trabajo de sombra", "Riesgo de idealizar la sombra"],
+          "recomendaciones_breves": ["Continúa profundizando en tu inconsciente con humildad", "Usa tu experiencia para guiar a otros con sabiduría", "Mantén equilibrio entre profundidad y ligereza"]
+        },
+        "premium": {
+          "detalle": "Tu alta aceptación de la sombra te ha convertido en un ser humano más completo y compasivo. Has transformado tus heridas en sabiduría y tu oscuridad en luz. Tu presencia irradia autenticidad y te permite conectar con los demás a un nivel profundo.",
+          "mejorar": ["Explorar la 'sombra colectiva' y cómo se manifiesta en la sociedad", "Desarrollar la capacidad de 'contener' la sombra de otros sin absorberla", "Crear espacios seguros para que otros exploren sus sombras", "Cultivar la humildad en tu sabiduría"],
+          "alertas": ["Caer en la arrogancia o el juicio hacia la inautenticidad ajena", "Aislarte si sientes que no encuentras personas 'a tu nivel'", "Descuidar la diplomacia en aras de la 'verdad' absoluta"],
+          "oportunidades": ["Liderazgo transformador", "Creación de comunidades basadas en la verdad y la conexión genuina", "Impacto positivo en tu entorno al modelar la integridad"],
+          "impacto_relaciones": ["Relaciones profundas y significativas, basadas en la confianza y el respeto mutuo", "Puedes ser un espejo para que otros vean sus propias sombras"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu integración de la sombra te ha hecho más libre",
+            "Día 2: Identifica una manifestación de la 'sombra colectiva' en tu entorno",
+            "Día 3: Practica la 'empatía radical' hacia alguien que te desafía",
+            "Día 4: Escribe sobre cómo puedes usar tu experiencia para ayudar a otros",
+            "Día 5: Dedica tiempo a una práctica espiritual que te conecte con la totalidad",
+            "Día 6: Busca una oportunidad para 'sostener el espacio' para la sombra de otra persona",
+            "Día 7: Celebra tu viaje y visualiza cómo seguir siendo un agente de integración"
+          ],
+          "cita": "Lo que niegas te somete; lo que aceptas te transforma"
+        }
+      }
+    ],
+    "integracion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta reconocer y asimilar tus aspectos inconscientes, lo que puede llevar a patrones repetitivos y falta de autoconciencia",
+        "ad_unlock": {
+          "fortalezas": ["Mantiene una visión simple del mundo", "Evita la complejidad interna", "Enfoque en lo externo"],
+          "debilidades": ["Repetición de errores", "Falta de insight sobre tus motivaciones", "Sentimientos de estar 'atrapado'"],
+          "recomendaciones_breves": ["Empieza a observar tus reacciones automáticas", "Pregúntate '¿por qué hice esto?' después de eventos", "Explora tus sueños y su significado"]
+        },
+        "premium": {
+          "detalle": "La baja integración de tu sombra significa que gran parte de tu energía psíquica está atrapada en el inconsciente, impidiendo tu crecimiento y plenitud. Es como intentar conducir con el freno de mano puesto.",
+          "mejorar": ["Journaling de sueños para conectar con el inconsciente", "Técnicas de 'asociación libre' para explorar pensamientos", "Buscar patrones en tus relaciones y conflictos recurrentes", "Práctica de mindfulness para observar patrones"],
+          "alertas": ["Sentir que la vida 'te sucede' sin control", "Proyectar tus problemas en el destino o en otros", "Resistencia a cualquier forma de auto-reflexión profunda"],
+          "oportunidades": ["Liberación de potencial creativo y energético", "Mayor control sobre tus reacciones y decisiones", "Desarrollo de una profunda sabiduría interior"],
+          "impacto_relaciones": ["Relaciones superficiales o conflictivas debido a proyecciones inconscientes", "Dificultad para entender las motivaciones de los demás"],
+          "plan_7_dias": [
+            "Día 1: Anota un sueño que recuerdes y busca un símbolo que te llame la atención",
+            "Día 2: Elige una reacción emocional fuerte que hayas tenido y explora su origen",
+            "Día 3: Practica la 'observación del observador': mira tus pensamientos como externos",
+            "Día 4: Identifica un patrón negativo en tu vida y reflexiona sobre tu contribución",
+            "Día 5: Dedica 15 minutos a la 'escritura automática' sobre un tema que te preocupe",
+            "Día 6: Busca un 'héroe' o 'villano' en tu vida y reflexiona sobre qué proyectas en ellos",
+            "Día 7: Reflexiona sobre un pequeño 'insight' que hayas tenido sobre ti mismo"
+          ],
+          "cita": "La integración es el puente entre tu yo conocido y tu yo por descubrir"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Estás activamente trabajando en la integración de tus aspectos inconscientes, lo que te permite un mayor autoconocimiento y crecimiento",
+        "ad_unlock": {
+          "fortalezas": ["Voluntad de autoexploración", "Mayor autoconciencia", "Capacidad de aprender de los errores"],
+          "debilidades": ["Puede sentirse abrumado por la complejidad del inconsciente", "Proceso lento y a veces doloroso", "Inconsistencia en la práctica"],
+          "recomendaciones_breves": ["Mantén la paciencia y la compasión contigo mismo", "Busca un guía o terapeuta si el proceso se vuelve muy intenso", "Celebra pequeños avances"]
+        },
+        "premium": {
+          "detalle": "Estás en un camino de profunda transformación, integrando activamente tu sombra. Este proceso requiere valentía y persistencia, pero cada pieza que integras te hace más completo y poderoso.",
+          "mejorar": ["Explorar el 'inconsciente colectivo' a través de mitos y arquetipos", "Desarrollar la 'función trascendente' para sintetizar opuestos", "Practicar la 'imaginación activa'", "Crear rituales de integración personal"],
+          "alertas": ["Caer en la 'inflación del ego' al descubrir nuevos aspectos", "Resistencia a la 'noche oscura del alma'", "Buscar soluciones rápidas en el proceso"],
+          "oportunidades": ["Desarrollo de una personalidad más rica y compleja", "Acceso a la creatividad y la intuición", "Mayor capacidad para la individuación"],
+          "impacto_relaciones": ["Relaciones más profundas basadas en la comprensión mutua", "Puedes ayudar a otros a integrar sus propias sombras"],
+          "plan_7_dias": [
+            "Día 1: Elige un 'trigger' emocional y explora qué parte de tu sombra podría estar reaccionando",
+            "Día 2: Escribe sobre un sueño reciente y busca posibles mensajes de tu inconsciente",
+            "Día 3: Practica la 'observación consciente' de tus juicios hacia otros",
+            "Día 4: Dedica 10 minutos a una meditación guiada de aceptación de la sombra",
+            "Día 5: Identifica una cualidad 'negativa' reprimida y busca su potencial positivo",
+            "Día 6: Comparte una pequeña vulnerabilidad con alguien de confianza",
+            "Día 7: Reflexiona sobre cómo tu percepción de ti mismo ha cambiado esta semana"
+          ],
+          "cita": "La integración no es hacer la oscuridad luz, sino hacer la oscuridad consciente"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Has logrado una profunda integración de tus aspectos inconscientes, lo que te permite vivir con una gran sabiduría, totalidad y propósito",
+        "ad_unlock": {
+          "fortalezas": ["Sabiduría profunda", "Totalidad psíquica", "Gran resiliencia"],
+          "debilidades": ["Puede ser difícil para otros comprender tu nivel de profundidad", "Riesgo de aislamiento"],
+          "recomendaciones_breves": ["Continúa explorando las profundidades del inconsciente con humildad", "Comparte tu sabiduría de manera accesible", "Mantén conexión con la vida cotidiana"]
+        },
+        "premium": {
+          "detalle": "Tu alta integración de la sombra te ha llevado a un estado de individuación, donde has unificado los opuestos dentro de ti. Eres un ser humano completo, consciente de tu luz y tu sombra, capaz de navegar la complejidad con sabiduría.",
+          "mejorar": ["Explorar la 'sombra del colectivo' y cómo puedes influir en ella", "Desarrollar nuevas formas de expresión que comuniquen tu sabiduría", "Cultivar la 'humildad radical'", "Crear puentes entre mundos consciente e inconsciente"],
+          "alertas": ["Caer en la 'trampa del gurú'", "Desconectarte de la realidad cotidiana", "Descuidar las necesidades básicas por enfocarte solo en lo espiritual"],
+          "oportunidades": ["Liderazgo transformador a gran escala", "Creación de sistemas que promuevan la integración", "Ser un 'puente' entre mundos para otros"],
+          "impacto_relaciones": ["Relaciones profundamente significativas y transformadoras", "Puedes ser un catalizador para el despertar de otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu integración te ha permitido vivir con mayor propósito",
+            "Día 2: Identifica un problema global y reflexiona sobre cómo la 'sombra colectiva' contribuye",
+            "Día 3: Practica la 'compasión radical' hacia un grupo que te genere rechazo",
+            "Día 4: Escribe sobre cómo puedes 'encarnar' tu sabiduría en acciones concretas",
+            "Día 5: Dedica tiempo a una práctica contemplativa que te conecte con la totalidad",
+            "Día 6: Busca una oportunidad para 'servir' a otros desde tu sabiduría",
+            "Día 7: Celebra tu viaje y visualiza cómo expandir tu conciencia"
+          ],
+          "cita": "La individuación es el arte de convertirse en quien realmente eres, integrando cada fragmento de tu ser"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Sombra Psicológica revela cómo integras tus aspectos inconscientes. Revisa el detalle para comprender tu camino hacia la totalidad."
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que han hecho su propio trabajo de sombra", "Quienes valoran la autenticidad sobre la perfección", "Perfiles que abrazan la vulnerabilidad como fortaleza"],
+        "dificil": ["Quienes mantienen máscaras sociales rígidas", "Personas que temen la profundidad emocional", "Perfiles que juzgan la vulnerabilidad como debilidad"]
+      },
+      "trabajo": {
+        "facil": ["Culturas que valoran la autenticidad y la transparencia", "Espacios que permiten expresión genuina y crecimiento", "Organizaciones con propósito y valores claros"],
+        "dificil": ["Ambientes que penalizan la vulnerabilidad", "Culturas superficiales que evitan la profundidad", "Estructuras que requieren máscaras constantes"]
+      },
+      "amistades": {
+        "facil": ["Personas en búsqueda de autenticidad y crecimiento", "Quienes valoran conversaciones profundas y reales", "Perfiles que abrazan la complejidad humana"],
+        "dificil": ["Quienes evitan temas existenciales", "Personas que mantienen relaciones superficiales", "Perfiles que temen la intensidad emocional"]
+      },
+      "insights": [
+        "Comparte tu viaje de integración para inspirar a otros",
+        "Equilibra tu profundidad con momentos de ligereza",
+        "Usa tu autenticidad para crear espacios seguros para la vulnerabilidad"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren autenticidad",
+        "prediccion": "Tenderás a elegir la verdad sobre la comodidad, incluso cuando sea difícil",
+        "consejo": "Comunica tu verdad con compasión para que otros puedan recibirla"
+      },
+      {
+        "escenario": "En relaciones que requieren vulnerabilidad",
+        "prediccion": "Tu capacidad de aceptar tus sombras te permitirá crear intimidad genuina",
+        "consejo": "Modela la autoaceptación para que otros se sientan seguros siendo vulnerables"
+      },
+      {
+        "escenario": "En entornos que requieren conformidad",
+        "prediccion": "Podrías sentir tensión entre tu autenticidad y las expectativas externas",
+        "consejo": "Encuentra formas de ser auténtico mientras respetas el contexto y ritmo de otros"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "autenticidad_radical",
+        "cita": "La autenticidad no es lo que dices, sino lo que haces cuando nadie te ve",
+        "reflexion": "Tu compromiso con vivir tu verdad interior te convierte en un faro de autenticidad para otros"
+      },
+      {
+        "rasgo": "aceptacion_transformadora",
+        "cita": "Lo que niegas te somete; lo que aceptas te transforma",
+        "reflexion": "Tu capacidad de abrazar tus aspectos sombríos te permite vivir con mayor plenitud y compasión"
+      },
+      {
+        "rasgo": "integracion_consciente",
+        "cita": "La individuación es el arte de convertirse en quien realmente eres, integrando cada fragmento de tu ser",
+        "reflexion": "Tu trabajo de integración de opuestos internos te permite vivir desde la totalidad y la sabiduría"
+      }
+    ]
+  },
+  "related_tests": ["autoestima", "inteligencia_emocional"]
+}

@@ -1,0 +1,350 @@
+{
+  "id": "persuasion-power",
+  "schemaVersion": 2,
+  "traitMap": {
+    "comunicacion": "carisma",
+    "influencia": "logica",
+    "lectura_social": "manipulacion"
+  },
+  "titulo": "Poder de Persuasión",
+  "nivel": "avanzado",
+  "visual": "radar",
+  "rasgos": ["carisma", "logica", "manipulacion"],
+  "arquetipos": [
+    {
+      "clave": "carisma",
+      "label": "El Carismático",
+      "descripcion": "Influyes a través de tu magnetismo personal y capacidad de conectar emocionalmente"
+    },
+    {
+      "clave": "logica",
+      "label": "El Lógico",
+      "descripcion": "Persuades mediante argumentos racionales, datos y razonamiento estructurado"
+    },
+    {
+      "clave": "manipulacion",
+      "label": "El Estratega",
+      "descripcion": "Utilizas técnicas avanzadas de influencia y control psicológico para lograr tus objetivos"
+    }
+  ],
+  "bands": {
+    "carisma": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tu carisma natural es limitado, pero puedes desarrollar habilidades de conexión personal",
+        "ad_unlock": {
+          "fortalezas": ["Autenticidad", "Humildad", "Escucha activa"],
+          "debilidades": ["Dificultad para captar atención", "Menor impacto en primeras impresiones"],
+          "recomendaciones_breves": ["Practica contacto visual", "Desarrolla tu lenguaje corporal", "Cuenta historias personales"]
+        },
+        "premium": {
+          "detalle": "Tu carisma bajo no significa falta de valor personal, sino una oportunidad de desarrollo. El carisma se puede cultivar a través de la práctica consciente de habilidades sociales y el desarrollo de la confianza personal.",
+          "mejorar": ["Practica técnicas de storytelling", "Desarrolla tu presencia física", "Trabaja en tu voz y dicción", "Cultiva la escucha empática"],
+          "alertas": ["Evitar situaciones sociales por inseguridad", "Subestimar tu propio valor", "Depender excesivamente de otros para comunicar"],
+          "oportunidades": ["Liderazgo auténtico", "Construcción de confianza genuina", "Influencia a través de la competencia"],
+          "impacto_relaciones": ["Relaciones más profundas basadas en autenticidad", "Menor impacto inicial pero conexiones duraderas"],
+          "plan_7_dias": [
+            "Día 1: Practica mantener contacto visual en conversaciones",
+            "Día 2: Cuenta una historia personal interesante a alguien",
+            "Día 3: Trabaja en tu postura y presencia física",
+            "Día 4: Practica escucha activa sin interrumpir",
+            "Día 5: Haz un cumplido genuino a tres personas",
+            "Día 6: Participa activamente en una conversación grupal",
+            "Día 7: Reflexiona sobre tu progreso y planifica siguientes pasos"
+          ],
+          "cita": "El carisma verdadero nace de la autenticidad, no de la actuación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Posees un carisma moderado que puedes potenciar en situaciones específicas",
+        "ad_unlock": {
+          "fortalezas": ["Conexión emocional", "Adaptabilidad social", "Presencia equilibrada"],
+          "debilidades": ["Inconsistencia en el impacto", "Dependencia del contexto"],
+          "recomendaciones_breves": ["Identifica tus momentos de mayor carisma", "Practica en diferentes contextos"]
+        },
+        "premium": {
+          "detalle": "Tu carisma moderado te permite conectar bien con otros en muchas situaciones. El desafío es desarrollar consistencia y aprender a activar tu magnetismo personal cuando más lo necesites.",
+          "mejorar": ["Desarrolla tu marca personal", "Practica técnicas de rapport", "Mejora tu inteligencia emocional", "Cultiva la confianza situacional"],
+          "alertas": ["Inconsistencia en diferentes contextos", "Falta de confianza en momentos clave", "No capitalizar tu potencial natural"],
+          "oportunidades": ["Liderazgo situacional", "Networking efectivo", "Influencia en equipos pequeños"],
+          "impacto_relaciones": ["Conexiones genuinas con variabilidad", "Capacidad de influir en círculos cercanos"],
+          "plan_7_dias": [
+            "Día 1: Identifica tres situaciones donde tu carisma brilla más",
+            "Día 2: Practica técnicas de rapport con desconocidos",
+            "Día 3: Trabaja en tu elevator pitch personal",
+            "Día 4: Observa y adapta tu estilo a diferentes audiencias",
+            "Día 5: Practica contar historias con impacto emocional",
+            "Día 6: Lidera una conversación grupal o reunión",
+            "Día 7: Solicita feedback sobre tu presencia e impacto"
+          ],
+          "cita": "El carisma se perfecciona con la práctica consciente"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees un carisma natural fuerte que te permite influir y conectar fácilmente con otros",
+        "ad_unlock": {
+          "fortalezas": ["Magnetismo personal", "Influencia natural", "Conexión emocional profunda"],
+          "debilidades": ["Posible manipulación inconsciente", "Dependencia excesiva del carisma"],
+          "recomendaciones_breves": ["Usa tu carisma éticamente", "Desarrolla sustancia detrás del carisma"]
+        },
+        "premium": {
+          "detalle": "Tu alto carisma es un don poderoso que te permite influir significativamente en otros. La responsabilidad que viene con este poder requiere uso ético y desarrollo de competencias que respalden tu magnetismo personal.",
+          "mejorar": ["Desarrolla liderazgo ético", "Cultiva la humildad", "Balancea carisma con competencia", "Practica la influencia positiva"],
+          "alertas": ["Manipulación inconsciente de otros", "Arrogancia o ego inflado", "Dependencia excesiva del carisma sin sustancia"],
+          "oportunidades": ["Liderazgo transformacional", "Influencia a gran escala", "Construcción de movimientos"],
+          "impacto_relaciones": ["Conexiones profundas e inmediatas", "Riesgo de relaciones superficiales basadas solo en carisma"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre el uso ético de tu carisma",
+            "Día 2: Practica empoderar a otros en lugar de solo influir",
+            "Día 3: Desarrolla una habilidad técnica que complemente tu carisma",
+            "Día 4: Busca feedback honesto sobre tu impacto en otros",
+            "Día 5: Practica la escucha profunda sin agenda",
+            "Día 6: Usa tu carisma para una causa benéfica",
+            "Día 7: Planifica cómo usar tu influencia para impacto positivo"
+          ],
+          "cita": "Con gran carisma viene gran responsabilidad"
+        }
+      }
+    ],
+    "logica": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a persuadir más por emoción que por lógica, lo que puede ser efectivo en ciertos contextos",
+        "ad_unlock": {
+          "fortalezas": ["Conexión emocional", "Intuición", "Flexibilidad de pensamiento"],
+          "debilidades": ["Argumentos poco estructurados", "Dificultad con audiencias analíticas"],
+          "recomendaciones_breves": ["Practica estructurar argumentos", "Usa datos para respaldar puntos"]
+        },
+        "premium": {
+          "detalle": "Tu enfoque menos lógico puede ser una fortaleza en contextos emocionales, pero limita tu efectividad con audiencias que valoran el razonamiento estructurado y los datos.",
+          "mejorar": ["Aprende frameworks de argumentación", "Practica el uso de evidencia", "Desarrolla pensamiento crítico", "Estudia casos de estudio"],
+          "alertas": ["Perder credibilidad con audiencias analíticas", "Argumentos fácilmente refutables", "Dependencia excesiva de la emoción"],
+          "oportunidades": ["Persuasión emocional", "Creatividad en soluciones", "Conexión humana auténtica"],
+          "impacto_relaciones": ["Conexiones emocionales fuertes", "Posible frustración con personas lógicas"],
+          "plan_7_dias": [
+            "Día 1: Aprende la estructura básica de un argumento (premisa-evidencia-conclusión)",
+            "Día 2: Practica respaldar una opinión con tres datos concretos",
+            "Día 3: Analiza un argumento lógico que admires",
+            "Día 4: Practica el pensamiento crítico cuestionando una creencia propia",
+            "Día 5: Presenta un punto usando tanto lógica como emoción",
+            "Día 6: Busca evidencia que contradiga una posición que defiendes",
+            "Día 7: Combina tu intuición con análisis lógico en una decisión"
+          ],
+          "cita": "La lógica sin emoción es fría, la emoción sin lógica es ciega"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras razonamiento lógico con otros enfoques de persuasión de manera efectiva",
+        "ad_unlock": {
+          "fortalezas": ["Argumentación balanceada", "Adaptabilidad", "Credibilidad moderada"],
+          "debilidades": ["Falta de especialización", "Argumentos no siempre contundentes"],
+          "recomendaciones_breves": ["Fortalece tu arsenal de evidencias", "Practica debates estructurados"]
+        },
+        "premium": {
+          "detalle": "Tu equilibrio entre lógica y otros enfoques te da versatilidad, pero puedes beneficiarte de fortalecer tu capacidad de argumentación estructurada para situaciones que lo requieren.",
+          "mejorar": ["Desarrolla expertise en áreas clave", "Practica técnicas de debate", "Mejora tu investigación", "Cultiva el pensamiento sistémico"],
+          "alertas": ["Argumentos mediocres en situaciones críticas", "Falta de profundidad en temas complejos"],
+          "oportunidades": ["Mediación y facilitación", "Comunicación versátil", "Liderazgo equilibrado"],
+          "impacto_relaciones": ["Credibilidad general buena", "Capacidad de conectar con diferentes tipos de personas"],
+          "plan_7_dias": [
+            "Día 1: Elige un tema y conviértete en experto durante una semana",
+            "Día 2: Practica el método socrático haciendo preguntas",
+            "Día 3: Construye un argumento usando el modelo PREP (Punto-Razón-Ejemplo-Punto)",
+            "Día 4: Debate una posición contraria a tu creencia",
+            "Día 5: Analiza los sesgos en tu propio razonamiento",
+            "Día 6: Presenta un análisis costo-beneficio de una decisión",
+            "Día 7: Combina datos cuantitativos con narrativa persuasiva"
+          ],
+          "cita": "La persuasión efectiva combina corazón y mente"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una capacidad excepcional para persuadir mediante argumentos lógicos y estructurados",
+        "ad_unlock": {
+          "fortalezas": ["Argumentación sólida", "Credibilidad intelectual", "Análisis profundo"],
+          "debilidades": ["Posible frialdad", "Menor conexión emocional"],
+          "recomendaciones_breves": ["Balancea lógica con emoción", "Adapta tu estilo a la audiencia"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad lógica te convierte en un persuasor formidable en contextos profesionales y académicos. El desafío es mantener la conexión humana mientras ejerces tu poder intelectual.",
+          "mejorar": ["Integra storytelling con datos", "Desarrolla inteligencia emocional", "Practica la simplificación", "Cultiva la empatía"],
+          "alertas": ["Intimidar con complejidad innecesaria", "Perder audiencias emocionales", "Arrogancia intelectual"],
+          "oportunidades": ["Consultoría estratégica", "Liderazgo basado en evidencia", "Influencia en decisiones importantes"],
+          "impacto_relaciones": ["Respeto intelectual", "Posible distancia emocional si no se balancea"],
+          "plan_7_dias": [
+            "Día 1: Practica explicar un concepto complejo de manera simple",
+            "Día 2: Combina una estadística con una historia personal",
+            "Día 3: Busca el componente emocional en un argumento lógico",
+            "Día 4: Practica la escucha empática antes de argumentar",
+            "Día 5: Adapta tu estilo lógico a una audiencia emocional",
+            "Día 6: Usa analogías para hacer accesibles conceptos complejos",
+            "Día 7: Reflexiona sobre cómo tu lógica puede servir mejor a otros"
+          ],
+          "cita": "La lógica más poderosa es la que toca el corazón"
+        }
+      }
+    ],
+    "manipulacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Prefieres la influencia directa y honesta, evitando tácticas manipuladoras",
+        "ad_unlock": {
+          "fortalezas": ["Integridad", "Confianza genuina", "Relaciones auténticas"],
+          "debilidades": ["Vulnerabilidad a manipuladores", "Menor efectividad en negociaciones duras"],
+          "recomendaciones_breves": ["Aprende a detectar manipulación", "Desarrolla asertividad"]
+        },
+        "premium": {
+          "detalle": "Tu baja tendencia manipuladora refleja integridad personal, pero puede dejarte vulnerable a quienes sí usan estas tácticas. Es importante desarrollar conciencia sobre estas dinámicas para protegerte.",
+          "mejorar": ["Estudia tácticas de influencia para defenderte", "Desarrolla asertividad", "Aprende a establecer límites", "Cultiva la inteligencia social"],
+          "alertas": ["Ser víctima de manipuladores", "Ingenuidad en negociaciones", "Dificultad para influir cuando es necesario"],
+          "oportunidades": ["Liderazgo ético", "Construcción de confianza", "Relaciones duraderas"],
+          "impacto_relaciones": ["Confianza profunda y duradera", "Posible frustración con personas manipuladoras"],
+          "plan_7_dias": [
+            "Día 1: Estudia las técnicas básicas de manipulación para reconocerlas",
+            "Día 2: Practica decir no de manera firme pero amable",
+            "Día 3: Identifica una situación donde fuiste manipulado y analízala",
+            "Día 4: Establece un límite claro con alguien",
+            "Día 5: Practica la influencia ética en una situación pequeña",
+            "Día 6: Observa dinámicas de poder en tus relaciones",
+            "Día 7: Desarrolla tu estrategia personal de protección"
+          ],
+          "cita": "La integridad es la mejor defensa contra la manipulación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Ocasionalmente usas tácticas de influencia avanzadas, pero mantienes límites éticos",
+        "ad_unlock": {
+          "fortalezas": ["Versatilidad táctica", "Conciencia social", "Efectividad situacional"],
+          "debilidades": ["Conflictos éticos ocasionales", "Inconsistencia en el enfoque"],
+          "recomendaciones_breves": ["Define tus límites éticos claramente", "Usa tácticas solo cuando sea necesario"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de manipulación indica conciencia táctica sin cruzar líneas éticas importantes. El desafío es mantener la integridad mientras desarrollas efectividad en situaciones complejas.",
+          "mejorar": ["Desarrolla un código ético personal", "Practica influencia win-win", "Mejora tu lectura de situaciones", "Cultiva la transparencia selectiva"],
+          "alertas": ["Deslizarse hacia manipulación dañina", "Justificar tácticas cuestionables", "Perder autenticidad"],
+          "oportunidades": ["Negociación efectiva", "Liderazgo estratégico", "Resolución de conflictos"],
+          "impacto_relaciones": ["Efectividad con mantenimiento de confianza", "Necesidad de transparencia ocasional"],
+          "plan_7_dias": [
+            "Día 1: Define tu código ético personal para la influencia",
+            "Día 2: Practica una negociación buscando beneficio mutuo",
+            "Día 3: Analiza una situación donde usaste influencia y evalúa la ética",
+            "Día 4: Practica la transparencia sobre tus intenciones",
+            "Día 5: Desarrolla una táctica de influencia completamente ética",
+            "Día 6: Busca feedback sobre tu estilo de influencia",
+            "Día 7: Reflexiona sobre el equilibrio entre efectividad e integridad"
+          ],
+          "cita": "La influencia ética es más poderosa a largo plazo"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees habilidades avanzadas de manipulación e influencia psicológica",
+        "ad_unlock": {
+          "fortalezas": ["Control psicológico", "Efectividad táctica", "Lectura profunda de personas"],
+          "debilidades": ["Riesgo ético alto", "Posible aislamiento", "Daño relacional"],
+          "recomendaciones_breves": ["Establece límites éticos estrictos", "Usa tu poder responsablemente"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad manipuladora te otorga poder significativo sobre otros, pero viene con gran responsabilidad ética. El uso irresponsable puede dañar relaciones y tu propia integridad.",
+          "mejorar": ["Desarrolla liderazgo ético y de servicio", "Practica la influencia benevolente", "Cultiva la empatía genuina", "Busca propósitos nobles"],
+          "alertas": ["Daño psicológico a otros", "Aislamiento por desconfianza", "Pérdida de autenticidad personal"],
+          "oportunidades": ["Liderazgo transformacional", "Terapia y coaching", "Negociación de alto nivel"],
+          "impacto_relaciones": ["Control significativo pero posible desconfianza", "Necesidad de transparencia y límites claros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona profundamente sobre el impacto de tu influencia en otros",
+            "Día 2: Identifica una forma de usar tu influencia para el bien común",
+            "Día 3: Practica la influencia completamente transparente",
+            "Día 4: Busca feedback honesto sobre cómo otros perciben tu influencia",
+            "Día 5: Desarrolla empatía genuina hacia alguien que has influenciado",
+            "Día 6: Establece límites estrictos sobre cuándo y cómo influir",
+            "Día 7: Compromete tu poder con una causa mayor que tú mismo"
+          ],
+          "cita": "El poder de influir conlleva la responsabilidad de elevar"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Poder de Persuasión revela cómo influyes en otros a través de carisma, lógica y tácticas avanzadas"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la comunicación clara y directa", "Quienes aprecian tanto la lógica como la conexión emocional", "Perfiles que buscan liderazgo auténtico y transparente"],
+        "dificil": ["Quienes desconfían de personas influyentes", "Personas que prefieren comunicación indirecta o pasiva", "Perfiles que temen ser persuadidos o influenciados"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran el liderazgo y la comunicación efectiva", "Culturas que premian la influencia positiva y los resultados", "Espacios que requieren negociación y construcción de consenso"],
+        "dificil": ["Ambientes que desconfían del liderazgo carismático", "Culturas extremadamente técnicas que minimizan las habilidades sociales", "Estructuras rígidas que penalizan la influencia personal"]
+      },
+      "amistades": {
+        "facil": ["Personas que admiran el liderazgo natural y la comunicación clara", "Quienes valoran la honestidad directa y la transparencia", "Perfiles que buscan inspiración y motivación"],
+        "dificil": ["Quienes se sienten intimidados por personalidades fuertes", "Personas que prefieren relaciones más igualitarias sin dinámicas de influencia", "Perfiles que interpretan el carisma como manipulación"]
+      },
+      "insights": [
+        "Usa tu influencia para empoderar a otros, no solo para lograr tus objetivos",
+        "Equilibra tu carisma con humildad para crear conexiones auténticas",
+        "Comunica tus intenciones claramente para que otros no malinterpreten tu carisma"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren liderazgo y toma de decisiones",
+        "prediccion": "Tu combinación de carisma y lógica te posicionará naturalmente como líder",
+        "consejo": "Usa tu influencia para incluir y empoderar a otros en el proceso de decisión"
+      },
+      {
+        "escenario": "En negociaciones importantes o conflictos",
+        "prediccion": "Tu capacidad persuasiva te dará ventaja, pero debes cuidar no intimidar",
+        "consejo": "Balancea tu poder de persuasión con empatía genuina hacia las necesidades del otro"
+      },
+      {
+        "escenario": "En relaciones íntimas que requieren vulnerabilidad y autenticidad",
+        "prediccion": "Tu tendencia a influir puede crear barreras para la intimidad genuina",
+        "consejo": "Practica momentos de vulnerabilidad donde no ejerces influencia, solo compartes"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "carisma_autentico",
+        "cita": "El carisma verdadero no busca seguidores, sino que crea más líderes",
+        "reflexion": "Tu magnetismo personal es más poderoso cuando lo usas para elevar y empoderar a otros"
+      },
+      {
+        "rasgo": "logica_compasiva",
+        "cita": "La lógica sin corazón es fría, el corazón sin lógica es ciego",
+        "reflexion": "Tu capacidad de combinar razonamiento sólido con conexión emocional te permite persuadir de manera ética y efectiva"
+      },
+      {
+        "rasgo": "influencia_etica",
+        "cita": "El poder de influir conlleva la responsabilidad de elevar",
+        "reflexion": "Tu habilidad para influir en otros es un regalo que debe usarse para el bien común y el crecimiento mutuo"
+      }
+    ]
+  },
+  "related_tests": ["dark-triad", "test_carisma", "test_liderazgo"]
+}

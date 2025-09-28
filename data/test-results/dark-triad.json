@@ -1,0 +1,345 @@
+{
+  "id": "dark-triad",
+  "schemaVersion": 1,
+  "titulo": "Tríada Oscura",
+  "nivel": "avanzado",
+  "visual": "radar",
+  "rasgos": ["narcisismo", "maquiavelismo", "psicopatia"],
+  "arquetipos": [
+    {
+      "clave": "narcisismo",
+      "label": "El Protagonista",
+      "descripcion": "Buscas reconocimiento y presencia destacada con foco en imagen e impacto"
+    },
+    {
+      "clave": "maquiavelismo",
+      "label": "El Estratega",
+      "descripcion": "Priorizas el resultado y la ventaja con alta orientación táctica"
+    },
+    {
+      "clave": "psicopatia",
+      "label": "El Impasible",
+      "descripcion": "Muestras frialdad emocional y alta tolerancia al riesgo y a la presión"
+    }
+  ],
+  "bands": {
+    "narcisismo": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Baja necesidad de admiración y tendencia a la cooperación",
+        "ad_unlock": {
+          "fortalezas": ["Humildad", "Capacidad de escucha", "Orientación al equipo"],
+          "debilidades": ["Infravaloración de logros", "Menor visibilidad personal"],
+          "recomendaciones_breves": ["Practica presentarte con seguridad", "Registra logros semanales"]
+        },
+        "premium": {
+          "detalle": "No sueles buscar foco ni reconocimiento lo que favorece la colaboración pero puede ocultar tus aportes",
+          "mejorar": ["Entrena presencia al comunicar", "Define un mensaje personal claro", "Pide feedback concreto"],
+          "alertas": ["Asumir menos mérito del que corresponde", "Ceder espacio clave por exceso de modestia", "Evitar confrontaciones necesarias"],
+          "oportunidades": ["Liderazgo de servicio", "Mentoría y coordinación de equipos"],
+          "impacto_relaciones": ["Priorizas acuerdos y armonía", "Riesgo de no expresar necesidades"],
+          "plan_7_dias": [
+            "Día 1: Redacta 3 logros recientes con datos",
+            "Día 2: Comparte un aporte en una reunión",
+            "Día 3: Mejora tu bio o pitch personal",
+            "Día 4: Pide feedback de un par específico",
+            "Día 5: Ensaya postura abierta y voz firme 5 minutos",
+            "Día 6: Reconoce tu progreso por escrito",
+            "Día 7: Revisa avances y ajusta objetivos"
+          ],
+          "cita": "La cooperación gana fuerza cuando reconoces tu propio valor"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibrio entre visibilidad y colaboración",
+        "ad_unlock": {
+          "fortalezas": ["Confianza moderada", "Influencia situacional"],
+          "debilidades": ["Sensibilidad a la crítica", "Oscilación entre modestia y autoexigencia"],
+          "recomendaciones_breves": ["Separa identidad de resultados puntuales", "Usa métricas para evaluar tu impacto"]
+        },
+        "premium": {
+          "detalle": "Puedes destacar sin eclipsar y leer el contexto social pero la crítica puede afectar tu seguridad si no la encuadras",
+          "mejorar": ["Reencuadre de crítica", "Indicadores de desempeño", "Storytelling breve"],
+          "alertas": ["Buscar aprobación para compensar inseguridad", "No delegar por miedo a perder control"],
+          "oportunidades": ["Portavocía", "Presentaciones breves de alto impacto"],
+          "impacto_relaciones": ["Alternas liderazgo y escucha", "Cuida el manejo de expectativas"],
+          "plan_7_dias": [
+            "Día 1: Lista críticas recientes y aprendizajes",
+            "Día 2: Diseña una métrica simple para tu rol",
+            "Día 3: Graba un pitch de 60 segundos",
+            "Día 4: Solicita feedback a un perfil crítico",
+            "Día 5: Aplica técnica sandwich en feedback",
+            "Día 6: Refuerza un hábito de visibilidad saludable",
+            "Día 7: Síntesis de avances y próximos pasos"
+          ],
+          "cita": "La confianza usa la crítica como combustible"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Alta búsqueda de reconocimiento y estatus personal",
+        "ad_unlock": {
+          "fortalezas": ["Ambición", "Autoconfianza", "Energía para liderar"],
+          "debilidades": ["Egocentrismo", "Baja empatía situacional", "Competitividad excesiva"],
+          "recomendaciones_breves": ["Programa momentos de escucha activa", "Equilibra logro con impacto en personas"]
+        },
+        "premium": {
+          "detalle": "El impulso por destacar y liderar acelera resultados pero si no equilibras empatía y límites éticos se deterioran relaciones y reputación",
+          "mejorar": ["Rituales de escucha", "Métricas de bienestar de equipo", "Reconocimiento cruzado"],
+          "alertas": ["Decisiones para lucimiento personal", "Ignorar señales de desgaste en el equipo"],
+          "oportunidades": ["Liderazgo visible", "Negociación exigente"],
+          "impacto_relaciones": ["Otros pueden sentirse invisibilizados", "Riesgo de conflicto por protagonismo"],
+          "plan_7_dias": [
+            "Día 1: Reunión uno a uno de escucha 15 min",
+            "Día 2: Reconoce públicamente un logro ajeno",
+            "Día 3: Incluye una métrica de clima en tus objetivos",
+            "Día 4: Pide una crítica concreta y accionable",
+            "Día 5: Practica preguntas abiertas",
+            "Día 6: Delega visibilidad en un colaborador",
+            "Día 7: Evalúa efectos y ajusta hábitos"
+          ],
+          "cita": "Influir más empieza por escuchar mejor"
+        }
+      }
+    ],
+    "maquiavelismo": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Alta orientación ética y cooperación por encima de la ventaja personal",
+        "ad_unlock": {
+          "fortalezas": ["Confianza generada", "Relaciones estables"],
+          "debilidades": ["Ingenuidad táctica", "Dificultad para decir no"],
+          "recomendaciones_breves": ["Define límites claros", "Valida información sensible"]
+        },
+        "premium": {
+          "detalle": "Valoras la transparencia y evitas juegos de poder lo que fortalece la confianza pero puede exponerte a estrategias ajenas",
+          "mejorar": ["Asertividad en solicitudes", "Checklist de señales de manipulación", "Documentar acuerdos"],
+          "alertas": ["Ceder por presión emocional", "Comprometerte sin garantías mínimas"],
+          "oportunidades": ["Alianzas de largo plazo", "Facilitación de acuerdos"],
+          "impacto_relaciones": ["Ambiente predecible y seguro", "Riesgo de sobrecarga por exceso de buena voluntad"],
+          "plan_7_dias": [
+            "Día 1: Escribe 3 límites negociables y 3 no negociables",
+            "Día 2: Practica decir no con alternativa",
+            "Día 3: Identifica una señal de manipulación y responde asertivo",
+            "Día 4: Documenta un acuerdo simple",
+            "Día 5: Valida datos antes de decidir",
+            "Día 6: Pide garantías proporcionales",
+            "Día 7: Solicita retro del entorno"
+          ],
+          "cita": "La cooperación sana requiere límites firmes"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras táctica con ética según el contexto",
+        "ad_unlock": {
+          "fortalezas": ["Lectura estratégica", "Negociación adaptable"],
+          "debilidades": ["Riesgo de cinismo", "Desgaste relacional"],
+          "recomendaciones_breves": ["Alinea medios y fines", "Revisa impactos de segundo orden"]
+        },
+        "premium": {
+          "detalle": "Comprendes incentivos y poder pero debes cuidar la coherencia entre tus valores y tus tácticas",
+          "mejorar": ["Mapa de incentivos de partes", "Criterios de límites éticos", "Red de consejeros"],
+          "alertas": ["Normalizar atajos", "Justificar fines a toda costa"],
+          "oportunidades": ["Cierre de acuerdos complejos", "Gestión de stakeholders"],
+          "impacto_relaciones": ["Negocias duro sin romper puentes", "Cuida la transparencia mínima"],
+          "plan_7_dias": [
+            "Día 1: Define valores no negociables",
+            "Día 2: Mapea incentivos de un actor clave",
+            "Día 3: Prepara una alternativa de reserva",
+            "Día 4: Simula objeciones y respuestas",
+            "Día 5: Establece una regla de transparencia",
+            "Día 6: Pide feedback de percepción",
+            "Día 7: Evalúa consecuencias de segundo orden"
+          ],
+          "cita": "La mejor estrategia integra ética con resultados"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Alta orientación a resultados con tácticas duras",
+        "ad_unlock": {
+          "fortalezas": ["Frialdad táctica", "Cierre de objetivos", "Foco en resultados"],
+          "debilidades": ["Manipulación", "Desconfianza ajena", "Riesgo reputacional"],
+          "recomendaciones_breves": ["Aumenta transparencia mínima", "Establece límites éticos claros"]
+        },
+        "premium": {
+          "detalle": "El foco pragmático maximiza logros a corto plazo pero puede erosionar confianza y sostenibilidad si no regulas el cómo",
+          "mejorar": ["Transparencia por defecto en puntos críticos", "Contrapesos y revisión de decisiones", "Mentoría ética"],
+          "alertas": ["Normalizar mentiras útiles", "Instrumentalizar relaciones"],
+          "oportunidades": ["Turnaround y crisis", "Negociaciones de alto riesgo"],
+          "impacto_relaciones": ["Percepción de cálculo constante", "Refuerza seguridad psicológica del entorno"],
+          "plan_7_dias": [
+            "Día 1: Define tu código de límites",
+            "Día 2: Comunica motivos y reglas del juego",
+            "Día 3: Revisa una decisión y sus efectos colaterales",
+            "Día 4: Pide consentimiento explícito",
+            "Día 5: Reconoce aportes ajenos públicamente",
+            "Día 6: Compromete una métrica de confianza",
+            "Día 7: Evalúa reputación y corrige"
+          ],
+          "cita": "El qué sin el cómo tiene fecha de caducidad"
+        }
+      }
+    ],
+    "psicopatia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Alta sensibilidad emocional y fuerte empatía",
+        "ad_unlock": {
+          "fortalezas": ["Cuidado por los demás", "Trabajo en equipo"],
+          "debilidades": ["Sobrecarga emocional", "Dificultad para poner límites"],
+          "recomendaciones_breves": ["Practica límites amables", "Gestiona exposición a conflictos"]
+        },
+        "premium": {
+          "detalle": "Lees bien emociones y cuidas el vínculo pero puedes agotarte si absorbes problemas ajenos",
+          "mejorar": ["Técnicas de respiración y grounding", "Diálogo de límites claros", "Higiene emocional"],
+          "alertas": ["Confundir empatía con responsabilidad total", "Evitar confrontaciones necesarias"],
+          "oportunidades": ["Mediación y clima", "Experiencia de cliente"],
+          "impacto_relaciones": ["Generas confianza rápidamente", "Riesgo de auto sacrificio"],
+          "plan_7_dias": [
+            "Día 1: Define tu semáforo de límites",
+            "Día 2: Practica respiración 4-4-8 en tensión",
+            "Día 3: Agenda tiempo de recuperación",
+            "Día 4: Valida sin cargar con la solución",
+            "Día 5: Cierra un pendiente propio",
+            "Día 6: Comunica un límite pequeño",
+            "Día 7: Revisa energía y ajustes"
+          ],
+          "cita": "Cuidarte también sostiene a los demás"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibrio entre empatía y foco en resultados",
+        "ad_unlock": {
+          "fortalezas": ["Sangre fría en tensión", "Decisión con datos"],
+          "debilidades": ["Franqueza dura", "Menor calidez en crisis"],
+          "recomendaciones_breves": ["Incluye validación emocional breve", "Explica criterios de decisión"]
+        },
+        "premium": {
+          "detalle": "Actúas con calma bajo presión y eso te hace efectivo pero cuida la huella emocional que dejas",
+          "mejorar": ["Check emocional de 10 segundos", "Cierre con síntesis empática", "Revisión post evento"],
+          "alertas": ["Normalizar dureza innecesaria", "Subestimar señales de desgaste"],
+          "oportunidades": ["Gestión de crisis", "Operaciones críticas"],
+          "impacto_relaciones": ["Te perciben competente en urgencias", "Cuida la calidez en el día a día"],
+          "plan_7_dias": [
+            "Día 1: Agrega una frase de validación",
+            "Día 2: Pregunta por el impacto humano",
+            "Día 3: Explica motivos detrás de una decisión",
+            "Día 4: Pide retro de clima",
+            "Día 5: Pausa antes de responder",
+            "Día 6: Reconoce esfuerzo del equipo",
+            "Día 7: Balancea métricas y bienestar"
+          ],
+          "cita": "La eficacia crece cuando la gente se siente vista"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Alta frialdad emocional y búsqueda de riesgo",
+        "ad_unlock": {
+          "fortalezas": ["Decisión rápida", "Tolerancia a la presión", "Coraje"],
+          "debilidades": ["Insensibilidad", "Impaciencia", "Conflictos interpersonales"],
+          "recomendaciones_breves": ["Introduce checks de empatía", "Consulta impactos antes de actuar"]
+        },
+        "premium": {
+          "detalle": "Tu temple y valentía destacan en situaciones críticas pero si no integras empatía dañarás vínculos y reputación",
+          "mejorar": ["Decidir con principios explicitados", "Pedir lectura social a un tercero", "Entrenar lenguaje no verbal cálido"],
+          "alertas": ["Deshumanizar conversaciones", "Normalizar riesgo innecesario"],
+          "oportunidades": ["Crisis y negociaciones duras", "Tareas de alto riesgo"],
+          "impacto_relaciones": ["Te ven contundente y decidido", "Riesgo de distancia emocional"],
+          "plan_7_dias": [
+            "Día 1: Consulta impacto humano con un aliado",
+            "Día 2: Practica parafraseo antes de decidir",
+            "Día 3: Limita decisiones bajo ira",
+            "Día 4: Agenda un check con persona clave",
+            "Día 5: Nombra emociones ajenas",
+            "Día 6: Cierra el loop de una decisión pasada",
+            "Día 7: Evalúa cambios en feedback recibido"
+          ],
+          "cita": "La valentía que cuida es la más sostenible"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil se sitúa por encima de la media en algunos rasgos y por debajo en otros, revisa el detalle"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la ambición y el liderazgo directo", "Quienes aprecian la honestidad estratégica y la comunicación clara", "Perfiles que buscan crecimiento mutuo y desafíos intelectuales"],
+        "dificil": ["Quienes se sienten intimidados por personalidades fuertes o ambiciosas", "Personas que evitan la competencia o prefieren dinámicas pasivas", "Perfiles que interpretan la estrategia como manipulación o frialdad"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran el liderazgo decisivo y los resultados medibles", "Culturas que premian la ambición, la estrategia y la toma de riesgos calculados", "Espacios que requieren negociación, transformación y gestión del cambio"],
+        "dificil": ["Ambientes que penalizan la ambición o el liderazgo proactivo", "Culturas que priorizan la armonía sobre los resultados o la eficiencia", "Estructuras que desconfían de la estrategia o la ven como política tóxica"]
+      },
+      "amistades": {
+        "facil": ["Personas que admiran la determinación y la capacidad de liderazgo", "Quienes valoran la honestidad directa y la comunicación sin filtros", "Perfiles que buscan inspiración y motivación para sus propios objetivos"],
+        "dificil": ["Quienes se sienten opacados por personalidades dominantes o ambiciosas", "Personas que prefieren relaciones sin dinámicas de competencia", "Perfiles que interpretan la confianza como arrogancia o insensibilidad"]
+      },
+      "insights": [
+        "Usa tu ambición para elevar a otros, no solo para destacar personalmente",
+        "Equilibra tu estrategia con transparencia para generar confianza a largo plazo",
+        "Comunica tus intenciones claramente para que otros no malinterpreten tu determinación"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren liderazgo decisivo y toma de riesgos",
+        "prediccion": "Tu combinación de ambición, estrategia y determinación te posicionará naturalmente como líder",
+        "consejo": "Usa tu liderazgo para incluir y desarrollar a otros, no solo para dirigir desde arriba"
+      },
+      {
+        "escenario": "En negociaciones importantes o situaciones competitivas",
+        "prediccion": "Tu capacidad estratégica y tolerancia al riesgo te darán ventaja significativa",
+        "consejo": "Balancea tu enfoque en ganar con la construcción de relaciones sostenibles a largo plazo"
+      },
+      {
+        "escenario": "En relaciones íntimas que requieren vulnerabilidad y reciprocidad emocional",
+        "prediccion": "Tu tendencia al control y la imagen puede crear barreras para la intimidad genuina",
+        "consejo": "Practica momentos de vulnerabilidad donde no lideras ni controlas, solo compartes tu humanidad"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "narcisismo_consciente",
+        "cita": "La verdadera grandeza no busca admiración, sino que inspira grandeza en otros",
+        "reflexion": "Tu ambición y confianza alcanzan su máximo potencial cuando las usas para elevar y empoderar a quienes te rodean"
+      },
+      {
+        "rasgo": "maquiavelismo_etico",
+        "cita": "La estrategia más poderosa es la que construye confianza mientras logra objetivos",
+        "reflexion": "Tu capacidad estratégica se multiplica cuando la combinas con transparencia y consideración por el bienestar de todos"
+      },
+      {
+        "rasgo": "psicopatia_equilibrada",
+        "cita": "La frialdad emocional es útil para decidir, pero la calidez humana es esencial para liderar",
+        "reflexion": "Tu capacidad de mantener calma bajo presión se vuelve liderazgo transformacional cuando la combinas con empatía genuina"
+      }
+    ]
+  },
+  "related_tests": ["deteccion_manipulacion", "poder_persuasion"]
+}

@@ -1,0 +1,350 @@
+{
+  "id": "sesgos_cognitivos",
+  "schemaVersion": 1,
+  "titulo": "Sesgos Cognitivos",
+  "nivel": "avanzado",
+  "visual": "radar",
+  "rasgos": ["confirmacion", "disponibilidad", "anclaje"],
+  "traitMap": {
+    "anclaje": "anclaje",
+    "confirmacion": "confirmacion",
+    "disponibilidad": "disponibilidad"
+  },
+  "arquetipos": [
+    {
+      "clave": "confirmacion",
+      "label": "El Confirmador",
+      "descripcion": "Tiendes a buscar y valorar información que confirma tus creencias previas"
+    },
+    {
+      "clave": "disponibilidad",
+      "label": "El Intuitivo",
+      "descripcion": "Basas tus juicios en la información más fácilmente recordable o reciente"
+    },
+    {
+      "clave": "anclaje",
+      "label": "El Anclado",
+      "descripcion": "Te influencias fuertemente por la primera información que recibes al tomar decisiones"
+    }
+  ],
+  "bands": {
+    "confirmacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Mantienes una mente abierta y buscas activamente información que desafíe tus creencias",
+        "ad_unlock": {
+          "fortalezas": ["Pensamiento crítico", "Flexibilidad mental", "Objetividad"],
+          "debilidades": ["Posible indecisión", "Análisis excesivo"],
+          "recomendaciones_breves": ["Mantén tu apertura mental", "Confía más en tus conclusiones bien fundamentadas"]
+        },
+        "premium": {
+          "detalle": "Tu bajo sesgo de confirmación es una fortaleza cognitiva significativa que te permite evaluar información de manera más objetiva y tomar decisiones más fundamentadas.",
+          "mejorar": ["Desarrolla confianza en tus análisis", "Practica la toma de decisiones eficiente", "Balancea apertura con practicidad"],
+          "alertas": ["Parálisis por análisis", "Dudar excesivamente de conclusiones válidas", "Perder oportunidades por sobre-análisis"],
+          "oportunidades": ["Investigación y análisis", "Consultoría estratégica", "Mediación imparcial"],
+          "impacto_relaciones": ["Eres visto como justo y objetivo", "Puedes ayudar a otros a ver diferentes perspectivas"],
+          "plan_7_dias": [
+            "Día 1: Identifica una decisión donde tu objetividad fue clave",
+            "Día 2: Practica defender una posición con confianza",
+            "Día 3: Establece límites de tiempo para análisis",
+            "Día 4: Busca el equilibrio entre apertura y eficiencia",
+            "Día 5: Comparte tu perspectiva objetiva en una discusión",
+            "Día 6: Toma una decisión rápida basada en evidencia sólida",
+            "Día 7: Reflexiona sobre cómo tu objetividad beneficia a otros"
+          ],
+          "cita": "La mente abierta es el mejor filtro para la verdad"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Ocasionalmente buscas información que confirma tus creencias, pero mantienes cierta apertura",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio cognitivo", "Practicidad", "Eficiencia en decisiones"],
+          "debilidades": ["Sesgo selectivo ocasional", "Resistencia a cambiar de opinión"],
+          "recomendaciones_breves": ["Cuestiona activamente tus suposiciones", "Busca fuentes diversas de información"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de sesgo de confirmación es común y manejable. Con conciencia y práctica, puedes minimizar su impacto en tus decisiones importantes.",
+          "mejorar": ["Desarrolla el hábito de buscar contraargumentos", "Practica el pensamiento de abogado del diablo", "Diversifica tus fuentes de información"],
+          "alertas": ["Rechazar evidencia válida que contradice tus creencias", "Tomar decisiones basadas en información sesgada"],
+          "oportunidades": ["Liderazgo equilibrado", "Toma de decisiones práctica", "Comunicación efectiva"],
+          "impacto_relaciones": ["Equilibrio entre convicción y flexibilidad", "Capacidad de encontrar puntos medios"],
+          "plan_7_dias": [
+            "Día 1: Identifica una creencia fuerte y busca evidencia contraria",
+            "Día 2: Lee una fuente de noticias con perspectiva opuesta",
+            "Día 3: Practica el rol de abogado del diablo en una discusión",
+            "Día 4: Pregunta a alguien que piense diferente sobre un tema",
+            "Día 5: Cambia de opinión sobre algo menor basado en nueva evidencia",
+            "Día 6: Evalúa una decisión pasada buscando sesgos",
+            "Día 7: Establece un sistema para diversificar tus fuentes"
+          ],
+          "cita": "La sabiduría comienza cuando cuestionamos lo que creemos saber"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tiendes fuertemente a buscar solo información que confirme tus creencias existentes",
+        "ad_unlock": {
+          "fortalezas": ["Convicción fuerte", "Decisiones rápidas", "Coherencia personal"],
+          "debilidades": ["Pensamiento cerrado", "Resistencia al cambio", "Decisiones sesgadas"],
+          "recomendaciones_breves": ["Busca activamente perspectivas contrarias", "Practica cambiar de opinión ocasionalmente"]
+        },
+        "premium": {
+          "detalle": "Tu alto sesgo de confirmación puede limitar significativamente tu capacidad de tomar decisiones óptimas y adaptarte a nueva información. Es crucial desarrollar estrategias para contrarrestarlo.",
+          "mejorar": ["Implementa sistemas de verificación de sesgos", "Busca consejeros que piensen diferente", "Practica la humildad intelectual"],
+          "alertas": ["Tomar decisiones importantes con información incompleta", "Perder oportunidades por rigidez mental", "Conflictos por cerrazón"],
+          "oportunidades": ["Liderazgo en situaciones que requieren convicción", "Especialización profunda en áreas específicas"],
+          "impacto_relaciones": ["Puedes ser visto como terco o cerrado", "Riesgo de polarización en discusiones"],
+          "plan_7_dias": [
+            "Día 1: Identifica tus tres creencias más fuertes",
+            "Día 2: Busca evidencia que desafíe una de esas creencias",
+            "Día 3: Habla con alguien que tenga una perspectiva opuesta",
+            "Día 4: Practica decir 'no estoy seguro' sobre algo",
+            "Día 5: Lee un artículo que contradiga tu punto de vista",
+            "Día 6: Cambia de opinión sobre algo pequeño",
+            "Día 7: Reflexiona sobre cómo la apertura mental puede beneficiarte"
+          ],
+          "cita": "El primer paso hacia la sabiduría es admitir que podemos estar equivocados"
+        }
+      }
+    ],
+    "disponibilidad": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Evalúas probabilidades y riesgos de manera más objetiva, sin dejarte influir por ejemplos recientes",
+        "ad_unlock": {
+          "fortalezas": ["Análisis estadístico", "Pensamiento a largo plazo", "Evaluación objetiva de riesgos"],
+          "debilidades": ["Posible desconexión de la realidad inmediata", "Menor intuición social"],
+          "recomendaciones_breves": ["Balancea datos con experiencia vivida", "Mantén conexión con ejemplos concretos"]
+        },
+        "premium": {
+          "detalle": "Tu bajo sesgo de disponibilidad te permite hacer evaluaciones más precisas basadas en datos reales en lugar de ejemplos memorables, lo que es valioso para la toma de decisiones estratégicas.",
+          "mejorar": ["Integra análisis cuantitativo con insights cualitativos", "Desarrolla empatía basada en datos", "Comunica estadísticas de forma accesible"],
+          "alertas": ["Subestimar riesgos reales por confiar solo en estadísticas", "Desconectarse de experiencias humanas"],
+          "oportunidades": ["Análisis de riesgos", "Planificación estratégica", "Investigación y consultoría"],
+          "impacto_relaciones": ["Aportas perspectiva racional", "Puedes parecer frío si no balanceas con empatía"],
+          "plan_7_dias": [
+            "Día 1: Identifica una decisión donde los datos te ayudaron más que la intuición",
+            "Día 2: Practica explicar una estadística con un ejemplo concreto",
+            "Día 3: Escucha activamente una experiencia personal de alguien",
+            "Día 4: Combina datos con storytelling en una presentación",
+            "Día 5: Valida una estadística con experiencias reales",
+            "Día 6: Usa tu análisis objetivo para ayudar a alguien",
+            "Día 7: Reflexiona sobre cómo equilibrar datos y experiencia"
+          ],
+          "cita": "Los datos sin contexto humano son números vacíos"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras entre ejemplos memorables y análisis más sistemático al evaluar probabilidades",
+        "ad_unlock": {
+          "fortalezas": ["Intuición práctica", "Conexión con la realidad", "Decisiones balanceadas"],
+          "debilidades": ["Ocasional sobrevaloración de eventos recientes", "Inconsistencia en evaluaciones"],
+          "recomendaciones_breves": ["Verifica tus intuiciones con datos", "Cuestiona si ejemplos recientes son representativos"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de sesgo de disponibilidad te permite usar tanto la intuición como el análisis, pero debes ser consciente de cuándo los ejemplos recientes pueden estar distorsionando tu juicio.",
+          "mejorar": ["Desarrolla checklists para decisiones importantes", "Practica la evaluación de base rates", "Combina intuición con verificación"],
+          "alertas": ["Sobrerreaccionar a eventos recientes", "Subestimar riesgos poco visibles pero importantes"],
+          "oportunidades": ["Comunicación efectiva usando ejemplos", "Liderazgo que conecta con la experiencia"],
+          "impacto_relaciones": ["Conectas bien con experiencias compartidas", "Puedes ayudar a otros a ver patrones"],
+          "plan_7_dias": [
+            "Día 1: Identifica una decisión reciente influida por un ejemplo memorable",
+            "Día 2: Busca estadísticas que contextualicen una preocupación actual",
+            "Día 3: Practica evaluar la representatividad de un ejemplo",
+            "Día 4: Usa tanto datos como ejemplos para explicar un punto",
+            "Día 5: Cuestiona si una preocupación reciente es proporcionada",
+            "Día 6: Ayuda a alguien a evaluar un riesgo objetivamente",
+            "Día 7: Crea un sistema personal para verificar intuiciones"
+          ],
+          "cita": "La intuición informada es más poderosa que los datos ciegos"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Te influencias fuertemente por ejemplos recientes o memorables al evaluar probabilidades y riesgos",
+        "ad_unlock": {
+          "fortalezas": ["Conexión emocional", "Aprendizaje de experiencias", "Comunicación vivida"],
+          "debilidades": ["Evaluación distorsionada de riesgos", "Decisiones basadas en casos atípicos"],
+          "recomendaciones_breves": ["Busca estadísticas antes de decidir", "Pregúntate si el ejemplo es representativo"]
+        },
+        "premium": {
+          "detalle": "Tu alto sesgo de disponibilidad puede llevarte a sobrestimar riesgos raros pero memorables y subestimar riesgos comunes pero menos visibles, afectando significativamente tus decisiones.",
+          "mejorar": ["Desarrolla el hábito de buscar base rates", "Practica el pensamiento estadístico", "Crea sistemas de verificación de sesgos"],
+          "alertas": ["Tomar decisiones importantes basadas en casos extremos", "Sobrestimar riesgos mediáticos", "Subestimar riesgos graduales"],
+          "oportunidades": ["Storytelling poderoso", "Conexión emocional con audiencias", "Aprendizaje experiencial"],
+          "impacto_relaciones": ["Conectas profundamente a través de historias", "Puedes transmitir preocupaciones desproporcionadas"],
+          "plan_7_dias": [
+            "Día 1: Identifica un miedo basado en ejemplos mediáticos",
+            "Día 2: Busca estadísticas reales sobre ese riesgo",
+            "Día 3: Compara tu percepción con la realidad estadística",
+            "Día 4: Practica evaluar la representatividad de noticias",
+            "Día 5: Toma una decisión basada en datos, no en ejemplos",
+            "Día 6: Ayuda a alguien a contextualizar un miedo con estadísticas",
+            "Día 7: Crea un recordatorio para verificar tus intuiciones"
+          ],
+          "cita": "Lo memorable no siempre es lo más probable"
+        }
+      }
+    ],
+    "anclaje": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Evalúas información de manera independiente sin dejarte influir excesivamente por referencias iniciales",
+        "ad_unlock": {
+          "fortalezas": ["Evaluación independiente", "Flexibilidad cognitiva", "Análisis objetivo"],
+          "debilidades": ["Posible lentitud en decisiones", "Menor uso de referencias útiles"],
+          "recomendaciones_breves": ["Usa referencias como punto de partida, no limitación", "Acelera decisiones cuando sea apropiado"]
+        },
+        "premium": {
+          "detalle": "Tu bajo sesgo de anclaje te permite evaluar cada situación de manera más independiente y objetiva, lo que es especialmente valioso en negociaciones y evaluaciones complejas.",
+          "mejorar": ["Aprende a usar anclajes estratégicamente", "Desarrolla marcos de referencia útiles", "Balancea independencia con eficiencia"],
+          "alertas": ["Reinventar la rueda innecesariamente", "Perder tiempo en análisis que podrían usar referencias válidas"],
+          "oportunidades": ["Evaluación imparcial", "Negociación efectiva", "Análisis independiente"],
+          "impacto_relaciones": ["Aportas perspectivas frescas", "Puedes ser visto como lento para decidir"],
+          "plan_7_dias": [
+            "Día 1: Identifica una situación donde tu independencia de criterio fue valiosa",
+            "Día 2: Practica usar una referencia como punto de partida, no límite",
+            "Día 3: Acelera una decisión usando marcos de referencia apropiados",
+            "Día 4: En una negociación, establece tu propio punto de referencia",
+            "Día 5: Evalúa si una referencia externa es útil o limitante",
+            "Día 6: Ayuda a alguien a ver más allá de una referencia restrictiva",
+            "Día 7: Crea tu propio sistema de referencias para decisiones comunes"
+          ],
+          "cita": "La verdadera objetividad viene de la independencia de pensamiento"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Te influencias moderadamente por información inicial, pero mantienes cierta flexibilidad para ajustar",
+        "ad_unlock": {
+          "fortalezas": ["Eficiencia cognitiva", "Uso práctico de referencias", "Decisiones balanceadas"],
+          "debilidades": ["Influencia ocasional de anclajes irrelevantes", "Ajustes insuficientes"],
+          "recomendaciones_breves": ["Cuestiona la relevancia de referencias iniciales", "Practica ajustes más amplios"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de sesgo de anclaje es funcional en muchas situaciones, pero debes ser consciente de cuándo las referencias iniciales pueden estar limitando tu evaluación.",
+          "mejorar": ["Desarrolla conciencia sobre fuentes de anclaje", "Practica evaluaciones desde múltiples puntos de partida", "Crea sistemas de verificación"],
+          "alertas": ["Aceptar ofertas iniciales sin suficiente negociación", "Basar evaluaciones en información irrelevante"],
+          "oportunidades": ["Negociación equilibrada", "Toma de decisiones eficiente", "Evaluación práctica"],
+          "impacto_relaciones": ["Equilibrio entre eficiencia y flexibilidad", "Capacidad de encontrar puntos medios"],
+          "plan_7_dias": [
+            "Día 1: Identifica una decisión reciente donde una referencia inicial te influyó",
+            "Día 2: Practica evaluar algo desde múltiples puntos de partida",
+            "Día 3: En una negociación, cuestiona la primera oferta",
+            "Día 4: Busca información adicional antes de ajustar desde un anclaje",
+            "Día 5: Ayuda a alguien a ver más allá de una referencia limitante",
+            "Día 6: Practica hacer ajustes más amplios desde puntos de referencia",
+            "Día 7: Crea recordatorios para cuestionar anclajes irrelevantes"
+          ],
+          "cita": "Las referencias son útiles cuando las elegimos conscientemente"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Te influencias fuertemente por la primera información que recibes, limitando tus evaluaciones posteriores",
+        "ad_unlock": {
+          "fortalezas": ["Decisiones rápidas", "Uso de referencias disponibles", "Eficiencia cognitiva"],
+          "debilidades": ["Evaluaciones sesgadas", "Negociaciones subóptimas", "Rigidez cognitiva"],
+          "recomendaciones_breves": ["Busca múltiples referencias antes de decidir", "Practica ignorar información inicial irrelevante"]
+        },
+        "premium": {
+          "detalle": "Tu alto sesgo de anclaje puede llevarte a evaluaciones significativamente sesgadas y decisiones subóptimas, especialmente en negociaciones y evaluaciones financieras.",
+          "mejorar": ["Desarrolla el hábito de buscar múltiples referencias", "Practica evaluaciones independientes", "Crea sistemas para contrarrestar anclajes"],
+          "alertas": ["Aceptar primeras ofertas sin negociar", "Basar decisiones importantes en información irrelevante", "Subestimar o sobrestimar valores"],
+          "oportunidades": ["Mejora significativa en negociaciones", "Evaluaciones más precisas", "Decisiones financieras más inteligentes"],
+          "impacto_relaciones": ["Puedes ser predecible en negociaciones", "Otros pueden usar anclajes para influirte"],
+          "plan_7_dias": [
+            "Día 1: Identifica una situación donde un anclaje te perjudicó",
+            "Día 2: Practica ignorar la primera información en una evaluación",
+            "Día 3: Busca múltiples referencias antes de tomar una decisión",
+            "Día 4: En una negociación, establece tu propio punto de partida",
+            "Día 5: Cuestiona la relevancia de información inicial",
+            "Día 6: Practica hacer evaluaciones completamente independientes",
+            "Día 7: Crea un sistema personal para contrarrestar anclajes"
+          ],
+          "cita": "La primera impresión no siempre es la más precisa"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Sesgos Cognitivos revela cómo tus patrones de pensamiento se comparan con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran el pensamiento crítico y la objetividad", "Quienes aprecian la honestidad intelectual y la apertura mental", "Perfiles que buscan crecimiento a través del cuestionamiento constructivo"],
+        "dificil": ["Quienes se aferran rígidamente a sus creencias sin cuestionarlas", "Personas que evitan el análisis profundo o la autocrítica", "Perfiles que se sienten amenazados por perspectivas diferentes"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran el pensamiento crítico y la toma de decisiones basada en evidencia", "Culturas que premian la objetividad y el análisis riguroso", "Espacios que fomentan el debate constructivo y la mejora continua"],
+        "dificil": ["Ambientes que penalizan el cuestionamiento o la disidencia intelectual", "Culturas que priorizan la conformidad sobre el análisis", "Estructuras que toman decisiones basadas en sesgos no examinados"]
+      },
+      "amistades": {
+        "facil": ["Personas interesadas en el crecimiento intelectual y personal", "Quienes valoran las conversaciones profundas y el debate respetuoso", "Perfiles que abrazan la complejidad y la nuance en el pensamiento"],
+        "dificil": ["Quienes evitan cuestionar sus propias creencias o patrones", "Personas que se sienten incómodas con el análisis crítico", "Perfiles que prefieren certezas absolutas sobre exploración intelectual"]
+      },
+      "insights": [
+        "Comparte tu proceso de cuestionamiento para inspirar pensamiento crítico en otros",
+        "Equilibra tu análisis objetivo con empatía hacia diferentes perspectivas",
+        "Usa tu conciencia de sesgos para crear espacios de diálogo más honestos"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren análisis objetivo y toma de decisiones",
+        "prediccion": "Tu conciencia de sesgos te permitirá evaluar información más objetivamente que otros",
+        "consejo": "Comparte tu proceso de análisis para ayudar a otros a tomar mejores decisiones"
+      },
+      {
+        "escenario": "En debates o discusiones sobre temas controvertidos",
+        "prediccion": "Tu capacidad de reconocer sesgos te dará ventaja para encontrar puntos medios",
+        "consejo": "Usa tu objetividad para facilitar diálogo constructivo, no para ganar argumentos"
+      },
+      {
+        "escenario": "En entornos que requieren innovación y pensamiento creativo",
+        "prediccion": "Tu flexibilidad mental te permitirá ver soluciones que otros pasan por alto",
+        "consejo": "Balancea tu análisis crítico con apertura a ideas aparentemente irracionales"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "confirmacion_consciente",
+        "cita": "La mente abierta es el mejor filtro para la verdad",
+        "reflexion": "Tu capacidad de cuestionar tus propias creencias te permite acceder a verdades más profundas y tomar decisiones más sabias"
+      },
+      {
+        "rasgo": "disponibilidad_equilibrada",
+        "cita": "Lo memorable no siempre es lo más probable, lo probable no siempre es lo más importante",
+        "reflexion": "Tu habilidad para equilibrar experiencias vividas con análisis estadístico te da una perspectiva más completa de la realidad"
+      },
+      {
+        "rasgo": "anclaje_libre",
+        "cita": "La verdadera objetividad viene de la independencia de pensamiento",
+        "reflexion": "Tu capacidad de evaluar cada situación desde múltiples perspectivas te libera de limitaciones mentales que restringen a otros"
+      }
+    ]
+  },
+  "related_tests": ["dark-triad", "psychological-shadow", "inteligencia_emocional"]
+}

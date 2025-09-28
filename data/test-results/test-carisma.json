@@ -1,0 +1,350 @@
+{
+  "id": "test_carisma",
+  "schemaVersion": 2,
+  "traitMap": {
+    "presencia": "presencia",
+    "conexion_emocional": "conexion",
+    "influencia_natural": "magnetismo"
+  },
+  "titulo": "Test de Carisma",
+  "nivel": "intermedio",
+  "visual": "radar",
+  "rasgos": ["presencia", "conexion", "magnetismo"],
+  "arquetipos": [
+    {
+      "clave": "presencia",
+      "label": "El Magnético",
+      "descripcion": "Tu presencia física y energética atrae naturalmente la atención y el interés de otros"
+    },
+    {
+      "clave": "conexion",
+      "label": "El Conector",
+      "descripcion": "Estableces vínculos emocionales profundos y genuinos con las personas que conoces"
+    },
+    {
+      "clave": "magnetismo",
+      "label": "El Inspirador",
+      "descripcion": "Motivas y guías a otros hacia acciones positivas a través de tu ejemplo y palabras"
+    }
+  ],
+  "bands": {
+    "presencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tu presencia física tiende a pasar desapercibida, pero puedes desarrollar técnicas para destacar más",
+        "ad_unlock": {
+          "fortalezas": ["Humildad natural", "Capacidad de observación", "Autenticidad sin pretensiones"],
+          "debilidades": ["Dificultad para captar atención", "Menor impacto en primeras impresiones", "Timidez en grupos"],
+          "recomendaciones_breves": ["Practica postura erguida y contacto visual", "Desarrolla tu voz y dicción", "Usa gestos más expresivos"]
+        },
+        "premium": {
+          "detalle": "Tu baja presencia no significa falta de valor, sino una oportunidad de desarrollo. La presencia se puede cultivar a través de técnicas específicas de lenguaje corporal, voz y energía personal.",
+          "mejorar": ["Entrena postura de poder durante 2 minutos diarios", "Practica proyección vocal", "Desarrolla tu estilo personal único", "Trabaja en tu entrada a espacios"],
+          "alertas": ["Pasar desapercibido en reuniones importantes", "Perder oportunidades por falta de visibilidad", "Subestimar tu propio impacto"],
+          "oportunidades": ["Liderazgo auténtico desde la humildad", "Conexiones profundas uno a uno", "Influencia a través de la competencia"],
+          "impacto_relaciones": ["Relaciones basadas en sustancia, no en apariencia", "Conexiones más lentas pero duraderas"],
+          "plan_7_dias": [
+            "Día 1: Practica postura erguida y respiración profunda por 10 minutos",
+            "Día 2: Mantén contacto visual durante conversaciones completas",
+            "Día 3: Habla 20% más lento y con mayor claridad",
+            "Día 4: Usa gestos más amplios al explicar algo",
+            "Día 5: Practica tu entrada a una habitación con confianza",
+            "Día 6: Modula tu voz para proyectar más energía",
+            "Día 7: Combina todas las técnicas en una interacción social"
+          ],
+          "cita": "La presencia verdadera viene de la confianza interior, no de la actuación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes una presencia moderada que puedes potenciar en situaciones específicas",
+        "ad_unlock": {
+          "fortalezas": ["Presencia equilibrada", "Adaptabilidad social", "Confianza situacional"],
+          "debilidades": ["Inconsistencia en diferentes contextos", "Dependencia del estado de ánimo"],
+          "recomendaciones_breves": ["Identifica tus momentos de mayor presencia", "Practica consistencia en diferentes entornos"]
+        },
+        "premium": {
+          "detalle": "Tu presencia moderada te permite destacar en muchas situaciones, pero la inconsistencia puede limitarte. El desafío es desarrollar una presencia más estable y consciente.",
+          "mejorar": ["Desarrolla rituales pre-sociales", "Practica presencia en diferentes contextos", "Fortalece tu energía personal", "Cultiva la conciencia corporal"],
+          "alertas": ["Presencia que fluctúa según el humor", "Menor impacto en situaciones importantes", "Dependencia excesiva del contexto"],
+          "oportunidades": ["Liderazgo situacional", "Presentaciones efectivas", "Networking estratégico"],
+          "impacto_relaciones": ["Presencia agradable pero no siempre memorable", "Capacidad de adaptarse a diferentes grupos"],
+          "plan_7_dias": [
+            "Día 1: Identifica tres situaciones donde tu presencia es más fuerte",
+            "Día 2: Crea un ritual de 5 minutos antes de eventos sociales",
+            "Día 3: Practica presencia consciente en una reunión",
+            "Día 4: Trabaja en tu energía personal con ejercicio y respiración",
+            "Día 5: Experimenta con diferentes estilos de presencia",
+            "Día 6: Pide feedback sobre tu presencia a alguien de confianza",
+            "Día 7: Integra las técnicas que mejor funcionaron"
+          ],
+          "cita": "La presencia consistente es más poderosa que la presencia ocasional"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una presencia natural fuerte que atrae y mantiene la atención de otros",
+        "ad_unlock": {
+          "fortalezas": ["Magnetismo natural", "Impacto inmediato", "Confianza proyectada"],
+          "debilidades": ["Posible intimidación a otros", "Expectativas altas constantes"],
+          "recomendaciones_breves": ["Usa tu presencia para empoderar a otros", "Balancea intensidad con accesibilidad"]
+        },
+        "premium": {
+          "detalle": "Tu alta presencia es un don natural que te otorga ventajas significativas en interacciones sociales y profesionales. El desafío es usar este poder de manera ética y constructiva.",
+          "mejorar": ["Desarrolla humildad consciente", "Practica empoderar a otros", "Cultiva la escucha activa", "Balancea presencia con vulnerabilidad"],
+          "alertas": ["Intimidar sin intención", "Crear dependencia en otros", "Arrogancia por el poder de presencia"],
+          "oportunidades": ["Liderazgo transformacional", "Oratoria y presentaciones", "Influencia social positiva"],
+          "impacto_relaciones": ["Atracción inmediata pero riesgo de superficialidad", "Capacidad de inspirar pero también de intimidar"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre el impacto de tu presencia en otros",
+            "Día 2: Practica usar tu presencia para hacer que otros se sientan importantes",
+            "Día 3: Experimenta con momentos de vulnerabilidad controlada",
+            "Día 4: Busca feedback honesto sobre cómo otros perciben tu presencia",
+            "Día 5: Practica la escucha activa sin dominar la conversación",
+            "Día 6: Usa tu presencia para una causa benéfica o ayudar a alguien",
+            "Día 7: Planifica cómo usar tu presencia para impacto positivo duradero"
+          ],
+          "cita": "La verdadera presencia eleva a otros, no solo a uno mismo"
+        }
+      }
+    ],
+    "conexion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta establecer vínculos emocionales profundos rápidamente con nuevas personas",
+        "ad_unlock": {
+          "fortalezas": ["Selectividad en relaciones", "Profundidad sobre cantidad", "Autenticidad"],
+          "debilidades": ["Dificultad para hacer networking", "Menor calidez percibida", "Lentitud en formar vínculos"],
+          "recomendaciones_breves": ["Practica preguntas abiertas", "Muestra interés genuino en otros", "Comparte experiencias personales"]
+        },
+        "premium": {
+          "detalle": "Tu baja conexión emocional puede deberse a introversión natural o falta de habilidades sociales desarrolladas. Aunque prefieres relaciones profundas, puedes beneficiarte de técnicas para conectar más rápidamente.",
+          "mejorar": ["Desarrolla curiosidad genuina por otros", "Practica la escucha empática", "Aprende a hacer preguntas que generen apertura", "Cultiva la vulnerabilidad apropiada"],
+          "alertas": ["Ser percibido como frío o distante", "Perder oportunidades por falta de conexión", "Aislamiento social involuntario"],
+          "oportunidades": ["Relaciones profundas y significativas", "Confianza basada en autenticidad", "Liderazgo a través del ejemplo"],
+          "impacto_relaciones": ["Pocas relaciones pero muy profundas", "Confianza que se construye lentamente pero es sólida"],
+          "plan_7_dias": [
+            "Día 1: Haz tres preguntas genuinas sobre la vida de alguien",
+            "Día 2: Comparte una experiencia personal pequeña con un conocido",
+            "Día 3: Practica recordar y usar nombres en conversaciones",
+            "Día 4: Muestra interés activo en los hobbies de alguien",
+            "Día 5: Practica la escucha sin planear tu respuesta",
+            "Día 6: Expresa aprecio genuino por algo específico de una persona",
+            "Día 7: Reflexiona sobre cómo te sentiste al conectar más profundamente"
+          ],
+          "cita": "La conexión auténtica vale más que mil interacciones superficiales"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Estableces conexiones emocionales moderadas, adaptándote bien a diferentes tipos de personas",
+        "ad_unlock": {
+          "fortalezas": ["Versatilidad social", "Empatía desarrollada", "Equilibrio entre apertura y límites"],
+          "debilidades": ["Conexiones no siempre profundas", "Puede faltar intensidad emocional"],
+          "recomendaciones_breves": ["Profundiza conexiones existentes", "Practica vulnerabilidad estratégica"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad moderada de conexión te permite relacionarte bien con diversos tipos de personas. Puedes mejorar desarrollando mayor profundidad emocional y técnicas de rapport avanzadas.",
+          "mejorar": ["Desarrolla técnicas de rapport avanzadas", "Practica la sincronización emocional", "Cultiva la inteligencia emocional", "Aprende a leer microexpresiones"],
+          "alertas": ["Conexiones que se mantienen superficiales", "Falta de memorabilidad en interacciones", "No capitalizar el potencial de conexión"],
+          "oportunidades": ["Mediación y facilitación", "Trabajo en equipo efectivo", "Networking estratégico"],
+          "impacto_relaciones": ["Relaciones cómodas y estables", "Capacidad de conectar con diversos grupos"],
+          "plan_7_dias": [
+            "Día 1: Profundiza una conversación existente con preguntas más personales",
+            "Día 2: Practica sincronizar tu energía con la de tu interlocutor",
+            "Día 3: Comparte una vulnerabilidad apropiada con alguien",
+            "Día 4: Observa y refleja las emociones de otros en conversaciones",
+            "Día 5: Practica recordar detalles importantes de las vidas de otros",
+            "Día 6: Crea un momento de conexión genuina con un desconocido",
+            "Día 7: Evalúa qué técnicas generaron conexiones más profundas"
+          ],
+          "cita": "La conexión se profundiza cuando compartimos nuestra humanidad"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Estableces conexiones emocionales profundas y rápidas, creando vínculos significativos fácilmente",
+        "ad_unlock": {
+          "fortalezas": ["Empatía excepcional", "Rapport instantáneo", "Calidez natural"],
+          "debilidades": ["Posible agotamiento emocional", "Dificultad para mantener límites"],
+          "recomendaciones_breves": ["Gestiona tu energía emocional", "Establece límites saludables", "Usa tu don para causas importantes"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad de conexión es un regalo excepcional que te permite tocar profundamente las vidas de otros. El desafío es mantener tu bienestar emocional mientras usas este don responsablemente.",
+          "mejorar": ["Desarrolla técnicas de protección energética", "Practica límites emocionales saludables", "Cultiva la conexión sin absorber problemas ajenos", "Canaliza tu don hacia propósitos mayores"],
+          "alertas": ["Agotamiento por absorber emociones ajenas", "Ser usado emocionalmente por otros", "Perder tu propia identidad en las conexiones"],
+          "oportunidades": ["Terapia y coaching", "Liderazgo inspiracional", "Construcción de comunidades"],
+          "impacto_relaciones": ["Conexiones profundas e inmediatas", "Riesgo de relaciones desequilibradas donde das más"],
+          "plan_7_dias": [
+            "Día 1: Establece un límite emocional pequeño pero claro",
+            "Día 2: Practica técnicas de grounding después de interacciones intensas",
+            "Día 3: Identifica cuándo estás absorbiendo emociones ajenas vs conectando",
+            "Día 4: Usa tu capacidad de conexión para ayudar a alguien específicamente",
+            "Día 5: Practica decir no a una petición emocional que te agote",
+            "Día 6: Reflexiona sobre el equilibrio entre dar y recibir en tus relaciones",
+            "Día 7: Planifica cómo usar tu don de conexión para un propósito mayor"
+          ],
+          "cita": "La conexión más poderosa es la que sana tanto al que da como al que recibe"
+        }
+      }
+    ],
+    "magnetismo": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tu capacidad de influir en las decisiones y acciones de otros es limitada, pero puedes desarrollarla",
+        "ad_unlock": {
+          "fortalezas": ["Respeto por la autonomía ajena", "Enfoque colaborativo", "Humildad"],
+          "debilidades": ["Dificultad para liderar cambios", "Menor impacto en decisiones grupales", "Timidez para expresar opiniones"],
+          "recomendaciones_breves": ["Desarrolla confianza en tus ideas", "Practica comunicación persuasiva", "Aprende a presentar beneficios claros"]
+        },
+        "premium": {
+          "detalle": "Tu baja influencia puede reflejar respeto por otros o falta de confianza en tus propias ideas. Desarrollar habilidades de influencia ética te permitirá contribuir más efectivamente a causas importantes.",
+          "mejorar": ["Desarrolla expertise en áreas específicas", "Practica storytelling persuasivo", "Aprende técnicas de presentación", "Cultiva la confianza en tus ideas"],
+          "alertas": ["No contribuir con ideas valiosas por timidez", "Permitir que decisiones importantes se tomen sin tu input", "Subestimar tu potencial de liderazgo"],
+          "oportunidades": ["Liderazgo de servicio", "Influencia a través de la competencia", "Construcción de consenso"],
+          "impacto_relaciones": ["Relaciones equilibradas sin dominancia", "Respeto por la autonomía de otros"],
+          "plan_7_dias": [
+            "Día 1: Identifica un área donde tienes conocimiento valioso",
+            "Día 2: Comparte una idea o sugerencia en una conversación",
+            "Día 3: Practica explicar los beneficios de una propuesta",
+            "Día 4: Cuenta una historia que ilustre un punto importante",
+            "Día 5: Lidera una decisión pequeña en un grupo",
+            "Día 6: Practica presentar una idea con confianza",
+            "Día 7: Reflexiona sobre cómo tu influencia puede beneficiar a otros"
+          ],
+          "cita": "La influencia más noble es la que empodera a otros a crecer"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes una capacidad moderada de influencia que funciona bien en contextos familiares",
+        "ad_unlock": {
+          "fortalezas": ["Influencia equilibrada", "Persuasión situacional", "Liderazgo colaborativo"],
+          "debilidades": ["Limitaciones en audiencias grandes", "Influencia que depende del contexto"],
+          "recomendaciones_breves": ["Expande tu zona de influencia", "Practica con audiencias más diversas"]
+        },
+        "premium": {
+          "detalle": "Tu influencia moderada te permite liderar efectivamente en círculos conocidos. Para expandir tu impacto, necesitas desarrollar técnicas más avanzadas y confianza para influir en contextos más amplios.",
+          "mejorar": ["Desarrolla tu marca personal", "Practica influencia en grupos más grandes", "Mejora tus habilidades de presentación", "Cultiva autoridad en tu campo"],
+          "alertas": ["Limitarse a círculos conocidos", "No aprovechar oportunidades de mayor impacto", "Subestimar tu potencial de influencia"],
+          "oportunidades": ["Liderazgo de equipos", "Influencia en organizaciones", "Construcción de redes profesionales"],
+          "impacto_relaciones": ["Liderazgo respetado en grupos pequeños", "Capacidad de generar consenso"],
+          "plan_7_dias": [
+            "Día 1: Identifica una audiencia nueva donde podrías tener influencia",
+            "Día 2: Practica tu elevator pitch con diferentes personas",
+            "Día 3: Lidera una iniciativa pequeña en tu trabajo o comunidad",
+            "Día 4: Comparte tu expertise en una plataforma nueva (redes, blog, etc.)",
+            "Día 5: Practica influir en una decisión grupal más grande",
+            "Día 6: Busca oportunidades de mentoría o enseñanza",
+            "Día 7: Evalúa tu progreso y planifica expansión de influencia"
+          ],
+          "cita": "La influencia crece cuando se comparte generosamente"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una capacidad excepcional para influir en las decisiones y acciones de otros",
+        "ad_unlock": {
+          "fortalezas": ["Liderazgo natural", "Persuasión poderosa", "Capacidad de movilizar"],
+          "debilidades": ["Riesgo de manipulación", "Responsabilidad ética alta", "Posible resistencia de otros"],
+          "recomendaciones_breves": ["Usa tu influencia éticamente", "Desarrolla liderazgo de servicio", "Empodera a otros"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad de influencia te convierte en un líder natural con poder significativo sobre otros. Esta es una responsabilidad que requiere uso ético y enfoque en el bien común.",
+          "mejorar": ["Desarrolla liderazgo ético y de servicio", "Practica la influencia que empodera", "Cultiva la humildad y la responsabilidad", "Crea sistemas de feedback honesto"],
+          "alertas": ["Usar influencia para beneficio personal únicamente", "Crear dependencia en lugar de empoderar", "Arrogancia por el poder de influencia"],
+          "oportunidades": ["Liderazgo transformacional a gran escala", "Construcción de movimientos sociales", "Mentoría de futuros líderes"],
+          "impacto_relaciones": ["Influencia profunda y duradera", "Responsabilidad de usar el poder sabiamente"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre la responsabilidad ética de tu influencia",
+            "Día 2: Identifica una forma de usar tu influencia para el bien común",
+            "Día 3: Practica empoderar a alguien en lugar de solo influir",
+            "Día 4: Busca feedback honesto sobre tu estilo de liderazgo",
+            "Día 5: Desarrolla a un futuro líder a través de mentoría",
+            "Día 6: Crea un sistema para mantener humildad y responsabilidad",
+            "Día 7: Compromete tu influencia con una causa mayor que tú mismo"
+          ],
+          "cita": "Con gran influencia viene gran responsabilidad de elevar a otros"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Carisma revela cómo tu presencia, capacidad de conexión e influencia se comparan con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la autenticidad y la conexión genuina", "Quienes aprecian tanto la presencia como la humildad", "Perfiles que buscan inspiración y crecimiento mutuo"],
+        "dificil": ["Quienes se sienten intimidados por personalidades magnéticas", "Personas que prefieren relaciones sin dinámicas de liderazgo", "Perfiles que desconfían del carisma o lo ven como superficial"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran el liderazgo inspiracional y la comunicación efectiva", "Culturas que premian la capacidad de motivar y conectar equipos", "Espacios que requieren presentaciones, networking y construcción de consenso"],
+        "dificil": ["Ambientes que desconfían del liderazgo carismático o lo ven como amenaza", "Culturas extremadamente técnicas que minimizan las habilidades sociales", "Estructuras rígidas que penalizan la influencia personal"]
+      },
+      "amistades": {
+        "facil": ["Personas que admiran la capacidad de conexión y comunicación natural", "Quienes valoran la inspiración y la motivación mutua", "Perfiles que buscan líderes naturales en sus círculos sociales"],
+        "dificil": ["Quienes se sienten opacados por personalidades fuertes", "Personas que prefieren relaciones más igualitarias sin dinámicas de influencia", "Perfiles que interpretan el carisma como manipulación"]
+      },
+      "insights": [
+        "Usa tu magnetismo personal para elevar y empoderar a otros, no solo para destacar",
+        "Equilibra tu presencia natural con momentos de vulnerabilidad y escucha activa",
+        "Comunica tus intenciones claramente para que otros no malinterpreten tu carisma"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren liderazgo y motivación de equipos",
+        "prediccion": "Tu combinación de presencia, conexión e influencia te posicionará naturalmente como líder",
+        "consejo": "Usa tu carisma para incluir y empoderar a todos los miembros del equipo, no solo para dirigir"
+      },
+      {
+        "escenario": "En presentaciones importantes o eventos sociales",
+        "prediccion": "Tu presencia natural captará la atención y tu capacidad de conexión creará impacto duradero",
+        "consejo": "Balancea tu magnetismo con humildad genuina para crear conexiones auténticas, no solo admiración"
+      },
+      {
+        "escenario": "En relaciones íntimas que requieren vulnerabilidad y reciprocidad",
+        "prediccion": "Tu carisma puede crear una dinámica desequilibrada donde siempre lideras la interacción",
+        "consejo": "Practica momentos de vulnerabilidad y escucha donde no ejerces tu influencia, solo compartes"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "presencia_autentica",
+        "cita": "La verdadera presencia no busca atención, sino que crea espacios donde otros pueden brillar",
+        "reflexion": "Tu magnetismo personal es más poderoso cuando lo usas para hacer que otros se sientan importantes y valorados"
+      },
+      {
+        "rasgo": "conexion_genuina",
+        "cita": "La conexión auténtica vale más que mil interacciones superficiales",
+        "reflexion": "Tu capacidad de establecer vínculos profundos te permite tocar vidas de manera significativa y duradera"
+      },
+      {
+        "rasgo": "influencia_elevadora",
+        "cita": "Con gran carisma viene gran responsabilidad de elevar a otros",
+        "reflexion": "Tu habilidad para influir e inspirar es un regalo que debe usarse para empoderar y desarrollar el potencial de otros"
+      }
+    ]
+  },
+  "related_tests": ["persuasion-power", "test_liderazgo", "inteligencia_emocional"]
+}

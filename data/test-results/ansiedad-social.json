@@ -1,0 +1,295 @@
+{
+  "id": "ansiedad_social",
+  "schemaVersion": 2,
+  "traitMap": {
+    "miedo_juicio": "hiperconciencia",
+    "evitacion_social": "evitacion",
+    "sintomas_fisicos": "timidez"
+  },
+  "titulo": "Ansiedad Social",
+  "nivel": "basico",
+  "visual": "radar",
+  "rasgos": ["timidez", "hiperconciencia", "evitacion"],
+  "arquetipos": [
+    {
+      "clave": "timidez",
+      "label": "El Reservado",
+      "descripcion": "Sientes incomodidad en situaciones sociales y prefieres observar antes de participar"
+    },
+    {
+      "clave": "hiperconciencia",
+      "label": "El Hiperconsciente",
+      "descripcion": "Estás muy atento a cómo otros te perciben y te preocupas por el juicio social"
+    },
+    {
+      "clave": "evitacion",
+      "label": "El Evitativo",
+      "descripcion": "Tiendes a evitar situaciones sociales que te generan ansiedad o incomodidad"
+    }
+  ],
+  "bands": {
+    "timidez": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te sientes cómodo en la mayoría de situaciones sociales y participas naturalmente",
+        "ad_unlock": {
+          "fortalezas": ["Naturalidad social", "Facilidad para conectar", "Confianza en interacciones"],
+          "debilidades": ["Posible falta de sensibilidad hacia tímidos", "Menor reflexión antes de hablar"],
+          "recomendaciones_breves": ["Practica la escucha activa", "Ayuda a personas más tímidas a participar", "Mantén sensibilidad social"]
+        },
+        "premium": {
+          "detalle": "Tu baja timidez te permite navegar situaciones sociales con naturalidad y confianza. Esta es una fortaleza que te permite liderar conversaciones y hacer que otros se sientan cómodos.",
+          "mejorar": ["Desarrolla sensibilidad hacia personas más introvertidas", "Practica la inclusión activa en grupos", "Cultiva la paciencia con ritmos sociales diferentes", "Usa tu naturalidad para empoderar a otros"],
+          "alertas": ["Dominar conversaciones sin dar espacio a otros", "Subestimar la ansiedad social ajena", "Falta de empatía hacia la timidez"],
+          "oportunidades": ["Liderazgo social natural", "Facilitación de grupos", "Networking efectivo"],
+          "impacto_relaciones": ["Facilitas la comodidad social en otros", "Puedes ser un puente para personas tímidas"],
+          "plan_7_dias": [
+            "Día 1: Observa y ayuda a alguien tímido a participar en una conversación",
+            "Día 2: Practica hacer preguntas que incluyan a todos en un grupo",
+            "Día 3: Modera tu participación para dar espacio a otros",
+            "Día 4: Aprende sobre ansiedad social para entender mejor a otros",
+            "Día 5: Crea un ambiente seguro para que alguien tímido se exprese",
+            "Día 6: Practica la escucha activa sin interrumpir",
+            "Día 7: Reflexiona sobre cómo tu naturalidad puede empoderar a otros"
+          ],
+          "cita": "La confianza social verdadera incluye a todos en la conversación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Experimentas timidez moderada en ciertas situaciones sociales, especialmente con desconocidos",
+        "ad_unlock": {
+          "fortalezas": ["Reflexión antes de hablar", "Sensibilidad social", "Capacidad de observación"],
+          "debilidades": ["Incomodidad inicial en grupos nuevos", "Dificultad para iniciar conversaciones"],
+          "recomendaciones_breves": ["Practica iniciar conversaciones pequeñas", "Prepara temas de conversación", "Enfócate en hacer preguntas a otros"]
+        },
+        "premium": {
+          "detalle": "Tu timidez moderada puede ser una fortaleza que te permite observar y reflexionar antes de actuar socialmente. Con práctica, puedes desarrollar mayor comodidad manteniendo tu sensibilidad natural.",
+          "mejorar": ["Practica conversaciones en entornos seguros", "Desarrolla un repertorio de preguntas abiertas", "Fortalece tu confianza gradualmente", "Cultiva la curiosidad genuina por otros"],
+          "alertas": ["Evitar oportunidades sociales importantes", "Malinterpretar señales sociales neutras", "Aislamiento por exceso de cautela"],
+          "oportunidades": ["Desarrollo de habilidades sociales auténticas", "Conexiones profundas y significativas", "Liderazgo empático"],
+          "impacto_relaciones": ["Conexiones más lentas pero profundas", "Capacidad de crear confianza gradual"],
+          "plan_7_dias": [
+            "Día 1: Inicia una conversación pequeña con un desconocido",
+            "Día 2: Prepara 3 preguntas abiertas para usar en conversaciones",
+            "Día 3: Participa activamente en una conversación grupal",
+            "Día 4: Practica mantener contacto visual durante conversaciones",
+            "Día 5: Comparte una opinión personal en un grupo pequeño",
+            "Día 6: Busca puntos en común con alguien nuevo",
+            "Día 7: Reflexiona sobre tu progreso y celebra pequeños avances"
+          ],
+          "cita": "La timidez bien gestionada es sensibilidad en acción"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Experimentas timidez intensa que puede limitarte en situaciones sociales importantes",
+        "ad_unlock": {
+          "fortalezas": ["Capacidad de observación profunda", "Sensibilidad emocional", "Reflexión cuidadosa"],
+          "debilidades": ["Evitación de situaciones sociales", "Dificultad para expresar opiniones", "Aislamiento involuntario"],
+          "recomendaciones_breves": ["Busca apoyo terapéutico", "Practica exposición gradual", "Desarrolla técnicas de manejo de ansiedad"]
+        },
+        "premium": {
+          "detalle": "Tu alta timidez puede estar limitando significativamente tus oportunidades sociales y profesionales. Aunque tu sensibilidad es valiosa, necesitas desarrollar estrategias para participar más cómodamente en la vida social.",
+          "mejorar": ["Terapia cognitivo-conductual para ansiedad social", "Técnicas de exposición gradual", "Desarrollo de habilidades sociales específicas", "Fortalecimiento de la autoestima"],
+          "alertas": ["Evitar oportunidades importantes por miedo social", "Aislamiento progresivo", "Impacto en desarrollo profesional y personal"],
+          "oportunidades": ["Desarrollo de confianza social", "Conexiones auténticas y profundas", "Crecimiento personal significativo"],
+          "impacto_relaciones": ["Dificultad para formar nuevas relaciones", "Conexiones muy selectivas pero potencialmente profundas"],
+          "plan_7_dias": [
+            "Día 1: Busca apoyo profesional especializado en ansiedad social",
+            "Día 2: Practica técnicas de respiración antes de interacciones sociales",
+            "Día 3: Establece un objetivo social muy pequeño y alcanzable",
+            "Día 4: Practica conversación con alguien de máxima confianza",
+            "Día 5: Usa técnicas de grounding en una situación social menor",
+            "Día 6: Celebra cualquier participación social, por pequeña que sea",
+            "Día 7: Planifica el siguiente pequeño paso en tu desarrollo social"
+          ],
+          "cita": "El coraje no es la ausencia de miedo, sino actuar a pesar de él"
+        }
+      }
+    ],
+    "hiperconciencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "No te preocupas excesivamente por cómo otros te perciben y actúas con naturalidad",
+        "ad_unlock": {
+          "fortalezas": ["Autenticidad natural", "Menor estrés social", "Espontaneidad"],
+          "debilidades": ["Posible falta de sensibilidad social", "Menor adaptación a contextos"],
+          "recomendaciones_breves": ["Desarrolla conciencia de contextos sociales", "Practica leer el ambiente", "Mantén sensibilidad apropiada"]
+        },
+        "premium": {
+          "detalle": "Tu baja autoconciencia social te permite actuar con autenticidad sin estar paralizado por el juicio ajeno. Esta naturalidad es una fortaleza, pero cierta conciencia social puede mejorar tu efectividad.",
+          "mejorar": ["Desarrolla inteligencia social", "Practica la lectura de ambientes", "Cultiva sensibilidad contextual", "Aprende códigos sociales básicos"],
+          "alertas": ["Comportamiento inapropiado para el contexto", "Ofender sin intención por falta de sensibilidad", "Perder oportunidades por no leer el ambiente"],
+          "oportunidades": ["Liderazgo auténtico", "Comunicación directa y honesta", "Inspirar autenticidad en otros"],
+          "impacto_relaciones": ["Relaciones basadas en autenticidad", "Posible incomodidad en contextos formales"],
+          "plan_7_dias": [
+            "Día 1: Observa las normas sociales en diferentes contextos durante el día",
+            "Día 2: Practica adaptar tu estilo de comunicación al ambiente",
+            "Día 3: Pregunta a alguien de confianza sobre tu impacto social",
+            "Día 4: Observa reacciones no verbales cuando hablas",
+            "Día 5: Practica leer el estado de ánimo de un grupo antes de participar",
+            "Día 6: Ajusta tu energía para coincidir con el ambiente",
+            "Día 7: Reflexiona sobre el equilibrio entre autenticidad y sensibilidad social"
+          ],
+          "cita": "La autenticidad con conciencia social es la combinación más poderosa"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes conciencia moderada de cómo otros te perciben, lo que puede generar ansiedad ocasional",
+        "ad_unlock": {
+          "fortalezas": ["Sensibilidad social apropiada", "Capacidad de adaptación", "Conciencia de impacto"],
+          "debilidades": ["Ansiedad ocasional por juicio", "Sobrepensar interacciones", "Autocrítica social"],
+          "recomendaciones_breves": ["Equilibra conciencia con naturalidad", "Practica autoaceptación", "Reduce el sobreanálisis social"]
+        },
+        "premium": {
+          "detalle": "Tu autoconciencia social moderada te permite navegar situaciones sociales apropiadamente, pero a veces puede generar ansiedad innecesaria. El equilibrio es clave para mantener autenticidad sin estrés.",
+          "mejorar": ["Desarrolla confianza en tu valor personal", "Practica la autoaceptación", "Reduce el sobreanálisis de interacciones", "Cultiva la presencia mindful en conversaciones"],
+          "alertas": ["Sobrepensar cada interacción social", "Modificar tu personalidad excesivamente por aceptación", "Ansiedad que interfiere con la espontaneidad"],
+          "oportunidades": ["Comunicación socialmente inteligente", "Liderazgo empático", "Construcción de relaciones equilibradas"],
+          "impacto_relaciones": ["Sensibilidad que genera comodidad en otros", "Equilibrio entre adaptación y autenticidad"],
+          "plan_7_dias": [
+            "Día 1: Practica estar presente en conversaciones sin juzgarte",
+            "Día 2: Reduce el análisis post-interacción a 5 minutos máximo",
+            "Día 3: Enfócate en el disfrute de la conversación, no en tu desempeño",
+            "Día 4: Practica autoaceptación antes de eventos sociales",
+            "Día 5: Busca feedback real en lugar de asumir percepciones negativas",
+            "Día 6: Celebra momentos de naturalidad social",
+            "Día 7: Equilibra conciencia social con autenticidad personal"
+          ],
+          "cita": "La conciencia social saludable observa sin juzgar"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Experimentas alta preocupación por cómo otros te perciben, lo que puede generar ansiedad significativa",
+        "ad_unlock": {
+          "fortalezas": ["Sensibilidad social extrema", "Capacidad de adaptación", "Atención a detalles sociales"],
+          "debilidades": ["Ansiedad social intensa", "Autocrítica severa", "Parálisis social"],
+          "recomendaciones_breves": ["Busca terapia especializada", "Practica técnicas de relajación", "Desarrolla autocompasión"]
+        },
+        "premium": {
+          "detalle": "Tu alta autoconciencia social puede estar creando un nivel de ansiedad que interfiere significativamente con tu bienestar y oportunidades. Aunque tu sensibilidad tiene valor, necesitas desarrollar estrategias para reducir la autocrítica.",
+          "mejorar": ["Terapia cognitivo-conductual especializada", "Técnicas de mindfulness para reducir autocrítica", "Desarrollo de autocompasión", "Exposición gradual a situaciones sociales"],
+          "alertas": ["Evitar oportunidades importantes por miedo al juicio", "Autocrítica destructiva después de interacciones", "Aislamiento progresivo por ansiedad"],
+          "oportunidades": ["Desarrollo de confianza social auténtica", "Conexiones profundas basadas en vulnerabilidad", "Liderazgo empático"],
+          "impacto_relaciones": ["Dificultad para formar relaciones por miedo al rechazo", "Conexiones muy cuidadosas pero potencialmente profundas"],
+          "plan_7_dias": [
+            "Día 1: Busca apoyo terapéutico especializado en ansiedad social",
+            "Día 2: Practica autocompasión cuando te critiques socialmente",
+            "Día 3: Implementa técnicas de respiración antes de interacciones",
+            "Día 4: Desafía un pensamiento autocrítico sobre una interacción",
+            "Día 5: Practica una interacción social muy pequeña y segura",
+            "Día 6: Celebra cualquier participación social sin autocrítica",
+            "Día 7: Desarrolla un mantra personal de autoaceptación social"
+          ],
+          "cita": "Tu valor no depende de la aprobación ajena, sino de tu propia aceptación"
+        }
+      }
+    ],
+    "evitacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "No evitas situaciones sociales y te sientes cómodo participando en diferentes contextos",
+        "ad_unlock": {
+          "fortalezas": ["Participación social activa", "Comodidad en grupos", "Apertura a nuevas experiencias"],
+          "debilidades": ["Posible sobreexposición social", "Menor tiempo de reflexión personal"],
+          "recomendaciones_breves": ["Equilibra socialización con tiempo personal", "Practica la reflexión después de eventos sociales", "Mantén límites saludables"]
+        },
+        "premium": {
+          "detalle": "Tu baja evitación social te permite aprovechar oportunidades de conexión y crecimiento. Esta apertura es una fortaleza que te permite construir redes amplias y diversas.",
+          "mejorar": ["Desarrolla discernimiento sobre calidad vs cantidad social", "Practica tiempo de reflexión personal", "Cultiva relaciones profundas además de amplias", "Mantén límites energéticos"],
+          "alertas": ["Agotamiento por sobreexposición social", "Relaciones superficiales por falta de selectividad", "Descuidar tiempo de introspección"],
+          "oportunidades": ["Networking amplio y efectivo", "Liderazgo social", "Construcción de comunidades"],
+          "impacto_relaciones": ["Facilidad para formar nuevas conexiones", "Riesgo de relaciones superficiales si no profundizas"],
+          "plan_7_dias": [
+            "Día 1: Evalúa el equilibrio entre cantidad y calidad en tus relaciones",
+            "Día 2: Dedica tiempo a profundizar una relación existente",
+            "Día 3: Practica decir no a un evento social para tener tiempo personal",
+            "Día 4: Reflexiona sobre qué tipo de interacciones te energizan vs agotan",
+            "Día 5: Busca calidad sobre cantidad en una interacción",
+            "Día 6: Establece límites saludables en tu calendario social",
+            "Día 7: Planifica cómo usar tu apertura social para impacto positivo"
+          ],
+          "cita": "La apertura social sabia incluye saber cuándo conectar y cuándo reflexionar"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Evitas algunas situaciones sociales, especialmente aquellas que te generan mayor ansiedad",
+        "ad_unlock": {
+          "fortalezas": ["Selectividad social", "Autoprotección", "Reflexión antes de comprometerse"],
+          "debilidades": ["Pérdida de oportunidades ocasionales", "Zona de confort limitada", "Ansiedad anticipatoria"],
+          "recomendaciones_breves": ["Practica exposición gradual", "Desarrolla técnicas de manejo de ansiedad", "Expande tu zona de confort lentamente"]
+        },
+        "premium": {
+          "detalle": "Tu evitación moderada puede ser protectiva pero también limitante. El desafío es expandir gradualmente tu zona de confort social sin abrumarte, manteniendo un equilibrio saludable.",
+          "mejorar": ["Desarrolla un plan de exposición gradual", "Practica técnicas de relajación", "Fortalece tu autoestima", "Cultiva la curiosidad sobre otros"],
+          "alertas": ["Zona de confort que se reduce progresivamente", "Perder oportunidades importantes por evitación", "Ansiedad que aumenta con el tiempo"],
+          "oportunidades": ["Desarrollo gradual de confianza social", "Relaciones selectivas pero significativas", "Crecimiento personal a través de desafíos"],
+          "impacto_relaciones": ["Relaciones cuidadosamente elegidas", "Necesidad de paciencia de otros para conocerte"],
+          "plan_7_dias": [
+            "Día 1: Identifica una situación social que evitas pero que podría beneficiarte",
+            "Día 2: Practica técnicas de relajación para situaciones sociales",
+            "Día 3: Da un pequeño paso hacia esa situación evitada",
+            "Día 4: Busca apoyo de alguien de confianza para una situación social",
+            "Día 5: Practica autoafirmaciones antes de eventos sociales",
+            "Día 6: Celebra cualquier progreso sin importar qué tan pequeño",
+            "Día 7: Planifica el siguiente paso gradual en tu desarrollo social"
+          ],
+          "cita": "El crecimiento social sucede un pequeño paso valiente a la vez"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Evitas activamente la mayoría de situaciones sociales, lo que puede limitar significativamente tu vida",
+        "ad_unlock": {
+          "fortalezas": ["Autoprotección efectiva", "Tiempo para reflexión personal", "Selectividad extrema"],
+          "debilidades": ["Aislamiento social severo", "Pérdida de oportunidades importantes", "Ansiedad social intensa"],
+          "recomendaciones_breves": ["Busca ayuda profesional inmediatamente", "Comienza con exposición muy gradual", "Desarrolla red de apoyo"]
+        },
+        "premium": {
+          "detalle": "Tu alta evitación social está impactando significativamente tu calidad de vida y oportunidades. Es crucial buscar apoyo profesional para desarrollar estrategias que te permitan participar más plenamente en la vida social.",
+          "mejorar": ["Terapia especializada en fobia social", "Medicación si es recomendada por profesional", "Grupos de apoyo para ansiedad social", "Técnicas de exposición muy graduales"],
+          "alertas": ["Aislamiento que empeora con el tiempo", "Impacto severo en oportunidades de vida", "Desarrollo de depresión por aislamiento"],
+          "oportunidades": ["Transformación profunda de la experiencia social", "Desarrollo de coraje excepcional", "Conexiones muy auténticas cuando se logran"],
+          "impacto_relaciones": ["Dificultad extrema para formar nuevas relaciones", "Dependencia de pocas relaciones muy cercanas"],
+          "plan_7_dias": [
+            "Día 1: Busca apoyo profesional especializado urgentemente",
+            "Día 2: Identifica una persona de máxima confianza para apoyo",
+            "Día 3: Practica técnicas de grounding para ansiedad social",
+            "Día 4: Establece el objetivo social más pequeño posible",
+            "Día 5: Usa apoyo virtual o telefónico si es más cómodo",
+            "Día 6: Celebra cualquier contacto social, por mínimo que sea",
+            "Día 7: Trabaja con tu terapeuta en el plan de exposición gradual"
+          ],
+          "cita": "Cada pequeño paso hacia la conexión es un acto de valentía extraordinaria"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Ansiedad Social revela cómo tu timidez, autoconciencia y evitación social se comparan con otros usuarios"
+  },
+  "related_tests": ["autoestima", "inteligencia_emocional", "estilo_apego"]
+}

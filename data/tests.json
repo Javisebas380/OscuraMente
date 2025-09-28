@@ -1,0 +1,2320 @@
+{
+  "dark-triad": {
+    "id": "dark-triad",
+    "titulo": "Tríada Oscura",
+    "descripcion": "Narcisismo, Maquiavelismo y Psicopatía",
+    "nivel": "avanzado",
+    "duracion": 8,
+    "preguntas": [
+      {
+        "texto": "Me gusta ser el centro de atención",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": false
+      },
+      {
+        "texto": "Creo que soy una persona especial",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": false
+      },
+      {
+        "texto": "Me gusta tener autoridad sobre otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": false
+      },
+      {
+        "texto": "Encuentro satisfacción en manipular a otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "maquiavelismo",
+        "reverse": false
+      },
+      {
+        "texto": "He usado el engaño o la mentira para conseguir lo que quiero",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "maquiavelismo",
+        "reverse": false
+      },
+      {
+        "texto": "He usado el halago para conseguir lo que quiero",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "maquiavelismo",
+        "reverse": false
+      },
+      {
+        "texto": "Tiendo a carecer de remordimientos",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "psicopatia",
+        "reverse": false
+      },
+      {
+        "texto": "Tiendo a no ser muy empático",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "psicopatia",
+        "reverse": false
+      },
+      {
+        "texto": "Tiendo a ser insensible o despiadado",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "psicopatia",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero trabajar en equipo que destacar individualmente",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": true
+      },
+      {
+        "texto": "Siempre digo la verdad, incluso cuando me perjudica",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "maquiavelismo",
+        "reverse": true
+      },
+      {
+        "texto": "Me afectan mucho los sentimientos de otras personas",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "psicopatia",
+        "reverse": true
+      },
+      {
+        "texto": "Merezco más reconocimiento del que recibo",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": false
+      },
+      {
+        "texto": "Es mejor ser temido que amado",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "maquiavelismo",
+        "reverse": false
+      },
+      {
+        "texto": "Evito herir los sentimientos de otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "psicopatia",
+        "reverse": true
+      },
+      {
+        "texto": "Me gusta impresionar a otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": false
+      },
+      {
+        "texto": "Es sabio mantener pistas sobre otros que podrían ser útiles",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "maquiavelismo",
+        "reverse": false
+      },
+      {
+        "texto": "Disfruto teniendo sexo con personas que apenas conozco",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "psicopatia",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento cómodo siendo el centro de atención",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "narcisismo",
+        "reverse": false
+      }
+    ]
+  },
+  "light-psychopathology": {
+    "id": "light-psychopathology",
+    "titulo": "Psicopatología Ligera",
+    "descripcion": "Detecta tendencias leves hacia paranoia, ansiedad o impulsividad",
+    "nivel": "avanzado",
+    "duracion": 10,
+    "preguntas": [
+      {
+        "id": 1,
+        "texto": "Me cuesta relajarme después de un día difícil.",
+        "rasgo": "ansiedad",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A menudo", "Siempre"]
+      },
+      {
+        "id": 2,
+        "texto": "Creo que la mayoría de la gente oculta segundas intenciones.",
+        "rasgo": "paranoia",
+        "reverse": false,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "id": 3,
+        "texto": "A menudo actúo sin pensar en las consecuencias.",
+        "rasgo": "impulsividad",
+        "reverse": false,
+        "opciones": ["Nunca", "A veces", "A menudo", "Siempre"]
+      },
+      {
+        "id": 4,
+        "texto": "Cuando me preocupo, mi mente no puede dejar de dar vueltas.",
+        "rasgo": "ansiedad",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A menudo", "Siempre"]
+      },
+      {
+        "id": 5,
+        "texto": "Desconfío incluso de personas cercanas.",
+        "rasgo": "paranoia",
+        "reverse": false,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "id": 6,
+        "texto": "Me arrepiento seguido de cosas que digo o hago en un impulso.",
+        "rasgo": "impulsividad",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"]
+      },
+      {
+        "id": 7,
+        "texto": "Encuentro fácil mantener la calma en situaciones tensas.",
+        "rasgo": "ansiedad",
+        "reverse": true,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "id": 8,
+        "texto": "Creo que otros hablan de mí a mis espaldas.",
+        "rasgo": "paranoia",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"]
+      },
+      {
+        "id": 9,
+        "texto": "Me es difícil esperar mi turno o ser paciente.",
+        "rasgo": "impulsividad",
+        "reverse": false,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "id": 10,
+        "texto": "Me preocupo demasiado por problemas pequeños.",
+        "rasgo": "ansiedad",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A menudo", "Siempre"]
+      },
+      {
+        "id": 11,
+        "texto": "Sospecho que las personas pueden traicionarme fácilmente.",
+        "rasgo": "paranoia",
+        "reverse": false,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "id": 12,
+        "texto": "A veces reacciono sin pensar y después me arrepiento.",
+        "rasgo": "impulsividad",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"]
+      },
+      {
+        "id": 13,
+        "texto": "Puedo desconectar la mente y descansar con facilidad.",
+        "rasgo": "ansiedad",
+        "reverse": true,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "id": 14,
+        "texto": "Interpreto gestos o miradas como pruebas de que me juzgan.",
+        "rasgo": "paranoia",
+        "reverse": false,
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"]
+      },
+      {
+        "id": 15,
+        "texto": "Me siento atraído por experiencias arriesgadas o extremas.",
+        "rasgo": "impulsividad",
+        "reverse": false,
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"]
+      },
+      {
+        "texto": "Prefiero tomar decisiones rápidas que analizar demasiado",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "impulsividad",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta trabajo relajarme completamente",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "ansiedad",
+        "reverse": false
+      },
+      {
+        "texto": "Siento que las personas hablan de mí a mis espaldas",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "paranoia",
+        "reverse": false
+      },
+      {
+        "texto": "Actúo sin pensar en las consecuencias cuando estoy molesto",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "impulsividad",
+        "reverse": false
+      },
+      {
+        "texto": "Me preocupo por cosas que aún no han pasado",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "ansiedad",
+        "reverse": false
+      }
+    ]
+  },
+  "psychological-shadow": {
+    "id": "psychological-shadow",
+    "titulo": "Sombra Psicológica",
+    "descripcion": "Explora los rasgos ocultos de tu personalidad (basado en Jung)",
+    "nivel": "avanzado",
+    "duracion": 9,
+    "preguntas": [
+      {
+        "texto": "Me siento cómodo mostrando mis vulnerabilidades a otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": false
+      },
+      {
+        "texto": "A menudo actúo de manera diferente según con quién esté",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": true
+      },
+      {
+        "texto": "Acepto tanto mis cualidades positivas como negativas",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "aceptacion",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta reconocer mis defectos",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "aceptacion",
+        "reverse": true
+      },
+      {
+        "texto": "He trabajado conscientemente en integrar mis aspectos 'oscuros'",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": false
+      },
+      {
+        "texto": "Evito pensar en los aspectos de mí que no me gustan",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": true
+      },
+      {
+        "texto": "Soy honesto sobre mis motivaciones, incluso las menos nobles",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": false
+      },
+      {
+        "texto": "Me juzgo duramente por mis errores",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "aceptacion",
+        "reverse": true
+      },
+      {
+        "texto": "Entiendo cómo mis traumas pasados afectan mi comportamiento actual",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero mantener una imagen perfecta ante otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo hablar abiertamente sobre mis inseguridades",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "aceptacion",
+        "reverse": false
+      },
+      {
+        "texto": "Reconozco patrones destructivos en mi comportamiento",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento auténtico en la mayoría de mis relaciones",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta perdonarme por mis errores pasados",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "aceptacion",
+        "reverse": true
+      },
+      {
+        "texto": "He transformado experiencias dolorosas en crecimiento personal",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": false
+      },
+      {
+        "texto": "Cambio mi personalidad para agradar a otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": true
+      },
+      {
+        "texto": "Acepto mis emociones 'negativas' como parte de mí",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "aceptacion",
+        "reverse": false
+      },
+      {
+        "texto": "Comprendo cómo mis aspectos rechazados se manifiestan en mi vida",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": false
+      },
+      {
+        "texto": "Expreso mis opiniones reales, aunque sean impopulares",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autenticidad",
+        "reverse": false
+      },
+      {
+        "texto": "He hecho las paces con mis aspectos más oscuros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "integracion",
+        "reverse": false
+      }
+    ]
+  },
+  "persuasion-power": {
+    "id": "persuasion-power",
+    "titulo": "Poder de Persuasión",
+    "descripcion": "Mide tus habilidades de influencia",
+    "nivel": "avanzado",
+    "duracion": 7,
+    "preguntas": [
+      {
+        "texto": "Me resulta fácil explicar mis ideas de manera clara.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "comunicacion",
+        "reverse": false
+      },
+      {
+        "texto": "Suelo lograr que otros cambien de opinión después de hablar conmigo.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "influencia",
+        "reverse": false
+      },
+      {
+        "texto": "Detecto rápidamente si alguien está aburrido o interesado en lo que digo.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "lectura_social",
+        "reverse": false
+      },
+      {
+        "texto": "Me incomoda hablar en público o ante grupos grandes.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "comunicacion",
+        "reverse": true
+      },
+      {
+        "texto": "Cuando discuto, adapto mis argumentos según la persona.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "lectura_social",
+        "reverse": false
+      },
+      {
+        "texto": "He convencido a otros de hacer cosas que inicialmente no querían.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "influencia",
+        "reverse": false
+      },
+      {
+        "texto": "Transmito seguridad incluso cuando no estoy del todo convencido.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "comunicacion",
+        "reverse": false
+      },
+      {
+        "texto": "Identifico con facilidad las emociones de quien me escucha.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "lectura_social",
+        "reverse": false
+      },
+      {
+        "texto": "Me resulta difícil persuadir a alguien que piensa distinto a mí.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "influencia",
+        "reverse": true
+      },
+      {
+        "texto": "Sé usar el tono de voz y el lenguaje corporal para reforzar mis palabras.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "comunicacion",
+        "reverse": false
+      },
+      {
+        "texto": "Conozco cuándo debo presionar y cuándo retirarme en una negociación.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "lectura_social",
+        "reverse": false
+      },
+      {
+        "texto": "Generalmente la gente confía en lo que digo.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "influencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta mantener la atención de las personas cuando hablo.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "comunicacion",
+        "reverse": true
+      },
+      {
+        "texto": "Suelo anticipar cómo responderá alguien antes de que lo haga.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "lectura_social",
+        "reverse": false
+      },
+      {
+        "texto": "Mis argumentos tienen impacto en decisiones de otras personas.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Siempre"],
+        "rasgo": "influencia",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero ser directo aunque pueda ofender a alguien",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "asertividad",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo hacer que las personas cambien de opinión fácilmente",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "influencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me resulta fácil detectar las debilidades de otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Evito confrontaciones directas cuando es posible",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "asertividad",
+        "reverse": true
+      }
+    ]
+  },
+  "resistencia_psicologica": {
+    "id": "resistencia_psicologica",
+    "titulo": "Resistencia Psicológica",
+    "descripcion": "Prueba tu fortaleza psicológica",
+    "nivel": "intermedio",
+    "duracion": 7,
+    "preguntas": [
+      {
+        "texto": "Cuando enfrento una situación muy estresante, logro mantener la calma",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "resistencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me recupero rápidamente de las decepciones o fracasos",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "resistencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo controlar mis emociones incluso en momentos difíciles",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "resistencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Tengo confianza en mi capacidad para superar obstáculos",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "resistencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo ver el lado positivo incluso en situaciones difíciles",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "resistencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando enfrento un problema, busco activamente soluciones",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "adaptabilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Me adapto fácilmente a nuevas situaciones o entornos",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "adaptabilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo cambiar mi enfoque cuando la situación lo requiere",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "adaptabilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Aprendo rápidamente de mis errores y ajusto mi comportamiento",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "adaptabilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Veo los desafíos como oportunidades de crecimiento",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "adaptabilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Tengo una red sólida de personas en las que puedo confiar",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "apoyo_social",
+        "reverse": false
+      },
+      {
+        "texto": "Busco ayuda cuando la necesito sin sentirme avergonzado/a",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "apoyo_social",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento cómodo/a compartiendo mis preocupaciones con otros",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "apoyo_social",
+        "reverse": false
+      },
+      {
+        "texto": "Las personas importantes en mi vida me apoyan en momentos difíciles",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "apoyo_social",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo ofrecer apoyo emocional a otros cuando lo necesitan",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "apoyo_social",
+        "reverse": false
+      },
+      {
+        "texto": "Mantengo relaciones saludables y significativas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "apoyo_social",
+        "reverse": false
+      }
+    ]
+  },
+  "senales_alerta": {
+    "id": "senales_alerta",
+    "titulo": "Señales de Alerta",
+    "descripcion": "Identifica señales de advertencia en relaciones",
+    "nivel": "basico",
+    "duracion": 5,
+    "preguntas": [
+      {
+        "texto": "Reconozco cuando alguien intenta hacerme sentir culpable por sus problemas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Noto cuando alguien cambia de tema para evitar responsabilidades",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Identifico cuando alguien usa el silencio como castigo",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Me doy cuenta cuando alguien minimiza mis sentimientos",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Detecto cuando alguien me aísla de mis amigos o familia",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Reconozco cuando alguien controla mis decisiones financieras",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta identificar comportamientos manipuladores",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": true
+      },
+      {
+        "texto": "Suelo justificar comportamientos tóxicos de otros",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "deteccion_manipulacion",
+        "reverse": true
+      },
+      {
+        "texto": "Confío en mis primeras impresiones sobre las personas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confianza_intuicion",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando algo se siente mal, investigo más antes de continuar",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confianza_intuicion",
+        "reverse": false
+      },
+      {
+        "texto": "Mi instinto me ha protegido de situaciones peligrosas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confianza_intuicion",
+        "reverse": false
+      },
+      {
+        "texto": "Presto atención a las señales no verbales de las personas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confianza_intuicion",
+        "reverse": false
+      },
+      {
+        "texto": "Ignoro mis corazonadas porque prefiero ser lógico",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "confianza_intuicion",
+        "reverse": true
+      },
+      {
+        "texto": "Dudo de mis percepciones cuando otros las cuestionan",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confianza_intuicion",
+        "reverse": true
+      },
+      {
+        "texto": "Establezco límites claros cuando alguien cruza una línea",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoproteccion",
+        "reverse": false
+      },
+      {
+        "texto": "Salgo de situaciones que me hacen sentir incómodo",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoproteccion",
+        "reverse": false
+      },
+      {
+        "texto": "Priorizo mi bienestar emocional sobre complacer a otros",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoproteccion",
+        "reverse": false
+      },
+      {
+        "texto": "Busco ayuda cuando me siento abrumado o en peligro",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoproteccion",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta decir no aunque me perjudique",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autoproteccion",
+        "reverse": true
+      },
+      {
+        "texto": "Permito comportamientos irrespetuosos para evitar conflictos",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoproteccion",
+        "reverse": true
+      }
+    ]
+  },
+  "sesgos_cognitivos": {
+    "id": "sesgos_cognitivos",
+    "titulo": "Sesgos Cognitivos",
+    "descripcion": "Identifica tus patrones de pensamiento",
+    "nivel": "avanzado",
+    "duracion": 9,
+    "preguntas": [
+      {
+        "texto": "Cuando ya tengo una opinión, busco información que la respalde.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confirmacion",
+        "reverse": false
+      },
+      {
+        "texto": "El primer precio que escucho suele influir en lo que considero \"caro\" o \"barato\".",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "anclaje",
+        "reverse": false
+      },
+      {
+        "texto": "Si oigo muchas noticias sobre un riesgo, creo que me puede pasar pronto.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "disponibilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Cambio de opinión cuando encuentro argumentos sólidos en contra de mi postura.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "confirmacion",
+        "reverse": true
+      },
+      {
+        "texto": "El primer dato que aparece en una negociación condiciona mis expectativas.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "anclaje",
+        "reverse": false
+      },
+      {
+        "texto": "Recuerdo más los eventos llamativos que los frecuentes pero discretos.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "disponibilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Suelo leer fuentes que piensan distinto a mí.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confirmacion",
+        "reverse": true
+      },
+      {
+        "texto": "Aunque me den nueva información, me cuesta salir del primer número que escuché.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "anclaje",
+        "reverse": false
+      },
+      {
+        "texto": "Sobrevaloro la probabilidad de algo solo porque lo vi recientemente.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "disponibilidad",
+        "reverse": false
+      },
+      {
+        "texto": "En debates, hago el esfuerzo de defender \"la otra parte\" para probar mi idea.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "confirmacion",
+        "reverse": true
+      },
+      {
+        "texto": "Un descuento grande sobre un precio alto me parece mejor que un precio bajo sin descuento.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "anclaje",
+        "reverse": false
+      },
+      {
+        "texto": "Historias impactantes me influyen más que estadísticas.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "disponibilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando alguien refuta mis ideas con datos, reviso mis fuentes.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "confirmacion",
+        "reverse": true
+      },
+      {
+        "texto": "Me quedo cerca del primer objetivo que fijé, aunque cambien las circunstancias.",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "anclaje",
+        "reverse": false
+      },
+      {
+        "texto": "Si no recuerdo un caso reciente, asumo que es poco probable.",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "disponibilidad",
+        "reverse": false
+      },
+      {
+        "texto": "Creo que mi primera impresión sobre las personas siempre es correcta",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "confirmacion",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando algo sale mal, generalmente es por factores externos",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "atribucion",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero información que confirme lo que ya pienso",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "confirmacion",
+        "reverse": false
+      },
+      {
+        "texto": "Analizo cuidadosamente mis errores para aprender de ellos",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "atribucion",
+        "reverse": true
+      }
+    ]
+  },
+  "deteccion_manipulacion": {
+    "id": "deteccion_manipulacion",
+    "titulo": "Detección de Manipulación",
+    "descripcion": "Detecta y comprende patrones de manipulación",
+    "nivel": "intermedio",
+    "duracion": 6,
+    "preguntas": [
+      {
+        "texto": "A menudo dudo de mis recuerdos después de discutir con alguien",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gaslighting",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando señalo una contradicción, me responden que lo entendí mal",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gaslighting",
+        "reverse": false
+      },
+      {
+        "texto": "Me dicen que exagero o que soy demasiado sensible cuando expreso emociones",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "gaslighting",
+        "reverse": false
+      },
+      {
+        "texto": "Cambian la historia para parecer siempre la víctima",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gaslighting",
+        "reverse": false
+      },
+      {
+        "texto": "Llego a dudar de si mis percepciones son correctas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gaslighting",
+        "reverse": false
+      },
+      {
+        "texto": "Confío en mis recuerdos y percepciones aunque intenten cuestionarlos",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gaslighting",
+        "reverse": true
+      },
+      {
+        "texto": "Me hacen sentir culpable si no cedo a lo que quieren",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "culpa_inducida",
+        "reverse": false
+      },
+      {
+        "texto": "Termino pidiendo disculpas aunque no sepa bien qué hice mal",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "culpa_inducida",
+        "reverse": false
+      },
+      {
+        "texto": "Me hacen sentir egoísta cuando pongo límites",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "culpa_inducida",
+        "reverse": false
+      },
+      {
+        "texto": "Evito decir lo que pienso para no generar reproches",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "culpa_inducida",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento responsable del bienestar emocional de la otra persona",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "culpa_inducida",
+        "reverse": false
+      },
+      {
+        "texto": "Reconozco que no soy culpable de todo y sé diferenciar mis responsabilidades",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "culpa_inducida",
+        "reverse": true
+      },
+      {
+        "texto": "Me aíslan o desaconsejan ver a ciertas personas importantes para mí",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "dependencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta imaginar mi vida sin esa persona aunque me haga daño",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "dependencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Siento que debo aparentar seguridad aunque no la tenga",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "dependencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Permito actitudes que no toleraría en otros por miedo a quedarme solo/a",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "dependencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "He aprendido a poner límites claros aunque me hagan sentir egoísta",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "dependencia_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo expresar desacuerdos sin miedo a perder la relación",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "dependencia_emocional",
+        "reverse": true
+      }
+    ]
+  },
+  "test_carisma": {
+    "id": "test_carisma",
+    "titulo": "Test de Carisma",
+    "descripcion": "Descubre tu personalidad magnética",
+    "nivel": "intermedio",
+    "duracion": 6,
+    "preguntas": [
+      {
+        "texto": "Las personas suelen buscar mi compañía en eventos sociales",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "presencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento cómodo siendo el centro de atención",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "presencia",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando entro a una habitación, la gente tiende a notarme",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "presencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta mantener la atención de otros cuando hablo",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "presencia",
+        "reverse": true
+      },
+      {
+        "texto": "Proyecto confianza incluso en situaciones nuevas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "presencia",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero pasar desapercibido en grupos grandes",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "presencia",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo leer fácilmente las emociones de otras personas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "conexion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Las personas se sienten cómodas compartiendo sus problemas conmigo",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "conexion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Sé cómo hacer que alguien se sienta especial y valorado",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "conexion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta conectar emocionalmente con personas nuevas",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "conexion_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Adapto mi comunicación según la personalidad de quien me escucha",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "conexion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me resulta difícil mostrar interés genuino en los demás",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "conexion_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Logro que otros cambien de opinión con facilidad",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "influencia_natural",
+        "reverse": false
+      },
+      {
+        "texto": "Las personas tienden a seguir mis sugerencias",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "influencia_natural",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo motivar a otros para que actúen",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "influencia_natural",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta persuadir a otros de mis ideas",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "influencia_natural",
+        "reverse": true
+      },
+      {
+        "texto": "Soy capaz de inspirar confianza en mis palabras",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "influencia_natural",
+        "reverse": false
+      },
+      {
+        "texto": "Evito intentar influir en las decisiones de otros",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "influencia_natural",
+        "reverse": true
+      }
+    ]
+  },
+  "inteligencia_emocional": {
+    "id": "inteligencia_emocional",
+    "titulo": "Inteligencia Emocional",
+    "descripcion": "Mide autoconciencia, empatía y regulación emocional",
+    "nivel": "intermedio",
+    "duracion": 7,
+    "preguntas": [
+      {
+        "texto": "Reconozco fácilmente mis emociones cuando las experimento",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoconciencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Entiendo qué situaciones específicas desencadenan mis emociones",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autoconciencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo explicar con precisión por qué me siento de cierta manera",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoconciencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta identificar qué emociones estoy sintiendo en el momento",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "autoconciencia_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Soy consciente de cómo mis emociones afectan mi comportamiento",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoconciencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Reflexiono sobre mis reacciones emocionales después de situaciones intensas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "autoconciencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo calmarme rápidamente cuando estoy alterado",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "regulacion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Manejo bien la frustración sin explotar",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "regulacion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando estoy enojado, puedo pensar antes de actuar",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "regulacion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta controlar mis emociones en situaciones estresantes",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "regulacion_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo mantener la compostura incluso cuando otros me provocan",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "regulacion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Uso técnicas específicas para manejar emociones difíciles",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "regulacion_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo percibir fácilmente cuando alguien está triste o preocupado",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "empatia",
+        "reverse": false
+      },
+      {
+        "texto": "Entiendo las emociones de otros sin que me las expliquen",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "empatia",
+        "reverse": false
+      },
+      {
+        "texto": "Me afectan emocionalmente los problemas de las personas cercanas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "empatia",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta entender por qué otros reaccionan de cierta manera",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "empatia",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo ponerme en el lugar de otros y entender su perspectiva",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "empatia",
+        "reverse": false
+      },
+      {
+        "texto": "Sé cómo responder apropiadamente cuando alguien está emocionalmente vulnerable",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "empatia",
+        "reverse": false
+      },
+      {
+        "texto": "Noto cambios sutiles en el estado de ánimo de las personas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "empatia",
+        "reverse": false
+      }
+    ]
+  },
+  "test_liderazgo": {
+    "id": "test_liderazgo",
+    "titulo": "Test de Liderazgo",
+    "descripcion": "Evalúa tu capacidad de influir y guiar a otros",
+    "nivel": "intermedio",
+    "duracion": 8,
+    "preguntas": [
+      {
+        "texto": "Tengo una visión clara de hacia dónde quiero dirigir mi equipo o proyecto",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "vision_estrategica",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo comunicar mis ideas de manera que otros las entiendan y se entusiasmen",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "vision_estrategica",
+        "reverse": false
+      },
+      {
+        "texto": "Anticipo problemas y oportunidades antes que otros",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "vision_estrategica",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta definir objetivos claros a largo plazo",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "vision_estrategica",
+        "reverse": true
+      },
+      {
+        "texto": "Sé cómo adaptar mi estrategia cuando las circunstancias cambian",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "vision_estrategica",
+        "reverse": false
+      },
+      {
+        "texto": "Inspiro a otros a trabajar hacia una meta común",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "vision_estrategica",
+        "reverse": false
+      },
+      {
+        "texto": "Delego tareas de manera efectiva según las fortalezas de cada persona",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gestion_equipos",
+        "reverse": false
+      },
+      {
+        "texto": "Sé cómo motivar a diferentes tipos de personalidades",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "gestion_equipos",
+        "reverse": false
+      },
+      {
+        "texto": "Manejo bien los conflictos entre miembros del equipo",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gestion_equipos",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta dar feedback constructivo sin generar defensividad",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "gestion_equipos",
+        "reverse": true
+      },
+      {
+        "texto": "Reconozco y celebro los logros de mi equipo públicamente",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gestion_equipos",
+        "reverse": false
+      },
+      {
+        "texto": "Creo un ambiente donde las personas se sienten seguras para expresar ideas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "gestion_equipos",
+        "reverse": false
+      },
+      {
+        "texto": "Tomo decisiones difíciles incluso cuando son impopulares",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "toma_decisiones",
+        "reverse": false
+      },
+      {
+        "texto": "Analizo múltiples opciones antes de decidir",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "toma_decisiones",
+        "reverse": false
+      },
+      {
+        "texto": "Asumo la responsabilidad de las consecuencias de mis decisiones",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "toma_decisiones",
+        "reverse": false
+      },
+      {
+        "texto": "Me paralizo cuando tengo que tomar decisiones importantes",
+        "opciones": ["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+        "rasgo": "toma_decisiones",
+        "reverse": true
+      },
+      {
+        "texto": "Consulto con otros antes de tomar decisiones que los afectan",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "toma_decisiones",
+        "reverse": false
+      },
+      {
+        "texto": "Mantengo la calma bajo presión al tomar decisiones críticas",
+        "opciones": ["Nunca", "Rara vez", "A veces", "Frecuentemente"],
+        "rasgo": "toma_decisiones",
+        "reverse": false
+      }
+    ]
+  },
+  "autoestima": {
+    "id": "autoestima",
+    "titulo": "Autoestima",
+    "descripcion": "Evalúa tu nivel de confianza personal",
+    "nivel": "basico",
+    "duracion": 4,
+    "preguntas": [
+      {
+        "texto": "Me siento satisfecho/a conmigo mismo/a la mayoría del tiempo",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autovaloracion",
+        "reverse": false
+      },
+      {
+        "texto": "A menudo me critico duramente por mis errores",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autovaloracion",
+        "reverse": true
+      },
+      {
+        "texto": "Creo que tengo cualidades valiosas que ofrecer",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autovaloracion",
+        "reverse": false
+      },
+      {
+        "texto": "Me comparo constantemente con otras personas",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autovaloracion",
+        "reverse": true
+      },
+      {
+        "texto": "Acepto mis defectos como parte de quien soy",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autovaloracion",
+        "reverse": false
+      },
+      {
+        "texto": "Siento que no soy lo suficientemente bueno/a",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autovaloracion",
+        "reverse": true
+      },
+      {
+        "texto": "Me siento cómodo/a expresando mis opiniones en grupo",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "confianza_social",
+        "reverse": false
+      },
+      {
+        "texto": "Evito hablar en público porque temo hacer el ridículo",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "confianza_social",
+        "reverse": true
+      },
+      {
+        "texto": "Me resulta fácil conocer gente nueva",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "confianza_social",
+        "reverse": false
+      },
+      {
+        "texto": "Me preocupa mucho lo que otros piensen de mí",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "confianza_social",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo defender mis ideas aunque otros no estén de acuerdo",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "confianza_social",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento inseguro/a al tomar decisiones importantes",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "confianza_social",
+        "reverse": true
+      },
+      {
+        "texto": "Cuando algo sale mal, me recupero relativamente rápido",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "resiliencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Los fracasos me afectan durante mucho tiempo",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "resiliencia_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Puedo mantener una actitud positiva incluso en momentos difíciles",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "resiliencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta mucho superar las críticas negativas",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "resiliencia_emocional",
+        "reverse": true
+      },
+      {
+        "texto": "Aprendo de mis errores y los veo como oportunidades de crecimiento",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "resiliencia_emocional",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento abrumado/a fácilmente por los desafíos",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "resiliencia_emocional",
+        "reverse": true
+      }
+    ]
+  },
+  "autoconocimiento_rapido": {
+    "titulo": "Autoconocimiento Rápido",
+    "descripcion": "Pequeño test introductorio para conocerte mejor",
+    "nivel": "basico",
+    "duracion": 3,
+    "preguntas": [
+      {
+        "texto": "Reconozco fácilmente cuando estoy sintiendo emociones fuertes",
+        "opciones": [
+          "Nunca o casi nunca",
+          "A veces",
+          "Frecuentemente",
+          "Siempre o casi siempre"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo identificar qué situaciones me generan estrés o ansiedad",
+        "opciones": [
+          "No tengo idea",
+          "Tengo una idea vaga",
+          "Lo sé en la mayoría de casos",
+          "Lo tengo muy claro"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Conozco cuáles son mis principales fortalezas y talentos",
+        "opciones": [
+          "No estoy seguro/a",
+          "Tengo algunas ideas",
+          "Conozco varias",
+          "Las tengo muy claras"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta trabajo entender por qué reacciono de cierta manera",
+        "opciones": [
+          "Nunca me cuesta",
+          "Rara vez me cuesta",
+          "A menudo me cuesta",
+          "Siempre me cuesta"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": true
+      },
+      {
+        "texto": "Sé qué valores son realmente importantes para mí",
+        "opciones": [
+          "No tengo claridad",
+          "Tengo una idea general",
+          "Los conozco bastante bien",
+          "Los tengo completamente claros"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo explicar fácilmente qué me motiva en la vida",
+        "opciones": [
+          "No sabría qué decir",
+          "Me costaría explicarlo",
+          "Podría explicarlo bien",
+          "Lo tengo muy claro"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Después de una discusión, reflexiono sobre mi comportamiento",
+        "opciones": [
+          "Nunca lo hago",
+          "Rara vez lo hago",
+          "A menudo lo hago",
+          "Siempre lo hago"
+        ],
+        "rasgo": "reflexion",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando cometo un error, trato de entender qué puedo aprender",
+        "opciones": [
+          "Nunca",
+          "A veces",
+          "Frecuentemente",
+          "Siempre"
+        ],
+        "rasgo": "reflexion",
+        "reverse": false
+      },
+      {
+        "texto": "Me tomo tiempo para pensar en mis experiencias del día",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "Algunas veces",
+          "Regularmente"
+        ],
+        "rasgo": "reflexion",
+        "reverse": false
+      },
+      {
+        "texto": "Actúo sin pensar mucho en las consecuencias",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A menudo",
+          "Siempre"
+        ],
+        "rasgo": "reflexion",
+        "reverse": true
+      },
+      {
+        "texto": "Busco feedback de otros para entender cómo me perciben",
+        "opciones": [
+          "Nunca lo busco",
+          "Rara vez lo busco",
+          "A veces lo busco",
+          "Frecuentemente lo busco"
+        ],
+        "rasgo": "reflexion",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando algo no sale como esperaba, analizo qué pudo haber sido diferente",
+        "opciones": [
+          "Nunca lo analizo",
+          "Rara vez lo analizo",
+          "A menudo lo analizo",
+          "Siempre lo analizo"
+        ],
+        "rasgo": "reflexion",
+        "reverse": false
+      },
+      {
+        "texto": "Tengo metas claras para mi futuro",
+        "opciones": [
+          "No tengo metas claras",
+          "Tengo algunas ideas vagas",
+          "Tengo metas bastante claras",
+          "Tengo metas muy específicas"
+        ],
+        "rasgo": "direccion",
+        "reverse": false
+      },
+      {
+        "texto": "Sé qué quiero lograr en los próximos años",
+        "opciones": [
+          "No tengo idea",
+          "Tengo una idea general",
+          "Lo tengo bastante claro",
+          "Lo tengo completamente claro"
+        ],
+        "rasgo": "direccion",
+        "reverse": false
+      },
+      {
+        "texto": "Mis acciones diarias están alineadas con mis objetivos a largo plazo",
+        "opciones": [
+          "Para nada alineadas",
+          "Poco alineadas",
+          "Bastante alineadas",
+          "Completamente alineadas"
+        ],
+        "rasgo": "direccion",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento perdido/a respecto a qué dirección tomar en mi vida",
+        "opciones": [
+          "Nunca me siento perdido/a",
+          "Rara vez me siento perdido/a",
+          "A menudo me siento perdido/a",
+          "Siempre me siento perdido/a"
+        ],
+        "rasgo": "direccion",
+        "reverse": true
+      },
+      {
+        "texto": "Tengo un propósito claro que guía mis decisiones",
+        "opciones": [
+          "No tengo un propósito claro",
+          "Mi propósito es vago",
+          "Tengo un propósito bastante claro",
+          "Tengo un propósito muy definido"
+        ],
+        "rasgo": "direccion",
+        "reverse": false
+      },
+      {
+        "texto": "Sé qué tipo de persona quiero ser",
+        "opciones": [
+          "No tengo idea",
+          "Tengo una idea vaga",
+          "Lo tengo bastante claro",
+          "Lo tengo completamente claro"
+        ],
+        "rasgo": "direccion",
+        "reverse": false
+      }
+    ]
+  },
+  "estilo_apego": {
+    "id": "estilo_apego",
+    "titulo": "Estilo de Apego",
+    "descripcion": "Comprende tus patrones de relación",
+    "nivel": "basico",
+    "duracion": 5,
+    "preguntas": [
+      {
+        "texto": "Me resulta fácil acercarme emocionalmente a otras personas",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_seguro",
+        "reverse": false
+      },
+      {
+        "texto": "Me preocupa que otros no me valoren tanto como yo los valoro a ellos",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero no mostrar mis sentimientos a otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_evitativo",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento cómodo dependiendo de otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_seguro",
+        "reverse": false
+      },
+      {
+        "texto": "A menudo me preocupo por ser abandonado",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": false
+      },
+      {
+        "texto": "Me resulta difícil confiar completamente en otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_evitativo",
+        "reverse": false
+      },
+      {
+        "texto": "No me molesta cuando otros dependen de mí",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_seguro",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando muestro mis sentimientos, temo que otros no sientan lo mismo por mí",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": false
+      },
+      {
+        "texto": "Encuentro que otros son reacios a acercarse tanto como me gustaría",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento nervioso cuando alguien se acerca demasiado emocionalmente",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_evitativo",
+        "reverse": false
+      },
+      {
+        "texto": "Quiero acercarme mucho a otros, pero temo que me lastimen",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": false
+      },
+      {
+        "texto": "Me resulta relativamente fácil acercarme a otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_seguro",
+        "reverse": false
+      },
+      {
+        "texto": "No me preocupo mucho por ser abandonado",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": true
+      },
+      {
+        "texto": "Prefiero no depender de otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_evitativo",
+        "reverse": false
+      },
+      {
+        "texto": "No me preocupo por que alguien se acerque demasiado a mí",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_evitativo",
+        "reverse": true
+      },
+      {
+        "texto": "Me resulta fácil ser afectuoso con otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_seguro",
+        "reverse": false
+      },
+      {
+        "texto": "A veces siento que obligo a otros a mostrar más sentimientos o compromiso",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_ansioso",
+        "reverse": false
+      },
+      {
+        "texto": "Encuentro difícil depender de otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "apego_evitativo",
+        "reverse": false
+      }
+    ]
+  },
+  "ansiedad_social": {
+    "titulo": "Ansiedad Social",
+    "descripcion": "Descubre tu nivel de incomodidad en interacciones sociales",
+    "duracion": 5,
+    "nivel": "basico",
+    "rasgos": ["miedo_juicio", "evitacion_social", "sintomas_fisicos"],
+    "preguntas": [
+      {
+        "texto": "Me siento nervioso/a cuando tengo que hablar en público o frente a un grupo",
+        "opciones": [
+          "Nunca me siento nervioso/a",
+          "Rara vez me siento nervioso/a",
+          "A veces me siento nervioso/a",
+          "Frecuentemente me siento muy nervioso/a"
+        ],
+        "rasgo": "miedo_juicio",
+        "reverse": false
+      },
+      {
+        "texto": "Evito eventos sociales porque me preocupa hacer el ridículo",
+        "opciones": [
+          "Nunca evito eventos por esta razón",
+          "Rara vez evito eventos por esta razón",
+          "A veces evito eventos por esta razón",
+          "Frecuentemente evito eventos por esta razón"
+        ],
+        "rasgo": "evitacion_social",
+        "reverse": false
+      },
+      {
+        "texto": "Cuando estoy en situaciones sociales, mi corazón late muy rápido",
+        "opciones": [
+          "Nunca me pasa esto",
+          "Rara vez me pasa esto",
+          "A veces me pasa esto",
+          "Frecuentemente me pasa esto"
+        ],
+        "rasgo": "sintomas_fisicos",
+        "reverse": false
+      },
+      {
+        "texto": "Me preocupa constantemente lo que otros piensan de mí",
+        "opciones": [
+          "Nunca me preocupo por esto",
+          "Rara vez me preocupo por esto",
+          "A veces me preocupo por esto",
+          "Constantemente me preocupo por esto"
+        ],
+        "rasgo": "miedo_juicio",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento cómodo/a iniciando conversaciones con desconocidos",
+        "opciones": [
+          "Muy cómodo/a",
+          "Bastante cómodo/a",
+          "Algo incómodo/a",
+          "Muy incómodo/a"
+        ],
+        "rasgo": "evitacion_social",
+        "reverse": true
+      },
+      {
+        "texto": "Sudo o tiemblo cuando tengo que interactuar con personas nuevas",
+        "opciones": [
+          "Nunca me pasa",
+          "Rara vez me pasa",
+          "A veces me pasa",
+          "Frecuentemente me pasa"
+        ],
+        "rasgo": "sintomas_fisicos",
+        "reverse": false
+      },
+      {
+        "texto": "Temo ser juzgado/a negativamente por otros",
+        "opciones": [
+          "Nunca tengo este miedo",
+          "Rara vez tengo este miedo",
+          "A veces tengo este miedo",
+          "Frecuentemente tengo este miedo"
+        ],
+        "rasgo": "miedo_juicio",
+        "reverse": false
+      },
+      {
+        "texto": "Prefiero quedarme en casa antes que ir a una reunión social",
+        "opciones": [
+          "Nunca prefiero quedarme en casa",
+          "Rara vez prefiero quedarme en casa",
+          "A veces prefiero quedarme en casa",
+          "Frecuentemente prefiero quedarme en casa"
+        ],
+        "rasgo": "evitacion_social",
+        "reverse": false
+      },
+      {
+        "texto": "Siento náuseas o malestar estomacal antes de eventos sociales",
+        "opciones": [
+          "Nunca siento esto",
+          "Rara vez siento esto",
+          "A veces siento esto",
+          "Frecuentemente siento esto"
+        ],
+        "rasgo": "sintomas_fisicos",
+        "reverse": false
+      },
+      {
+        "texto": "Me da igual si cometo errores sociales menores",
+        "opciones": [
+          "Totalmente de acuerdo",
+          "Bastante de acuerdo",
+          "Algo en desacuerdo",
+          "Totalmente en desacuerdo"
+        ],
+        "rasgo": "miedo_juicio",
+        "reverse": true
+      },
+      {
+        "texto": "Cancelo planes sociales cuando me siento ansioso/a",
+        "opciones": [
+          "Nunca cancelo por ansiedad",
+          "Rara vez cancelo por ansiedad",
+          "A veces cancelo por ansiedad",
+          "Frecuentemente cancelo por ansiedad"
+        ],
+        "rasgo": "evitacion_social",
+        "reverse": false
+      },
+      {
+        "texto": "Mi respiración se acelera cuando tengo que conocer gente nueva",
+        "opciones": [
+          "Nunca me pasa",
+          "Rara vez me pasa",
+          "A veces me pasa",
+          "Frecuentemente me pasa"
+        ],
+        "rasgo": "sintomas_fisicos",
+        "reverse": false
+      },
+      {
+        "texto": "Analizo excesivamente mis interacciones sociales después de que ocurren",
+        "opciones": [
+          "Nunca analizo mis interacciones",
+          "Rara vez analizo mis interacciones",
+          "A veces analizo mis interacciones",
+          "Siempre analizo mis interacciones"
+        ],
+        "rasgo": "miedo_juicio",
+        "reverse": false
+      },
+      {
+        "texto": "Disfruto conocer personas nuevas en fiestas o eventos",
+        "opciones": [
+          "Siempre disfruto",
+          "Generalmente disfruto",
+          "A veces disfruto",
+          "Nunca disfruto"
+        ],
+        "rasgo": "evitacion_social",
+        "reverse": true
+      },
+      {
+        "texto": "Siento tensión muscular cuando estoy en grupos grandes",
+        "opciones": [
+          "Nunca siento tensión",
+          "Rara vez siento tensión",
+          "A veces siento tensión",
+          "Frecuentemente siento tensión"
+        ],
+        "rasgo": "sintomas_fisicos",
+        "reverse": false
+      },
+      {
+        "texto": "Me preocupo por días sobre algo embarazoso que dije en una conversación",
+        "opciones": [
+          "Nunca me preocupo por esto",
+          "Rara vez me preocupo por esto",
+          "A veces me preocupo por esto",
+          "Siempre me preocupo por esto"
+        ],
+        "rasgo": "miedo_juicio",
+        "reverse": false
+      },
+      {
+        "texto": "Busco excusas para no asistir a reuniones de trabajo o sociales",
+        "opciones": [
+          "Nunca busco excusas",
+          "Rara vez busco excusas",
+          "A veces busco excusas",
+          "Frecuentemente busco excusas"
+        ],
+        "rasgo": "evitacion_social",
+        "reverse": false
+      },
+      {
+        "texto": "Me siento físicamente agotado/a después de interacciones sociales intensas",
+        "opciones": [
+          "Nunca me siento agotado/a",
+          "Rara vez me siento agotado/a",
+          "A veces me siento agotado/a",
+          "Siempre me siento agotado/a"
+        ],
+        "rasgo": "sintomas_fisicos",
+        "reverse": false
+      }
+    ]
+  },
+  "autoconocimiento_rapido": {
+    "titulo": "Autoconocimiento Rápido",
+    "descripcion": "Descubre aspectos clave de tu personalidad en pocos minutos",
+    "duracion": 3,
+    "nivel": "basico",
+    "rasgos": ["introspección", "autoconciencia", "reflexión"],
+    "preguntas": [
+      {
+        "texto": "Reflexiono regularmente sobre mis pensamientos y emociones",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A veces",
+          "Frecuentemente"
+        ],
+        "rasgo": "introspección",
+        "reverse": false
+      },
+      {
+        "texto": "Entiendo claramente qué me motiva en la vida",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Puedo identificar fácilmente mis fortalezas y debilidades",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A veces",
+          "Frecuentemente"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me cuesta entender por qué reacciono de cierta manera",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "introspección",
+        "reverse": true
+      },
+      {
+        "texto": "Sé qué valores son más importantes para mí",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A veces",
+          "Frecuentemente"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Analizo mis experiencias para aprender de ellas",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "reflexión",
+        "reverse": false
+      },
+      {
+        "texto": "Tengo una imagen clara de quién soy como persona",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A veces",
+          "Frecuentemente"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Evito pensar profundamente sobre mí mismo/a",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "introspección",
+        "reverse": true
+      },
+      {
+        "texto": "Busco feedback de otros para conocerme mejor",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A veces",
+          "Frecuentemente"
+        ],
+        "rasgo": "reflexión",
+        "reverse": false
+      },
+      {
+        "texto": "Reconozco patrones en mi comportamiento",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": false
+      },
+      {
+        "texto": "Me tomo tiempo para procesar experiencias importantes",
+        "opciones": [
+          "Nunca",
+          "Rara vez",
+          "A veces",
+          "Frecuentemente"
+        ],
+        "rasgo": "reflexión",
+        "reverse": false
+      },
+      {
+        "texto": "Me resulta difícil explicar mis motivaciones a otros",
+        "opciones": [
+          "Totalmente en desacuerdo",
+          "En desacuerdo",
+          "De acuerdo",
+          "Totalmente de acuerdo"
+        ],
+        "rasgo": "autoconciencia",
+        "reverse": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "id": "estilo_apego",
+  "schemaVersion": 2,
+  "traitMap": {
+    "apego_ansioso": "dependencia",
+    "apego_seguro": "seguridad",
+    "apego_evitativo": "evitacion"
+  },
+  "titulo": "Estilo de Apego",
+  "nivel": "basico",
+  "visual": "radar",
+  "rasgos": ["seguridad", "dependencia", "evitacion"],
+  "arquetipos": [
+    {
+      "clave": "seguridad",
+      "label": "El Seguro",
+      "descripcion": "Te sientes cómodo con la intimidad y la independencia, manteniendo relaciones equilibradas"
+    },
+    {
+      "clave": "dependencia",
+      "label": "El Ansioso",
+      "descripcion": "Buscas cercanía intensa pero temes el abandono, lo que puede crear dependencia emocional"
+    },
+    {
+      "clave": "evitacion",
+      "label": "El Evitativo",
+      "descripcion": "Valoras tu independencia y te sientes incómodo con demasiada intimidad emocional"
+    }
+  ],
+  "bands": {
+    "seguridad": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta sentirte seguro en relaciones y puedes experimentar ansiedad o evitación",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia de tus patrones", "Motivación para mejorar", "Capacidad de crecimiento"],
+          "debilidades": ["Inseguridad relacional", "Patrones de apego problemáticos", "Dificultad para confiar"],
+          "recomendaciones_breves": ["Trabaja en tu autoestima", "Practica comunicación abierta", "Busca terapia si es necesario"]
+        },
+        "premium": {
+          "detalle": "Tu baja seguridad en el apego puede estar afectando significativamente tus relaciones. Esto puede deberse a experiencias tempranas o patrones aprendidos que puedes cambiar con trabajo consciente.",
+          "mejorar": ["Terapia de apego", "Trabajo en autoestima", "Práctica de comunicación vulnerable", "Desarrollo de confianza gradual"],
+          "alertas": ["Sabotear relaciones por miedo", "Patrones repetitivos de conflicto", "Aislamiento emocional"],
+          "oportunidades": ["Desarrollo de relaciones más saludables", "Crecimiento personal profundo", "Mayor bienestar emocional"],
+          "impacto_relaciones": ["Dificultad para mantener relaciones estables", "Necesidad de paciencia y comprensión de la pareja"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre tus patrones de apego en relaciones pasadas",
+            "Día 2: Identifica tus miedos principales en las relaciones",
+            "Día 3: Practica expresar una necesidad emocional a alguien cercano",
+            "Día 4: Trabaja en una afirmación positiva sobre tu valor en relaciones",
+            "Día 5: Practica estar presente sin ansiedad en una interacción",
+            "Día 6: Busca apoyo profesional o de un amigo de confianza",
+            "Día 7: Celebra un pequeño paso hacia mayor seguridad relacional"
+          ],
+          "cita": "La seguridad en el apego se construye paso a paso, relación a relación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes una seguridad moderada en relaciones, con algunos momentos de ansiedad o evitación",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio relacional", "Capacidad de intimidad", "Flexibilidad emocional"],
+          "debilidades": ["Inseguridad ocasional", "Patrones mixtos de apego", "Inconsistencia emocional"],
+          "recomendaciones_breves": ["Fortalece tu autoestima", "Practica comunicación consistente", "Desarrolla mayor autoconciencia"]
+        },
+        "premium": {
+          "detalle": "Tu seguridad moderada en el apego te permite tener relaciones generalmente saludables, pero hay espacio para desarrollar mayor consistencia y profundidad en tus vínculos emocionales.",
+          "mejorar": ["Desarrollo de comunicación emocional", "Trabajo en patrones inconsistentes", "Fortalecimiento de la autoestima", "Práctica de vulnerabilidad apropiada"],
+          "alertas": ["Inconsistencia que confunde a la pareja", "Retrocesos en momentos de estrés", "No profundizar en intimidad por miedo"],
+          "oportunidades": ["Relaciones más profundas y estables", "Liderazgo emocional", "Modelar apego saludable"],
+          "impacto_relaciones": ["Relaciones generalmente estables con altibajos ocasionales", "Capacidad de crecimiento en intimidad"],
+          "plan_7_dias": [
+            "Día 1: Identifica patrones inconsistentes en tus relaciones",
+            "Día 2: Practica comunicar tus necesidades emocionales claramente",
+            "Día 3: Trabaja en fortalecer tu autoestima con afirmaciones",
+            "Día 4: Practica estar presente en momentos de intimidad",
+            "Día 5: Identifica y comunica un miedo relacional a tu pareja",
+            "Día 6: Practica dar y recibir apoyo emocional",
+            "Día 7: Reflexiona sobre tu progreso hacia mayor seguridad"
+          ],
+          "cita": "La consistencia en el amor es el fundamento de la seguridad"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tienes un estilo de apego seguro que te permite relaciones saludables y equilibradas",
+        "ad_unlock": {
+          "fortalezas": ["Relaciones estables", "Comunicación abierta", "Equilibrio entre intimidad e independencia"],
+          "debilidades": ["Posible complacencia", "Expectativas altas hacia otros"],
+          "recomendaciones_breves": ["Usa tu estabilidad para ayudar a otros", "Mantén crecimiento continuo", "Practica paciencia con estilos diferentes"]
+        },
+        "premium": {
+          "detalle": "Tu alta seguridad en el apego es una fortaleza extraordinaria que te permite formar relaciones profundas, estables y mutuamente satisfactorias. Puedes ser un modelo y mentor para otros en desarrollo relacional.",
+          "mejorar": ["Desarrollo de habilidades de mentoría relacional", "Práctica de paciencia con estilos de apego diferentes", "Cultivo de crecimiento continuo", "Ayuda a otros en su desarrollo de apego"],
+          "alertas": ["Complacencia en el crecimiento relacional", "Impaciencia con quienes tienen apego inseguro", "Subestimar la complejidad de otros estilos"],
+          "oportunidades": ["Liderazgo en relaciones saludables", "Terapia de pareja", "Mentoría en desarrollo emocional"],
+          "impacto_relaciones": ["Relaciones profundas y duraderas", "Capacidad de crear seguridad en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu seguridad beneficia a otros",
+            "Día 2: Ayuda a alguien con apego inseguro sin juzgar",
+            "Día 3: Practica la paciencia con patrones de apego diferentes",
+            "Día 4: Comparte tu experiencia de apego seguro con alguien",
+            "Día 5: Identifica un área de crecimiento en tus relaciones",
+            "Día 6: Modela comunicación saludable en una situación difícil",
+            "Día 7: Planifica cómo usar tu estabilidad para ayudar a más personas"
+          ],
+          "cita": "El apego seguro es un regalo que se multiplica al compartirlo"
+        }
+      }
+    ],
+    "dependencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "No experimentas ansiedad significativa por abandono y te sientes cómodo con la independencia en relaciones",
+        "ad_unlock": {
+          "fortalezas": ["Independencia emocional", "Confianza en relaciones", "Estabilidad emocional"],
+          "debilidades": ["Posible desconexión emocional", "Menor sensibilidad a necesidades de cercanía"],
+          "recomendaciones_breves": ["Mantén conexión emocional activa", "Practica expresar necesidades de cercanía", "Valida las necesidades de intimidad de otros"]
+        },
+        "premium": {
+          "detalle": "Tu baja ansiedad de apego te permite mantener tu identidad en relaciones y no depender excesivamente de otros para tu bienestar emocional, lo que es una fortaleza significativa.",
+          "mejorar": ["Desarrollo de intimidad emocional", "Práctica de expresión de necesidades", "Cultivo de la vulnerabilidad apropiada", "Atención a las necesidades de cercanía de otros"],
+          "alertas": ["Subestimar la importancia de la intimidad emocional", "Parecer desinteresado o frío", "No responder a señales de necesidad de cercanía"],
+          "oportunidades": ["Relaciones equilibradas", "Liderazgo emocional estable", "Apoyo a personas con alta ansiedad"],
+          "impacto_relaciones": ["Estabilidad y confianza", "Riesgo de parecer emocionalmente distante"],
+          "plan_7_dias": [
+            "Día 1: Practica expresar una necesidad emocional pequeña",
+            "Día 2: Pregunta activamente sobre las necesidades de cercanía de tu pareja",
+            "Día 3: Comparte una vulnerabilidad apropiada",
+            "Día 4: Practica la intimidad emocional sin perder tu independencia",
+            "Día 5: Observa y responde a señales de necesidad de cercanía",
+            "Día 6: Equilibra tiempo juntos con tiempo personal",
+            "Día 7: Reflexiona sobre cómo la intimidad puede enriquecer tu vida"
+          ],
+          "cita": "La independencia emocional es más poderosa cuando incluye la conexión"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Experimentas ansiedad moderada en relaciones, especialmente ante señales de distancia o conflicto",
+        "ad_unlock": {
+          "fortalezas": ["Sensibilidad relacional", "Motivación para mantener vínculos", "Capacidad de intimidad"],
+          "debilidades": ["Ansiedad ante conflictos", "Tendencia a sobreanalizar", "Necesidad de tranquilización"],
+          "recomendaciones_breves": ["Practica técnicas de calma", "Comunica tus miedos abiertamente", "Desarrolla autoestima independiente"]
+        },
+        "premium": {
+          "detalle": "Tu ansiedad moderada de apego puede ser manejable con las herramientas adecuadas. Aunque tu sensibilidad relacional es valiosa, necesitas desarrollar mayor seguridad interna.",
+          "mejorar": ["Técnicas de regulación emocional", "Desarrollo de autoestima", "Comunicación de necesidades", "Práctica de confianza gradual"],
+          "alertas": ["Sobreanalizar comportamientos de la pareja", "Buscar tranquilización constante", "Crear profecías autocumplidas de abandono"],
+          "oportunidades": ["Relaciones más profundas", "Desarrollo de seguridad interna", "Ayuda a otros con ansiedad similar"],
+          "impacto_relaciones": ["Intensidad emocional que puede abrumar", "Necesidad de paciencia y tranquilización de la pareja"],
+          "plan_7_dias": [
+            "Día 1: Practica técnicas de respiración cuando sientas ansiedad relacional",
+            "Día 2: Comunica un miedo específico a tu pareja de manera vulnerable",
+            "Día 3: Practica autoconsuelo sin buscar tranquilización externa",
+            "Día 4: Identifica pensamientos catastróficos y desafíalos",
+            "Día 5: Desarrolla actividades que fortalezcan tu autoestima",
+            "Día 6: Practica dar espacio sin interpretar como rechazo",
+            "Día 7: Celebra momentos de seguridad y confianza en la relación"
+          ],
+          "cita": "La seguridad en el amor comienza con la seguridad en uno mismo"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Experimentas ansiedad intensa por abandono que puede crear patrones de dependencia y control",
+        "ad_unlock": {
+          "fortalezas": ["Profunda capacidad de amor", "Sensibilidad emocional", "Motivación para conectar"],
+          "debilidades": ["Ansiedad de abandono intensa", "Tendencias controladoras", "Dependencia emocional"],
+          "recomendaciones_breves": ["Busca terapia especializada", "Trabaja en tu autoestima", "Practica técnicas de regulación emocional"]
+        },
+        "premium": {
+          "detalle": "Tu alta ansiedad de apego requiere atención especializada. Aunque tu capacidad de amor es profunda, los patrones de ansiedad pueden sabotear las relaciones que más valoras.",
+          "mejorar": ["Terapia especializada en apego", "Técnicas de regulación emocional", "Desarrollo de autoestima", "Práctica de confianza gradual"],
+          "alertas": ["Comportamientos controladores por miedo", "Dependencia emocional excesiva", "Sabotaje de relaciones por ansiedad"],
+          "oportunidades": ["Transformación profunda de patrones", "Relaciones más auténticas", "Ayuda a otros con ansiedad similar"],
+          "impacto_relaciones": ["Intensidad que puede agotar a la pareja", "Necesidad de mucha paciencia y comprensión"],
+          "plan_7_dias": [
+            "Día 1: Busca apoyo terapéutico especializado en apego",
+            "Día 2: Practica técnicas de grounding cuando sientas pánico de abandono",
+            "Día 3: Identifica comportamientos controladores y sus triggers",
+            "Día 4: Desarrolla un plan de autocuidado emocional",
+            "Día 5: Practica comunicar miedos sin exigir tranquilización",
+            "Día 6: Trabaja en actividades que fortalezcan tu identidad individual",
+            "Día 7: Reflexiona sobre pequeños progresos en seguridad"
+          ],
+          "cita": "El amor verdadero incluye la libertad de ser uno mismo"
+        }
+      }
+    ],
+    "evitacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te sientes cómodo con la intimidad emocional y no evitas la cercanía en relaciones",
+        "ad_unlock": {
+          "fortalezas": ["Comodidad con intimidad", "Apertura emocional", "Capacidad de vulnerabilidad"],
+          "debilidades": ["Posible dependencia emocional", "Dificultad para mantener independencia"],
+          "recomendaciones_breves": ["Mantén tu identidad individual", "Practica tiempo personal saludable", "Equilibra cercanía con autonomía"]
+        },
+        "premium": {
+          "detalle": "Tu baja evitación te permite formar vínculos profundos y auténticos. Esta es una fortaleza que te permite experimentar la intimidad plena, pero debes cuidar mantener tu identidad individual.",
+          "mejorar": ["Desarrollo de identidad individual fuerte", "Práctica de tiempo personal", "Equilibrio entre cercanía y autonomía", "Comunicación de necesidades individuales"],
+          "alertas": ["Perder tu identidad en la relación", "Dependencia emocional excesiva", "Dificultad para tomar decisiones independientes"],
+          "oportunidades": ["Relaciones profundamente íntimas", "Capacidad de sanación mutua", "Modelar intimidad saludable"],
+          "impacto_relaciones": ["Conexiones profundas y significativas", "Riesgo de fusión emocional poco saludable"],
+          "plan_7_dias": [
+            "Día 1: Dedica tiempo a una actividad personal que disfrutes",
+            "Día 2: Toma una decisión pequeña de manera completamente independiente",
+            "Día 3: Practica comunicar una necesidad de espacio personal",
+            "Día 4: Reflexiona sobre tus valores y metas individuales",
+            "Día 5: Mantén una amistad o hobby independiente de tu pareja",
+            "Día 6: Practica estar cómodo con momentos de soledad",
+            "Día 7: Evalúa el equilibrio entre intimidad e independencia"
+          ],
+          "cita": "La intimidad verdadera requiere dos individuos completos"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras necesidades de cercanía con deseos de independencia, aunque a veces sientes conflicto",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio entre intimidad e independencia", "Flexibilidad relacional", "Autoconciencia"],
+          "debilidades": ["Conflicto interno ocasional", "Inconsistencia en necesidades", "Confusión sobre límites"],
+          "recomendaciones_breves": ["Clarifica tus necesidades relacionales", "Comunica tu estilo de apego", "Practica consistencia emocional"]
+        },
+        "premium": {
+          "detalle": "Tu nivel moderado de evitación refleja un equilibrio saludable entre intimidad e independencia, pero puedes experimentar conflictos internos sobre cuánta cercanía es apropiada.",
+          "mejorar": ["Clarificación de necesidades relacionales", "Comunicación sobre estilo de apego", "Desarrollo de consistencia emocional", "Práctica de intimidad gradual"],
+          "alertas": ["Enviar señales mixtas a la pareja", "Retirarse cuando la intimidad se intensifica", "Confusión sobre propios límites"],
+          "oportunidades": ["Relaciones equilibradas y maduras", "Liderazgo en comunicación relacional", "Modelar independencia saludable"],
+          "impacto_relaciones": ["Equilibrio que puede ser confuso inicialmente", "Capacidad de enseñar sobre límites saludables"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre tus necesidades ideales de cercanía vs independencia",
+            "Día 2: Comunica tu estilo de apego a tu pareja o amigos cercanos",
+            "Día 3: Practica pedir cercanía cuando la necesites",
+            "Día 4: Practica pedir espacio cuando lo necesites",
+            "Día 5: Identifica patrones de retiro y sus triggers",
+            "Día 6: Desarrolla rituales de conexión que respeten tu necesidad de espacio",
+            "Día 7: Evalúa cómo tu equilibrio puede inspirar relaciones más saludables"
+          ],
+          "cita": "El equilibrio en el amor es un arte que se perfecciona con práctica"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tiendes a evitar la intimidad emocional profunda y prefieres mantener distancia en relaciones",
+        "ad_unlock": {
+          "fortalezas": ["Independencia fuerte", "Autoconfianza", "Capacidad de soledad"],
+          "debilidades": ["Dificultad para intimidad", "Aislamiento emocional", "Relaciones superficiales"],
+          "recomendaciones_breves": ["Practica vulnerabilidad gradual", "Busca terapia de apego", "Trabaja en confianza interpersonal"]
+        },
+        "premium": {
+          "detalle": "Tu alta evitación puede estar protegiéndote de dolor emocional, pero también te impide experimentar la intimidad y conexión profunda que enriquecen la vida humana.",
+          "mejorar": ["Terapia especializada en apego evitativo", "Práctica gradual de vulnerabilidad", "Desarrollo de confianza interpersonal", "Exploración de miedos a la intimidad"],
+          "alertas": ["Aislamiento emocional progresivo", "Relaciones que se mantienen superficiales", "Pérdida de oportunidades de conexión profunda"],
+          "oportunidades": ["Desarrollo de capacidad de intimidad", "Relaciones más ricas y significativas", "Crecimiento personal profundo"],
+          "impacto_relaciones": ["Dificultad para formar vínculos profundos", "Parejas que pueden sentirse rechazadas o no valoradas"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre los beneficios que has perdido por evitar intimidad",
+            "Día 2: Identifica un miedo específico sobre la cercanía emocional",
+            "Día 3: Practica compartir un sentimiento pequeño con alguien de confianza",
+            "Día 4: Busca apoyo terapéutico especializado en apego",
+            "Día 5: Practica estar presente en una conversación emocional",
+            "Día 6: Identifica una relación donde podrías ser más abierto",
+            "Día 7: Da un pequeño paso hacia mayor intimidad emocional"
+          ],
+          "cita": "La vulnerabilidad es la puerta de entrada al amor verdadero"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Estilo de Apego revela cómo tu seguridad, ansiedad y evitación en relaciones se comparan con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la comunicación emocional honesta y la construcción gradual de confianza", "Quienes comprenden y respetan diferentes ritmos de intimidad emocional", "Perfiles que buscan relaciones equilibradas basadas en seguridad mutua y crecimiento"],
+        "dificil": ["Quienes tienen expectativas rígidas sobre cómo deben ser las relaciones", "Personas que no respetan límites emocionales o los interpretan como rechazo", "Perfiles que buscan fusión emocional inmediata o evitan completamente la intimidad"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la estabilidad emocional y la comunicación clara", "Culturas que respetan diferentes estilos de trabajo y colaboración", "Espacios que fomentan relaciones profesionales saludables y equilibradas"],
+        "dificil": ["Ambientes que requieren intimidad emocional forzada o distancia extrema", "Culturas que no respetan límites personales o estilos de comunicación", "Estructuras que penalizan la vulnerabilidad apropiada o la independencia saludable"]
+      },
+      "amistades": {
+        "facil": ["Personas que respetan tu estilo de apego y ritmo de intimidad", "Quienes valoran tanto la conexión profunda como la independencia personal", "Perfiles que buscan amistad auténtica basada en comprensión y respeto mutuo"],
+        "dificil": ["Quienes interpretan tu estilo de apego como rechazo o frialdad", "Personas que exigen intimidad inmediata o mantienen distancia extrema", "Perfiles que no comprenden las necesidades de seguridad emocional"]
+      },
+      "insights": [
+        "Comunica tu estilo de apego para que otros entiendan tus necesidades emocionales",
+        "Equilibra tu búsqueda de seguridad con apertura al crecimiento relacional",
+        "Usa tu experiencia de apego para crear espacios seguros donde otros puedan desarrollar relaciones más saludables"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En relaciones nuevas que requieren construcción gradual de confianza",
+        "prediccion": "Tu estilo de apego determinará el ritmo y la profundidad con que te permites conectar emocionalmente",
+        "consejo": "Comunica tus necesidades de seguridad y tiempo para que otros entiendan tu proceso sin interpretarlo como desinterés"
+      },
+      {
+        "escenario": "En situaciones de conflicto o estrés relacional",
+        "prediccion": "Tu patrón de apego se activará, llevándote hacia búsqueda de cercanía, distancia o fluctuación entre ambas",
+        "consejo": "Reconoce cuando tu estilo de apego está siendo activado y comunica tus necesidades en lugar de actuar automáticamente"
+      },
+      {
+        "escenario": "En relaciones que requieren equilibrio entre intimidad e independencia",
+        "prediccion": "Tu capacidad de navegar este equilibrio dependerá de tu nivel de seguridad en el apego",
+        "consejo": "Practica comunicar tanto tus necesidades de cercanía como de espacio personal de manera clara y amorosa"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "seguridad_relacional",
+        "cita": "El apego seguro es un regalo que se multiplica al compartirlo con otros",
+        "reflexion": "Tu capacidad de formar vínculos seguros no solo te beneficia, sino que crea un modelo de relación saludable para quienes te rodean"
+      },
+      {
+        "rasgo": "ansiedad_consciente",
+        "cita": "La seguridad en el amor comienza con la seguridad en uno mismo",
+        "reflexion": "Tu ansiedad de apego, cuando se comprende y gestiona conscientemente, puede transformarse en profunda capacidad de conexión y cuidado"
+      },
+      {
+        "rasgo": "evitacion_equilibrada",
+        "cita": "La vulnerabilidad es la puerta de entrada al amor verdadero",
+        "reflexion": "Tu tendencia a la independencia, cuando se equilibra con apertura emocional, puede crear relaciones profundas basadas en respeto mutuo"
+      }
+    ]
+  },
+  "related_tests": ["inteligencia_emocional", "senales_alerta", "psychological-shadow"]
+}

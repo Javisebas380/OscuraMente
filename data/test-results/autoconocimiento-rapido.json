@@ -1,0 +1,350 @@
+{
+  "id": "autoconocimiento_rapido",
+  "schemaVersion": 2,
+  "traitMap": {
+    "autoconciencia": "introspeccion",
+    "reflexion": "reflexion",
+    "direccion": "consciencia"
+  },
+  "titulo": "Autoconocimiento Rápido",
+  "nivel": "basico",
+  "visual": "radar",
+  "rasgos": ["introspeccion", "reflexion", "consciencia"],
+  "arquetipos": [
+    {
+      "clave": "introspeccion",
+      "label": "El Introspectivo",
+      "descripcion": "Tienes la capacidad de mirar hacia adentro y explorar tus pensamientos, emociones y motivaciones profundas"
+    },
+    {
+      "clave": "reflexion",
+      "label": "El Reflexivo",
+      "descripcion": "Analizas tus experiencias y extraes aprendizajes significativos para tu crecimiento personal"
+    },
+    {
+      "clave": "consciencia",
+      "label": "El Consciente",
+      "descripcion": "Mantienes una conciencia clara de tus patrones, reacciones y el impacto que tienes en otros"
+    }
+  ],
+  "bands": {
+    "introspeccion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a enfocarte en el mundo exterior más que en tu mundo interior, lo que puede limitar tu autoconocimiento",
+        "ad_unlock": {
+          "fortalezas": ["Orientación a la acción", "Enfoque en resultados externos", "Menor tendencia a la rumiación"],
+          "debilidades": ["Falta de autoconocimiento profundo", "Dificultad para entender motivaciones", "Reacciones automáticas sin reflexión"],
+          "recomendaciones_breves": ["Dedica 10 minutos diarios a la reflexión personal", "Pregúntate '¿por qué reaccioné así?' después de eventos importantes", "Lleva un diario simple de emociones"]
+        },
+        "premium": {
+          "detalle": "Tu baja introspección puede estar limitando tu crecimiento personal y tu capacidad de entender tus propias motivaciones. Aunque tu enfoque externo tiene valor, desarrollar la capacidad de mirar hacia adentro te dará mayor control sobre tu vida.",
+          "mejorar": ["Establece rutinas diarias de reflexión", "Practica mindfulness básico", "Desarrolla curiosidad sobre tus propias reacciones", "Crea espacios de silencio para la contemplación"],
+          "alertas": ["Repetir patrones sin entender por qué", "Reacciones emocionales que te sorprenden", "Dificultad para explicar tus motivaciones a otros"],
+          "oportunidades": ["Desarrollo de autoconciencia", "Mayor control emocional", "Relaciones más auténticas"],
+          "impacto_relaciones": ["Dificultad para comunicar necesidades internas", "Posibles malentendidos por falta de autoconocimiento"],
+          "plan_7_dias": [
+            "Día 1: Dedica 5 minutos antes de dormir a reflexionar sobre tu día",
+            "Día 2: Pregúntate '¿qué estoy sintiendo?' tres veces durante el día",
+            "Día 3: Escribe sobre una reacción emocional que tuviste",
+            "Día 4: Observa tus pensamientos sin juzgarlos durante 10 minutos",
+            "Día 5: Reflexiona sobre qué te motiva realmente en la vida",
+            "Día 6: Identifica un patrón de comportamiento que repites",
+            "Día 7: Evalúa qué has aprendido sobre ti mismo esta semana"
+          ],
+          "cita": "El viaje más importante es el que haces hacia tu interior"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes momentos de introspección pero no siempre profundizas en tu autoconocimiento",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia básica de emociones", "Capacidad de reflexión ocasional", "Interés en el crecimiento personal"],
+          "debilidades": ["Introspección inconsistente", "Superficialidad en el autoanalisis", "Distracción por factores externos"],
+          "recomendaciones_breves": ["Establece rutinas regulares de reflexión", "Profundiza en las causas de tus emociones", "Reduce distracciones durante momentos de introspección"]
+        },
+        "premium": {
+          "detalle": "Tu introspección moderada indica que tienes la capacidad pero necesitas desarrollar mayor consistencia y profundidad. Estás en el camino correcto pero puedes beneficiarte de estructurar mejor tu proceso de autoconocimiento.",
+          "mejorar": ["Desarrolla técnicas de journaling estructurado", "Practica meditación regular", "Crea rituales de autoexploración", "Busca feedback de otros sobre tus patrones"],
+          "alertas": ["Superficialidad que impide insights profundos", "Inconsistencia que limita el progreso", "Distracciones que interrumpen el proceso"],
+          "oportunidades": ["Desarrollo de autoconciencia profunda", "Liderazgo auténtico", "Relaciones más significativas"],
+          "impacto_relaciones": ["Comunicación emocional en desarrollo", "Capacidad creciente de intimidad"],
+          "plan_7_dias": [
+            "Día 1: Establece una rutina diaria de 15 minutos de reflexión",
+            "Día 2: Explora las causas profundas de una emoción recurrente",
+            "Día 3: Escribe sobre tus valores fundamentales",
+            "Día 4: Reflexiona sobre un patrón de comportamiento que quieres cambiar",
+            "Día 5: Medita sobre tus motivaciones más profundas",
+            "Día 6: Pide feedback a alguien cercano sobre cómo te percibe",
+            "Día 7: Sintetiza los insights más importantes de la semana"
+          ],
+          "cita": "La introspección constante es el camino hacia la sabiduría personal"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una capacidad natural para la introspección profunda y el autoconocimiento",
+        "ad_unlock": {
+          "fortalezas": ["Autoconocimiento profundo", "Capacidad de análisis interno", "Conciencia de motivaciones"],
+          "debilidades": ["Posible sobreanálisis", "Rumiación excesiva", "Aislamiento por exceso de introspección"],
+          "recomendaciones_breves": ["Equilibra introspección con acción", "Comparte tus insights con otros", "Evita la rumiación destructiva"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad introspectiva es un don que te permite un autoconocimiento profundo. El desafío es usar esta sabiduría de manera constructiva sin caer en el sobreanálisis paralizante.",
+          "mejorar": ["Desarrolla habilidades de coaching para ayudar a otros", "Practica la acción basada en insights", "Cultiva la paciencia con procesos ajenos", "Balancea reflexión con espontaneidad"],
+          "alertas": ["Parálisis por análisis excesivo", "Aislamiento por profundidad que otros no entienden", "Rumiación que se vuelve destructiva"],
+          "oportunidades": ["Liderazgo basado en autoconocimiento", "Coaching y mentoría", "Desarrollo de otros en autoconciencia"],
+          "impacto_relaciones": ["Conexiones profundas basadas en autenticidad", "Capacidad de facilitar crecimiento en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu autoconocimiento beneficia a otros",
+            "Día 2: Comparte un insight personal con alguien de confianza",
+            "Día 3: Practica actuar sobre un insight sin sobreanalizar",
+            "Día 4: Ayuda a alguien a desarrollar mayor autoconciencia",
+            "Día 5: Equilibra tiempo de reflexión con actividades espontáneas",
+            "Día 6: Usa tu autoconocimiento para resolver un conflicto",
+            "Día 7: Planifica cómo usar tu sabiduría interior para impacto positivo"
+          ],
+          "cita": "El autoconocimiento profundo es la base de toda transformación auténtica"
+        }
+      }
+    ],
+    "reflexion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a vivir el momento sin analizar profundamente tus experiencias",
+        "ad_unlock": {
+          "fortalezas": ["Espontaneidad natural", "Vivir el presente", "Menor autocrítica"],
+          "debilidades": ["Pérdida de aprendizajes importantes", "Repetición de errores", "Falta de crecimiento consciente"],
+          "recomendaciones_breves": ["Dedica tiempo semanal a revisar experiencias", "Pregúntate '¿qué aprendí?' después de eventos importantes", "Lleva un registro simple de lecciones"]
+        },
+        "premium": {
+          "detalle": "Tu baja reflexión puede estar impidiendo que extraigas el máximo aprendizaje de tus experiencias. Aunque vivir el momento tiene valor, la reflexión te permite crecer conscientemente y evitar repetir errores.",
+          "mejorar": ["Desarrolla el hábito de revisión semanal", "Practica el análisis de experiencias significativas", "Crea rituales de aprendizaje", "Busca patrones en tus experiencias"],
+          "alertas": ["Repetir los mismos errores sin aprender", "Perder oportunidades de crecimiento", "Falta de dirección consciente en la vida"],
+          "oportunidades": ["Desarrollo de sabiduría experiencial", "Crecimiento acelerado", "Mejor toma de decisiones"],
+          "impacto_relaciones": ["Dificultad para aprender de conflictos", "Repetición de patrones relacionales problemáticos"],
+          "plan_7_dias": [
+            "Día 1: Al final del día, escribe una cosa que aprendiste",
+            "Día 2: Reflexiona sobre un error reciente y su lección",
+            "Día 3: Analiza una experiencia positiva y qué la hizo especial",
+            "Día 4: Identifica un patrón en tus relaciones",
+            "Día 5: Reflexiona sobre tus reacciones ante el estrés",
+            "Día 6: Evalúa qué estrategias te funcionan mejor",
+            "Día 7: Sintetiza los aprendizajes más importantes de la semana"
+          ],
+          "cita": "La experiencia sin reflexión es solo tiempo que pasa"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Reflexionas sobre tus experiencias de manera moderada, extrayendo algunos aprendizajes importantes",
+        "ad_unlock": {
+          "fortalezas": ["Capacidad de aprendizaje", "Reflexión situacional", "Crecimiento gradual"],
+          "debilidades": ["Reflexión inconsistente", "Análisis superficial ocasional", "Pérdida de insights profundos"],
+          "recomendaciones_breves": ["Profundiza en tu análisis de experiencias", "Establece rutinas más consistentes de reflexión", "Busca patrones más amplios"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad reflexiva moderada te permite aprender de muchas experiencias, pero puedes beneficiarte de desarrollar mayor profundidad y consistencia en tu proceso de análisis personal.",
+          "mejorar": ["Desarrolla técnicas de reflexión estructurada", "Practica el análisis de patrones a largo plazo", "Cultiva la curiosidad sobre tus propios procesos", "Crea sistemas de seguimiento de insights"],
+          "alertas": ["Reflexión superficial que no genera cambios reales", "Inconsistencia que limita el crecimiento", "Perder conexiones importantes entre experiencias"],
+          "oportunidades": ["Desarrollo de sabiduría personal", "Liderazgo basado en experiencia", "Mentoría efectiva"],
+          "impacto_relaciones": ["Aprendizaje gradual de dinámicas relacionales", "Capacidad creciente de resolver conflictos"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre los patrones en tus últimas tres relaciones",
+            "Día 2: Analiza profundamente una decisión importante reciente",
+            "Día 3: Identifica tus principales triggers emocionales y sus orígenes",
+            "Día 4: Reflexiona sobre tus valores y cómo los vives",
+            "Día 5: Analiza qué situaciones te dan más energía vs. te agotan",
+            "Día 6: Conecta experiencias pasadas con patrones actuales",
+            "Día 7: Crea un plan de acción basado en tus reflexiones"
+          ],
+          "cita": "La reflexión profunda transforma la experiencia en sabiduría"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una capacidad excepcional para reflexionar y extraer aprendizajes profundos de tus experiencias",
+        "ad_unlock": {
+          "fortalezas": ["Reflexión profunda", "Aprendizaje acelerado", "Sabiduría experiencial"],
+          "debilidades": ["Posible sobreanálisis", "Rumiación excesiva", "Parálisis por exceso de reflexión"],
+          "recomendaciones_breves": ["Equilibra reflexión con acción", "Evita la rumiación destructiva", "Comparte tu sabiduría con otros"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad reflexiva te convierte en un aprendiz excepcional que puede extraer sabiduría profunda de cualquier experiencia. El desafío es usar esta capacidad de manera equilibrada sin caer en el sobreanálisis paralizante.",
+          "mejorar": ["Desarrolla habilidades de enseñanza y mentoría", "Practica la acción basada en reflexión", "Cultiva la paciencia con procesos menos reflexivos", "Balancea análisis con intuición"],
+          "alertas": ["Parálisis por análisis excesivo", "Rumiación que se vuelve destructiva", "Aislamiento por profundidad que otros no comprenden"],
+          "oportunidades": ["Liderazgo sabio basado en experiencia", "Coaching y desarrollo personal", "Creación de sistemas de aprendizaje"],
+          "impacto_relaciones": ["Conexiones profundas basadas en comprensión mutua", "Capacidad de facilitar crecimiento en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu capacidad reflexiva puede servir a otros",
+            "Día 2: Enseña a alguien una técnica de reflexión que te funcione",
+            "Día 3: Practica actuar sobre un insight sin sobreanalizar",
+            "Día 4: Ayuda a alguien a reflexionar sobre un desafío personal",
+            "Día 5: Equilibra tiempo de análisis con actividades espontáneas",
+            "Día 6: Usa tu sabiduría reflexiva para resolver un problema complejo",
+            "Día 7: Planifica cómo usar tu don reflexivo para impacto positivo duradero"
+          ],
+          "cita": "La reflexión sin acción es filosofía; la acción sin reflexión es impulso"
+        }
+      }
+    ],
+    "consciencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta mantener conciencia de tus patrones de comportamiento y su impacto en otros",
+        "ad_unlock": {
+          "fortalezas": ["Naturalidad en comportamiento", "Menor autocrítica", "Espontaneidad auténtica"],
+          "debilidades": ["Falta de conciencia de impacto", "Repetición de patrones problemáticos", "Dificultad para cambiar comportamientos"],
+          "recomendaciones_breves": ["Pide feedback regular a personas cercanas", "Observa las reacciones de otros a tu comportamiento", "Practica la pausa antes de reaccionar"]
+        },
+        "premium": {
+          "detalle": "Tu baja conciencia de patrones puede estar limitando tu capacidad de crecimiento y mejora de relaciones. Aunque tu naturalidad es valiosa, desarrollar mayor conciencia te dará más control sobre tu impacto.",
+          "mejorar": ["Desarrolla observación de tus propios patrones", "Practica mindfulness en interacciones", "Busca feedback regular y específico", "Crea sistemas de autoevaluación"],
+          "alertas": ["Repetir comportamientos que dañan relaciones", "No darse cuenta del impacto negativo en otros", "Resistencia inconsciente al cambio"],
+          "oportunidades": ["Desarrollo de inteligencia social", "Mejora significativa en relaciones", "Liderazgo más efectivo"],
+          "impacto_relaciones": ["Posibles malentendidos por falta de conciencia", "Dificultad para ajustar comportamiento según las necesidades del otro"],
+          "plan_7_dias": [
+            "Día 1: Pide feedback específico a tres personas sobre tu comportamiento",
+            "Día 2: Observa las reacciones no verbales de otros cuando hablas",
+            "Día 3: Identifica un patrón de comportamiento que repites",
+            "Día 4: Practica pausar antes de reaccionar en conversaciones",
+            "Día 5: Reflexiona sobre el impacto de tus palabras en una conversación",
+            "Día 6: Ajusta conscientemente tu comportamiento en una interacción",
+            "Día 7: Evalúa cómo mayor conciencia mejora tus relaciones"
+          ],
+          "cita": "La conciencia es el primer paso hacia la transformación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes conciencia moderada de tus patrones, aunque a veces actúas automáticamente",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia situacional", "Capacidad de ajuste", "Autoobservación básica"],
+          "debilidades": ["Conciencia inconsistente", "Reacciones automáticas ocasionales", "Falta de profundidad en el análisis"],
+          "recomendaciones_breves": ["Desarrolla mayor consistencia en la autoobservación", "Practica la conciencia en tiempo real", "Profundiza en el análisis de tus patrones"]
+        },
+        "premium": {
+          "detalle": "Tu conciencia moderada te permite funcionar bien en muchas situaciones, pero hay espacio para desarrollar mayor consistencia y profundidad en tu autoobservación y comprensión de patrones.",
+          "mejorar": ["Desarrolla mindfulness en tiempo real", "Practica la metacognición (pensar sobre tu pensamiento)", "Crea sistemas de autoevaluación regular", "Cultiva la curiosidad sobre tus propios procesos"],
+          "alertas": ["Inconsistencia que limita el crecimiento", "Reacciones automáticas en momentos importantes", "Superficialidad en el autoanalisis"],
+          "oportunidades": ["Liderazgo consciente", "Relaciones más auténticas", "Desarrollo personal acelerado"],
+          "impacto_relaciones": ["Comunicación generalmente consciente", "Capacidad de ajuste según las necesidades del otro"],
+          "plan_7_dias": [
+            "Día 1: Practica conciencia en tiempo real durante conversaciones",
+            "Día 2: Observa tus pensamientos automáticos durante el día",
+            "Día 3: Identifica triggers que te hacen reaccionar automáticamente",
+            "Día 4: Practica la metacognición: observa cómo piensas",
+            "Día 5: Ajusta conscientemente tu comportamiento en una situación",
+            "Día 6: Reflexiona sobre patrones que has notado esta semana",
+            "Día 7: Crea un sistema personal de autoevaluación regular"
+          ],
+          "cita": "La conciencia en tiempo real es el superpoder del crecimiento personal"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Mantienes una conciencia excepcional de tus patrones, reacciones y impacto en otros",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia excepcional", "Control sobre patrones", "Impacto consciente en otros"],
+          "debilidades": ["Posible hipervigilancia", "Exceso de autocontrol", "Dificultad para ser espontáneo"],
+          "recomendaciones_breves": ["Equilibra conciencia con espontaneidad", "Usa tu conciencia para empoderar a otros", "Practica la vulnerabilidad auténtica"]
+        },
+        "premium": {
+          "detalle": "Tu conciencia excepcional te convierte en un maestro de tu propio comportamiento y impacto. Esta es una habilidad extraordinaria que puedes usar para liderar y enseñar a otros sobre el desarrollo de la conciencia.",
+          "mejorar": ["Desarrolla habilidades de coaching en conciencia", "Practica la espontaneidad controlada", "Cultiva la vulnerabilidad auténtica", "Enseña conciencia a otros sin juzgar"],
+          "alertas": ["Hipervigilancia que impide la naturalidad", "Exceso de control que limita la autenticidad", "Frustración con quienes tienen menor conciencia"],
+          "oportunidades": ["Liderazgo transformacional", "Coaching y desarrollo personal", "Creación de culturas conscientes"],
+          "impacto_relaciones": ["Relaciones profundamente conscientes y auténticas", "Capacidad de elevar la conciencia en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu conciencia puede servir mejor a otros",
+            "Día 2: Practica momentos de espontaneidad sin perder conciencia",
+            "Día 3: Enseña a alguien sobre la importancia de la autoconciencia",
+            "Día 4: Usa tu conciencia para crear un espacio seguro para otros",
+            "Día 5: Practica la vulnerabilidad consciente en una relación",
+            "Día 6: Desarrolla paciencia con procesos menos conscientes",
+            "Día 7: Planifica cómo usar tu don de conciencia para transformar tu entorno"
+          ],
+          "cita": "La conciencia más elevada es la que ilumina el camino para otros"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Autoconocimiento Rápido revela cómo tu capacidad introspectiva, reflexiva y consciente se compara con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la profundidad emocional y la comunicación auténtica", "Quienes buscan crecimiento personal y autoconocimiento mutuo", "Perfiles que abrazan la vulnerabilidad como camino hacia la intimidad genuina"],
+        "dificil": ["Quienes evitan la introspección o se sienten incómodos con la profundidad", "Personas que mantienen relaciones superficiales por miedo a la intimidad", "Perfiles que juzgan la reflexión como pérdida de tiempo o debilidad"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la reflexión estratégica y el desarrollo personal", "Culturas que premian la autoconciencia y el liderazgo consciente", "Espacios que fomentan la mejora continua y el aprendizaje experiencial"],
+        "dificil": ["Ambientes que penalizan la reflexión o la ven como improductiva", "Culturas que priorizan la acción sin análisis o la velocidad sobre la calidad", "Estructuras que desconfían de la introspección o la ven como pérdida de tiempo"]
+      },
+      "amistades": {
+        "facil": ["Personas interesadas en el crecimiento personal y la exploración interior", "Quienes valoran las conversaciones profundas sobre experiencias y aprendizajes", "Perfiles que buscan amistad basada en comprensión mutua y desarrollo conjunto"],
+        "dificil": ["Quienes evitan hablar de temas personales o de crecimiento interior", "Personas que se sienten incómodas con la profundidad emocional o psicológica", "Perfiles que mantienen relaciones basadas solo en actividades externas"]
+      },
+      "insights": [
+        "Comparte tu proceso de autoconocimiento para inspirar reflexión en otros",
+        "Equilibra tu profundidad interior con momentos de ligereza y espontaneidad",
+        "Usa tu sabiduría personal para crear espacios seguros de exploración interior"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren toma de decisiones importantes y reflexión estratégica",
+        "prediccion": "Tu capacidad de autoconocimiento te permitirá tomar decisiones más alineadas con tus valores y objetivos profundos",
+        "consejo": "Comparte tu proceso de reflexión para ayudar a otros a tomar mejores decisiones basadas en autoconocimiento"
+      },
+      {
+        "escenario": "En momentos de crisis personal o profesional que requieren claridad interior",
+        "prediccion": "Tu habilidad introspectiva te dará ventaja para encontrar soluciones auténticas y sostenibles",
+        "consejo": "Usa tu capacidad de reflexión para mantener calma y perspectiva, siendo un ancla de sabiduría para otros"
+      },
+      {
+        "escenario": "En relaciones que requieren comunicación profunda y comprensión mutua",
+        "prediccion": "Tu autoconciencia te permitirá comunicar necesidades y límites con claridad y autenticidad",
+        "consejo": "Balancea tu profundidad interior con paciencia hacia quienes están en diferentes etapas de autoconocimiento"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "introspectivo_sabio",
+        "cita": "El viaje más importante es el que haces hacia tu interior, pues allí encuentras todas las respuestas",
+        "reflexion": "Tu capacidad introspectiva te convierte en un explorador de la conciencia que puede guiar a otros hacia su propia sabiduría interior"
+      },
+      {
+        "rasgo": "reflexivo_transformador",
+        "cita": "La experiencia sin reflexión es solo tiempo que pasa; la reflexión sin acción es solo filosofía",
+        "reflexion": "Tu habilidad reflexiva transforma cada experiencia en sabiduría práctica que puede aplicarse para el crecimiento continuo"
+      },
+      {
+        "rasgo": "consciente_elevador",
+        "cita": "La conciencia más elevada es la que ilumina el camino para que otros encuentren su propia luz",
+        "reflexion": "Tu autoconciencia excepcional te permite no solo conocerte profundamente, sino facilitar el despertar de la conciencia en otros"
+      }
+    ]
+  },
+  "related_tests": ["psychological-shadow", "autoestima", "inteligencia_emocional"]
+}

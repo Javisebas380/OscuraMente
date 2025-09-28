@@ -1,0 +1,350 @@
+{
+  "id": "senales_alerta",
+  "schemaVersion": 2,
+  "traitMap": {
+    "deteccion_manipulacion": "observacion",
+    "confianza_intuicion": "intuicion",
+    "autoproteccion": "proteccion"
+  },
+  "titulo": "Señales de Alerta",
+  "nivel": "basico",
+  "visual": "radar",
+  "rasgos": ["observacion", "intuicion", "proteccion"],
+  "arquetipos": [
+    {
+      "clave": "observacion",
+      "label": "El Observador",
+      "descripcion": "Identificas patrones de comportamiento problemáticos y señales de advertencia en relaciones"
+    },
+    {
+      "clave": "intuicion",
+      "label": "El Intuitivo",
+      "descripcion": "Confías en tu instinto para detectar cuando algo no está bien en una situación o relación"
+    },
+    {
+      "clave": "proteccion",
+      "label": "El Guardián",
+      "descripcion": "Tomas medidas activas para protegerte a ti mismo y a otros de situaciones potencialmente dañinas"
+    }
+  ],
+  "bands": {
+    "observacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta identificar señales de advertencia en comportamientos y relaciones problemáticas",
+        "ad_unlock": {
+          "fortalezas": ["Confianza en otros", "Optimismo relacional", "Apertura social"],
+          "debilidades": ["Vulnerabilidad a personas tóxicas", "Dificultad para reconocer patrones dañinos", "Ingenuidad en relaciones"],
+          "recomendaciones_breves": ["Aprende las señales básicas de comportamiento tóxico", "Practica la observación de patrones", "Confía más en tus instintos iniciales"]
+        },
+        "premium": {
+          "detalle": "Tu baja capacidad de detección de señales de alerta puede exponerte a relaciones y situaciones dañinas. Aunque tu confianza en otros es admirable, necesitas desarrollar herramientas para protegerte sin perder tu naturaleza abierta.",
+          "mejorar": ["Estudia los patrones comunes de comportamiento tóxico", "Practica la observación de lenguaje corporal", "Desarrolla tu intuición social", "Aprende a documentar comportamientos preocupantes"],
+          "alertas": ["Ignorar señales obvias de comportamiento problemático", "Justificar o excusar comportamientos dañinos", "Permanecer en relaciones tóxicas por demasiado tiempo"],
+          "oportunidades": ["Desarrollo de discernimiento social", "Construcción de relaciones más saludables", "Mayor autoprotección"],
+          "impacto_relaciones": ["Riesgo de atraer personas con intenciones poco claras", "Posibilidad de relaciones desequilibradas"],
+          "plan_7_dias": [
+            "Día 1: Lee sobre las 10 señales de alerta más comunes en relaciones",
+            "Día 2: Observa el comportamiento de personas en tu entorno durante el día",
+            "Día 3: Reflexiona sobre una relación pasada que no fue saludable",
+            "Día 4: Practica hacer preguntas que revelen valores e intenciones",
+            "Día 5: Identifica tus límites personales no negociables",
+            "Día 6: Observa cómo te sientes después de interactuar con diferentes personas",
+            "Día 7: Crea una lista personal de señales de alerta a observar"
+          ],
+          "cita": "La confianza sabia incluye la observación cuidadosa"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Detectas algunas señales de alerta pero puedes pasar por alto patrones más sutiles",
+        "ad_unlock": {
+          "fortalezas": ["Intuición social desarrollada", "Equilibrio entre confianza y cautela", "Capacidad de aprendizaje"],
+          "debilidades": ["Inconsistencia en la detección", "Dudas sobre tus percepciones", "Vulnerabilidad a manipuladores expertos"],
+          "recomendaciones_breves": ["Confía más en tus instintos", "Estudia patrones de comportamiento más complejos", "Practica la verificación de tus percepciones"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad moderada de detección te permite identificar señales obvias, pero las tácticas más sutiles pueden pasarte desapercibidas. Tienes una buena base que puedes fortalecer con conocimiento y práctica.",
+          "mejorar": ["Desarrolla un sistema de evaluación de relaciones", "Estudia casos de manipulación sutil", "Practica la lectura de microexpresiones", "Fortalece tu confianza en tus percepciones"],
+          "alertas": ["Dudar de tus instintos cuando detectas algo extraño", "Racionalizar comportamientos problemáticos", "Ser inconsistente en aplicar tu conocimiento"],
+          "oportunidades": ["Convertirte en un detector experto", "Ayudar a otros a reconocer señales", "Desarrollar relaciones más saludables"],
+          "impacto_relaciones": ["Equilibrio entre apertura y protección", "Capacidad de identificar relaciones problemáticas antes de profundizar"],
+          "plan_7_dias": [
+            "Día 1: Crea una lista de comportamientos que te generan incomodidad",
+            "Día 2: Practica confiar en tu primera impresión sobre alguien",
+            "Día 3: Analiza una relación actual buscando patrones de comportamiento",
+            "Día 4: Estudia un caso de manipulación sutil en medios o libros",
+            "Día 5: Practica hacer preguntas que revelen inconsistencias",
+            "Día 6: Observa y analiza dinámicas de poder en tu entorno",
+            "Día 7: Desarrolla tu protocolo personal de evaluación de relaciones"
+          ],
+          "cita": "La intuición entrenada es tu mejor sistema de alerta temprana"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tienes una capacidad excepcional para identificar señales de alerta, incluso las más sutiles",
+        "ad_unlock": {
+          "fortalezas": ["Detección experta", "Análisis profundo de comportamientos", "Protección efectiva"],
+          "debilidades": ["Posible hipervigilancia", "Dificultad para confiar", "Aislamiento social"],
+          "recomendaciones_breves": ["Equilibra detección con apertura social", "Usa tu habilidad para ayudar a otros", "Mantén relaciones auténticas"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad de detección te convierte en un experto en identificar comportamientos problemáticos. Puedes ver señales que otros pasan por alto, pero debes cuidar que esta habilidad no te lleve al aislamiento o la desconfianza excesiva.",
+          "mejorar": ["Desarrolla habilidades de enseñanza para compartir tu conocimiento", "Practica la comunicación asertiva sobre señales de alerta", "Cultiva relaciones con personas igualmente conscientes", "Balancea detección con apertura emocional"],
+          "alertas": ["Volverse paranoico o excesivamente desconfiado", "Aislarse socialmente por miedo a personas problemáticas", "Juzgar demasiado rápido sin dar oportunidades"],
+          "oportunidades": ["Consultoría en seguridad relacional", "Educación y prevención", "Liderazgo en bienestar comunitario"],
+          "impacto_relaciones": ["Relaciones muy selectivas pero seguras", "Capacidad de proteger a otros de personas tóxicas"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo usar tu habilidad para ayudar a otros",
+            "Día 2: Enseña a alguien de confianza a reconocer una señal específica",
+            "Día 3: Practica dar el beneficio de la duda en una situación ambigua",
+            "Día 4: Analiza si alguna de tus alertas fue una falsa alarma",
+            "Día 5: Busca una comunidad de personas conscientes y saludables",
+            "Día 6: Desarrolla un sistema para ayudar a víctimas de relaciones tóxicas",
+            "Día 7: Planifica cómo usar tu expertise para crear impacto positivo"
+          ],
+          "cita": "El conocimiento de las señales de alerta es un regalo que debe compartirse"
+        }
+      }
+    ],
+    "intuicion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a racionalizar situaciones incómodas en lugar de confiar en tu instinto",
+        "ad_unlock": {
+          "fortalezas": ["Pensamiento lógico", "Beneficio de la duda", "Análisis racional"],
+          "debilidades": ["Ignorar señales intuitivas", "Sobreanalizar situaciones claras", "Vulnerabilidad a gaslighting"],
+          "recomendaciones_breves": ["Practica escuchar tu cuerpo en interacciones", "Registra tus primeras impresiones", "Valida tus instintos con otros"]
+        },
+        "premium": {
+          "detalle": "Tu baja confianza en la intuición puede llevarte a ignorar señales importantes que tu subconsciente ya ha detectado. Aunque el análisis racional es valioso, la intuición es un sistema de alerta temprana crucial.",
+          "mejorar": ["Practica mindfulness corporal", "Registra sensaciones físicas en interacciones", "Valida intuiciones con evidencia posterior", "Desarrolla confianza en tu sabiduría interna"],
+          "alertas": ["Ignorar sensaciones de incomodidad persistentes", "Racionalizar comportamientos obviamente problemáticos", "Desconfiar sistemáticamente de tus instintos"],
+          "oportunidades": ["Desarrollo de inteligencia intuitiva", "Mejor toma de decisiones", "Protección personal mejorada"],
+          "impacto_relaciones": ["Riesgo de permanecer en situaciones dañinas por sobreanalizar", "Posible vulnerabilidad a manipulación emocional"],
+          "plan_7_dias": [
+            "Día 1: Registra tus sensaciones físicas al conocer personas nuevas",
+            "Día 2: Practica la técnica del 'check corporal' antes de decisiones",
+            "Día 3: Reflexiona sobre una vez que tu instinto fue correcto",
+            "Día 4: Observa cómo te sientes en diferentes ambientes",
+            "Día 5: Practica tomar una decisión pequeña basada solo en intuición",
+            "Día 6: Valida una intuición reciente con evidencia observable",
+            "Día 7: Crea un sistema para honrar tanto lógica como intuición"
+          ],
+          "cita": "La intuición es inteligencia que no necesita explicación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras intuición con análisis racional, aunque a veces dudas de tus instintos",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio entre lógica e intuición", "Capacidad de verificación", "Flexibilidad cognitiva"],
+          "debilidades": ["Dudas sobre percepciones intuitivas", "Inconsistencia en confiar en instintos", "Análisis excesivo ocasional"],
+          "recomendaciones_breves": ["Fortalece la confianza en tus instintos", "Desarrolla un sistema de verificación rápida", "Practica actuar sobre intuiciones en situaciones seguras"]
+        },
+        "premium": {
+          "detalle": "Tu equilibrio entre intuición y análisis es valioso, pero puedes beneficiarte de desarrollar mayor confianza en tus percepciones intuitivas, especialmente en situaciones donde la lógica no proporciona respuestas claras.",
+          "mejorar": ["Desarrolla un diario de intuiciones y sus resultados", "Practica la toma de decisiones rápidas basadas en instinto", "Fortalece la conexión mente-cuerpo", "Cultiva la confianza en tu sabiduría interna"],
+          "alertas": ["Dudar de instintos precisos por falta de evidencia lógica", "Sobreanalizar situaciones donde la intuición es clara", "Perder oportunidades por indecisión"],
+          "oportunidades": ["Liderazgo intuitivo", "Toma de decisiones equilibrada", "Detección temprana de problemas"],
+          "impacto_relaciones": ["Equilibrio entre confianza y cautela", "Capacidad de detectar problemas antes de que escalen"],
+          "plan_7_dias": [
+            "Día 1: Registra una intuición y su resultado al final del día",
+            "Día 2: Practica confiar en tu primera impresión sobre una situación",
+            "Día 3: Toma una decisión pequeña basada únicamente en intuición",
+            "Día 4: Observa cómo tu cuerpo reacciona a diferentes personas",
+            "Día 5: Valida una intuición pasada con evidencia actual",
+            "Día 6: Practica comunicar una intuición sin sobreexplicar",
+            "Día 7: Crea tu sistema personal de equilibrio intuición-lógica"
+          ],
+          "cita": "La sabiduría está en el equilibrio entre sentir y pensar"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Confías fuertemente en tu intuición y tienes un instinto muy desarrollado para detectar problemas",
+        "ad_unlock": {
+          "fortalezas": ["Intuición muy desarrollada", "Detección temprana de problemas", "Sabiduría interna fuerte"],
+          "debilidades": ["Posible paranoia", "Dificultad para explicar tus percepciones", "Aislamiento por hipervigilancia"],
+          "recomendaciones_breves": ["Balancea intuición con verificación lógica", "Comunica tus percepciones de manera accesible", "Mantén apertura a perspectivas diferentes"]
+        },
+        "premium": {
+          "detalle": "Tu intuición altamente desarrollada es un don excepcional que te permite detectar problemas antes que otros. El desafío es usar esta habilidad de manera equilibrada sin caer en paranoia o aislamiento social.",
+          "mejorar": ["Desarrolla habilidades para comunicar intuiciones", "Practica la verificación colaborativa de percepciones", "Cultiva la paciencia con quienes tienen menor intuición", "Balancea alerta con apertura"],
+          "alertas": ["Volverse paranoico o excesivamente desconfiado", "Aislarse por ver problemas que otros no ven", "Comunicar alarmas de manera que otros no puedan recibir"],
+          "oportunidades": ["Consultoría en prevención de riesgos", "Liderazgo en seguridad emocional", "Mentoría en desarrollo intuitivo"],
+          "impacto_relaciones": ["Relaciones muy selectivas pero profundas", "Capacidad de proteger a otros de situaciones dañinas"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu intuición ha protegido a otros",
+            "Día 2: Practica comunicar una intuición de manera que otros puedan recibirla",
+            "Día 3: Busca evidencia lógica que respalde una intuición reciente",
+            "Día 4: Enseña a alguien a desarrollar su propia intuición",
+            "Día 5: Practica dar el beneficio de la duda cuando sea apropiado",
+            "Día 6: Usa tu intuición para una causa benéfica",
+            "Día 7: Planifica cómo usar tu don intuitivo para ayudar a más personas"
+          ],
+          "cita": "La intuición es el lenguaje del alma que habla antes que la mente"
+        }
+      }
+    ],
+    "proteccion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta tomar medidas activas para protegerte cuando detectas señales problemáticas",
+        "ad_unlock": {
+          "fortalezas": ["Evita conflictos innecesarios", "Mantiene la armonía", "Esperanza en el cambio"],
+          "debilidades": ["Falta de límites claros", "Permanencia en situaciones dañinas", "Autoprotección insuficiente"],
+          "recomendaciones_breves": ["Define límites claros y comunícalos", "Practica alejarte de situaciones tóxicas", "Desarrolla un plan de seguridad personal"]
+        },
+        "premium": {
+          "detalle": "Tu baja tendencia a la autoprotección puede exponerte a daño continuado incluso cuando reconoces señales problemáticas. Es crucial desarrollar la capacidad de actuar en tu propio beneficio sin sentir culpa.",
+          "mejorar": ["Desarrolla asertividad para establecer límites", "Practica el alejamiento gradual de situaciones tóxicas", "Fortalece tu autoestima para valorar tu bienestar", "Crea un sistema de apoyo para decisiones difíciles"],
+          "alertas": ["Permanecer en relaciones dañinas por evitar conflicto", "Justificar la falta de acción con esperanza de cambio", "Priorizar el bienestar ajeno sobre el propio consistentemente"],
+          "oportunidades": ["Desarrollo de autoestima saludable", "Relaciones más equilibradas", "Mayor bienestar personal"],
+          "impacto_relaciones": ["Riesgo de relaciones desequilibradas donde das más", "Posible atracción de personas que aprovechan tu bondad"],
+          "plan_7_dias": [
+            "Día 1: Escribe tus límites personales no negociables",
+            "Día 2: Practica decir no a una petición pequeña",
+            "Día 3: Identifica una situación donde necesitas más protección",
+            "Día 4: Comunica un límite claro a alguien",
+            "Día 5: Practica alejarte de una conversación tóxica",
+            "Día 6: Busca apoyo para una decisión de autoprotección",
+            "Día 7: Celebra un acto de autoprotección saludable"
+          ],
+          "cita": "Protegerte no es egoísmo, es responsabilidad contigo mismo"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tomas medidas de protección moderadas, aunque a veces dudas si es apropiado hacerlo",
+        "ad_unlock": {
+          "fortalezas": ["Autoprotección equilibrada", "Evaluación situacional", "Flexibilidad en respuestas"],
+          "debilidades": ["Dudas sobre cuándo actuar", "Inconsistencia en la protección", "Culpa por establecer límites"],
+          "recomendaciones_breves": ["Desarrolla criterios claros para cuándo protegerte", "Practica la autoprotección sin culpa", "Fortalece tu confianza en tus decisiones"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad moderada de autoprotección te permite cuidarte en muchas situaciones, pero podrías beneficiarte de desarrollar mayor consistencia y confianza en tus decisiones de protección personal.",
+          "mejorar": ["Desarrolla un sistema de evaluación de riesgos personal", "Practica la autoprotección proactiva", "Fortalece tu autoestima para valorar tu bienestar", "Aprende a comunicar límites de manera efectiva"],
+          "alertas": ["Dudar demasiado antes de protegerte", "Sentir culpa por establecer límites necesarios", "Ser inconsistente en la aplicación de límites"],
+          "oportunidades": ["Liderazgo en bienestar personal", "Mentoría en establecimiento de límites", "Modelar autoprotección saludable"],
+          "impacto_relaciones": ["Equilibrio entre apertura y protección", "Relaciones más saludables y equilibradas"],
+          "plan_7_dias": [
+            "Día 1: Define criterios claros para cuándo necesitas protegerte",
+            "Día 2: Practica establecer un límite sin justificarte excesivamente",
+            "Día 3: Identifica una situación donde podrías ser más proactivo en protegerte",
+            "Día 4: Comunica una necesidad de espacio o límite a alguien",
+            "Día 5: Practica la autoprotección sin sentir culpa",
+            "Día 6: Busca apoyo para mantener límites difíciles",
+            "Día 7: Evalúa cómo la autoprotección mejora tu bienestar"
+          ],
+          "cita": "Los límites saludables crean espacios para relaciones auténticas"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tomas medidas de protección rápidas y efectivas cuando detectas señales problemáticas",
+        "ad_unlock": {
+          "fortalezas": ["Autoprotección efectiva", "Límites claros", "Acción rápida ante problemas"],
+          "debilidades": ["Posible rigidez en límites", "Dificultad para dar segundas oportunidades", "Aislamiento por exceso de protección"],
+          "recomendaciones_breves": ["Balancea protección con apertura apropiada", "Practica la flexibilidad en límites no fundamentales", "Usa tu habilidad para enseñar a otros"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad de autoprotección te mantiene seguro y en relaciones saludables. El desafío es mantener este nivel de protección sin volverse rígido o perder oportunidades de conexión genuina.",
+          "mejorar": ["Desarrolla discernimiento entre protección necesaria y rigidez", "Practica la flexibilidad en límites no fundamentales", "Cultiva la capacidad de dar segundas oportunidades cuando sea apropiado", "Enseña autoprotección a otros"],
+          "alertas": ["Volverse demasiado rígido en límites", "Perder oportunidades de conexión por exceso de cautela", "Aislarse innecesariamente"],
+          "oportunidades": ["Liderazgo en seguridad emocional", "Consultoría en límites saludables", "Mentoría en autoprotección"],
+          "impacto_relaciones": ["Relaciones muy saludables y equilibradas", "Capacidad de crear espacios seguros para otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre el equilibrio entre protección y apertura",
+            "Día 2: Identifica un área donde podrías ser más flexible",
+            "Día 3: Practica dar una segunda oportunidad en una situación menor",
+            "Día 4: Enseña a alguien sobre la importancia de los límites",
+            "Día 5: Evalúa si algún límite tuyo es demasiado rígido",
+            "Día 6: Usa tu habilidad de protección para ayudar a alguien vulnerable",
+            "Día 7: Planifica cómo crear espacios más seguros para otros"
+          ],
+          "cita": "La protección sabia sabe cuándo ser escudo y cuándo ser puente"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Señales de Alerta revela tu capacidad para detectar, intuir y protegerte de situaciones problemáticas comparado con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la honestidad y la comunicación directa sobre límites", "Quienes respetan la intuición y las señales emocionales como válidas", "Perfiles que buscan relaciones equilibradas basadas en respeto mutuo y transparencia"],
+        "dificil": ["Quienes usan tácticas manipuladoras o ignoran límites claros", "Personas que minimizan o ridiculizan la intuición y las señales emocionales", "Perfiles que buscan relaciones desequilibradas donde puedan ejercer control"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la transparencia y la comunicación ética", "Culturas que respetan los límites profesionales y la autonomía personal", "Espacios que premian la prevención de problemas y la detección temprana"],
+        "dificil": ["Ambientes tóxicos con dinámicas de poder abusivas o manipuladoras", "Culturas que normalizan comportamientos problemáticos como 'parte del trabajo'", "Estructuras que penalizan reportar problemas o establecer límites"]
+      },
+      "amistades": {
+        "facil": ["Personas que valoran la autenticidad y la comunicación honesta sobre límites", "Quienes respetan tu capacidad de detectar inconsistencias y problemas", "Perfiles que buscan relaciones genuinas sin juegos psicológicos o drama"],
+        "dificil": ["Quienes se sienten amenazados por tu capacidad de detección", "Personas que usan chantaje emocional, victimización o manipulación", "Perfiles que mantienen relaciones basadas en control, dependencia o toxicidad"]
+      },
+      "insights": [
+        "Comparte tu conocimiento sobre señales de alerta para educar y proteger a otros",
+        "Equilibra tu capacidad de detección con apertura a relaciones genuinas y saludables",
+        "Usa tu experiencia para crear espacios seguros libres de manipulación y comportamientos tóxicos"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones donde detectas señales de alerta en relaciones o entornos",
+        "prediccion": "Tu capacidad de reconocimiento te permitirá identificar y alejarte de situaciones problemáticas antes de que te afecten",
+        "consejo": "Comunica tus observaciones de manera constructiva y educa sobre por qué ciertas señales son importantes"
+      },
+      {
+        "escenario": "En entornos donde presencias comportamientos tóxicos hacia otros",
+        "prediccion": "Tu intuición y conocimiento te motivarán a intervenir y proteger a personas vulnerables",
+        "consejo": "Balancea tu intervención con respeto por la autonomía de otros para tomar sus propias decisiones"
+      },
+      {
+        "escenario": "En relaciones nuevas que requieren construcción gradual de confianza",
+        "prediccion": "Tu hipervigilancia inicial puede crear barreras, pero una vez establecida la confianza, formas vínculos muy sólidos",
+        "consejo": "Comunica tu proceso de evaluación para que otros entiendan tu cautela inicial como protección, no rechazo"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "deteccion_protectora",
+        "cita": "El conocimiento de las señales de alerta es un regalo que debe compartirse sabiamente",
+        "reflexion": "Tu capacidad de detectar comportamientos problemáticos te convierte en un guardián de la integridad relacional y la seguridad emocional"
+      },
+      {
+        "rasgo": "intuicion_sabia",
+        "cita": "La intuición es el lenguaje del alma que habla antes que la mente analice",
+        "reflexion": "Tu instinto desarrollado te permite detectar problemas antes de que se manifiesten completamente, protegiendo tu bienestar y el de otros"
+      },
+      {
+        "rasgo": "proteccion_equilibrada",
+        "cita": "Los límites saludables crean espacios donde las relaciones auténticas pueden florecer",
+        "reflexion": "Tu capacidad de autoprotección no solo te mantiene seguro, sino que crea estándares que elevan la calidad de todas tus relaciones"
+      }
+    ]
+  },
+  "related_tests": ["deteccion_manipulacion", "psychological-shadow", "inteligencia_emocional"]
+}

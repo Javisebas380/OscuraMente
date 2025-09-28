@@ -1,0 +1,350 @@
+{
+  "id": "deteccion_manipulacion",
+  "schemaVersion": 2,
+  "traitMap": {
+    "gaslighting": "deteccion",
+    "culpa_inducida": "resistencia",
+    "dependencia_emocional": "contraataque"
+  },
+  "titulo": "Detección de Manipulación",
+  "nivel": "intermedio",
+  "visual": "radar",
+  "rasgos": ["deteccion", "resistencia", "contraataque"],
+  "arquetipos": [
+    {
+      "clave": "deteccion",
+      "label": "El Detector",
+      "descripcion": "Identificas patrones y señales de manipulación con facilidad y precisión"
+    },
+    {
+      "clave": "resistencia",
+      "label": "El Escudo",
+      "descripcion": "Mantienes tu autonomía y no te dejas influir por tácticas manipuladoras"
+    },
+    {
+      "clave": "contraataque",
+      "label": "El Estratega Defensivo",
+      "descripcion": "Respondes efectivamente a intentos de manipulación con tácticas apropiadas"
+    }
+  ],
+  "bands": {
+    "deteccion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta identificar señales sutiles de manipulación y puedes ser vulnerable a tácticas persuasivas",
+        "ad_unlock": {
+          "fortalezas": ["Confianza en otros", "Apertura social", "Optimismo relacional"],
+          "debilidades": ["Vulnerabilidad a manipuladores", "Dificultad para detectar engaños", "Ingenuidad social"],
+          "recomendaciones_breves": ["Aprende las técnicas básicas de manipulación", "Practica la verificación de información", "Desarrolla tu intuición social"]
+        },
+        "premium": {
+          "detalle": "Tu baja capacidad de reconocimiento de manipulación te hace vulnerable a personas que usan tácticas persuasivas poco éticas. Aunque tu confianza en otros es admirable, necesitas desarrollar herramientas para protegerte sin perder tu naturaleza abierta.",
+          "mejorar": ["Estudia las técnicas comunes de manipulación", "Practica la verificación cruzada de información", "Desarrolla tu capacidad de observación no verbal", "Aprende a confiar en tu intuición"],
+          "alertas": ["Aceptar información sin verificar", "Ceder a presión emocional excesiva", "Ignorar señales de alarma en relaciones"],
+          "oportunidades": ["Desarrollo de discernimiento social", "Construcción de relaciones más auténticas", "Mayor autoprotección"],
+          "impacto_relaciones": ["Puedes atraer a manipuladores por tu apertura", "Riesgo de relaciones desequilibradas donde das más de lo que recibes"],
+          "plan_7_dias": [
+            "Día 1: Lee sobre las 10 técnicas de manipulación más comunes",
+            "Día 2: Observa el lenguaje corporal en conversaciones durante el día",
+            "Día 3: Practica hacer preguntas de verificación cuando recibas información importante",
+            "Día 4: Identifica una situación pasada donde fuiste manipulado y analízala",
+            "Día 5: Practica decir 'necesito tiempo para pensarlo' antes de tomar decisiones",
+            "Día 6: Observa las tácticas de presión en publicidad y ventas",
+            "Día 7: Reflexiona sobre tus límites personales y cómo comunicarlos"
+          ],
+          "cita": "La confianza sabia incluye la verificación"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Reconoces algunas señales de manipulación pero puedes pasar por alto tácticas más sutiles",
+        "ad_unlock": {
+          "fortalezas": ["Intuición social desarrollada", "Equilibrio entre confianza y cautela", "Capacidad de aprendizaje"],
+          "debilidades": ["Inconsistencia en la detección", "Dudas sobre tus percepciones", "Vulnerabilidad a manipuladores expertos"],
+          "recomendaciones_breves": ["Confía más en tus instintos", "Estudia técnicas avanzadas de manipulación", "Practica la verificación sistemática"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad moderada de reconocimiento te permite detectar manipulación obvia, pero las tácticas más sofisticadas pueden pasarte desapercibidas. Tienes una buena base que puedes fortalecer con conocimiento y práctica.",
+          "mejorar": ["Desarrolla un sistema de verificación personal", "Estudia casos de manipulación compleja", "Practica la lectura de microexpresiones", "Fortalece tu confianza en tus percepciones"],
+          "alertas": ["Dudar de tus instintos cuando detectas algo extraño", "Racionalizar comportamientos manipuladores", "Ser inconsistente en aplicar tu conocimiento"],
+          "oportunidades": ["Convertirte en un detector experto", "Ayudar a otros a reconocer manipulación", "Desarrollar liderazgo ético"],
+          "impacto_relaciones": ["Equilibrio entre apertura y protección", "Capacidad de identificar relaciones tóxicas antes de que se profundicen"],
+          "plan_7_dias": [
+            "Día 1: Crea una lista de señales de alarma personalizadas",
+            "Día 2: Practica la técnica del 'tiempo fuera' en decisiones importantes",
+            "Día 3: Analiza una conversación reciente buscando tácticas de influencia",
+            "Día 4: Estudia un caso famoso de manipulación masiva",
+            "Día 5: Practica hacer preguntas que revelen inconsistencias",
+            "Día 6: Observa y analiza técnicas de persuasión en medios",
+            "Día 7: Desarrolla tu protocolo personal anti-manipulación"
+          ],
+          "cita": "La intuición entrenada es tu mejor defensa"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tienes una capacidad excepcional para identificar intentos de manipulación, incluso los más sutiles",
+        "ad_unlock": {
+          "fortalezas": ["Detección experta", "Análisis profundo de comportamientos", "Protección efectiva"],
+          "debilidades": ["Posible paranoia", "Dificultad para confiar", "Aislamiento social"],
+          "recomendaciones_breves": ["Equilibra detección con apertura social", "Usa tu habilidad para ayudar a otros", "Mantén relaciones auténticas"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad de reconocimiento te convierte en un detector experto de manipulación. Puedes identificar tácticas sutiles que otros pasan por alto, pero debes cuidar que esta habilidad no te lleve al aislamiento o la desconfianza excesiva.",
+          "mejorar": ["Desarrolla habilidades de enseñanza para compartir tu conocimiento", "Practica la comunicación asertiva sobre manipulación", "Cultiva relaciones con personas igualmente conscientes", "Balancea detección con apertura emocional"],
+          "alertas": ["Volverse paranoico o excesivamente desconfiado", "Aislarse socialmente por miedo a la manipulación", "Usar tu conocimiento para manipular a otros"],
+          "oportunidades": ["Consultoría en detección de fraudes", "Educación y entrenamiento", "Liderazgo en ética organizacional"],
+          "impacto_relaciones": ["Relaciones muy selectivas pero profundas", "Capacidad de proteger a otros de manipuladores"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo usar tu habilidad para el bien común",
+            "Día 2: Enseña a alguien de confianza a reconocer una táctica específica",
+            "Día 3: Practica dar el beneficio de la duda en una situación ambigua",
+            "Día 4: Analiza tus propios patrones de influencia para mantener la ética",
+            "Día 5: Busca una comunidad de personas conscientes y éticas",
+            "Día 6: Desarrolla un sistema para ayudar a víctimas de manipulación",
+            "Día 7: Planifica cómo usar tu expertise para crear impacto positivo"
+          ],
+          "cita": "El conocimiento de la manipulación es poder que debe usarse con sabiduría"
+        }
+      }
+    ],
+    "resistencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Tiendes a ceder ante presión social y tácticas persuasivas, incluso cuando no estás completamente convencido",
+        "ad_unlock": {
+          "fortalezas": ["Flexibilidad social", "Capacidad de compromiso", "Evita conflictos"],
+          "debilidades": ["Falta de límites claros", "Decisiones influenciadas externamente", "Baja autoestima"],
+          "recomendaciones_breves": ["Desarrolla tu autoestima", "Practica decir no", "Define tus valores fundamentales"]
+        },
+        "premium": {
+          "detalle": "Tu baja resistencia a la manipulación puede llevarte a tomar decisiones que no reflejan tus verdaderos deseos o valores. Aunque tu flexibilidad puede ser útil socialmente, necesitas desarrollar límites más firmes para proteger tu autonomía.",
+          "mejorar": ["Fortalece tu autoestima y confianza personal", "Practica técnicas de asertividad", "Define claramente tus valores y límites", "Desarrolla un sistema de toma de decisiones personal"],
+          "alertas": ["Tomar decisiones importantes bajo presión", "Comprometerte con cosas que no quieres hacer", "Permitir que otros definan tus prioridades"],
+          "oportunidades": ["Desarrollo de autonomía personal", "Relaciones más equilibradas", "Mayor satisfacción con tus decisiones"],
+          "impacto_relaciones": ["Riesgo de relaciones desequilibradas", "Posible resentimiento por ceder constantemente"],
+          "plan_7_dias": [
+            "Día 1: Escribe tus 5 valores más importantes",
+            "Día 2: Practica decir 'no' a una petición pequeña",
+            "Día 3: Identifica una situación donde cediste contra tu voluntad",
+            "Día 4: Practica la frase 'necesito tiempo para decidir'",
+            "Día 5: Establece un límite claro con alguien",
+            "Día 6: Toma una decisión basada únicamente en tus valores",
+            "Día 7: Reflexiona sobre cómo te sientes al mantener tus límites"
+          ],
+          "cita": "Los límites no son muros, son puertas que tú controlas"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Mantienes cierta resistencia a la manipulación pero puedes ceder en situaciones de alta presión",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio entre flexibilidad y firmeza", "Capacidad de negociación", "Resistencia selectiva"],
+          "debilidades": ["Inconsistencia bajo presión", "Dudas sobre tus decisiones", "Vulnerabilidad emocional"],
+          "recomendaciones_breves": ["Fortalece tu resistencia en situaciones clave", "Desarrolla estrategias para manejar presión", "Confía más en tus instintos"]
+        },
+        "premium": {
+          "detalle": "Tu resistencia moderada te permite mantener tu autonomía en muchas situaciones, pero las tácticas de alta presión o manipulación emocional pueden quebrar tus defensas. Tienes una buena base que puedes fortalecer.",
+          "mejorar": ["Desarrolla técnicas específicas para manejar presión", "Practica la respiración y el grounding en situaciones tensas", "Fortalece tu red de apoyo", "Crea protocolos para decisiones importantes"],
+          "alertas": ["Ceder en momentos de vulnerabilidad emocional", "Dudar de tus instintos bajo presión social", "Racionalizar decisiones que no te convencen"],
+          "oportunidades": ["Liderazgo equilibrado", "Negociación efectiva", "Relaciones más auténticas"],
+          "impacto_relaciones": ["Equilibrio entre dar y recibir", "Capacidad de mantener límites sin ser rígido"],
+          "plan_7_dias": [
+            "Día 1: Identifica tus puntos débiles de resistencia",
+            "Día 2: Practica técnicas de respiración para manejar presión",
+            "Día 3: Desarrolla frases preparadas para situaciones de presión",
+            "Día 4: Busca apoyo de alguien de confianza para una decisión difícil",
+            "Día 5: Practica mantener tu posición en una discusión menor",
+            "Día 6: Reflexiona sobre una vez que cediste y cómo podrías actuar diferente",
+            "Día 7: Crea tu protocolo personal para decisiones bajo presión"
+          ],
+          "cita": "La resistencia inteligente sabe cuándo ser flexible y cuándo ser firme"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Mantienes una resistencia excepcional a intentos de manipulación y presión externa",
+        "ad_unlock": {
+          "fortalezas": ["Autonomía fuerte", "Límites claros", "Toma de decisiones independiente"],
+          "debilidades": ["Posible rigidez", "Dificultad para comprometerse", "Aislamiento social"],
+          "recomendaciones_breves": ["Balancea firmeza con flexibilidad apropiada", "Mantén apertura a perspectivas válidas", "Cultiva relaciones colaborativas"]
+        },
+        "premium": {
+          "detalle": "Tu alta resistencia a la manipulación es una fortaleza poderosa que te permite mantener tu autonomía e integridad. Sin embargo, debes cuidar que esta resistencia no se convierta en rigidez que impida colaboración genuina o crecimiento personal.",
+          "mejorar": ["Desarrolla discernimiento entre manipulación e influencia legítima", "Practica la colaboración sin comprometer valores", "Cultiva la empatía sin perder límites", "Aprende a ser flexible en temas no fundamentales"],
+          "alertas": ["Rechazar automáticamente toda influencia externa", "Aislarse por exceso de desconfianza", "Perder oportunidades de crecimiento por rigidez"],
+          "oportunidades": ["Liderazgo ético e independiente", "Mentoría en autonomía personal", "Consultoría en integridad organizacional"],
+          "impacto_relaciones": ["Relaciones basadas en respeto mutuo", "Capacidad de inspirar autonomía en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre la diferencia entre influencia positiva y manipulación",
+            "Día 2: Practica escuchar una perspectiva diferente sin defensividad",
+            "Día 3: Identifica un área donde podrías ser más flexible sin comprometer valores",
+            "Día 4: Busca una oportunidad de colaboración genuina",
+            "Día 5: Enseña a alguien sobre la importancia de los límites personales",
+            "Día 6: Practica la empatía manteniendo tus límites",
+            "Día 7: Evalúa cómo tu resistencia puede servir mejor a otros"
+          ],
+          "cita": "La verdadera fortaleza incluye saber cuándo ser flexible"
+        }
+      }
+    ],
+    "contraataque": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Cuando detectas manipulación, tiendes a retirarte o evitar el conflicto en lugar de confrontar directamente",
+        "ad_unlock": {
+          "fortalezas": ["Evita escaladas innecesarias", "Mantiene la paz", "Reflexión antes de actuar"],
+          "debilidades": ["Permite que la manipulación continúe", "Falta de herramientas de confrontación", "Posible victimización repetida"],
+          "recomendaciones_breves": ["Desarrolla técnicas de confrontación asertiva", "Practica respuestas preparadas", "Fortalece tu confianza personal"]
+        },
+        "premium": {
+          "detalle": "Tu tendencia a evitar el contraataque puede permitir que los manipuladores continúen sus tácticas contigo y con otros. Aunque evitar conflictos tiene valor, necesitas desarrollar herramientas para responder efectivamente cuando sea necesario.",
+          "mejorar": ["Aprende técnicas de comunicación asertiva", "Practica respuestas a tácticas comunes de manipulación", "Desarrolla confianza en tu derecho a defenderte", "Estudia casos de confrontación exitosa"],
+          "alertas": ["Permitir que la manipulación se repita", "Sentirte impotente ante manipuladores", "Evitar situaciones donde podrías ayudar a otros"],
+          "oportunidades": ["Desarrollo de habilidades de liderazgo", "Protección de otros vulnerables", "Crecimiento en confianza personal"],
+          "impacto_relaciones": ["Riesgo de ser visto como fácil de manipular", "Posible frustración por no defenderte"],
+          "plan_7_dias": [
+            "Día 1: Aprende 3 técnicas básicas de comunicación asertiva",
+            "Día 2: Practica respuestas a la técnica de 'pie en la puerta'",
+            "Día 3: Identifica una situación donde podrías haber respondido mejor",
+            "Día 4: Practica decir 'eso no es aceptable' frente al espejo",
+            "Día 5: Busca apoyo de alguien de confianza para practicar confrontación",
+            "Día 6: Responde asertivamente a una manipulación menor",
+            "Día 7: Reflexiona sobre cómo te sientes al defenderte"
+          ],
+          "cita": "No confrontar la manipulación es permitir que continúe"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Respondes a la manipulación de manera moderada, a veces confrontando y otras veces evitando el conflicto",
+        "ad_unlock": {
+          "fortalezas": ["Flexibilidad táctica", "Evaluación situacional", "Respuestas medidas"],
+          "debilidades": ["Inconsistencia en respuestas", "Falta de estrategias específicas", "Dudas sobre cuándo actuar"],
+          "recomendaciones_breves": ["Desarrolla criterios claros para cuándo confrontar", "Practica diferentes niveles de respuesta", "Fortalece tu arsenal de técnicas"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad moderada de contraataque te permite responder a la manipulación cuando es necesario, pero podrías beneficiarte de desarrollar un enfoque más sistemático y confiado para diferentes situaciones.",
+          "mejorar": ["Desarrolla un sistema de escalada de respuestas", "Practica técnicas específicas para diferentes tipos de manipulación", "Fortalece tu confianza en la confrontación", "Aprende a leer cuándo es el momento apropiado para actuar"],
+          "alertas": ["Ser inconsistente en tus respuestas", "Dudar demasiado antes de actuar", "No tener estrategias para manipuladores persistentes"],
+          "oportunidades": ["Liderazgo en situaciones difíciles", "Mentoría en habilidades de confrontación", "Mediación en conflictos"],
+          "impacto_relaciones": ["Respeto por tu capacidad de defenderte", "Equilibrio entre confrontación y diplomacia"],
+          "plan_7_dias": [
+            "Día 1: Crea tu escala personal de respuestas (suave a firme)",
+            "Día 2: Practica la técnica del 'disco rayado' para persistencia",
+            "Día 3: Desarrolla respuestas específicas para chantaje emocional",
+            "Día 4: Practica confrontación con lenguaje corporal seguro",
+            "Día 5: Identifica cuándo es mejor retirarse vs. confrontar",
+            "Día 6: Practica desenmascarar una táctica de manipulación específica",
+            "Día 7: Evalúa tu progreso y ajusta tu enfoque"
+          ],
+          "cita": "El contraataque efectivo es arte y ciencia combinados"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Respondes a la manipulación con técnicas efectivas y confrontación directa cuando es necesario",
+        "ad_unlock": {
+          "fortalezas": ["Respuestas efectivas", "Confianza en confrontación", "Protección de otros"],
+          "debilidades": ["Posible agresividad excesiva", "Escalada innecesaria de conflictos", "Reputación de confrontativo"],
+          "recomendaciones_breves": ["Balancea firmeza con diplomacia", "Usa tu habilidad para enseñar a otros", "Mantén proporcionalidad en respuestas"]
+        },
+        "premium": {
+          "detalle": "Tu alta capacidad de contraataque te convierte en un oponente formidable para los manipuladores. Puedes desenmascarar tácticas y responder efectivamente, pero debes cuidar que tu respuesta sea proporcional y constructiva.",
+          "mejorar": ["Desarrolla técnicas de de-escalada", "Practica respuestas que eduquen además de confrontar", "Cultiva la paciencia para enseñar a otros", "Balancea justicia con compasión"],
+          "alertas": ["Ser demasiado agresivo en respuestas", "Crear enemigos innecesarios", "Usar tus habilidades para intimidar"],
+          "oportunidades": ["Liderazgo en ética organizacional", "Entrenamiento en detección de manipulación", "Consultoría en negociación"],
+          "impacto_relaciones": ["Respeto y posible intimidación", "Capacidad de crear entornos libres de manipulación"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre el equilibrio entre firmeza y compasión",
+            "Día 2: Practica una respuesta educativa a manipulación menor",
+            "Día 3: Desarrolla técnicas para calmar situaciones después de confrontar",
+            "Día 4: Enseña a alguien una técnica de contraataque específica",
+            "Día 5: Practica respuestas que protejan sin humillar",
+            "Día 6: Evalúa si alguna de tus respuestas ha sido desproporcionada",
+            "Día 7: Planifica cómo usar tu habilidad para crear entornos más éticos"
+          ],
+          "cita": "El contraataque más poderoso es el que enseña mientras protege"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Detección de Manipulación revela tu capacidad para reconocer, resistir y responder a tácticas manipuladoras"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la honestidad y la comunicación directa", "Quienes respetan los límites personales y la autonomía", "Perfiles que buscan relaciones equilibradas basadas en respeto mutuo"],
+        "dificil": ["Quienes usan tácticas manipuladoras o de control emocional", "Personas que no respetan límites claros", "Perfiles que buscan relaciones desequilibradas donde puedan dominar"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la transparencia y la comunicación ética", "Culturas que respetan la autonomía y los límites profesionales", "Espacios que premian la integridad sobre los resultados a cualquier costo"],
+        "dificil": ["Ambientes tóxicos con dinámicas de poder abusivas", "Culturas que normalizan la manipulación como estrategia", "Estructuras que penalizan la honestidad y premian la manipulación"]
+      },
+      "amistades": {
+        "facil": ["Personas que valoran la autenticidad y la comunicación honesta", "Quienes respetan tu capacidad de detectar inconsistencias", "Perfiles que buscan relaciones genuinas sin juegos psicológicos"],
+        "dificil": ["Quienes se sienten amenazados por tu capacidad de detección", "Personas que usan chantaje emocional o victimización", "Perfiles que mantienen relaciones basadas en control o dependencia"]
+      },
+      "insights": [
+        "Comparte tu conocimiento sobre manipulación para educar y proteger a otros",
+        "Equilibra tu capacidad de detección con apertura a relaciones genuinas",
+        "Usa tu experiencia para crear espacios seguros libres de manipulación"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones donde otros intentan manipularte o influenciarte indebidamente",
+        "prediccion": "Tu capacidad de reconocimiento te permitirá identificar y neutralizar tácticas antes de que te afecten",
+        "consejo": "Comunica tus límites claramente y educa sobre por qué ciertas tácticas no son apropiadas"
+      },
+      {
+        "escenario": "En entornos donde presencias manipulación hacia otros",
+        "prediccion": "Tu resistencia y conocimiento te motivarán a intervenir y proteger a personas vulnerables",
+        "consejo": "Balancea tu intervención con respeto por la autonomía de otros para decidir por sí mismos"
+      },
+      {
+        "escenario": "En relaciones que requieren confianza y vulnerabilidad mutua",
+        "prediccion": "Tu hipervigilancia puede crear barreras iniciales, pero una vez establecida la confianza, formas vínculos muy sólidos",
+        "consejo": "Comunica tu proceso de construcción de confianza para que otros entiendan tu cautela inicial"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "reconocimiento_protector",
+        "cita": "El conocimiento de la manipulación es poder que debe usarse con sabiduría",
+        "reflexion": "Tu capacidad de detectar tácticas manipuladoras te convierte en un guardián de la integridad relacional"
+      },
+      {
+        "rasgo": "resistencia_autonoma",
+        "cita": "Los límites no son muros, son puertas que tú controlas",
+        "reflexion": "Tu resistencia a la manipulación preserva tu autonomía y te permite tomar decisiones desde tu verdad interior"
+      },
+      {
+        "rasgo": "contraataque_educativo",
+        "cita": "El contraataque más poderoso es el que enseña mientras protege",
+        "reflexion": "Tu capacidad de responder a la manipulación no solo te protege, sino que educa y empodera a otros"
+      }
+    ]
+  },
+  "related_tests": ["dark-triad", "persuasion-power", "psychological-shadow"]
+}

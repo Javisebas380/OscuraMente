@@ -1,0 +1,350 @@
+{
+  "id": "inteligencia_emocional",
+  "schemaVersion": 2,
+  "traitMap": {
+    "autoconciencia_emocional": "conciencia",
+    "regulacion_emocional": "regulacion",
+    "empatia": "empatia"
+  },
+  "titulo": "Inteligencia Emocional",
+  "nivel": "intermedio",
+  "visual": "radar",
+  "rasgos": ["conciencia", "regulacion", "empatia"],
+  "arquetipos": [
+    {
+      "clave": "conciencia",
+      "label": "El Autoconsciente",
+      "descripcion": "Tienes una comprensión profunda de tus propias emociones, motivaciones y patrones de comportamiento"
+    },
+    {
+      "clave": "regulacion",
+      "label": "El Equilibrado",
+      "descripcion": "Gestionas tus emociones de manera efectiva, manteniendo el control incluso en situaciones desafiantes"
+    },
+    {
+      "clave": "empatia",
+      "label": "El Empático",
+      "descripcion": "Comprendes y conectas profundamente con las emociones y perspectivas de otras personas"
+    }
+  ],
+  "bands": {
+    "conciencia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta identificar y comprender tus propias emociones y sus causas subyacentes",
+        "ad_unlock": {
+          "fortalezas": ["Espontaneidad natural", "Menor autocrítica", "Vivir el momento"],
+          "debilidades": ["Reacciones emocionales impredecibles", "Dificultad para explicar tus sentimientos", "Patrones repetitivos sin conciencia"],
+          "recomendaciones_breves": ["Practica el registro emocional diario", "Pregúntate '¿qué estoy sintiendo?' varias veces al día", "Identifica tus triggers emocionales"]
+        },
+        "premium": {
+          "detalle": "La baja autoconciencia emocional puede llevarte a reacciones automáticas y patrones repetitivos que limitan tu crecimiento personal y profesional. Desarrollar esta habilidad es fundamental para el bienestar y las relaciones saludables.",
+          "mejorar": ["Journaling emocional diario", "Meditación mindfulness", "Terapia de autoconocimiento", "Feedback regular de personas cercanas"],
+          "alertas": ["Reacciones emocionales que sorprenden a otros y a ti mismo", "Repetir los mismos errores relacionales", "Sentirte desconectado de tus propias necesidades"],
+          "oportunidades": ["Desarrollo de inteligencia emocional", "Relaciones más auténticas", "Mayor control sobre tu vida"],
+          "impacto_relaciones": ["Dificultad para comunicar necesidades emocionales", "Posibles malentendidos por falta de claridad interna"],
+          "plan_7_dias": [
+            "Día 1: Registra tus emociones cada 3 horas con una palabra",
+            "Día 2: Identifica qué situaciones te generan estrés",
+            "Día 3: Practica nombrar emociones antes de reaccionar",
+            "Día 4: Reflexiona sobre un patrón emocional repetitivo",
+            "Día 5: Pregunta a alguien cercano cómo percibe tus emociones",
+            "Día 6: Medita 10 minutos observando tus pensamientos",
+            "Día 7: Escribe sobre lo que has aprendido de ti mismo"
+          ],
+          "cita": "Conocerte a ti mismo es el principio de toda sabiduría"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes una comprensión moderada de tus emociones, aunque a veces te sorprendes por tus reacciones",
+        "ad_unlock": {
+          "fortalezas": ["Conciencia emocional básica", "Capacidad de reflexión", "Interés en el autoconocimiento"],
+          "debilidades": ["Inconsistencia en la autoobservación", "Reacciones ocasionalmente impulsivas"],
+          "recomendaciones_breves": ["Profundiza en las causas de tus emociones", "Practica la pausa antes de reaccionar"]
+        },
+        "premium": {
+          "detalle": "Tu autoconciencia moderada te permite navegar la mayoría de situaciones emocionales, pero hay espacio para desarrollar una comprensión más profunda y consistente de tu mundo interno.",
+          "mejorar": ["Técnicas avanzadas de mindfulness", "Exploración de patrones emocionales profundos", "Desarrollo de vocabulario emocional", "Práctica de autorreflexión estructurada"],
+          "alertas": ["Subestimar el impacto de tus emociones en otros", "No profundizar en las causas raíz de patrones emocionales"],
+          "oportunidades": ["Liderazgo emocional", "Coaching y mentoría", "Relaciones más profundas"],
+          "impacto_relaciones": ["Comunicación emocional generalmente efectiva", "Capacidad de crecimiento en intimidad"],
+          "plan_7_dias": [
+            "Día 1: Identifica tus 5 emociones más frecuentes",
+            "Día 2: Explora las causas profundas de una emoción recurrente",
+            "Día 3: Practica la técnica STOP antes de reaccionar",
+            "Día 4: Comparte una emoción vulnerable con alguien de confianza",
+            "Día 5: Observa cómo tus emociones afectan a otros",
+            "Día 6: Desarrolla estrategias para emociones desafiantes",
+            "Día 7: Celebra tu progreso en autoconocimiento"
+          ],
+          "cita": "La autoconciencia es la brújula del alma"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una comprensión profunda y clara de tus emociones, motivaciones y patrones internos",
+        "ad_unlock": {
+          "fortalezas": ["Autoconocimiento profundo", "Comunicación emocional clara", "Crecimiento personal constante"],
+          "debilidades": ["Posible sobreanálisis", "Expectativas altas hacia otros"],
+          "recomendaciones_breves": ["Usa tu autoconciencia para ayudar a otros", "Equilibra análisis con acción espontánea"]
+        },
+        "premium": {
+          "detalle": "Tu alta autoconciencia emocional es un regalo que te permite navegar la vida con claridad y propósito. Puedes usar esta fortaleza para liderar y ayudar a otros en su desarrollo emocional.",
+          "mejorar": ["Desarrollo de habilidades de coaching emocional", "Práctica de la vulnerabilidad estratégica", "Cultivo de la paciencia con procesos ajenos", "Integración de intuición con análisis"],
+          "alertas": ["Paralizar la acción con exceso de análisis", "Frustración con quienes tienen menor autoconciencia", "Aislamiento por profundidad emocional"],
+          "oportunidades": ["Liderazgo transformacional", "Terapia y coaching", "Construcción de culturas emocionales saludables"],
+          "impacto_relaciones": ["Conexiones profundas y significativas", "Capacidad de facilitar crecimiento en otros"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu autoconciencia beneficia a otros",
+            "Día 2: Enseña a alguien una técnica de autoobservación",
+            "Día 3: Practica la paciencia con alguien menos autoconsciente",
+            "Día 4: Usa tu autoconciencia para resolver un conflicto",
+            "Día 5: Comparte una vulnerabilidad que inspire crecimiento",
+            "Día 6: Desarrolla un ritual de autoconexión diaria",
+            "Día 7: Planifica cómo usar tu don para impacto positivo"
+          ],
+          "cita": "La autoconciencia profunda es el fundamento de toda transformación"
+        }
+      }
+    ],
+    "regulacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta controlar tus impulsos emocionales y reacciones, especialmente bajo estrés",
+        "ad_unlock": {
+          "fortalezas": ["Autenticidad emocional", "Expresividad natural", "Pasión genuina"],
+          "debilidades": ["Reacciones impulsivas", "Dificultad bajo presión", "Arrepentimiento por explosiones emocionales"],
+          "recomendaciones_breves": ["Practica técnicas de respiración", "Implementa pausas antes de reaccionar", "Desarrolla estrategias de manejo del estrés"]
+        },
+        "premium": {
+          "detalle": "Tu baja autorregulación puede llevarte a reacciones que dañen relaciones y oportunidades. Aunque tu autenticidad emocional es valiosa, necesitas desarrollar herramientas para canalizar tus emociones constructivamente.",
+          "mejorar": ["Técnicas de respiración profunda", "Mindfulness para la regulación", "Ejercicio regular para liberar tensión", "Desarrollo de rituales de calma"],
+          "alertas": ["Explosiones emocionales en momentos críticos", "Decisiones impulsivas que lamentas", "Daño a relaciones importantes por falta de control"],
+          "oportunidades": ["Desarrollo de resiliencia emocional", "Liderazgo auténtico", "Creatividad a través de la pasión"],
+          "impacto_relaciones": ["Intensidad emocional que puede abrumar", "Necesidad de paciencia y comprensión de otros"],
+          "plan_7_dias": [
+            "Día 1: Practica respiración 4-7-8 cuando sientas tensión",
+            "Día 2: Implementa una pausa de 10 segundos antes de responder",
+            "Día 3: Identifica tus principales triggers emocionales",
+            "Día 4: Desarrolla una frase calmante personal",
+            "Día 5: Practica ejercicio físico para liberar estrés",
+            "Día 6: Pide disculpas por una reacción emocional pasada",
+            "Día 7: Celebra un momento donde lograste autorregularte"
+          ],
+          "cita": "La autorregulación no suprime la emoción, la dirige sabiamente"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Generalmente manejas bien tus emociones, aunque ocasionalmente puedes perder el control",
+        "ad_unlock": {
+          "fortalezas": ["Control emocional general", "Capacidad de recuperación", "Flexibilidad emocional"],
+          "debilidades": ["Inconsistencia bajo estrés extremo", "Dificultad con emociones muy intensas"],
+          "recomendaciones_breves": ["Fortalece técnicas para situaciones de alta presión", "Desarrolla estrategias preventivas"]
+        },
+        "premium": {
+          "detalle": "Tu autorregulación moderada te permite funcionar bien en la mayoría de situaciones, pero las circunstancias de alto estrés pueden desafiar tu control emocional. Fortalecer estas habilidades te dará mayor consistencia.",
+          "mejorar": ["Técnicas avanzadas de manejo del estrés", "Desarrollo de inteligencia emocional bajo presión", "Práctica de comunicación asertiva", "Cultivo de la paciencia"],
+          "alertas": ["Perder el control en momentos críticos", "Acumulación de estrés sin liberación adecuada"],
+          "oportunidades": ["Liderazgo en situaciones desafiantes", "Mediación de conflictos", "Coaching emocional"],
+          "impacto_relaciones": ["Estabilidad emocional general", "Confiabilidad en la mayoría de situaciones"],
+          "plan_7_dias": [
+            "Día 1: Identifica situaciones que desafían tu autorregulación",
+            "Día 2: Practica técnicas de grounding en momentos de calma",
+            "Día 3: Desarrolla un plan para situaciones de alta presión",
+            "Día 4: Practica comunicación asertiva en una situación menor",
+            "Día 5: Implementa una rutina de liberación de estrés",
+            "Día 6: Busca feedback sobre tu estabilidad emocional",
+            "Día 7: Refina tus estrategias basándote en la experiencia"
+          ],
+          "cita": "La autorregulación es el arte de ser capitán de tu propio barco emocional"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees un control emocional excepcional y manejas el estrés con gran habilidad",
+        "ad_unlock": {
+          "fortalezas": ["Control emocional superior", "Estabilidad bajo presión", "Liderazgo emocional"],
+          "debilidades": ["Posible supresión emocional", "Expectativas altas hacia otros"],
+          "recomendaciones_breves": ["Asegúrate de procesar emociones, no solo controlarlas", "Ayuda a otros a desarrollar autorregulación"]
+        },
+        "premium": {
+          "detalle": "Tu alta autorregulación te convierte en un líder emocional natural. Puedes mantener la calma y tomar decisiones racionales incluso en las situaciones más desafiantes, lo que inspira confianza en otros.",
+          "mejorar": ["Desarrollo de habilidades de coaching emocional", "Práctica de vulnerabilidad apropiada", "Cultivo de la paciencia con procesos ajenos", "Integración de espontaneidad controlada"],
+          "alertas": ["Suprimir emociones en lugar de procesarlas", "Ser visto como frío o desconectado", "Frustración con la 'inmadurez' emocional ajena"],
+          "oportunidades": ["Liderazgo en crisis", "Coaching y mentoría", "Construcción de equipos resilientes"],
+          "impacto_relaciones": ["Estabilidad y confianza que otros buscan", "Riesgo de ser visto como emocionalmente inaccesible"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu estabilidad beneficia a otros",
+            "Día 2: Practica compartir una emoción vulnerable apropiadamente",
+            "Día 3: Ayuda a alguien a manejar una emoción difícil",
+            "Día 4: Identifica si suprimes emociones que deberías procesar",
+            "Día 5: Practica la paciencia con alguien emocionalmente reactivo",
+            "Día 6: Desarrolla un ritual para procesar emociones profundas",
+            "Día 7: Planifica cómo usar tu estabilidad para liderar"
+          ],
+          "cita": "La verdadera autorregulación incluye sentir profundamente y actuar sabiamente"
+        }
+      }
+    ],
+    "empatia": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta conectar emocionalmente con otros y comprender sus perspectivas",
+        "ad_unlock": {
+          "fortalezas": ["Objetividad", "Decisiones racionales", "Menor carga emocional"],
+          "debilidades": ["Dificultad para conectar", "Insensibilidad percibida", "Malentendidos relacionales"],
+          "recomendaciones_breves": ["Practica la escucha activa", "Pregunta sobre sentimientos de otros", "Observa lenguaje no verbal"]
+        },
+        "premium": {
+          "detalle": "Tu baja empatía puede deberse a diferentes factores, desde protección emocional hasta falta de desarrollo de estas habilidades. Aunque tu objetividad tiene valor, desarrollar empatía mejorará significativamente tus relaciones.",
+          "mejorar": ["Práctica de escucha empática", "Desarrollo de curiosidad por otros", "Técnicas de lectura emocional", "Exposición a diferentes perspectivas"],
+          "alertas": ["Ser percibido como frío o insensible", "Perder oportunidades relacionales importantes", "Dificultad para liderar equipos"],
+          "oportunidades": ["Liderazgo objetivo", "Toma de decisiones racionales", "Análisis sin sesgo emocional"],
+          "impacto_relaciones": ["Relaciones más superficiales", "Dificultad para generar confianza emocional"],
+          "plan_7_dias": [
+            "Día 1: Haz tres preguntas sobre sentimientos a diferentes personas",
+            "Día 2: Observa y nombra emociones en el lenguaje corporal ajeno",
+            "Día 3: Practica reflejar lo que otros sienten antes de dar consejos",
+            "Día 4: Escucha una historia personal sin juzgar o solucionar",
+            "Día 5: Pregunta '¿cómo te hace sentir eso?' en una conversación",
+            "Día 6: Comparte una emoción tuya para generar reciprocidad",
+            "Día 7: Reflexiona sobre cómo la empatía puede enriquecer tu vida"
+          ],
+          "cita": "La empatía es el puente que conecta corazones"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tienes una capacidad moderada para comprender y conectar con las emociones de otros",
+        "ad_unlock": {
+          "fortalezas": ["Conexión emocional básica", "Comprensión social", "Equilibrio entre objetividad y empatía"],
+          "debilidades": ["Empatía inconsistente", "Dificultad con emociones muy diferentes a las tuyas"],
+          "recomendaciones_breves": ["Practica ponerte en el lugar de otros", "Desarrolla curiosidad por perspectivas diferentes"]
+        },
+        "premium": {
+          "detalle": "Tu empatía moderada te permite conectar bien con muchas personas, especialmente aquellas similares a ti. El desafío es expandir tu capacidad empática hacia perspectivas más diversas y situaciones complejas.",
+          "mejorar": ["Desarrollo de empatía cognitiva", "Práctica con perspectivas muy diferentes", "Técnicas de comunicación no violenta", "Cultivo de la curiosidad genuina"],
+          "alertas": ["Empatía selectiva solo con personas similares", "Dificultad para entender emociones complejas"],
+          "oportunidades": ["Mediación y facilitación", "Trabajo en equipo efectivo", "Liderazgo inclusivo"],
+          "impacto_relaciones": ["Conexiones genuinas con variedad moderada", "Capacidad de crear ambientes seguros"],
+          "plan_7_dias": [
+            "Día 1: Busca entender la perspectiva de alguien muy diferente a ti",
+            "Día 2: Practica la técnica del 'como si fueras' en una situación",
+            "Día 3: Pregunta sobre experiencias que no has vivido",
+            "Día 4: Practica validar emociones sin estar de acuerdo",
+            "Día 5: Observa y refleja microexpresiones en conversaciones",
+            "Día 6: Busca puntos en común con alguien que te desafía",
+            "Día 7: Evalúa cómo tu empatía expandida afecta tus relaciones"
+          ],
+          "cita": "La empatía crece cuando abraza lo diferente"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una capacidad excepcional para comprender y conectar con las emociones de otros",
+        "ad_unlock": {
+          "fortalezas": ["Empatía profunda", "Conexión emocional excepcional", "Comprensión intuitiva de otros"],
+          "debilidades": ["Sobrecarga emocional", "Dificultad para establecer límites", "Absorción de emociones ajenas"],
+          "recomendaciones_breves": ["Establece límites emocionales saludables", "Practica técnicas de protección energética"]
+        },
+        "premium": {
+          "detalle": "Tu alta empatía es un don extraordinario que te permite tocar profundamente las vidas de otros. El desafío es mantener tu bienestar emocional mientras usas este regalo para el bien común.",
+          "mejorar": ["Técnicas de protección emocional", "Desarrollo de límites empáticos", "Práctica de auto-cuidado emocional", "Canalización de empatía hacia propósitos constructivos"],
+          "alertas": ["Agotamiento emocional por absorber dolor ajeno", "Perder tu identidad en las emociones de otros", "Ser usado emocionalmente"],
+          "oportunidades": ["Terapia y sanación", "Liderazgo compasivo", "Construcción de comunidades empáticas"],
+          "impacto_relaciones": ["Conexiones transformadoras y sanadoras", "Riesgo de relaciones desequilibradas"],
+          "plan_7_dias": [
+            "Día 1: Establece un límite emocional pequeño pero importante",
+            "Día 2: Practica técnicas de grounding después de interacciones intensas",
+            "Día 3: Identifica cuándo absorbes vs. cuando conectas empáticamente",
+            "Día 4: Usa tu empatía para sanar una relación específica",
+            "Día 5: Practica decir no a una petición emocional agotadora",
+            "Día 6: Desarrolla un ritual de limpieza energética",
+            "Día 7: Planifica cómo usar tu don empático sosteniblemente"
+          ],
+          "cita": "La empatía más poderosa es la que sana sin agotarse"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Inteligencia Emocional revela cómo tu autoconciencia, autorregulación y empatía se comparan con otros usuarios"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la comunicación emocional honesta y profunda", "Quienes buscan crecimiento personal y autoconocimiento", "Perfiles que abrazan la vulnerabilidad como fortaleza y conexión"],
+        "dificil": ["Quienes evitan conversaciones emocionales o las ven como debilidad", "Personas que mantienen distancia emocional por miedo", "Perfiles que juzgan la sensibilidad como fragilidad"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la inteligencia emocional y el bienestar del equipo", "Culturas que premian la empatía, comunicación y liderazgo consciente", "Espacios que fomentan el crecimiento personal y la autenticidad"],
+        "dificil": ["Ambientes que minimizan la importancia de las emociones", "Culturas tóxicas que penalizan la vulnerabilidad o sensibilidad", "Estructuras rígidas que ignoran el bienestar emocional"]
+      },
+      "amistades": {
+        "facil": ["Personas en camino de desarrollo emocional y autoconocimiento", "Quienes valoran la profundidad emocional y la autenticidad", "Perfiles que buscan conexiones significativas basadas en comprensión mutua"],
+        "dificil": ["Quienes evitan la profundidad emocional o la introspección", "Personas que se sienten incómodas con la intensidad emocional", "Perfiles que mantienen relaciones superficiales por miedo a la intimidad"]
+      },
+      "insights": [
+        "Comparte tu sabiduría emocional para crear espacios seguros de vulnerabilidad",
+        "Equilibra tu intensidad emocional con momentos de ligereza y humor",
+        "Usa tu inteligencia emocional para facilitar el crecimiento de otros sin absorber sus problemas"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren liderazgo emocional y resolución de conflictos",
+        "prediccion": "Tu combinación de autoconciencia, regulación y empatía te posicionará como mediador natural",
+        "consejo": "Usa tu inteligencia emocional para facilitar comprensión mutua, no para controlar el resultado"
+      },
+      {
+        "escenario": "En crisis emocionales propias o ajenas",
+        "prediccion": "Tu capacidad de regulación y empatía te permitirá mantener calma y ofrecer apoyo efectivo",
+        "consejo": "Balancea tu apoyo emocional con límites saludables para evitar agotamiento por absorción"
+      },
+      {
+        "escenario": "En entornos que requieren comunicación sensible y construcción de confianza",
+        "prediccion": "Tu autoconciencia y empatía crearán conexiones profundas y duraderas",
+        "consejo": "Usa tu sensibilidad emocional para empoderar a otros, no solo para conectar"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "autoconciencia_transformadora",
+        "cita": "Conocerte a ti mismo es el principio de toda sabiduría emocional",
+        "reflexion": "Tu profunda autoconciencia emocional te permite navegar la vida con claridad y ayudar a otros a entender sus propios mundos internos"
+      },
+      {
+        "rasgo": "autorregulacion_sabia",
+        "cita": "La autorregulación no suprime la emoción, la dirige hacia la sabiduría",
+        "reflexion": "Tu capacidad de gestionar emociones conscientemente te convierte en un líder emocional que inspira estabilidad y crecimiento"
+      },
+      {
+        "rasgo": "empatia_sanadora",
+        "cita": "La empatía más poderosa es la que sana sin agotarse",
+        "reflexion": "Tu don empático te permite tocar profundamente las vidas de otros mientras mantienes tu propio bienestar emocional"
+      }
+    ]
+  },
+  "related_tests": ["psychological-shadow", "test_carisma", "test_liderazgo"]
+}

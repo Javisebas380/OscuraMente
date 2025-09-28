@@ -1,0 +1,86 @@
+{
+  "ad_unlock_global": {
+    "comparacion_poblacion": {
+      "descripcion": "Tus percentiles frente a la media de usuarios",
+      "percentiles": {
+        "narcisismo": 65,
+        "maquiavelismo": 72,
+        "psicopatia": 58,
+        "autenticidad": 70,
+        "aceptacion": 55,
+        "integracion": 62
+      },
+      "texto_insight": "Estas por encima de la media en la mayoría de rasgos evaluados. Tu perfil tiende hacia patrones de liderazgo y autoconocimiento consciente",
+      "nota_metodologia": "Percentiles calculados sobre la muestra anonima de la app"
+    }
+  },
+  "premium_global": {
+    "informe_extendido": {
+      "titulo": "Retrato psicologico integrado",
+      "narrativa_400_600": "Tu perfil refleja una personalidad compleja que combina elementos de liderazgo, estrategia y autoconocimiento profundo. La forma en que gestionas tanto tus impulsos de poder como tu sombra psicológica revela un individuo en proceso de integración consciente. Tus puntuaciones sugieren que has desarrollado herramientas tanto para navegar el mundo externo con efectividad como para explorar tu mundo interno con valentía. Este equilibrio entre la acción estratégica y la reflexión profunda te posiciona como alguien capaz de influir positivamente en tu entorno mientras mantienes una conexión auténtica contigo mismo.",
+      "interrelaciones": [
+        "Como tu autenticidad alta puede generar resistencia en entornos que valoran la conformidad",
+        "Como tu orientación estratégica puede chocar con tu búsqueda de autenticidad si no las integras conscientemente",
+        "Como tu capacidad de liderazgo se potencia cuando la combinas con tu trabajo de sombra personal"
+      ],
+      "puntos_clave": [
+        "Contextos donde brillas: Liderazgo transformacional y espacios de crecimiento personal",
+        "Contextos donde te desgastas: Ambientes superficiales o altamente políticos sin propósito",
+        "Palancas de regulación personal: Prácticas contemplativas combinadas con acción estratégica"
+      ]
+    },
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas en camino de autoconocimiento", "Quienes valoran tanto la profundidad como la acción", "Perfiles que abrazan el crecimiento personal"],
+        "dificil": ["Quienes evitan la introspección", "Personas que temen la intensidad emocional", "Perfiles que mantienen máscaras sociales rígidas"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran la autenticidad y los resultados", "Culturas de feedback honesto y alto rendimiento", "Espacios de innovación y liderazgo transformacional"],
+        "dificil": ["Ambientes altamente políticos sin propósito claro", "Culturas que penalizan la vulnerabilidad", "Estructuras que requieren conformidad absoluta"]
+      },
+      "amistades": {
+        "facil": ["Personas en búsqueda de significado y crecimiento", "Quienes valoran conversaciones profundas y acción", "Perfiles que abrazan la complejidad humana"],
+        "dificil": ["Quienes evitan temas existenciales", "Personas que mantienen relaciones superficiales", "Perfiles que juzgan la intensidad como debilidad"]
+      },
+      "insights": [
+        "Comunica tu proceso de crecimiento para que otros entiendan tu perspectiva",
+        "Equilibra tu intensidad con momentos de ligereza y humor",
+        "Usa tu capacidad estratégica para crear espacios seguros de vulnerabilidad"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones de alta tensión emocional",
+        "prediccion": "Tenderás a buscar espacios de soledad para procesar internamente antes de actuar estratégicamente",
+        "consejo": "Comunica tu necesidad de espacio sin desconectarte completamente de otros"
+      },
+      {
+        "escenario": "En relaciones íntimas profundas",
+        "prediccion": "Tu combinación de intensidad y estrategia puede intimidar a quienes no han explorado su propia complejidad",
+        "consejo": "Dosifica la profundidad según la capacidad del otro de recibirla"
+      },
+      {
+        "escenario": "En entornos laborales convencionales",
+        "prediccion": "Podrías sentir frustración por la falta de autenticidad y propósito del ambiente",
+        "consejo": "Encuentra formas de expresar tu verdad y crear cambio positivo sin desafiar todo el sistema de una vez"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "liderazgo_integrado",
+        "cita": "El verdadero poder surge cuando la estrategia se encuentra con la autenticidad",
+        "reflexion": "Tu capacidad para combinar efectividad externa con profundidad interna te convierte en un líder transformacional"
+      },
+      {
+        "rasgo": "sombra_consciente",
+        "cita": "La luz más brillante surge de quien ha navegado conscientemente su propia oscuridad",
+        "reflexion": "Tu trabajo de integración de la sombra te permite liderar desde un lugar de sabiduría y compasión genuinas"
+      },
+      {
+        "rasgo": "autenticidad_estrategica",
+        "cita": "La autenticidad sin estrategia es ingenua; la estrategia sin autenticidad es vacía",
+        "reflexion": "Tu capacidad para ser genuino mientras navegas complejidades te permite crear impacto duradero y significativo"
+      }
+    ]
+  }
+}

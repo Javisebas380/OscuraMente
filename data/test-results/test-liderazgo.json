@@ -1,0 +1,350 @@
+{
+  "id": "test_liderazgo",
+  "schemaVersion": 2,
+  "traitMap": {
+    "vision_estrategica": "vision",
+    "gestion_de_equipos": "comunicacion",
+    "toma_de_decisiones": "ejecucion"
+  },
+  "titulo": "Test de Liderazgo",
+  "nivel": "intermedio",
+  "visual": "radar",
+  "rasgos": ["vision", "comunicacion", "ejecucion"],
+  "arquetipos": [
+    {
+      "clave": "vision",
+      "label": "El Visionario",
+      "descripcion": "Tienes la capacidad de ver el panorama general y guiar a otros hacia objetivos a largo plazo"
+    },
+    {
+      "clave": "comunicacion",
+      "label": "El Comunicador",
+      "descripcion": "Inspiras y motivas a través de tu habilidad para transmitir ideas de manera clara y convincente"
+    },
+    {
+      "clave": "ejecucion",
+      "label": "El Decisor",
+      "descripcion": "Tomas decisiones efectivas bajo presión y asumes responsabilidad por los resultados"
+    }
+  ],
+  "bands": {
+    "vision": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te enfocas más en tareas inmediatas que en la visión a largo plazo, pero puedes desarrollar perspectiva estratégica",
+        "ad_unlock": {
+          "fortalezas": ["Atención al detalle", "Ejecución práctica", "Enfoque en resultados inmediatos"],
+          "debilidades": ["Dificultad para ver el panorama general", "Planificación a corto plazo", "Menor inspiración hacia otros"],
+          "recomendaciones_breves": ["Dedica tiempo semanal a planificación estratégica", "Pregunta '¿hacia dónde vamos?' en reuniones", "Lee sobre tendencias de tu industria"]
+        },
+        "premium": {
+          "detalle": "Tu enfoque en lo inmediato es valioso para la ejecución, pero desarrollar visión estratégica te permitirá liderar con mayor impacto y guiar a otros hacia objetivos más ambiciosos y significativos.",
+          "mejorar": ["Practica el pensamiento sistémico", "Desarrolla escenarios futuros", "Estudia líderes visionarios", "Crea mapas de ruta a 3-5 años"],
+          "alertas": ["Perderse en detalles sin ver el objetivo mayor", "Equipos sin dirección clara", "Reactividad constante sin proactividad"],
+          "oportunidades": ["Liderazgo operacional", "Gestión de proyectos complejos", "Mentoría en ejecución"],
+          "impacto_relaciones": ["Confianza en tu capacidad de entregar resultados", "Necesidad de complementarte con visionarios"],
+          "plan_7_dias": [
+            "Día 1: Dedica 30 minutos a visualizar tu área en 3 años",
+            "Día 2: Identifica 3 tendencias que podrían afectar tu trabajo",
+            "Día 3: Crea un mapa visual de objetivos a corto, medio y largo plazo",
+            "Día 4: Pregunta a tu equipo sobre sus aspiraciones futuras",
+            "Día 5: Lee sobre un líder visionario que admires",
+            "Día 6: Conecta una tarea actual con un objetivo mayor",
+            "Día 7: Presenta una visión simple a tu equipo o familia"
+          ],
+          "cita": "La visión transforma el trabajo en propósito"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Equilibras la visión estratégica con la ejecución práctica, adaptándote según la situación",
+        "ad_unlock": {
+          "fortalezas": ["Equilibrio estratégico-operacional", "Adaptabilidad", "Pragmatismo visionario"],
+          "debilidades": ["Visión no siempre clara", "Comunicación inconsistente de la dirección"],
+          "recomendaciones_breves": ["Clarifica y comunica tu visión regularmente", "Conecta tareas diarias con objetivos mayores"]
+        },
+        "premium": {
+          "detalle": "Tu equilibrio entre visión y ejecución es valioso, pero puedes potenciar tu liderazgo desarrollando una visión más clara y comunicándola de manera más consistente y inspiradora.",
+          "mejorar": ["Desarrolla storytelling visionario", "Practica comunicación inspiracional", "Crea rituales de conexión con la visión", "Mejora tu capacidad de síntesis"],
+          "alertas": ["Visión que cambia frecuentemente", "Equipo confundido sobre la dirección", "Falta de inspiración en momentos clave"],
+          "oportunidades": ["Liderazgo de equipos medianos", "Gestión de cambio", "Desarrollo de estrategias"],
+          "impacto_relaciones": ["Liderazgo respetado pero no siempre inspirador", "Necesidad de mayor claridad en comunicación"],
+          "plan_7_dias": [
+            "Día 1: Escribe tu visión personal en una página",
+            "Día 2: Practica comunicar tu visión en 60 segundos",
+            "Día 3: Conecta cada proyecto actual con la visión mayor",
+            "Día 4: Busca feedback sobre la claridad de tu dirección",
+            "Día 5: Crea una metáfora visual para tu visión",
+            "Día 6: Presenta tu visión a un grupo pequeño",
+            "Día 7: Refina tu visión basándote en feedback recibido"
+          ],
+          "cita": "Una visión clara es el faro que guía en la tormenta"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees una visión clara y poderosa que inspira a otros a seguirte hacia objetivos ambiciosos",
+        "ad_unlock": {
+          "fortalezas": ["Visión inspiradora", "Pensamiento estratégico", "Capacidad de movilizar"],
+          "debilidades": ["Posible desconexión de la realidad operacional", "Impaciencia con la ejecución"],
+          "recomendaciones_breves": ["Balancea visión con ejecución práctica", "Involucra a otros en refinar la visión"]
+        },
+        "premium": {
+          "detalle": "Tu visión poderosa es un don de liderazgo excepcional que puede transformar organizaciones y vidas. El desafío es mantener conexión con la realidad operacional y asegurar que tu visión sea alcanzable.",
+          "mejorar": ["Desarrolla habilidades de ejecución", "Practica la co-creación de visión", "Cultiva la paciencia con procesos", "Balancea inspiración con pragmatismo"],
+          "alertas": ["Visiones inalcanzables que frustran al equipo", "Desconexión de limitaciones reales", "Impaciencia con la implementación"],
+          "oportunidades": ["Liderazgo transformacional", "Fundación de organizaciones", "Consultoría estratégica"],
+          "impacto_relaciones": ["Inspiración profunda pero posible presión por altos estándares", "Atracción de personas ambiciosas"],
+          "plan_7_dias": [
+            "Día 1: Evalúa la viabilidad práctica de tu visión actual",
+            "Día 2: Involucra a tu equipo en refinar la visión",
+            "Día 3: Crea hitos concretos hacia tu visión",
+            "Día 4: Practica comunicar tanto la visión como los pasos prácticos",
+            "Día 5: Busca feedback sobre la alcanzabilidad de tus objetivos",
+            "Día 6: Celebra pequeños avances hacia la visión mayor",
+            "Día 7: Ajusta tu visión para ser inspiradora pero alcanzable"
+          ],
+          "cita": "La visión sin acción es solo un sueño; la acción sin visión es solo actividad"
+        }
+      }
+    ],
+    "comunicacion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta comunicar ideas de manera clara y persuasiva, pero puedes desarrollar estas habilidades",
+        "ad_unlock": {
+          "fortalezas": ["Escucha activa", "Humildad", "Comunicación auténtica"],
+          "debilidades": ["Dificultad para articular ideas", "Menor impacto en presentaciones", "Timidez para hablar en público"],
+          "recomendaciones_breves": ["Practica estructurar tus ideas antes de hablar", "Desarrolla tu confianza al presentar", "Usa ejemplos concretos"]
+        },
+        "premium": {
+          "detalle": "Tu comunicación limitada puede estar frenando tu potencial de liderazgo. Aunque tu autenticidad es valiosa, desarrollar habilidades de comunicación te permitirá compartir tus ideas y liderar más efectivamente.",
+          "mejorar": ["Practica técnicas de oratoria", "Desarrolla storytelling", "Mejora tu lenguaje corporal", "Cultiva la confianza al hablar"],
+          "alertas": ["Ideas valiosas que no se comunican", "Malentendidos por falta de claridad", "Oportunidades perdidas por timidez"],
+          "oportunidades": ["Liderazgo auténtico", "Comunicación uno a uno efectiva", "Desarrollo de confianza personal"],
+          "impacto_relaciones": ["Conexiones profundas en conversaciones privadas", "Dificultad para influir en grupos"],
+          "plan_7_dias": [
+            "Día 1: Practica explicar una idea compleja de manera simple",
+            "Día 2: Graba un video de 2 minutos explicando algo que sabes bien",
+            "Día 3: Participa activamente en una reunión o conversación grupal",
+            "Día 4: Practica contar una historia personal con estructura clara",
+            "Día 5: Haz una presentación corta a un grupo pequeño",
+            "Día 6: Busca feedback específico sobre tu comunicación",
+            "Día 7: Celebra tu progreso y planifica siguientes pasos"
+          ],
+          "cita": "La comunicación clara es el puente entre la idea y la acción"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Comunicas de manera efectiva en la mayoría de situaciones, aunque puedes mejorar en contextos desafiantes",
+        "ad_unlock": {
+          "fortalezas": ["Comunicación clara", "Adaptabilidad", "Conexión con audiencias familiares"],
+          "debilidades": ["Inconsistencia en diferentes contextos", "Nerviosismo en situaciones de alta presión"],
+          "recomendaciones_breves": ["Practica en contextos más desafiantes", "Desarrolla técnicas para manejar nervios"]
+        },
+        "premium": {
+          "detalle": "Tu comunicación moderada te permite liderar efectivamente en muchas situaciones. Para expandir tu impacto, necesitas desarrollar consistencia y confianza en contextos más amplios y desafiantes.",
+          "mejorar": ["Desarrolla técnicas avanzadas de presentación", "Practica comunicación bajo presión", "Mejora tu capacidad de improvisación", "Cultiva presencia escénica"],
+          "alertas": ["Comunicación que falla en momentos críticos", "Inconsistencia que confunde al equipo", "Nerviosismo que afecta el mensaje"],
+          "oportunidades": ["Liderazgo de equipos", "Presentaciones importantes", "Facilitación de reuniones"],
+          "impacto_relaciones": ["Comunicación generalmente efectiva", "Confianza que crece con el tiempo"],
+          "plan_7_dias": [
+            "Día 1: Identifica situaciones donde tu comunicación es menos efectiva",
+            "Día 2: Practica técnicas de respiración para manejar nervios",
+            "Día 3: Presenta algo a una audiencia más grande de lo usual",
+            "Día 4: Practica responder preguntas difíciles con calma",
+            "Día 5: Graba una presentación y analiza tu lenguaje corporal",
+            "Día 6: Busca oportunidades de comunicación más desafiantes",
+            "Día 7: Solicita feedback específico sobre tu evolución"
+          ],
+          "cita": "La comunicación excelente se forja en la práctica constante"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Posees habilidades excepcionales de comunicación que te permiten inspirar y movilizar a otros efectivamente",
+        "ad_unlock": {
+          "fortalezas": ["Comunicación inspiradora", "Claridad excepcional", "Impacto en audiencias diversas"],
+          "debilidades": ["Posible dependencia excesiva de la comunicación", "Expectativas altas de otros"],
+          "recomendaciones_breves": ["Usa tu don para empoderar a otros", "Desarrolla líderes comunicadores en tu equipo"]
+        },
+        "premium": {
+          "detalle": "Tu comunicación excepcional es un superpoder de liderazgo que te permite transformar ideas en movimientos. La responsabilidad es usar este don para elevar a otros y crear impacto positivo duradero.",
+          "mejorar": ["Desarrolla habilidades de coaching comunicacional", "Practica la comunicación que empodera", "Cultiva la humildad en tu don", "Crea sistemas para desarrollar otros comunicadores"],
+          "alertas": ["Dominar conversaciones sin dar espacio a otros", "Crear dependencia en lugar de empoderar", "Arrogancia por tu habilidad comunicativa"],
+          "oportunidades": ["Liderazgo a gran escala", "Oratoria transformacional", "Desarrollo de otros líderes"],
+          "impacto_relaciones": ["Influencia profunda y duradera", "Capacidad de inspirar cambios significativos"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre cómo tu comunicación puede empoderar más",
+            "Día 2: Enseña técnicas de comunicación a alguien de tu equipo",
+            "Día 3: Practica escuchar más y hablar menos en una reunión",
+            "Día 4: Usa tu comunicación para una causa benéfica",
+            "Día 5: Desarrolla el talento comunicativo de un colaborador",
+            "Día 6: Busca feedback sobre cómo tu comunicación afecta a otros",
+            "Día 7: Compromete tu don comunicativo con un propósito mayor"
+          ],
+          "cita": "La comunicación más poderosa es la que da voz a otros"
+        }
+      }
+    ],
+    "ejecucion": [
+      {
+        "min": 0,
+        "max": 33,
+        "label": "Bajo",
+        "free_summary": "Te cuesta tomar decisiones rápidas y asumir responsabilidad, prefiriendo consenso y análisis extenso",
+        "ad_unlock": {
+          "fortalezas": ["Análisis cuidadoso", "Búsqueda de consenso", "Consideración de múltiples perspectivas"],
+          "debilidades": ["Lentitud en decisiones críticas", "Evitación de responsabilidad", "Parálisis por análisis"],
+          "recomendaciones_breves": ["Establece límites de tiempo para decisiones", "Practica tomar decisiones pequeñas rápidamente", "Acepta que no todas las decisiones serán perfectas"]
+        },
+        "premium": {
+          "detalle": "Tu cautela en la toma de decisiones puede ser valiosa para evitar errores, pero en roles de liderazgo necesitas desarrollar la capacidad de decidir con información incompleta y asumir las consecuencias.",
+          "mejorar": ["Desarrolla marcos de decisión rápida", "Practica la toma de decisiones bajo presión", "Cultiva la tolerancia a la incertidumbre", "Aprende de decisiones pasadas"],
+          "alertas": ["Perder oportunidades por indecisión", "Equipos frustrados por falta de dirección", "Evitar decisiones difíciles necesarias"],
+          "oportunidades": ["Liderazgo colaborativo", "Análisis de riesgos", "Facilitación de procesos de decisión"],
+          "impacto_relaciones": ["Confianza en tu análisis pero frustración por lentitud", "Necesidad de apoyo en decisiones críticas"],
+          "plan_7_dias": [
+            "Día 1: Toma 3 decisiones pequeñas en menos de 5 minutos cada una",
+            "Día 2: Establece un límite de tiempo para una decisión pendiente",
+            "Día 3: Practica la regla 70% (decidir con 70% de información)",
+            "Día 4: Asume responsabilidad por una decisión pasada",
+            "Día 5: Toma una decisión difícil que has estado evitando",
+            "Día 6: Busca feedback sobre tu proceso de toma de decisiones",
+            "Día 7: Celebra las decisiones tomadas esta semana"
+          ],
+          "cita": "El liderazgo requiere la valentía de decidir con información incompleta"
+        }
+      },
+      {
+        "min": 34,
+        "max": 66,
+        "label": "Medio",
+        "free_summary": "Tomas decisiones de manera equilibrada, considerando información relevante sin caer en parálisis",
+        "ad_unlock": {
+          "fortalezas": ["Decisiones balanceadas", "Consideración apropiada", "Responsabilidad moderada"],
+          "debilidades": ["Ocasional lentitud en crisis", "Dudas en decisiones complejas"],
+          "recomendaciones_breves": ["Desarrolla confianza en decisiones bajo presión", "Practica comunicar el razonamiento detrás de tus decisiones"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad moderada de toma de decisiones te permite liderar efectivamente en la mayoría de situaciones. Para el siguiente nivel, necesitas desarrollar mayor velocidad y confianza en contextos de alta presión.",
+          "mejorar": ["Desarrolla intuición para decisiones rápidas", "Practica comunicación de decisiones difíciles", "Mejora tu tolerancia al riesgo", "Cultiva la confianza en tu juicio"],
+          "alertas": ["Lentitud en crisis que requieren acción inmediata", "Dudas que se transmiten al equipo", "Sobre-análisis en situaciones simples"],
+          "oportunidades": ["Liderazgo en situaciones complejas", "Gestión de equipos diversos", "Toma de decisiones estratégicas"],
+          "impacto_relaciones": ["Confianza general en tu juicio", "Respeto por tu proceso de decisión"],
+          "plan_7_dias": [
+            "Día 1: Identifica patrones en tus mejores decisiones",
+            "Día 2: Practica tomar decisiones rápidas en situaciones de bajo riesgo",
+            "Día 3: Comunica el razonamiento detrás de una decisión compleja",
+            "Día 4: Toma una decisión importante con 80% de información",
+            "Día 5: Practica mantener calma al comunicar decisiones difíciles",
+            "Día 6: Busca feedback sobre tu estilo de toma de decisiones",
+            "Día 7: Refina tu proceso personal de decisión"
+          ],
+          "cita": "Las mejores decisiones combinan análisis con intuición"
+        }
+      },
+      {
+        "min": 67,
+        "max": 100,
+        "label": "Alto",
+        "free_summary": "Tomas decisiones rápidas y efectivas, asumiendo responsabilidad total por los resultados",
+        "ad_unlock": {
+          "fortalezas": ["Decisiones rápidas", "Liderazgo bajo presión", "Responsabilidad total"],
+          "debilidades": ["Posibles decisiones precipitadas", "Menor consulta con el equipo"],
+          "recomendaciones_breves": ["Balancea velocidad con consulta apropiada", "Comunica tu proceso de decisión al equipo"]
+        },
+        "premium": {
+          "detalle": "Tu capacidad excepcional para tomar decisiones rápidas y asumir responsabilidad te convierte en un líder natural en crisis y situaciones de alta presión. El desafío es mantener la calidad mientras preservas la velocidad.",
+          "mejorar": ["Desarrolla sistemas de consulta rápida", "Practica la comunicación de decisiones complejas", "Cultiva la humildad para revisar decisiones", "Balancea autonomía con colaboración"],
+          "alertas": ["Decisiones unilaterales que alienan al equipo", "Velocidad que sacrifica calidad innecesariamente", "Arrogancia en la toma de decisiones"],
+          "oportunidades": ["Liderazgo en crisis", "Turnaround de organizaciones", "Emprendimiento de alto riesgo"],
+          "impacto_relaciones": ["Confianza total en situaciones críticas", "Posible intimidación por tu determinación"],
+          "plan_7_dias": [
+            "Día 1: Reflexiona sobre el equilibrio entre velocidad y consulta",
+            "Día 2: Practica involucrar al equipo en una decisión rápida",
+            "Día 3: Comunica claramente el razonamiento de una decisión compleja",
+            "Día 4: Revisa una decisión pasada y evalúa si fue la correcta",
+            "Día 5: Busca feedback sobre tu estilo de toma de decisiones",
+            "Día 6: Practica la humildad al reconocer una decisión subóptima",
+            "Día 7: Desarrolla un sistema para decisiones que incluya input del equipo"
+          ],
+          "cita": "La decisión valiente que incluye a otros es la más poderosa"
+        }
+      }
+    ]
+  },
+  "comparativa": {
+    "enabled": true,
+    "texto_premium": "Tu perfil de Liderazgo revela cómo tu visión, comunicación y capacidad de decisión se comparan con otros líderes"
+  },
+  "premium_global": {
+    "compatibilidad": {
+      "relaciones": {
+        "facil": ["Personas que valoran la dirección clara y el liderazgo inspiracional", "Quienes aprecian la comunicación directa y la toma de decisiones", "Perfiles que buscan crecimiento y desarrollo bajo liderazgo consciente"],
+        "dificil": ["Quienes se sienten intimidados por personalidades de liderazgo fuerte", "Personas que prefieren estructuras horizontales sin jerarquías", "Perfiles que desconfían de la autoridad o el liderazgo en general"]
+      },
+      "trabajo": {
+        "facil": ["Entornos que valoran el liderazgo visionario y la toma de decisiones efectiva", "Culturas que premian la comunicación clara y la dirección estratégica", "Espacios que requieren transformación, innovación y gestión del cambio"],
+        "dificil": ["Ambientes que penalizan la iniciativa o el liderazgo proactivo", "Culturas extremadamente burocráticas que limitan la toma de decisiones", "Estructuras que desconfían del liderazgo carismático o visionario"]
+      },
+      "amistades": {
+        "facil": ["Personas que admiran la capacidad de liderazgo y la visión clara", "Quienes valoran la comunicación inspiracional y la motivación", "Perfiles que buscan dirección y crecimiento en sus círculos sociales"],
+        "dificil": ["Quienes se sienten opacados por personalidades de liderazgo natural", "Personas que prefieren relaciones completamente igualitarias", "Perfiles que interpretan el liderazgo como dominancia o control"]
+      },
+      "insights": [
+        "Usa tu capacidad de liderazgo para desarrollar otros líderes, no solo para dirigir",
+        "Equilibra tu visión ambiciosa con paciencia hacia los procesos de otros",
+        "Comunica tus decisiones de manera que otros entiendan el razonamiento y se sientan incluidos"
+      ]
+    },
+    "predicciones": [
+      {
+        "escenario": "En situaciones que requieren transformación organizacional o cambio",
+        "prediccion": "Tu combinación de visión, comunicación y decisión te posicionará como líder natural del cambio",
+        "consejo": "Incluye a otros en la co-creación de la visión para generar compromiso genuino, no solo cumplimiento"
+      },
+      {
+        "escenario": "En crisis que requieren decisiones rápidas y comunicación clara",
+        "prediccion": "Tu capacidad de decidir bajo presión y comunicar con claridad te convertirá en el punto de referencia",
+        "consejo": "Balancea la velocidad de decisión con la inclusión del equipo para mantener confianza a largo plazo"
+      },
+      {
+        "escenario": "En relaciones personales que requieren igualdad y reciprocidad",
+        "prediccion": "Tu tendencia natural al liderazgo puede crear dinámicas desequilibradas",
+        "consejo": "Practica momentos de seguimiento y vulnerabilidad donde otros puedan liderar la interacción"
+      }
+    ],
+    "citas_reflexiones": [
+      {
+        "rasgo": "vision_transformadora",
+        "cita": "La visión sin acción es solo un sueño; la acción sin visión es solo actividad",
+        "reflexion": "Tu capacidad visionaria se convierte en transformación real cuando la combinas con ejecución práctica y comunicación inspiradora"
+      },
+      {
+        "rasgo": "comunicacion_elevadora",
+        "cita": "La comunicación más poderosa es la que da voz a otros",
+        "reflexion": "Tu don comunicativo alcanza su máximo potencial cuando lo usas para amplificar las voces y el potencial de otros"
+      },
+      {
+        "rasgo": "decision_inclusiva",
+        "cita": "La decisión valiente que incluye a otros es la más poderosa",
+        "reflexion": "Tu capacidad de tomar decisiones efectivas se multiplica cuando logras que otros se sientan parte del proceso"
+      }
+    ]
+  },
+  "related_tests": ["test_carisma", "persuasion-power", "inteligencia_emocional"]
+}
