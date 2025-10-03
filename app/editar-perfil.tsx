@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Animated } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Animated, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, User, Mail, Save, Camera } from 'lucide-react-native';
