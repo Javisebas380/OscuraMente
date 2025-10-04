@@ -97,7 +97,7 @@ export default function Ayuda() {
       const emailBody = `Categoría: ${ticketForm.category}\n\nMensaje:\n${ticketForm.message}\n\n---\nEnviado desde la app de Psicología Oscura`;
       
       // Create mailto URL
-      const mailtoUrl = `mailto:oscuramenteapp@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      const mailtoUrl = `mailto:oscuramentecontacto@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
       
       // Check if email can be opened
       const canOpen = await Linking.canOpenURL(mailtoUrl);
