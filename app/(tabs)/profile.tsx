@@ -162,7 +162,7 @@ export default function Profile() {
     
     switch (type) {
       case 'email':
-        Linking.openURL('mailto:javisebas380@gmail.com?subject=Consulta desde la app');
+        Linking.openURL('mailto:oscuramentecontacto@gmail.com?subject=Consulta desde la app');
         break;
       case 'whatsapp':
         Linking.openURL('https://wa.me/1234567890?text=Hola, tengo una consulta sobre la app de Psicología Oscura');
