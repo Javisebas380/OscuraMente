@@ -366,7 +366,7 @@ export default function Profile() {
             <User size={32} color="#F5F5F5" strokeWidth={1.5} />
           </LinearGradient>
         </View>
-        <Text style={styles.nameText}>Explorador de Psicología</Text>
+        <Text style={styles.nameText}>Explorador/a de Psicología</Text>
         
         
         <View style={styles.statsRow}>
