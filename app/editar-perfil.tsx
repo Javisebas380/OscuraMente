@@ -12,7 +12,7 @@ export default function EditarPerfil() {
   const { trackEvent } = useAnalytics();
   const [profile, setProfile] = useState({
     name: 'Explorador de Psicología',
-    email: 'explorador@psicoscura.app',
+    email: 'OscuraMente App',
     alias: 'Explorador'
   });
   const [isEdited, setIsEdited] = useState(false);
