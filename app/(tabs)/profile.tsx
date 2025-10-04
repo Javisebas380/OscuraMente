@@ -367,7 +367,7 @@ export default function Profile() {
           </LinearGradient>
         </View>
         <Text style={styles.nameText}>Explorador de Psicología</Text>
-        <Text style={styles.emailText}>{t('psychology_explorer').toLowerCase()}@psicoscura.app</Text>
+        <Text style={styles.emailText}>{t('psychology_explorer').toLowerCase()}</Text>
         
         <View style={styles.statsRow}>
           <View style={styles.statItem}>
