@@ -17,7 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'; // Keep fo
 // Environment variables for RevenueCat API Key and Entitlement
 const EXPO_PUBLIC_RC_API_KEY_IOS = process.env.EXPO_PUBLIC_RC_API_KEY_IOS || 'appl_mock_key_for_development';
 const EXPO_PUBLIC_RC_API_KEY_ANDROID = process.env.EXPO_PUBLIC_RC_API_KEY_ANDROID || 'goog_mock_key_for_development';
-const EXPO_PUBLIC_RC_ENTITLEMENT = process.env.EXPO_PUBLIC_RC_ENTITLEMENT || 'pro';
+const EXPO_PUBLIC_RC_ENTITLEMENT = process.env.EXPO_PUBLIC_RC_ENTITLEMENT || 'premium';
 
 // Select the appropriate API key based on platform
 const getApiKey = () => {
@@ -87,14 +87,14 @@ export function useRevenueCatIntegration() {
           serverDescription: 'Default offering',
           availablePackages: [
             {
-              identifier: 'monthly',
-              packageType: 'MONTHLY' as any,
+              identifier: 'weekly',
+              packageType: 'WEEKLY' as any,
               product: {
-                identifier: 'premium_monthly',
-                description: 'Premium Monthly Subscription',
-                title: 'Premium Monthly',
-                price: '7.99',
-                priceString: '$7.99',
+                identifier: 'psico_weekly_399',
+                description: 'Premium Weekly Subscription',
+                title: 'Premium Semanal',
+                price: '3.99',
+                priceString: '$3.99',
                 currencyCode: 'USD',
               } as PurchasesStoreProduct,
             },
@@ -102,11 +102,11 @@ export function useRevenueCatIntegration() {
               identifier: 'annual',
               packageType: 'ANNUAL' as any,
               product: {
-                identifier: 'premium_annual',
+                identifier: 'psico_annual_2499',
                 description: 'Premium Annual Subscription',
-                title: 'Premium Annual',
-                price: '49.99',
-                priceString: '$49.99',
+                title: 'Premium Anual',
+                price: '24.99',
+                priceString: '$24.99',
                 currencyCode: 'USD',
               } as PurchasesStoreProduct,
             },
@@ -137,14 +137,14 @@ export function useRevenueCatIntegration() {
             serverDescription: 'Default offering',
             availablePackages: [
               {
-                identifier: 'monthly',
-                packageType: 'MONTHLY' as any,
+                identifier: 'weekly',
+                packageType: 'WEEKLY' as any,
                 product: {
-                  identifier: 'premium_monthly',
-                  description: 'Premium Monthly Subscription',
-                  title: 'Premium Monthly',
-                  price: '7.99',
-                  priceString: '$7.99',
+                  identifier: 'psico_weekly_399',
+                  description: 'Premium Weekly Subscription',
+                  title: 'Premium Semanal',
+                  price: '3.99',
+                  priceString: '$3.99',
                   currencyCode: 'USD',
                 } as PurchasesStoreProduct,
               },
@@ -152,11 +152,11 @@ export function useRevenueCatIntegration() {
                 identifier: 'annual',
                 packageType: 'ANNUAL' as any,
                 product: {
-                  identifier: 'premium_annual',
+                  identifier: 'psico_annual_2499',
                   description: 'Premium Annual Subscription',
-                  title: 'Premium Annual',
-                  price: '49.99',
-                  priceString: '$49.99',
+                  title: 'Premium Anual',
+                  price: '24.99',
+                  priceString: '$24.99',
                   currencyCode: 'USD',
                 } as PurchasesStoreProduct,
               },

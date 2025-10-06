@@ -22,7 +22,7 @@ export function useSubscription() {
     if (revenueCatState.isActive && revenueCatState.customerInfo) {
       const entitlement = revenueCatState.customerInfo.entitlements.active[revenueCatState.entitlement || ''];
       if (entitlement) {
-        if (entitlement.productIdentifier?.includes('monthly')) {
+        if (entitlement.productIdentifier?.includes('weekly') || entitlement.productIdentifier?.includes('monthly')) {
           currentPlan = 'monthly';
         } else if (entitlement.productIdentifier?.includes('annual')) {
           currentPlan = 'yearly';
@@ -48,15 +48,15 @@ export function useSubscription() {
   const purchaseSubscription = useCallback(async (planType: 'monthly' | 'yearly') => {
     const targetPackage = revenueCatState.currentOffering?.availablePackages.find(pkg => {
       if (Platform.OS === 'web') {
-        return (planType === 'monthly' && pkg.packageType === 'MONTHLY') ||
+        return (planType === 'monthly' && (pkg.packageType === 'WEEKLY' || pkg.packageType === 'MONTHLY')) ||
                (planType === 'yearly' && pkg.packageType === 'ANNUAL');
       } else {
         try {
           const { PurchasesPackageType } = require('react-native-purchases');
-          return (planType === 'monthly' && pkg.packageType === PurchasesPackageType.MONTHLY) ||
+          return (planType === 'monthly' && (pkg.packageType === PurchasesPackageType.WEEKLY || pkg.packageType === PurchasesPackageType.MONTHLY)) ||
                  (planType === 'yearly' && pkg.packageType === PurchasesPackageType.ANNUAL);
         } catch {
-          return (planType === 'monthly' && pkg.packageType === 'MONTHLY') ||
+          return (planType === 'monthly' && (pkg.packageType === 'WEEKLY' || pkg.packageType === 'MONTHLY')) ||
                  (planType === 'yearly' && pkg.packageType === 'ANNUAL');
         }
       }
@@ -73,7 +73,7 @@ export function useSubscription() {
       DeviceEventEmitter.emit('subscription-updated', {
         isActive: true,
         plan: planType,
-        expiresAt: new Date(Date.now() + (planType === 'yearly' ? 365 : 30) * 24 * 60 * 60 * 1000).toISOString(),
+        expiresAt: new Date(Date.now() + (planType === 'yearly' ? 365 : 7) * 24 * 60 * 60 * 1000).toISOString(),
       });
       return { success: true, message: 'Suscripción activada correctamente' };
     } else {
