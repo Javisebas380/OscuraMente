@@ -1,4 +1,4 @@
-package com.oscuramentetestpsicolgicos
+package com.psicologiaoscura.darkpsychology
 
 import android.os.Build
 import android.os.Bundle
