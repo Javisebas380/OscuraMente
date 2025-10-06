@@ -9,7 +9,7 @@
     "userInterfaceStyle": "dark",
     "newArchEnabled": false,
     "splash": {
-      "image": "./assets/images/icon.png",
+      "image": "./assets/images/oscuramente-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#0D0D0D"
     },
