@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Psicología Oscura",
-    "slug": "psicologia-oscura",
+    "name": "OscuraMente - Test Psicológicos",
+    "slug": "oscuramente",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "psicologiaoscura",
+    "scheme": "oscuramente",
     "userInterfaceStyle": "dark",
     "newArchEnabled": false,
     "splash": {
