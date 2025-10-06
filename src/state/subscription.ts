@@ -30,14 +30,22 @@ const getApiKey = () => {
   return EXPO_PUBLIC_RC_API_KEY_IOS;
 };
 
+function isExpoGo(): boolean {
+  try {
+    const Constants = require('expo-constants').default;
+    return Constants.appOwnership === 'expo';
+  } catch {
+    return true;
+  }
+}
+
 console.log('[RevenueCat] INITIAL Configuration loaded:', {
   apiKeyIOS: EXPO_PUBLIC_RC_API_KEY_IOS.substring(0, 10) + '...',
   apiKeyAndroid: EXPO_PUBLIC_RC_API_KEY_ANDROID.substring(0, 10) + '...',
   selectedApiKey: getApiKey().substring(0, 10) + '...',
   entitlement: EXPO_PUBLIC_RC_ENTITLEMENT,
   platform: Platform.OS,
-  globalNativeModules: !!global.nativeModules,
-  rcPurchasesModule: !!(global.nativeModules && global.nativeModules.RCPurchases),
+  isExpoGo: isExpoGo(),
   timestamp: new Date().toISOString()
 });
 
@@ -116,14 +124,11 @@ export function useRevenueCatIntegration() {
     }
 
     try {
-      // Check if we're in Expo Go
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
-      console.log('[RevenueCat] configurePurchases - Environment detection - isExpoGo:', isExpoGo);
-      console.log('[RevenueCat] configurePurchases - global.nativeModules exists:', !!global.nativeModules);
-      console.log('[RevenueCat] configurePurchases - RCPurchases module exists:', !!(global.nativeModules && global.nativeModules.RCPurchases));
+      const inExpoGo = isExpoGo();
+      console.log('[RevenueCat] configurePurchases - Environment detection - isExpoGo:', inExpoGo);
       console.log('[RevenueCat] configurePurchases - Platform.OS:', Platform.OS);
-      
-      if (isExpoGo) {
+
+      if (inExpoGo) {
         console.log('[RevenueCat] configurePurchases - Expo Go detected - using mock implementation');
         // Use same mock data as web for Expo Go
         const mockOfferings: PurchasesOffering[] = [
@@ -215,15 +220,11 @@ export function useRevenueCatIntegration() {
     console.log('[RevenueCat] checkSubscriptionStatus - Native platform - checking subscription status');
     setState(prev => ({ ...prev, loading: true }));
     try {
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
+      const inExpoGo = isExpoGo();
       console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - Platform.OS:', Platform.OS);
-      console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - isExpoGo:', isExpoGo);
-      console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - global.nativeModules:', !!global.nativeModules);
-      console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - RCPurchases module:', !!(global.nativeModules && global.nativeModules.RCPurchases));
-      console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - typeof global:', typeof global);
-      console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - global keys:', global ? Object.keys(global) : 'global is undefined');
+      console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - isExpoGo:', inExpoGo);
       
-      if (isExpoGo) {
+      if (inExpoGo) {
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go detected - using mock subscription');
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go - Platform.OS:', Platform.OS);
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go - Checking for subscription state...');
@@ -338,11 +339,11 @@ export function useRevenueCatIntegration() {
 
     console.log('[RevenueCat] loadOfferings - Native platform - Loading offerings...');
     try {
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
+      const inExpoGo = isExpoGo();
       console.log('[RevenueCat] loadOfferings - Platform.OS:', Platform.OS);
-      console.log('[RevenueCat] loadOfferings - isExpoGo:', isExpoGo);
+      console.log('[RevenueCat] loadOfferings - isExpoGo:', inExpoGo);
       
-      if (isExpoGo) {
+      if (inExpoGo) {
         console.log('[RevenueCat] loadOfferings - Expo Go - offerings already set in configurePurchases');
         return;
       }
@@ -412,11 +413,11 @@ export function useRevenueCatIntegration() {
     console.log('[RevenueCat] purchase - Native platform - attempting purchase');
     setState(prev => ({ ...prev, loading: true }));
     try {
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
+      const inExpoGo = isExpoGo();
       console.log('[RevenueCat] purchase - Platform.OS:', Platform.OS);
-      console.log('[RevenueCat] purchase - isExpoGo:', isExpoGo);
+      console.log('[RevenueCat] purchase - isExpoGo:', inExpoGo);
       
-      if (isExpoGo) {
+      if (inExpoGo) {
         console.log('[RevenueCat] purchase - Expo Go - mock purchase');
         // Simulate purchase for Expo Go
         await new Promise(resolve => setTimeout(resolve, 1500));
@@ -486,11 +487,11 @@ export function useRevenueCatIntegration() {
     console.log('[RevenueCat] restore - Native platform - attempting restore');
     setState(prev => ({ ...prev, loading: true }));
     try {
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
+      const inExpoGo = isExpoGo();
       console.log('[RevenueCat] restore - Platform.OS:', Platform.OS);
-      console.log('[RevenueCat] restore - isExpoGo:', isExpoGo);
+      console.log('[RevenueCat] restore - isExpoGo:', inExpoGo);
       
-      if (isExpoGo) {
+      if (inExpoGo) {
         console.log('[RevenueCat] restore - Expo Go - mock restore (no purchases to restore)');
         setState(prev => ({ ...prev, loading: false }));
         return { success: false, error: 'No purchases to restore in Expo Go' };
@@ -546,11 +547,11 @@ export function useRevenueCatIntegration() {
 
     console.log('[RevenueCat] cancel - Native platform - attempting cancellation');
     try {
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
+      const inExpoGo = isExpoGo();
       console.log('[RevenueCat] cancel - Platform.OS:', Platform.OS);
-      console.log('[RevenueCat] cancel - isExpoGo:', isExpoGo);
+      console.log('[RevenueCat] cancel - isExpoGo:', inExpoGo);
       
-      if (isExpoGo) {
+      if (inExpoGo) {
         console.log('[RevenueCat] cancel - Expo Go - clearing mock subscription');
         // For Expo Go, clear any stored mock subscription and force inactive state
         await AsyncStorage.setItem('subscription_cancelled', 'true');
@@ -603,11 +604,11 @@ export function useRevenueCatIntegration() {
     // Listener for customer info updates
     if (Platform.OS !== 'web') {
       // Only add listener if we have real RevenueCat (not Expo Go)
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RCPurchases;
+      const inExpoGo = isExpoGo();
       console.log('[RevenueCat] useEffect - Listener setup - Platform.OS:', Platform.OS);
-      console.log('[RevenueCat] useEffect - Listener setup - isExpoGo:', isExpoGo);
-      
-      if (!isExpoGo) {
+      console.log('[RevenueCat] useEffect - Listener setup - isExpoGo:', inExpoGo);
+
+      if (!inExpoGo) {
         console.log('[RevenueCat] useEffect - Setting up real RevenueCat listener');
         const customerInfoUpdateListener = (customerInfo: PurchasesCustomerInfo) => {
           console.log('[RevenueCat] useEffect - Customer info updated via listener');

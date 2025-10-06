@@ -6,29 +6,37 @@ interface AdResult {
   error?: string;
 }
 
+function isExpoGo(): boolean {
+  try {
+    const Constants = require('expo-constants').default;
+    return Constants.appOwnership === 'expo';
+  } catch {
+    return true;
+  }
+}
+
 class AdsManager {
   private isInitialized = false;
   private readonly COOLDOWN_TIME = 90000; // 90 seconds
   private lastAdShown: { [key: string]: number } = {};
   private loadedAds: { [key: string]: any } = {}; // Store loaded ad instances
+  private usesMockAds = false;
 
   async initialize(): Promise<boolean> {
     console.log('[AdsManager] Initializing ads manager...');
-    
+
     if (Platform.OS === 'web') {
       console.log('[AdsManager] Web platform detected - using mock implementation');
       this.isInitialized = true;
+      this.usesMockAds = true;
       return true;
     }
 
     try {
-      // Check if we're in Expo Go or development build
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RNGoogleMobileAds;
-      console.log('[AdsManager] Environment detection - isExpoGo:', isExpoGo);
-      
-      if (isExpoGo) {
+      if (isExpoGo()) {
         console.log('[AdsManager] Expo Go detected - using mock implementation for compatibility');
         this.isInitialized = true;
+        this.usesMockAds = true;
         return true;
       }
 
@@ -38,29 +46,26 @@ class AdsManager {
       await GoogleMobileAds().initialize();
       console.log('[AdsManager] Real AdMob initialized successfully');
       this.isInitialized = true;
+      this.usesMockAds = false;
       return true;
-    } catch (error) {
-      console.log('[AdsManager] Failed to initialize real AdMob, falling back to mock:', error.message);
-      // Fallback to mock implementation
+    } catch (error: any) {
+      console.log('[AdsManager] Failed to initialize real AdMob, falling back to mock:', error?.message);
       this.isInitialized = true;
+      this.usesMockAds = true;
       return true;
     }
   }
 
   async preloadRewarded(placementKey: string): Promise<boolean> {
     console.log(`[AdsManager] Preloading rewarded ad for placement: ${placementKey}`);
-    
+
     if (!this.isInitialized) {
       console.log('[AdsManager] Not initialized, cannot preload');
       return false;
     }
 
     try {
-      // Check if we have real AdMob available
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RNGoogleMobileAds;
-      console.log(`[AdsManager] Preload environment check - isExpoGo: ${isExpoGo}`);
-      
-      if (isExpoGo) {
+      if (this.usesMockAds) {
         console.log(`[AdsManager] Mock preload for ${placementKey} - success`);
         return true;
       }
@@ -123,11 +128,7 @@ class AdsManager {
     }
 
     try {
-      // Check if we have real AdMob available
-      const isExpoGo = !global.nativeModules || !global.nativeModules.RNGoogleMobileAds;
-      console.log(`[AdsManager] Show environment check - isExpoGo: ${isExpoGo}`);
-      
-      if (isExpoGo) {
+      if (this.usesMockAds) {
         console.log(`[AdsManager] Showing mock ad for ${placementKey}...`);
         
         // Simulate ad showing for Expo Go
