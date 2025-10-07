@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Platform } from 'react-native';
+import { isExpoGo, devLog, errorLog } from '../utils/environment';
 import Purchases, {
   PurchasesPackage,
   CustomerInfo,
@@ -30,16 +31,8 @@ const getApiKey = () => {
   return EXPO_PUBLIC_RC_API_KEY_IOS;
 };
 
-function isExpoGo(): boolean {
-  try {
-    const Constants = require('expo-constants').default;
-    return Constants.appOwnership === 'expo';
-  } catch {
-    return true;
-  }
-}
 
-console.log('[RevenueCat] INITIAL Configuration loaded:', {
+devLog('RevenueCat', 'INITIAL Configuration loaded', {
   apiKeyIOS: EXPO_PUBLIC_RC_API_KEY_IOS.substring(0, 10) + '...',
   apiKeyAndroid: EXPO_PUBLIC_RC_API_KEY_ANDROID.substring(0, 10) + '...',
   selectedApiKey: getApiKey().substring(0, 10) + '...',

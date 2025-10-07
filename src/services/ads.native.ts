@@ -1,18 +1,10 @@
 import { Platform } from 'react-native';
+import { isExpoGo, devLog, errorLog, isProduction } from '../utils/environment';
 
 interface AdResult {
   success: boolean;
   rewarded: boolean;
   error?: string;
-}
-
-function isExpoGo(): boolean {
-  try {
-    const Constants = require('expo-constants').default;
-    return Constants.appOwnership === 'expo';
-  } catch {
-    return true;
-  }
 }
 
 class AdsManager {
@@ -23,10 +15,10 @@ class AdsManager {
   private usesMockAds = false;
 
   async initialize(): Promise<boolean> {
-    console.log('[AdsManager] Initializing ads manager...');
+    devLog('AdsManager', 'Initializing ads manager...');
 
     if (Platform.OS === 'web') {
-      console.log('[AdsManager] Web platform detected - using mock implementation');
+      devLog('AdsManager', 'Web platform detected - using mock implementation');
       this.isInitialized = true;
       this.usesMockAds = true;
       return true;
@@ -34,22 +26,29 @@ class AdsManager {
 
     try {
       if (isExpoGo()) {
-        console.log('[AdsManager] Expo Go detected - using mock implementation for compatibility');
+        devLog('AdsManager', 'Expo Go detected - using mock implementation for compatibility');
         this.isInitialized = true;
         this.usesMockAds = true;
         return true;
       }
 
-      // Try to initialize real AdMob for development builds
-      console.log('[AdsManager] Attempting to initialize real AdMob...');
+      // Try to initialize real AdMob for development/production builds
+      devLog('AdsManager', 'Attempting to initialize real AdMob...');
       const { GoogleMobileAds } = require('react-native-google-mobile-ads');
-      await GoogleMobileAds().initialize();
-      console.log('[AdsManager] Real AdMob initialized successfully');
+
+      // Timeout de seguridad para la inicialización
+      const initPromise = GoogleMobileAds().initialize();
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('AdMob initialization timeout')), 5000)
+      );
+
+      await Promise.race([initPromise, timeoutPromise]);
+      devLog('AdsManager', 'Real AdMob initialized successfully');
       this.isInitialized = true;
       this.usesMockAds = false;
       return true;
     } catch (error: any) {
-      console.log('[AdsManager] Failed to initialize real AdMob, falling back to mock:', error?.message);
+      errorLog('AdsManager', 'Failed to initialize real AdMob, falling back to mock', error);
       this.isInitialized = true;
       this.usesMockAds = true;
       return true;
@@ -75,8 +74,8 @@ class AdsManager {
       const { RewardedAd, AdEventType, TestIds } = require('react-native-google-mobile-ads');
       
       // Use test ID for development, real ID for production
-      const adUnitId = __DEV__ ? TestIds.REWARDED : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_PROD;
-      console.log(`[AdsManager] Using ad unit ID: ${adUnitId} (dev: ${__DEV__})`);
+      const adUnitId = __DEV__ ? TestIds.REWARDED : (process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_PROD || TestIds.REWARDED);
+      devLog('AdsManager', `Using ad unit ID: ${adUnitId?.substring(0, 20)}... (dev: ${__DEV__})`);
       
       const rewarded = RewardedAd.createForAdRequest(adUnitId, {
         requestNonPersonalizedAdsOnly: true,
@@ -100,8 +99,8 @@ class AdsManager {
 
         rewarded.load();
       });
-    } catch (error) {
-      console.log(`[AdsManager] Error preloading ad for ${placementKey}:`, error.message);
+    } catch (error: any) {
+      errorLog('AdsManager', `Error preloading ad for ${placementKey}`, error);
       return false;
     }
   }
@@ -188,8 +187,8 @@ class AdsManager {
 
         rewarded.show();
       });
-    } catch (error) {
-      console.log(`[AdsManager] Error showing ad for ${placementKey}:`, error.message);
+    } catch (error: any) {
+      errorLog('AdsManager', `Error showing ad for ${placementKey}`, error);
       return { success: false, rewarded: false, error: 'Failed to show ad' };
     }
   }
