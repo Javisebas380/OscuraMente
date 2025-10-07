@@ -2,15 +2,23 @@
 
 Esta guía documenta todos los problemas identificados y las soluciones implementadas para resolver el problema de pantalla negra al abrir la app en TestFlight.
 
-## Problemas Identificados
+## Problemas Identificados y Resueltos
 
 ### 1. ✅ Conflicto de Dependencias (RESUELTO)
 
-**Problema:** `lucide-react-native@0.484.0` no es compatible con React 19.1.0
+**Problema 1A:** `lucide-react-native@0.484.0` no es compatible con React 19.1.0
 
 **Solución Implementada:**
 - Actualizado `lucide-react-native` de `0.484.0` a `0.496.0`
 - Esta versión soporta React 19
+
+**Problema 1B:** `react-native-reanimated@4.1.1` requiere Nueva Arquitectura habilitada
+
+**Solución Implementada:**
+- Downgrade a `react-native-reanimated@3.10.1`
+- Esta versión funciona sin Nueva Arquitectura
+- Totalmente compatible con Expo SDK 54 y todas las animaciones actuales
+- Ver `FIX_REANIMATED_ERROR.md` para más detalles
 
 **Acción Requerida en tu Máquina:**
 ```bash
