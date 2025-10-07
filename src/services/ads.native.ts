@@ -72,11 +72,16 @@ class AdsManager {
       // Real AdMob preload logic
       console.log(`[AdsManager] Starting real AdMob preload for ${placementKey}`);
       const { RewardedAd, AdEventType, TestIds } = require('react-native-google-mobile-ads');
-      
-      // Use test ID for development, real ID for production
-      const adUnitId = __DEV__ ? TestIds.REWARDED : (process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_PROD || TestIds.REWARDED);
-      devLog('AdsManager', `Using ad unit ID: ${adUnitId?.substring(0, 20)}... (dev: ${__DEV__})`);
-      
+
+      // Use test ID for development, platform-specific real ID for production
+      let adUnitId = TestIds.REWARDED;
+      if (!__DEV__) {
+        adUnitId = Platform.OS === 'ios'
+          ? (process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD || TestIds.REWARDED)
+          : (process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD || TestIds.REWARDED);
+      }
+      devLog('AdsManager', `Using ad unit ID for ${Platform.OS}: ${adUnitId?.substring(0, 20)}... (dev: ${__DEV__})`);
+
       const rewarded = RewardedAd.createForAdRequest(adUnitId, {
         requestNonPersonalizedAdsOnly: true,
       });
