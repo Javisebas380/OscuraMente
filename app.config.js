@@ -13,6 +13,11 @@ module.exports = {
       resizeMode: "contain",
       backgroundColor: "#0D0D0D"
     },
+    extra: {
+      eas: {
+        projectId: "23e592fc-2da8-42d3-91eb-1f36d1179814"
+      }
+    },
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
