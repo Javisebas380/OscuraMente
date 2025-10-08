@@ -6,14 +6,12 @@ import Purchases, {
   CustomerInfo,
   PurchasesOffering,
   LOG_LEVEL,
-  ATTRIBUTION_NETWORK,
   PurchasesStoreProduct,
-  PurchasesStoreProductDiscount,
-  PurchasesPackageType,
-  PurchasesEntitlementInfo,
-  PurchasesCustomerInfo,
 } from 'react-native-purchases';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Keep for web fallback
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+// Type alias for CustomerInfo
+type PurchasesCustomerInfo = CustomerInfo;
 
 // Environment variables for RevenueCat API Key and Entitlement
 const EXPO_PUBLIC_RC_API_KEY_IOS = process.env.EXPO_PUBLIC_RC_API_KEY_IOS || 'appl_mock_key_for_development';
@@ -68,9 +66,9 @@ export function useRevenueCatIntegration() {
     console.log('[RevenueCat] configurePurchases - Platform.OS:', Platform.OS);
     console.log('[RevenueCat] configurePurchases - Environment check starting...');
     console.log('[RevenueCat] configurePurchases - global object exists:', typeof global !== 'undefined');
-    console.log('[RevenueCat] configurePurchases - global.nativeModules exists:', !!global.nativeModules);
-    console.log('[RevenueCat] configurePurchases - RCPurchases module exists:', !!(global.nativeModules && global.nativeModules.RCPurchases));
-    
+    console.log('[RevenueCat] configurePurchases - global.nativeModules exists:', !!(global as any).nativeModules);
+    console.log('[RevenueCat] configurePurchases - RCPurchases module exists:', !!((global as any).nativeModules && (global as any).nativeModules.RCPurchases));
+
     if (Platform.OS === 'web') {
       console.warn('[RevenueCat] configurePurchases - Web platform detected, using mock data');
       // Mock data for web
@@ -82,28 +80,54 @@ export function useRevenueCatIntegration() {
             {
               identifier: 'weekly',
               packageType: 'WEEKLY' as any,
+              offeringIdentifier: 'default',
+              presentedOfferingContext: { offeringIdentifier: 'default', targetingContext: null, placementIdentifier: null },
               product: {
                 identifier: 'psico_weekly_399',
                 description: 'Premium Weekly Subscription',
                 title: 'Premium Semanal',
-                price: '3.99',
+                price: 3.99,
                 priceString: '$3.99',
                 currencyCode: 'USD',
-              } as PurchasesStoreProduct,
+                pricePerWeek: 3.99,
+                pricePerMonth: 15.96,
+                pricePerYear: 207.48,
+                pricePerWeekString: '$3.99',
+                pricePerMonthString: '$15.96',
+                pricePerYearString: '$207.48',
+                introPrice: null,
+                discounts: [],
+                productCategory: null,
+                productType: null,
+                subscriptionPeriod: null,
+              } as unknown as PurchasesStoreProduct,
             },
             {
               identifier: 'annual',
               packageType: 'ANNUAL' as any,
+              offeringIdentifier: 'default',
+              presentedOfferingContext: { offeringIdentifier: 'default', targetingContext: null, placementIdentifier: null },
               product: {
                 identifier: 'psico_annual_2499',
                 description: 'Premium Annual Subscription',
                 title: 'Premium Anual',
-                price: '24.99',
+                price: 24.99,
                 priceString: '$24.99',
                 currencyCode: 'USD',
-              } as PurchasesStoreProduct,
+                pricePerWeek: 0.48,
+                pricePerMonth: 2.08,
+                pricePerYear: 24.99,
+                pricePerWeekString: '$0.48',
+                pricePerMonthString: '$2.08',
+                pricePerYearString: '$24.99',
+                introPrice: null,
+                discounts: [],
+                productCategory: null,
+                productType: null,
+                subscriptionPeriod: null,
+              } as unknown as PurchasesStoreProduct,
             },
-          ],
+          ] as PurchasesPackage[],
         },
       ];
       setState(prev => ({
@@ -132,28 +156,54 @@ export function useRevenueCatIntegration() {
               {
                 identifier: 'weekly',
                 packageType: 'WEEKLY' as any,
+                offeringIdentifier: 'default',
+                presentedOfferingContext: { offeringIdentifier: 'default', targetingContext: null, placementIdentifier: null },
                 product: {
                   identifier: 'psico_weekly_399',
                   description: 'Premium Weekly Subscription',
                   title: 'Premium Semanal',
-                  price: '3.99',
+                  price: 3.99,
                   priceString: '$3.99',
                   currencyCode: 'USD',
-                } as PurchasesStoreProduct,
+                  pricePerWeek: 3.99,
+                  pricePerMonth: 15.96,
+                  pricePerYear: 207.48,
+                  pricePerWeekString: '$3.99',
+                  pricePerMonthString: '$15.96',
+                  pricePerYearString: '$207.48',
+                  introPrice: null,
+                  discounts: [],
+                  productCategory: null,
+                  productType: null,
+                  subscriptionPeriod: null,
+                } as unknown as PurchasesStoreProduct,
               },
               {
                 identifier: 'annual',
                 packageType: 'ANNUAL' as any,
+                offeringIdentifier: 'default',
+                presentedOfferingContext: { offeringIdentifier: 'default', targetingContext: null, placementIdentifier: null },
                 product: {
                   identifier: 'psico_annual_2499',
                   description: 'Premium Annual Subscription',
                   title: 'Premium Anual',
-                  price: '24.99',
+                  price: 24.99,
                   priceString: '$24.99',
                   currencyCode: 'USD',
-                } as PurchasesStoreProduct,
+                  pricePerWeek: 0.48,
+                  pricePerMonth: 2.08,
+                  pricePerYear: 24.99,
+                  pricePerWeekString: '$0.48',
+                  pricePerMonthString: '$2.08',
+                  pricePerYearString: '$24.99',
+                  introPrice: null,
+                  discounts: [],
+                  productCategory: null,
+                  productType: null,
+                  subscriptionPeriod: null,
+                } as unknown as PurchasesStoreProduct,
               },
-            ],
+            ] as PurchasesPackage[],
           },
         ];
         setState(prev => ({
@@ -180,7 +230,7 @@ export function useRevenueCatIntegration() {
   const checkSubscriptionStatus = useCallback(async () => {
     console.log('[RevenueCat] checkSubscriptionStatus - Starting subscription check');
     console.log('[RevenueCat] checkSubscriptionStatus - Platform.OS:', Platform.OS);
-    
+
     if (Platform.OS === 'web') {
       // Web fallback: check AsyncStorage for mock subscription
       console.log('[RevenueCat] checkSubscriptionStatus - Web platform - checking mock subscription');
@@ -216,12 +266,12 @@ export function useRevenueCatIntegration() {
       const inExpoGo = isExpoGo();
       console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - Platform.OS:', Platform.OS);
       console.log('[RevenueCat] checkSubscriptionStatus - CRITICAL DETECTION - isExpoGo:', inExpoGo);
-      
+
       if (inExpoGo) {
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go detected - using mock subscription');
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go - Platform.OS:', Platform.OS);
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go - Checking for subscription state...');
-        
+
         // Check if subscription was manually cancelled
         try {
           const cancelledState = await AsyncStorage.getItem('subscription_cancelled');
@@ -241,7 +291,7 @@ export function useRevenueCatIntegration() {
         } catch (error) {
           console.log('[RevenueCat] checkSubscriptionStatus - Error checking cancelled state:', error);
         }
-        
+
         // Check if subscription is active from previous purchase
         try {
           const activeState = await AsyncStorage.getItem('mock_expo_subscription_active');
@@ -263,7 +313,7 @@ export function useRevenueCatIntegration() {
               ...prev,
               isActive: true,
               entitlement: EXPO_PUBLIC_RC_ENTITLEMENT,
-              customerInfo: mockCustomerInfo,
+              customerInfo: mockCustomerInfo as any,
               loading: false,
               error: null,
             }));
@@ -273,7 +323,7 @@ export function useRevenueCatIntegration() {
         } catch (error) {
           console.log('[RevenueCat] checkSubscriptionStatus - Error checking active state:', error);
         }
-        
+
         // Default to INACTIVE for testing if not purchased
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go - Setting mock subscription to INACTIVE by default for testing buttons');
         console.log('[RevenueCat] checkSubscriptionStatus - Expo Go - This should make Premium buttons visible');
@@ -288,7 +338,7 @@ export function useRevenueCatIntegration() {
           ...prev,
           isActive: false,
           entitlement: null,
-          customerInfo: mockCustomerInfo,
+          customerInfo: mockCustomerInfo as any,
           loading: false,
           error: null,
         }));
@@ -335,7 +385,7 @@ export function useRevenueCatIntegration() {
       const inExpoGo = isExpoGo();
       console.log('[RevenueCat] loadOfferings - Platform.OS:', Platform.OS);
       console.log('[RevenueCat] loadOfferings - isExpoGo:', inExpoGo);
-      
+
       if (inExpoGo) {
         console.log('[RevenueCat] loadOfferings - Expo Go - offerings already set in configurePurchases');
         return;
@@ -362,27 +412,27 @@ export function useRevenueCatIntegration() {
     console.log('[RevenueCat] purchase - Starting purchase process');
     console.log('[RevenueCat] purchase - Platform.OS:', Platform.OS);
     console.log('[RevenueCat] purchase - Package:', packageToPurchase.identifier);
-    
+
     if (Platform.OS === 'web') {
       // Mock purchase for web
       console.log('[RevenueCat] purchase - Web platform - mock purchase');
       try {
         // Clear any previous cancellation state
         await AsyncStorage.removeItem('subscription_cancelled');
-        
+
         const mockSubscription = {
           isActive: true,
           entitlement: EXPO_PUBLIC_RC_ENTITLEMENT,
           expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(), // 1 year mock
-          customerInfo: { 
-            entitlements: { 
-              active: { 
-                [EXPO_PUBLIC_RC_ENTITLEMENT]: { 
+          customerInfo: {
+            entitlements: {
+              active: {
+                [EXPO_PUBLIC_RC_ENTITLEMENT]: {
                   isActive: true,
                   productIdentifier: packageToPurchase.product.identifier
-                } 
-              } 
-            } 
+                }
+              }
+            }
           },
         };
         await AsyncStorage.setItem('mock_subscription_state', JSON.stringify(mockSubscription));
@@ -394,7 +444,7 @@ export function useRevenueCatIntegration() {
           currentOffering: state.currentOffering,
           loading: false,
           error: null,
-          customerInfo: mockSubscription.customerInfo,
+          customerInfo: mockSubscription.customerInfo as any,
         });
         return { success: true };
       } catch (error) {
@@ -409,18 +459,18 @@ export function useRevenueCatIntegration() {
       const inExpoGo = isExpoGo();
       console.log('[RevenueCat] purchase - Platform.OS:', Platform.OS);
       console.log('[RevenueCat] purchase - isExpoGo:', inExpoGo);
-      
+
       if (inExpoGo) {
         console.log('[RevenueCat] purchase - Expo Go - mock purchase');
         // Simulate purchase for Expo Go
         await new Promise(resolve => setTimeout(resolve, 1500));
-        
+
         // Clear any previous cancellation state
         await AsyncStorage.removeItem('subscription_cancelled');
-        
+
         // Set active state for persistence
         await AsyncStorage.setItem('mock_expo_subscription_active', 'true');
-        
+
         const mockCustomerInfo = {
           entitlements: {
             active: {
@@ -432,12 +482,12 @@ export function useRevenueCatIntegration() {
             }
           }
         };
-        
+
         setState(prev => ({
           ...prev,
           isActive: true,
           entitlement: EXPO_PUBLIC_RC_ENTITLEMENT,
-          customerInfo: mockCustomerInfo,
+          customerInfo: mockCustomerInfo as any,
           loading: false,
           error: null,
         }));
@@ -471,7 +521,7 @@ export function useRevenueCatIntegration() {
   const restore = useCallback(async (): Promise<{ success: boolean; error?: string }> => {
     console.log('[RevenueCat] restore - Starting restore process');
     console.log('[RevenueCat] restore - Platform.OS:', Platform.OS);
-    
+
     if (Platform.OS === 'web') {
       console.log('[RevenueCat] restore - Web platform - restore not available');
       return { success: false, error: 'Restore not available on web' };
@@ -483,7 +533,7 @@ export function useRevenueCatIntegration() {
       const inExpoGo = isExpoGo();
       console.log('[RevenueCat] restore - Platform.OS:', Platform.OS);
       console.log('[RevenueCat] restore - isExpoGo:', inExpoGo);
-      
+
       if (inExpoGo) {
         console.log('[RevenueCat] restore - Expo Go - mock restore (no purchases to restore)');
         setState(prev => ({ ...prev, loading: false }));
@@ -515,7 +565,7 @@ export function useRevenueCatIntegration() {
   const cancel = useCallback(async (): Promise<{ success: boolean; error?: string }> => {
     console.log('[RevenueCat] cancel - Starting cancellation process');
     console.log('[RevenueCat] cancel - Platform.OS:', Platform.OS);
-    
+
     if (Platform.OS === 'web') {
       // Web cancellation: clear mock subscription
       console.log('[RevenueCat] cancel - Web platform - clearing mock subscription');
@@ -543,7 +593,7 @@ export function useRevenueCatIntegration() {
       const inExpoGo = isExpoGo();
       console.log('[RevenueCat] cancel - Platform.OS:', Platform.OS);
       console.log('[RevenueCat] cancel - isExpoGo:', inExpoGo);
-      
+
       if (inExpoGo) {
         console.log('[RevenueCat] cancel - Expo Go - clearing mock subscription');
         // For Expo Go, clear any stored mock subscription and force inactive state
@@ -565,9 +615,9 @@ export function useRevenueCatIntegration() {
       // Real RevenueCat doesn't have direct cancellation API
       // Users must cancel through their app store subscriptions
       console.log('[RevenueCat] cancel - Real RevenueCat - cancellation must be done through app store');
-      return { 
-        success: false, 
-        error: 'Para cancelar tu suscripción, ve a los ajustes de suscripciones de tu dispositivo (App Store o Google Play Store)' 
+      return {
+        success: false,
+        error: 'Para cancelar tu suscripción, ve a los ajustes de suscripciones de tu dispositivo (App Store o Google Play Store)'
       };
     } catch (e: any) {
       console.error('[RevenueCat] cancel - Error in cancellation:', e);
@@ -585,7 +635,7 @@ export function useRevenueCatIntegration() {
   useEffect(() => {
     console.log('[RevenueCat] useEffect - Initial setup starting');
     configurePurchases();
-    
+
     // Initial load without refresh to avoid loops
     const initialLoad = async () => {
       await Promise.all([checkSubscriptionStatus(), loadOfferings()]);
