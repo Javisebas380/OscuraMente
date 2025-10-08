@@ -35,8 +35,8 @@ export default function RootLayout() {
   useFrameworkReady();
   const { hasSeenOnboarding, isLoading } = useOnboardingSeen();
   const [initializationError, setInitializationError] = useState<string | null>(null);
-  const initTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const splashTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const initTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const splashTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-SemiBold': Montserrat_600SemiBold,
