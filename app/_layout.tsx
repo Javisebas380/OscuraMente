@@ -25,8 +25,9 @@ import { useOnboardingSeen } from '@/hooks/useOnboardingSeen';
 import { router } from 'expo-router';
 import { adsManager } from '../src/services/ads';
 import { unlockManager } from '../src/services/unlockManager';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import { devLog, errorLog } from '../src/utils/environment';
+import * as TrackingTransparency from 'expo-tracking-transparency';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -61,8 +62,8 @@ export default function RootLayout() {
         );
       }, 5000);
 
-      // Initialize services (no bloqueante)
-      initializeServices();
+      // Request tracking permissions first (iOS only), then initialize services
+      requestTrackingPermissionsAndInitialize();
 
       // Ocultar splash después de un breve delay para mejor UX
       setTimeout(() => {
@@ -89,6 +90,29 @@ export default function RootLayout() {
       }
     };
   }, [fontsLoaded, fontError, hasSeenOnboarding, isLoading]);
+
+  const requestTrackingPermissionsAndInitialize = async () => {
+    devLog('RootLayout', 'Requesting tracking permissions...');
+
+    try {
+      if (Platform.OS === 'ios') {
+        const { status } = await TrackingTransparency.requestTrackingPermissionsAsync();
+        devLog('RootLayout', `Tracking permission status: ${status}`);
+
+        if (status === 'granted') {
+          devLog('RootLayout', 'Tracking permission granted - ads can be personalized');
+        } else {
+          devLog('RootLayout', 'Tracking permission denied - showing non-personalized ads');
+        }
+      } else {
+        devLog('RootLayout', 'Android platform - no tracking permission needed');
+      }
+    } catch (error) {
+      errorLog('RootLayout', 'Error requesting tracking permissions', error);
+    }
+
+    await initializeServices();
+  };
 
   const initializeServices = async () => {
     devLog('RootLayout', 'Starting service initialization...');

@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { isExpoGo, devLog, errorLog, isProduction } from '../utils/environment';
+import { isExpoGo, devLog, errorLog, isProduction, isTestFlightBuild, getEnvironment } from '../utils/environment';
 
 interface AdResult {
   success: boolean;
@@ -15,7 +15,11 @@ class AdsManager {
   private usesMockAds = false;
 
   async initialize(): Promise<boolean> {
-    devLog('AdsManager', 'Initializing ads manager...');
+    const environment = getEnvironment();
+    devLog('AdsManager', `Initializing ads manager in ${environment} environment...`);
+
+    // Log configuration details
+    this.logAdMobConfiguration();
 
     if (Platform.OS === 'web') {
       devLog('AdsManager', 'Web platform detected - using mock implementation');
@@ -43,7 +47,11 @@ class AdsManager {
       );
 
       await Promise.race([initPromise, timeoutPromise]);
-      devLog('AdsManager', 'Real AdMob initialized successfully');
+
+      // Add a small delay after initialization to ensure AdMob is fully ready
+      await new Promise(resolve => setTimeout(resolve, 500));
+
+      devLog('AdsManager', `Real AdMob initialized successfully in ${environment} environment`);
       this.isInitialized = true;
       this.usesMockAds = false;
       return true;
@@ -53,6 +61,50 @@ class AdsManager {
       this.usesMockAds = true;
       return true;
     }
+  }
+
+  private logAdMobConfiguration(): void {
+    const environment = getEnvironment();
+    console.log('='.repeat(60));
+    console.log('[AdsManager] AdMob Configuration');
+    console.log('='.repeat(60));
+    console.log(`Environment: ${environment}`);
+    console.log(`Platform: ${Platform.OS}`);
+    console.log(`__DEV__: ${__DEV__}`);
+    console.log(`isTestFlight: ${isTestFlightBuild()}`);
+    console.log(`isProduction: ${isProduction()}`);
+    console.log('');
+
+    // Log App IDs (safe to log - they're public)
+    const iosAppId = process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID;
+    const androidAppId = process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID;
+    console.log(`iOS App ID: ${iosAppId ? iosAppId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+    console.log(`Android App ID: ${androidAppId ? androidAppId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+    console.log('');
+
+    // Log Ad Unit IDs availability (first chars only for security)
+    const iosRewardedId = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD;
+    const androidRewardedId = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD;
+    console.log(`iOS Rewarded ID: ${iosRewardedId ? iosRewardedId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+    console.log(`Android Rewarded ID: ${androidRewardedId ? androidRewardedId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+    console.log('');
+
+    // Warnings
+    if (environment === 'testflight') {
+      console.log('⚠️  TestFlight Build Detected');
+      console.log('   Using TEST ad unit IDs');
+      console.log('   Production ads will not show until published to App Store');
+    } else if (environment === 'production' && !isTestFlightBuild()) {
+      console.log('✅ App Store Production Build');
+      console.log('   Using PRODUCTION ad unit IDs');
+      if (!iosRewardedId && Platform.OS === 'ios') {
+        console.log('   ⚠️  WARNING: iOS production ad unit ID not configured!');
+      }
+      if (!androidRewardedId && Platform.OS === 'android') {
+        console.log('   ⚠️  WARNING: Android production ad unit ID not configured!');
+      }
+    }
+    console.log('='.repeat(60));
   }
 
   async preloadRewarded(placementKey: string): Promise<boolean> {
@@ -73,14 +125,31 @@ class AdsManager {
       console.log(`[AdsManager] Starting real AdMob preload for ${placementKey}`);
       const { RewardedAd, AdEventType, TestIds } = require('react-native-google-mobile-ads');
 
-      // Use test ID for development, platform-specific real ID for production
+      // Determine which ad unit ID to use based on environment
       let adUnitId = TestIds.REWARDED;
-      if (!__DEV__) {
-        adUnitId = Platform.OS === 'ios'
-          ? (process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD || TestIds.REWARDED)
-          : (process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD || TestIds.REWARDED);
+      const environment = getEnvironment();
+
+      // CRITICAL: Use test IDs for development and TestFlight
+      // Only use production IDs when app is published to App Store
+      if (environment === 'production' && !isTestFlightBuild()) {
+        // App Store production build - use real ad unit IDs
+        const prodId = Platform.OS === 'ios'
+          ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD
+          : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD;
+
+        if (prodId) {
+          adUnitId = prodId;
+          devLog('AdsManager', `Using PRODUCTION ad unit ID for ${Platform.OS}`);
+        } else {
+          errorLog('AdsManager', `Production ad unit ID not configured for ${Platform.OS}, falling back to test ID`);
+        }
+      } else {
+        // Development or TestFlight - use test IDs
+        devLog('AdsManager', `Using TEST ad unit ID for ${environment} environment on ${Platform.OS}`);
       }
-      devLog('AdsManager', `Using ad unit ID for ${Platform.OS}: ${adUnitId?.substring(0, 20)}... (dev: ${__DEV__})`);
+
+      devLog('AdsManager', `Ad Unit ID (first 20 chars): ${adUnitId?.substring(0, 20)}...`);
+      devLog('AdsManager', `Environment: ${environment}, Platform: ${Platform.OS}, __DEV__: ${__DEV__}`);
 
       const rewarded = RewardedAd.createForAdRequest(adUnitId, {
         requestNonPersonalizedAdsOnly: true,
@@ -90,18 +159,27 @@ class AdsManager {
       this.loadedAds[placementKey] = rewarded;
 
       return new Promise((resolve) => {
+        // Set a timeout for ad loading
+        const loadTimeout = setTimeout(() => {
+          console.log(`[AdsManager] Ad load timeout for ${placementKey}`);
+          resolve(false);
+        }, 10000); // 10 second timeout
+
         const unsubscribeLoaded = rewarded.addAdEventListener(AdEventType.LOADED, () => {
           console.log(`[AdsManager] Real ad loaded successfully for ${placementKey}`);
+          clearTimeout(loadTimeout);
           unsubscribeLoaded();
           resolve(true);
         });
 
         const unsubscribeError = rewarded.addAdEventListener(AdEventType.ERROR, (error: any) => {
           console.log(`[AdsManager] Error loading real ad for ${placementKey}:`, error);
+          clearTimeout(loadTimeout);
           unsubscribeError();
           resolve(false);
         });
 
+        console.log(`[AdsManager] Starting ad load for ${placementKey}...`);
         rewarded.load();
       });
     } catch (error: any) {
