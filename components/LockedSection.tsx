@@ -520,7 +520,7 @@ export default function LockedSection({
         >
           <TouchableOpacity
             style={[styles.unlockButton, styles.stickyButton]}
-            isUnlocked={subscriptionIsActive}
+            onPress={() => handleUnlockPress('sticky')}
             disabled={isLoading}
             accessibilityRole="button"
             accessibilityLabel={getAccessibilityLabel('sticky')}

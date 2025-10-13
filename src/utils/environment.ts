@@ -49,7 +49,7 @@ export function isProduction(): boolean {
 
 /**
  * Detecta si la app está corriendo en TestFlight
- * TestFlight builds tienen __DEV__ = false pero no están en el App Store
+ * IMPORTANTE: TestFlight debe tratarse como PRODUCCIÓN para servicios externos (AdMob, RevenueCat)
  */
 export function isTestFlightBuild(): boolean {
   try {
@@ -60,50 +60,89 @@ export function isTestFlightBuild(): boolean {
 
     const Constants = require('expo-constants').default;
 
-    // Método 1: Verificar si está en modo release pero con expo-updates en desarrollo
-    // TestFlight normalmente usa canal 'default' o no tiene canal configurado
+    // Método 1: Variable de entorno explícita (más confiable)
+    if (process.env.EXPO_PUBLIC_IS_TESTFLIGHT === 'true') {
+      console.log('[Environment] TestFlight detected via env variable');
+      return true;
+    }
+
+    // Método 2: Verificar canal de updates de Expo
     if (Constants.expoConfig?.updates?.channel) {
       const channel = Constants.expoConfig.updates.channel;
+      console.log('[Environment] Updates channel:', channel);
+
+      // TestFlight normalmente usa 'testflight' como canal
+      if (channel === 'testflight') {
+        return true;
+      }
+
       // Si hay un canal específico de producción configurado, no es TestFlight
       if (channel === 'production' || channel === 'prod') {
         return false;
       }
     }
 
-    // Método 2: Si estamos en producción (__DEV__ = false) pero no hay evidencia
-    // clara de estar en App Store, asumimos TestFlight
-    // En App Store, normalmente hay más indicadores de producción configurados
-    const isReleaseBuild = !__DEV__;
+    // Método 3: Verificar información de la app desde expo-application
+    try {
+      const Application = require('expo-application');
+      const buildNumber = Application.nativeBuildVersion;
+      const version = Application.nativeApplicationVersion;
 
-    // Si es release build pero no tiene canal de producción explícito,
-    // probablemente es TestFlight
-    if (isReleaseBuild && !Constants.expoConfig?.updates?.channel) {
-      return true;
+      console.log('[Environment] App version:', version, 'Build:', buildNumber);
+
+      // TestFlight builds tienen __DEV__ = false
+      const isReleaseBuild = !__DEV__;
+
+      // Si es release build pero no es web ni Expo Go, podría ser TestFlight
+      if (isReleaseBuild && !isExpoGo() && Platform.OS !== 'web') {
+        // Por defecto, asumimos que builds de release sin canal explícito son TestFlight
+        // Esto es más seguro ya que TestFlight debe usar configuración de producción
+        const hasNoChannel = !Constants.expoConfig?.updates?.channel;
+        console.log('[Environment] Release build without channel - likely TestFlight:', hasNoChannel);
+        return false; // IMPORTANTE: Retornamos false para que use configuración de producción
+      }
+    } catch (error) {
+      console.log('[Environment] expo-application not available:', error);
     }
 
     return false;
   } catch (error) {
     console.log('[Environment] Error detecting TestFlight build:', error);
-    // Si no podemos determinar, por seguridad asumimos que NO es TestFlight
-    // para que use la lógica de producción normal
+    // Por defecto, tratamos como producción para evitar problemas
     return false;
   }
 }
 
 /**
  * Obtiene el entorno de ejecución como string
+ * NOTA: Para servicios externos (AdMob, RevenueCat), TestFlight debe tratarse como 'production'
  */
 export function getEnvironment(): 'expo-go' | 'development' | 'testflight' | 'production' {
   if (isExpoGo()) {
     return 'expo-go';
   }
+
+  // CRÍTICO: TestFlight ahora retorna 'production' para que use IDs reales
+  // Esto soluciona el problema de anuncios y compras en TestFlight
   if (isTestFlightBuild()) {
-    return 'testflight';
+    console.log('[Environment] TestFlight detected - using PRODUCTION configuration');
+    return 'production'; // Cambiado de 'testflight' a 'production'
   }
+
   if (isProduction()) {
     return 'production';
   }
   return 'development';
+}
+
+/**
+ * Detecta si debemos usar configuración de producción para servicios externos
+ * (AdMob, RevenueCat, etc.)
+ */
+export function shouldUseProductionConfig(): boolean {
+  const env = getEnvironment();
+  // Tanto TestFlight como Production deben usar configuración real
+  return env === 'production' || env === 'testflight';
 }
 
 /**

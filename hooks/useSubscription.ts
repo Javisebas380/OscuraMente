@@ -46,6 +46,35 @@ export function useSubscription() {
   }, [revenueCatState]);
 
   const purchaseSubscription = useCallback(async (planType: 'monthly' | 'yearly') => {
+    console.log('[useSubscription] purchaseSubscription - Starting purchase process');
+    console.log('[useSubscription] Requested plan type:', planType);
+    console.log('[useSubscription] Current offering available:', !!revenueCatState.currentOffering);
+
+    // Debug: Log all available offerings
+    if (revenueCatState.currentOffering) {
+      console.log('[useSubscription] Current offering identifier:', revenueCatState.currentOffering.identifier);
+      console.log('[useSubscription] Available packages count:', revenueCatState.currentOffering.availablePackages.length);
+
+      // Log each package for debugging
+      revenueCatState.currentOffering.availablePackages.forEach((pkg, index) => {
+        console.log(`[useSubscription] Package ${index + 1}:`);
+        console.log(`  - Identifier: ${pkg.identifier}`);
+        console.log(`  - Package Type: ${pkg.packageType}`);
+        console.log(`  - Product ID: ${pkg.product.identifier}`);
+        console.log(`  - Price: ${pkg.product.priceString}`);
+      });
+    } else {
+      console.error('[useSubscription] ❌ CRITICAL: No current offering available!');
+      console.error('[useSubscription] This means:');
+      console.error('[useSubscription] 1. RevenueCat is not configured properly');
+      console.error('[useSubscription] 2. No products are set up in RevenueCat Dashboard');
+      console.error('[useSubscription] 3. Products are not linked to an offering');
+      return {
+        success: false,
+        message: 'No hay planes disponibles. Verifica la configuración de RevenueCat en el dashboard.'
+      };
+    }
+
     const targetPackage = revenueCatState.currentOffering?.availablePackages.find(pkg => {
       if (Platform.OS === 'web') {
         return (planType === 'monthly' && (pkg.packageType === 'WEEKLY' || pkg.packageType === 'MONTHLY')) ||
@@ -63,12 +92,34 @@ export function useSubscription() {
     });
 
     if (!targetPackage) {
-      return { success: false, message: 'Plan no encontrado. Asegúrate de que las ofertas de RevenueCat estén configuradas.' };
+      console.error('[useSubscription] ❌ Package not found for plan type:', planType);
+      console.error('[useSubscription] Available package types:', revenueCatState.currentOffering?.availablePackages.map(p => p.packageType).join(', '));
+      console.error('[useSubscription] Expected package type:', planType === 'monthly' ? 'WEEKLY or MONTHLY' : 'ANNUAL');
+      console.error('[useSubscription] ');
+      console.error('[useSubscription] SOLUTION: Check RevenueCat Dashboard');
+      console.error('[useSubscription] 1. Go to https://app.revenuecat.com/');
+      console.error('[useSubscription] 2. Navigate to your project');
+      console.error('[useSubscription] 3. Check Offerings > default offering');
+      console.error('[useSubscription] 4. Ensure products are added to the offering');
+      console.error('[useSubscription] 5. Products must match: psico_weekly_399 and psico_annual_2499');
+
+      const availableTypes = revenueCatState.currentOffering?.availablePackages
+        .map(p => `${p.identifier} (${p.packageType})`)
+        .join(', ') || 'ninguno';
+
+      return {
+        success: false,
+        message: `Plan ${planType} no encontrado. Paquetes disponibles: ${availableTypes}. Configura los productos en RevenueCat Dashboard.`
+      };
     }
 
+    console.log('[useSubscription] ✅ Target package found:', targetPackage.identifier);
+    console.log('[useSubscription] Initiating purchase with RevenueCat...');
+
     const result = await revenueCatState.purchase(targetPackage);
-    
+
     if (result.success) {
+      console.log('[useSubscription] ✅ Purchase successful!');
       // Emit event for other components to react
       DeviceEventEmitter.emit('subscription-updated', {
         isActive: true,
@@ -77,7 +128,11 @@ export function useSubscription() {
       });
       return { success: true, message: 'Suscripción activada correctamente' };
     } else {
-      return { success: false, message: result.error || 'Error al procesar la compra. Inténtalo de nuevo.' };
+      console.error('[useSubscription] ❌ Purchase failed:', result.error);
+      return {
+        success: false,
+        message: result.error || 'Error al procesar la compra. Verifica tu conexión e inténtalo de nuevo.'
+      };
     }
   }, [revenueCatState.currentOffering, revenueCatState.purchase]);
 

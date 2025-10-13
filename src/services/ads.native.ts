@@ -65,6 +65,8 @@ class AdsManager {
 
   private logAdMobConfiguration(): void {
     const environment = getEnvironment();
+    const useProductionIds = environment === 'production';
+
     console.log('='.repeat(60));
     console.log('[AdsManager] AdMob Configuration');
     console.log('='.repeat(60));
@@ -73,6 +75,7 @@ class AdsManager {
     console.log(`__DEV__: ${__DEV__}`);
     console.log(`isTestFlight: ${isTestFlightBuild()}`);
     console.log(`isProduction: ${isProduction()}`);
+    console.log(`Will use PRODUCTION IDs: ${useProductionIds}`);
     console.log('');
 
     // Log App IDs (safe to log - they're public)
@@ -89,20 +92,21 @@ class AdsManager {
     console.log(`Android Rewarded ID: ${androidRewardedId ? androidRewardedId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
     console.log('');
 
-    // Warnings
-    if (environment === 'testflight') {
-      console.log('⚠️  TestFlight Build Detected');
-      console.log('   Using TEST ad unit IDs');
-      console.log('   Production ads will not show until published to App Store');
-    } else if (environment === 'production' && !isTestFlightBuild()) {
-      console.log('✅ App Store Production Build');
+    // Status
+    if (environment === 'production') {
+      console.log('✅ Production Build (including TestFlight)');
       console.log('   Using PRODUCTION ad unit IDs');
       if (!iosRewardedId && Platform.OS === 'ios') {
-        console.log('   ⚠️  WARNING: iOS production ad unit ID not configured!');
+        console.log('   ⚠️  CRITICAL: iOS production ad unit ID not configured!');
+        console.log('   ⚠️  Ads will NOT show until this is configured in .env or EAS Secrets');
       }
       if (!androidRewardedId && Platform.OS === 'android') {
-        console.log('   ⚠️  WARNING: Android production ad unit ID not configured!');
+        console.log('   ⚠️  CRITICAL: Android production ad unit ID not configured!');
+        console.log('   ⚠️  Ads will NOT show until this is configured in .env or EAS Secrets');
       }
+    } else {
+      console.log('🛠️ Development/Expo Go Build');
+      console.log('   Using TEST ad unit IDs (Google test ads)');
     }
     console.log('='.repeat(60));
   }
@@ -129,23 +133,27 @@ class AdsManager {
       let adUnitId = TestIds.REWARDED;
       const environment = getEnvironment();
 
-      // CRITICAL: Use test IDs for development and TestFlight
-      // Only use production IDs when app is published to App Store
-      if (environment === 'production' && !isTestFlightBuild()) {
-        // App Store production build - use real ad unit IDs
+      // CRITICAL FIX: Use PRODUCTION IDs for both App Store AND TestFlight
+      // TestFlight needs real ad unit IDs to show ads properly
+      if (environment === 'production') {
+        // Production build (includes TestFlight) - use real ad unit IDs
         const prodId = Platform.OS === 'ios'
           ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD
           : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD;
 
-        if (prodId) {
+        if (prodId && prodId.startsWith('ca-app-pub-')) {
           adUnitId = prodId;
-          devLog('AdsManager', `Using PRODUCTION ad unit ID for ${Platform.OS}`);
+          console.log(`[AdsManager] ✅ Using PRODUCTION ad unit ID for ${Platform.OS}`);
+          console.log(`[AdsManager] Ad Unit ID (first 25 chars): ${adUnitId.substring(0, 25)}...`);
         } else {
-          errorLog('AdsManager', `Production ad unit ID not configured for ${Platform.OS}, falling back to test ID`);
+          errorLog('AdsManager', `CRITICAL: Production ad unit ID not configured or invalid for ${Platform.OS}`);
+          errorLog('AdsManager', 'Ads will use TEST IDs and may not show properly in production');
+          console.log('[AdsManager] Expected format: ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX');
+          console.log('[AdsManager] Check .env file or EAS Secrets for EXPO_PUBLIC_ADMOB_REWARDED_ID_*_PROD');
         }
       } else {
-        // Development or TestFlight - use test IDs
-        devLog('AdsManager', `Using TEST ad unit ID for ${environment} environment on ${Platform.OS}`);
+        // Development or Expo Go - use test IDs
+        console.log(`[AdsManager] 🛠️ Using TEST ad unit ID for ${environment} environment on ${Platform.OS}`);
       }
 
       devLog('AdsManager', `Ad Unit ID (first 20 chars): ${adUnitId?.substring(0, 20)}...`);
@@ -159,27 +167,45 @@ class AdsManager {
       this.loadedAds[placementKey] = rewarded;
 
       return new Promise((resolve) => {
-        // Set a timeout for ad loading
+        // Set a timeout for ad loading (increased to 15 seconds)
         const loadTimeout = setTimeout(() => {
-          console.log(`[AdsManager] Ad load timeout for ${placementKey}`);
+          console.log(`[AdsManager] ⚠️ Ad load timeout for ${placementKey} after 15 seconds`);
+          console.log(`[AdsManager] This might indicate:`);
+          console.log(`[AdsManager] 1. Network connectivity issues`);
+          console.log(`[AdsManager] 2. AdMob account not fully activated`);
+          console.log(`[AdsManager] 3. Ad unit not approved yet`);
+          console.log(`[AdsManager] 4. Invalid ad unit ID configuration`);
           resolve(false);
-        }, 10000); // 10 second timeout
+        }, 15000); // 15 second timeout
 
         const unsubscribeLoaded = rewarded.addAdEventListener(AdEventType.LOADED, () => {
-          console.log(`[AdsManager] Real ad loaded successfully for ${placementKey}`);
+          console.log(`[AdsManager] ✅ Real ad loaded successfully for ${placementKey}`);
           clearTimeout(loadTimeout);
           unsubscribeLoaded();
           resolve(true);
         });
 
         const unsubscribeError = rewarded.addAdEventListener(AdEventType.ERROR, (error: any) => {
-          console.log(`[AdsManager] Error loading real ad for ${placementKey}:`, error);
+          console.error(`[AdsManager] ❌ Error loading real ad for ${placementKey}`);
+          console.error(`[AdsManager] Error details:`, JSON.stringify(error, null, 2));
+
+          // Provide helpful error messages based on error code
+          if (error.code === 0) {
+            console.error('[AdsManager] Error code 0: INTERNAL_ERROR - AdMob service error');
+          } else if (error.code === 1) {
+            console.error('[AdsManager] Error code 1: INVALID_REQUEST - Check ad unit ID configuration');
+          } else if (error.code === 2) {
+            console.error('[AdsManager] Error code 2: NETWORK_ERROR - Check internet connection');
+          } else if (error.code === 3) {
+            console.error('[AdsManager] Error code 3: NO_FILL - No ads available at this time');
+          }
+
           clearTimeout(loadTimeout);
           unsubscribeError();
           resolve(false);
         });
 
-        console.log(`[AdsManager] Starting ad load for ${placementKey}...`);
+        console.log(`[AdsManager] 🔄 Starting ad load for ${placementKey}...`);
         rewarded.load();
       });
     } catch (error: any) {
