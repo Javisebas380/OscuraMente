@@ -26,8 +26,17 @@ import { router } from 'expo-router';
 import { adsManager } from '../src/services/ads';
 import { unlockManager } from '../src/services/unlockManager';
 import { View, Text, StyleSheet, Platform } from 'react-native';
-import { devLog, errorLog } from '../src/utils/environment';
-import * as TrackingTransparency from 'expo-tracking-transparency';
+import { devLog, errorLog, isExpoGo } from '../src/utils/environment';
+
+// Importar TrackingTransparency solo si está disponible
+let TrackingTransparency: any = null;
+try {
+  if (Platform.OS === 'ios' && !isExpoGo()) {
+    TrackingTransparency = require('expo-tracking-transparency');
+  }
+} catch (error) {
+  console.log('[RootLayout] expo-tracking-transparency not available:', error);
+}
 
 SplashScreen.preventAutoHideAsync();
 
@@ -95,20 +104,28 @@ export default function RootLayout() {
     devLog('RootLayout', 'Requesting tracking permissions...');
 
     try {
-      if (Platform.OS === 'ios') {
-        const { status } = await TrackingTransparency.requestTrackingPermissionsAsync();
-        devLog('RootLayout', `Tracking permission status: ${status}`);
+      if (Platform.OS === 'ios' && TrackingTransparency) {
+        // Solo solicitar permisos si el módulo está disponible
+        try {
+          const { status } = await TrackingTransparency.requestTrackingPermissionsAsync();
+          devLog('RootLayout', `Tracking permission status: ${status}`);
 
-        if (status === 'granted') {
-          devLog('RootLayout', 'Tracking permission granted - ads can be personalized');
-        } else {
-          devLog('RootLayout', 'Tracking permission denied - showing non-personalized ads');
+          if (status === 'granted') {
+            devLog('RootLayout', 'Tracking permission granted - ads can be personalized');
+          } else {
+            devLog('RootLayout', 'Tracking permission denied - showing non-personalized ads');
+          }
+        } catch (permError) {
+          errorLog('RootLayout', 'Error requesting tracking permissions', permError);
         }
+      } else if (Platform.OS === 'ios' && !TrackingTransparency) {
+        devLog('RootLayout', 'iOS platform - TrackingTransparency module not available (Expo Go or web)');
+        devLog('RootLayout', 'Will show non-personalized ads');
       } else {
         devLog('RootLayout', 'Android platform - no tracking permission needed');
       }
     } catch (error) {
-      errorLog('RootLayout', 'Error requesting tracking permissions', error);
+      errorLog('RootLayout', 'Error in tracking permissions flow', error);
     }
 
     await initializeServices();
