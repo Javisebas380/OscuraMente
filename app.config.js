@@ -1,3 +1,28 @@
+/**
+ * Obtiene el App ID correcto de AdMob según el entorno (APP_ENV)
+ * - development: Usa IDs de test de Google
+ * - production: Usa IDs reales de producción
+ */
+function getAdMobAppId(platform) {
+  const appEnv = process.env.EXPO_PUBLIC_APP_ENV || 'development';
+
+  if (appEnv === 'production') {
+    // Producción - usar IDs reales
+    if (platform === 'ios') {
+      return process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID_PROD || 'ca-app-pub-9521354088644356~4323532279';
+    } else {
+      return process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID_PROD || 'ca-app-pub-9521354088644356~6949695611';
+    }
+  } else {
+    // Development/Test - usar IDs de test de Google
+    if (platform === 'ios') {
+      return process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID_TEST || 'ca-app-pub-3940256099942544~1458002511';
+    } else {
+      return process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID_TEST || 'ca-app-pub-3940256099942544~3347511713';
+    }
+  }
+}
+
 module.exports = {
   expo: {
     name: "OscuraMente - Test Psicológicos",
@@ -71,8 +96,8 @@ module.exports = {
       [
         "react-native-google-mobile-ads",
         {
-          androidAppId: process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID || "ca-app-pub-9521354088644356~6949695611",
-          iosAppId: process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID || "ca-app-pub-9521354088644356~4323532279",
+          androidAppId: getAdMobAppId('android'),
+          iosAppId: getAdMobAppId('ios'),
           sk_ad_network_items: [
             "cstr6suwn9.skadnetwork",
             "4fzdc2evr5.skadnetwork",

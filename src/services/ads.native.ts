@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { isExpoGo, devLog, errorLog, isProduction, isTestFlightBuild, getEnvironment } from '../utils/environment';
+import { isExpoGo, devLog, errorLog, getAppEnvironment } from '../utils/environment';
 
 interface AdResult {
   success: boolean;
@@ -15,8 +15,8 @@ class AdsManager {
   private usesMockAds = false;
 
   async initialize(): Promise<boolean> {
-    const environment = getEnvironment();
-    devLog('AdsManager', `Initializing ads manager in ${environment} environment...`);
+    const appEnvironment = getAppEnvironment();
+    devLog('AdsManager', `Initializing ads manager with APP_ENV=${appEnvironment}...`);
 
     // Log configuration details
     this.logAdMobConfiguration();
@@ -51,7 +51,7 @@ class AdsManager {
       // Add a small delay after initialization to ensure AdMob is fully ready
       await new Promise(resolve => setTimeout(resolve, 500));
 
-      devLog('AdsManager', `Real AdMob initialized successfully in ${environment} environment`);
+      devLog('AdsManager', `Real AdMob initialized successfully with APP_ENV=${appEnvironment}`);
       this.isInitialized = true;
       this.usesMockAds = false;
       return true;
@@ -64,49 +64,48 @@ class AdsManager {
   }
 
   private logAdMobConfiguration(): void {
-    const environment = getEnvironment();
-    const useProductionIds = environment === 'production';
+    const appEnvironment = getAppEnvironment();
+    const useProductionIds = appEnvironment === 'production';
 
     console.log('='.repeat(60));
     console.log('[AdsManager] AdMob Configuration');
     console.log('='.repeat(60));
-    console.log(`Environment: ${environment}`);
+    console.log(`APP_ENV: ${appEnvironment}`);
     console.log(`Platform: ${Platform.OS}`);
-    console.log(`__DEV__: ${__DEV__}`);
-    console.log(`isTestFlight: ${isTestFlightBuild()}`);
-    console.log(`isProduction: ${isProduction()}`);
     console.log(`Will use PRODUCTION IDs: ${useProductionIds}`);
     console.log('');
 
-    // Log App IDs (safe to log - they're public)
-    const iosAppId = process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID;
-    const androidAppId = process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID;
-    console.log(`iOS App ID: ${iosAppId ? iosAppId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
-    console.log(`Android App ID: ${androidAppId ? androidAppId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
-    console.log('');
+    if (appEnvironment === 'production') {
+      // Log Production IDs
+      const iosAppIdProd = process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID_PROD;
+      const androidAppIdProd = process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID_PROD;
+      const iosRewardedIdProd = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD;
+      const androidRewardedIdProd = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD;
 
-    // Log Ad Unit IDs availability (first chars only for security)
-    const iosRewardedId = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD;
-    const androidRewardedId = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD;
-    console.log(`iOS Rewarded ID: ${iosRewardedId ? iosRewardedId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
-    console.log(`Android Rewarded ID: ${androidRewardedId ? androidRewardedId.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
-    console.log('');
+      console.log('📱 PRODUCTION IDs:');
+      console.log(`iOS App ID: ${iosAppIdProd ? iosAppIdProd.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+      console.log(`Android App ID: ${androidAppIdProd ? androidAppIdProd.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+      console.log(`iOS Rewarded: ${iosRewardedIdProd ? iosRewardedIdProd.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+      console.log(`Android Rewarded: ${androidRewardedIdProd ? androidRewardedIdProd.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
 
-    // Status
-    if (environment === 'production') {
-      console.log('✅ Production Build (including TestFlight)');
-      console.log('   Using PRODUCTION ad unit IDs');
-      if (!iosRewardedId && Platform.OS === 'ios') {
-        console.log('   ⚠️  CRITICAL: iOS production ad unit ID not configured!');
-        console.log('   ⚠️  Ads will NOT show until this is configured in .env or EAS Secrets');
+      if (!iosRewardedIdProd && Platform.OS === 'ios') {
+        console.log('⚠️ CRITICAL: iOS production rewarded ID not configured!');
       }
-      if (!androidRewardedId && Platform.OS === 'android') {
-        console.log('   ⚠️  CRITICAL: Android production ad unit ID not configured!');
-        console.log('   ⚠️  Ads will NOT show until this is configured in .env or EAS Secrets');
+      if (!androidRewardedIdProd && Platform.OS === 'android') {
+        console.log('⚠️ CRITICAL: Android production rewarded ID not configured!');
       }
     } else {
-      console.log('🛠️ Development/Expo Go Build');
-      console.log('   Using TEST ad unit IDs (Google test ads)');
+      // Log Test IDs
+      const iosAppIdTest = process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID_TEST;
+      const androidAppIdTest = process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID_TEST;
+      const iosRewardedIdTest = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_TEST;
+      const androidRewardedIdTest = process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_TEST;
+
+      console.log('🛠️ TEST IDs (Google oficial):');
+      console.log(`iOS App ID: ${iosAppIdTest ? iosAppIdTest.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+      console.log(`Android App ID: ${androidAppIdTest ? androidAppIdTest.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+      console.log(`iOS Rewarded: ${iosRewardedIdTest ? iosRewardedIdTest.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
+      console.log(`Android Rewarded: ${androidRewardedIdTest ? androidRewardedIdTest.substring(0, 20) + '...' : 'NOT CONFIGURED'}`);
     }
     console.log('='.repeat(60));
   }
@@ -127,16 +126,14 @@ class AdsManager {
 
       // Real AdMob preload logic
       console.log(`[AdsManager] Starting real AdMob preload for ${placementKey}`);
-      const { RewardedAd, AdEventType, TestIds } = require('react-native-google-mobile-ads');
+      const { RewardedAd, AdEventType } = require('react-native-google-mobile-ads');
 
-      // Determine which ad unit ID to use based on environment
-      let adUnitId = TestIds.REWARDED;
-      const environment = getEnvironment();
+      // Determine which ad unit ID to use based on APP_ENV
+      const appEnvironment = getAppEnvironment();
+      let adUnitId: string;
 
-      // CRITICAL FIX: Use PRODUCTION IDs for both App Store AND TestFlight
-      // TestFlight needs real ad unit IDs to show ads properly
-      if (environment === 'production') {
-        // Production build (includes TestFlight) - use real ad unit IDs
+      if (appEnvironment === 'production') {
+        // Production - use real production ad unit IDs
         const prodId = Platform.OS === 'ios'
           ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD
           : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD;
@@ -144,20 +141,26 @@ class AdsManager {
         if (prodId && prodId.startsWith('ca-app-pub-')) {
           adUnitId = prodId;
           console.log(`[AdsManager] ✅ Using PRODUCTION ad unit ID for ${Platform.OS}`);
-          console.log(`[AdsManager] Ad Unit ID (first 25 chars): ${adUnitId.substring(0, 25)}...`);
         } else {
-          errorLog('AdsManager', `CRITICAL: Production ad unit ID not configured or invalid for ${Platform.OS}`);
-          errorLog('AdsManager', 'Ads will use TEST IDs and may not show properly in production');
-          console.log('[AdsManager] Expected format: ca-app-pub-XXXXXXXXXXXXXXXX/XXXXXXXXXX');
-          console.log('[AdsManager] Check .env file or EAS Secrets for EXPO_PUBLIC_ADMOB_REWARDED_ID_*_PROD');
+          errorLog('AdsManager', `CRITICAL: Production ad unit ID not configured for ${Platform.OS}`);
+          return false;
         }
       } else {
-        // Development or Expo Go - use test IDs
-        console.log(`[AdsManager] 🛠️ Using TEST ad unit ID for ${environment} environment on ${Platform.OS}`);
+        // Development/Testing - use Google's official test IDs
+        const testId = Platform.OS === 'ios'
+          ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_TEST
+          : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_TEST;
+
+        if (testId && testId.startsWith('ca-app-pub-')) {
+          adUnitId = testId;
+          console.log(`[AdsManager] 🛠️ Using TEST ad unit ID for ${Platform.OS}`);
+        } else {
+          errorLog('AdsManager', `TEST ad unit ID not configured for ${Platform.OS}, check .env`);
+          return false;
+        }
       }
 
-      devLog('AdsManager', `Ad Unit ID (first 20 chars): ${adUnitId?.substring(0, 20)}...`);
-      devLog('AdsManager', `Environment: ${environment}, Platform: ${Platform.OS}, __DEV__: ${__DEV__}`);
+      console.log(`[AdsManager] Ad Unit ID (first 25 chars): ${adUnitId.substring(0, 25)}...`);
 
       const rewarded = RewardedAd.createForAdRequest(adUnitId, {
         requestNonPersonalizedAdsOnly: true,

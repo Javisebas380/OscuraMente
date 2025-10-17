@@ -146,6 +146,24 @@ export function shouldUseProductionConfig(): boolean {
 }
 
 /**
+ * Obtiene el entorno de la app basado en la variable APP_ENV
+ * Esta función determina qué IDs de AdMob usar (test o producción)
+ *
+ * @returns 'development' | 'production'
+ */
+export function getAppEnvironment(): 'development' | 'production' {
+  const appEnv = process.env.EXPO_PUBLIC_APP_ENV;
+
+  if (appEnv === 'production') {
+    console.log('[Environment] APP_ENV is production - using PRODUCTION AdMob IDs');
+    return 'production';
+  }
+
+  console.log('[Environment] APP_ENV is development (or not set) - using TEST AdMob IDs');
+  return 'development';
+}
+
+/**
  * Verifica si un módulo nativo está disponible
  */
 export function isNativeModuleAvailable(moduleName: string): boolean {
