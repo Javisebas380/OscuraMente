@@ -34,27 +34,33 @@ Es **ALTAMENTE RECOMENDADO** crear dos proyectos separados en RevenueCat:
 
 ## 📋 Variables de Entorno Configuradas
 
-### Keys de Desarrollo
+### Keys de Desarrollo (iOS y Android)
 ```bash
-# Public SDK Key del proyecto de desarrollo
-EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_DEV=appl_dev_XXXXXXXXXXXXXXXX  # iOS
-# o
-EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_DEV=goog_XXXXXXXXXXXXXXXX     # Android
+# iOS Development Key
+EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV=appl_dev_XXXXXXXXXXXXXXXX
+
+# Android Development Key
+EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV=goog_XXXXXXXXXXXXXXXX
 ```
 
-### Keys de Producción
+### Keys de Producción (iOS y Android)
 ```bash
-# Public SDK Key del proyecto principal
-EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_PROD=appl_XXXXXXXXXXXXXXXX    # iOS
-# o
-EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_PROD=goog_XXXXXXXXXXXXXXXX    # Android
+# iOS Production Key
+EXPO_PUBLIC_REVENUECAT_IOS_KEY_PROD=appl_XXXXXXXXXXXXXXXX
+
+# Android Production Key
+EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_PROD=goog_XXXXXXXXXXXXXXXX
 ```
 
 ### Entitlement
 ```bash
-# Nombre del entitlement (mismo en ambos proyectos)
+# Nombre del entitlement (mismo en ambos proyectos y plataformas)
 EXPO_PUBLIC_RC_ENTITLEMENT=premium
 ```
+
+**IMPORTANTE**: Necesitas **4 keys en total**:
+- 2 para desarrollo (iOS + Android)
+- 2 para producción (iOS + Android)
 
 ## 🔧 Configuración
 
@@ -86,22 +92,38 @@ En cada proyecto, configura los mismos productos:
 - IDs: `psico_weekly_399`, `psico_annual_2499` (mismos IDs)
 - Precios reales
 
-### Paso 3: Obtener Public SDK Keys
+### Paso 3: Obtener Public SDK Keys (iOS y Android)
+
+**Para cada proyecto (Development y Production):**
 
 1. Ve a RevenueCat Dashboard
-2. Selecciona proyecto "Development"
+2. Selecciona el proyecto (ej: "Mi App - Development")
 3. Ve a: **Settings → API Keys**
-4. Copia la **Public SDK Key** (comienza con `appl_` o `goog_`)
-5. Pégala en `EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_DEV`
-6. Repite para proyecto "Production" → `EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_PROD`
+4. Encontrarás **2 Public SDK Keys**:
+   - Una para iOS (comienza con `appl_` o `appl_dev_`)
+   - Una para Android (comienza con `goog_`)
+5. Copia ambas keys
+6. Para Development:
+   - iOS key → `EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV`
+   - Android key → `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV`
+7. Repite para proyecto Production:
+   - iOS key → `EXPO_PUBLIC_REVENUECAT_IOS_KEY_PROD`
+   - Android key → `EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_PROD`
 
 ### Paso 4: Configurar .env Local
 
 ```bash
 # .env
 EXPO_PUBLIC_APP_ENV=development
-EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_DEV=appl_dev_tu_key_aqui
-EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_PROD=appl_tu_key_prod_aqui
+
+# iOS Keys
+EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV=appl_dev_tu_key_ios_aqui
+EXPO_PUBLIC_REVENUECAT_IOS_KEY_PROD=appl_tu_key_ios_prod_aqui
+
+# Android Keys
+EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV=goog_tu_key_android_aqui
+EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_PROD=goog_tu_key_android_prod_aqui
+
 EXPO_PUBLIC_RC_ENTITLEMENT=premium
 ```
 
@@ -115,8 +137,9 @@ EXPO_PUBLIC_RC_ENTITLEMENT=premium
 # Configurar entorno como development
 eas secret:create --scope project --name EXPO_PUBLIC_APP_ENV --value development --type string
 
-# Configurar key de desarrollo
-eas secret:create --scope project --name EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_DEV --value appl_dev_tu_key_aqui --type string
+# Configurar keys de desarrollo (iOS y Android)
+eas secret:create --scope project --name EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV --value appl_dev_tu_key_ios_aqui --type string
+eas secret:create --scope project --name EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV --value goog_tu_key_android_aqui --type string
 
 # Configurar entitlement
 eas secret:create --scope project --name EXPO_PUBLIC_RC_ENTITLEMENT --value premium --type string
@@ -153,8 +176,9 @@ eas build --profile preview --platform android
 # Cambiar entorno a production
 eas secret:create --scope project --name EXPO_PUBLIC_APP_ENV --value production --type string --force
 
-# Configurar key de producción
-eas secret:create --scope project --name EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_PROD --value appl_tu_key_prod_aqui --type string
+# Configurar keys de producción (iOS y Android)
+eas secret:create --scope project --name EXPO_PUBLIC_REVENUECAT_IOS_KEY_PROD --value appl_tu_key_ios_prod_aqui --type string
+eas secret:create --scope project --name EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_PROD --value goog_tu_key_android_prod_aqui --type string
 
 # Configurar entitlement
 eas secret:create --scope project --name EXPO_PUBLIC_RC_ENTITLEMENT --value premium --type string

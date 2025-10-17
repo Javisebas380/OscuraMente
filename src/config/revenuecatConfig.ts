@@ -7,11 +7,26 @@ const APP_ENV = process.env.EXPO_PUBLIC_APP_ENV ?? EXTRA.APP_ENV ?? (__DEV__ ? '
 
 export const IS_DEV_REVENUECAT = APP_ENV === 'development' || APP_ENV === 'test' || __DEV__;
 
-// Keys via env / expo extra
-const KEY_DEV = process.env.EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_DEV ?? EXTRA.REVENUECAT_PUBLIC_KEY_DEV ?? '';
-const KEY_PROD = process.env.EXPO_PUBLIC_REVENUECAT_PUBLIC_KEY_PROD ?? EXTRA.REVENUECAT_PUBLIC_KEY_PROD ?? '';
+// iOS Keys via env / expo extra
+const IOS_KEY_DEV = process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV ?? EXTRA.REVENUECAT_IOS_KEY_DEV ?? '';
+const IOS_KEY_PROD = process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY_PROD ?? EXTRA.REVENUECAT_IOS_KEY_PROD ?? '';
 
-export const REVENUECAT_API_KEY = IS_DEV_REVENUECAT ? KEY_DEV : KEY_PROD;
+// Android Keys via env / expo extra
+const ANDROID_KEY_DEV = process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV ?? EXTRA.REVENUECAT_ANDROID_KEY_DEV ?? '';
+const ANDROID_KEY_PROD = process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_PROD ?? EXTRA.REVENUECAT_ANDROID_KEY_PROD ?? '';
+
+// Seleccionar la key correcta según plataforma y entorno
+const getRevenueCatKey = (): string => {
+  if (Platform.OS === 'ios') {
+    return IS_DEV_REVENUECAT ? IOS_KEY_DEV : IOS_KEY_PROD;
+  } else if (Platform.OS === 'android') {
+    return IS_DEV_REVENUECAT ? ANDROID_KEY_DEV : ANDROID_KEY_PROD;
+  }
+  // Fallback para web (usar iOS key)
+  return IS_DEV_REVENUECAT ? IOS_KEY_DEV : IOS_KEY_PROD;
+};
+
+export const REVENUECAT_API_KEY = getRevenueCatKey();
 
 let isInitialized = false;
 
