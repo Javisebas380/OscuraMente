@@ -27,9 +27,9 @@ module.exports = {
   expo: {
     name: "OscuraMente - Test Psicológicos",
     slug: "oscuramente",
-    version: "1.0.3",
+    version: "1.0.7",
     orientation: "portrait",
-    icon: "./assets/images/icon.png",
+    icon: "./assets/images/oscuramente-icon.png",
     scheme: "oscuramente",
     userInterfaceStyle: "dark",
     newArchEnabled: false,
@@ -47,7 +47,7 @@ module.exports = {
     ios: {
       supportsTablet: true,
       bundleIdentifier: "com.psicologiaoscura.darkpsychology",
-      buildNumber: "3",
+      buildNumber: "7",
       infoPlist: {
         NSCameraUsageDescription: "Necesitamos acceso a tu cámara para actualizar tu foto de perfil",
         NSPhotoLibraryUsageDescription: "Necesitamos acceso a tu galería para seleccionar tu foto de perfil",
