@@ -9,31 +9,21 @@ import Purchases, {
   PurchasesStoreProduct,
 } from 'react-native-purchases';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {
+  REVENUECAT_API_KEY,
+  IS_DEV_REVENUECAT,
+  initRevenueCat as initRevenueCatConfig
+} from '../config/revenuecatConfig';
 
 // Type alias for CustomerInfo
 type PurchasesCustomerInfo = CustomerInfo;
 
-// Environment variables for RevenueCat API Key and Entitlement
-const EXPO_PUBLIC_RC_API_KEY_IOS = process.env.EXPO_PUBLIC_RC_API_KEY_IOS || 'appl_mock_key_for_development';
-const EXPO_PUBLIC_RC_API_KEY_ANDROID = process.env.EXPO_PUBLIC_RC_API_KEY_ANDROID || 'goog_mock_key_for_development';
+// Environment variables for Entitlement
 const EXPO_PUBLIC_RC_ENTITLEMENT = process.env.EXPO_PUBLIC_RC_ENTITLEMENT || 'premium';
 
-// Select the appropriate API key based on platform
-const getApiKey = () => {
-  if (Platform.OS === 'ios') {
-    return EXPO_PUBLIC_RC_API_KEY_IOS;
-  } else if (Platform.OS === 'android') {
-    return EXPO_PUBLIC_RC_API_KEY_ANDROID;
-  }
-  // Fallback for web or other platforms
-  return EXPO_PUBLIC_RC_API_KEY_IOS;
-};
-
-
-devLog('RevenueCat', 'INITIAL Configuration loaded', {
-  apiKeyIOS: EXPO_PUBLIC_RC_API_KEY_IOS.substring(0, 10) + '...',
-  apiKeyAndroid: EXPO_PUBLIC_RC_API_KEY_ANDROID.substring(0, 10) + '...',
-  selectedApiKey: getApiKey().substring(0, 10) + '...',
+devLog('RevenueCat', 'INITIAL Configuration loaded from revenuecatConfig', {
+  apiKey: REVENUECAT_API_KEY ? REVENUECAT_API_KEY.substring(0, 10) + '...' : 'NOT CONFIGURED',
+  isDev: IS_DEV_REVENUECAT,
   entitlement: EXPO_PUBLIC_RC_ENTITLEMENT,
   platform: Platform.OS,
   isExpoGo: isExpoGo(),
@@ -236,8 +226,8 @@ export function useRevenueCatIntegration() {
 
       // Real RevenueCat configuration for development builds
       console.log('[RevenueCat] configurePurchases - Development build detected, configuring real RevenueCat');
-      Purchases.setLogLevel(LOG_LEVEL.DEBUG);
-      Purchases.configure({ apiKey: getApiKey() });
+      // Use the new config system which handles environment-based keys
+      initRevenueCatConfig();
       console.log('[RevenueCat] configurePurchases - Real RevenueCat configured successfully for platform:', Platform.OS);
     } catch (e) {
       console.error('[RevenueCat] configurePurchases - Error configuring RevenueCat:', e);
