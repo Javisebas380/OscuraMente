@@ -25,7 +25,7 @@ function getAdMobAppId(platform) {
 
 module.exports = {
   expo: {
-    name: "OscuraMente - Test Psicológicos",
+    name: "OscuraMente - Psycho Tests",
     slug: "oscuramente",
     version: "1.0.7",
     orientation: "portrait",
