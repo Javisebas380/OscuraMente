@@ -1,5 +1,5 @@
 import { Platform } from 'react-native';
-import { devLog, errorLog, isExpoGo, getEnvironment } from '../utils/environment';
+import { devLog, errorLog, isExpoGo, getEnvironment, getAppEnvironment, isValidAdMobId } from '../utils/environment';
 
 export type AdType = 'rewarded' | 'interstitial' | 'banner';
 
@@ -20,7 +20,8 @@ class AdsManager implements AdManagerInterface {
 
   async initialize(): Promise<boolean> {
     const environment = getEnvironment();
-    devLog('AdsManager', `Initializing in ${environment} environment`);
+    const appEnv = getAppEnvironment();
+    devLog('AdsManager', `Initializing in ${environment} environment (app: ${appEnv})`);
 
     if (Platform.OS === 'web') {
       devLog('AdsManager', 'Web platform detected - using mock implementation');
@@ -34,13 +35,38 @@ class AdsManager implements AdManagerInterface {
       return true;
     }
 
+    const iosAppId = appEnv === 'production'
+      ? process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID_PROD
+      : process.env.EXPO_PUBLIC_ADMOB_IOS_APP_ID_TEST;
+
+    const androidAppId = appEnv === 'production'
+      ? process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID_PROD
+      : process.env.EXPO_PUBLIC_ADMOB_ANDROID_APP_ID_TEST;
+
+    const currentAppId = Platform.OS === 'ios' ? iosAppId : androidAppId;
+
+    if (!isValidAdMobId(currentAppId)) {
+      errorLog('AdsManager', `Invalid or missing AdMob App ID for ${Platform.OS} in ${appEnv} mode`);
+      errorLog('AdsManager', `Using mock implementation instead`);
+      this.initialized = true;
+      return true;
+    }
+
     try {
       if (Platform.OS !== 'web') {
         const { default: mobileAds } = await import('react-native-google-mobile-ads');
         this.googleMobileAds = mobileAds;
 
-        devLog('AdsManager', 'Initializing Google Mobile Ads...');
-        await mobileAds.initialize();
+        devLog('AdsManager', `Initializing Google Mobile Ads with ID: ${currentAppId}`);
+
+        const initTimeout = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('AdMob initialization timeout')), 8000)
+        );
+
+        await Promise.race([
+          mobileAds.initialize(),
+          initTimeout
+        ]);
 
         this.initialized = true;
         devLog('AdsManager', 'Google Mobile Ads initialized successfully');
@@ -51,8 +77,9 @@ class AdsManager implements AdManagerInterface {
       return true;
     } catch (error) {
       errorLog('AdsManager', 'Failed to initialize Google Mobile Ads', error);
-      this.initialized = false;
-      return false;
+      errorLog('AdsManager', 'Continuing with mock implementation');
+      this.initialized = true;
+      return true;
     }
   }
 
@@ -94,8 +121,9 @@ class AdsManager implements AdManagerInterface {
     }
 
     const environment = getEnvironment();
+    const appEnv = getAppEnvironment();
 
-    if (environment === 'web' || environment === 'expo-go') {
+    if (environment === 'web' || environment === 'expo-go' || !this.googleMobileAds) {
       devLog('AdsManager', `Mock ad in ${environment} - simulating 2 second ad`);
       await new Promise(resolve => setTimeout(resolve, 2000));
       this.lastAdTime = Date.now();
@@ -112,13 +140,22 @@ class AdsManager implements AdManagerInterface {
 
       const { RewardedAd, RewardedAdEventType, TestIds } = await import('react-native-google-mobile-ads');
 
-      const unitId = adUnitId || (
-        Platform.OS === 'ios'
-          ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD || TestIds.REWARDED
-          : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD || TestIds.REWARDED
-      );
+      let unitId: string;
+      if (adUnitId) {
+        unitId = adUnitId;
+      } else {
+        if (appEnv === 'production') {
+          unitId = Platform.OS === 'ios'
+            ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_PROD || TestIds.REWARDED
+            : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_PROD || TestIds.REWARDED;
+        } else {
+          unitId = Platform.OS === 'ios'
+            ? process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_IOS_TEST || TestIds.REWARDED
+            : process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID_ANDROID_TEST || TestIds.REWARDED;
+        }
+      }
 
-      devLog('AdsManager', `Using ad unit ID: ${unitId}`);
+      devLog('AdsManager', `Using ad unit ID: ${unitId} (env: ${appEnv})`);
 
       const rewarded = RewardedAd.createForAdRequest(unitId);
 

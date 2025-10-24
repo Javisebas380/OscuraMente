@@ -26,7 +26,8 @@ import { router } from 'expo-router';
 import { adsManager } from '../src/services/ads';
 import { unlockManager } from '../src/services/unlockManager';
 import { View, Text, StyleSheet, Platform } from 'react-native';
-import { devLog, errorLog, isExpoGo } from '../src/utils/environment';
+import { devLog, errorLog, isExpoGo, validateEnvironmentConfig, getAppEnvironment } from '../src/utils/environment';
+import { EnvironmentBanner } from '../components/EnvironmentBanner';
 
 // Importar TrackingTransparency solo si está disponible
 let TrackingTransparency: any = null;
@@ -63,15 +64,28 @@ export default function RootLayout() {
     if (fontsLoaded || fontError) {
       devLog('RootLayout', 'Fonts loaded, initializing app...');
       devLog('RootLayout', 'Environment:', Platform.OS);
+      devLog('RootLayout', 'App Environment:', getAppEnvironment());
       devLog('RootLayout', 'Onboarding status:', { hasSeenOnboarding, isLoading });
 
-      // Timeout de seguridad extendido: ocultar splash después de 15 segundos máximo
+      const validation = validateEnvironmentConfig();
+      if (validation.warnings.length > 0) {
+        validation.warnings.forEach(warning => {
+          errorLog('RootLayout', `Config Warning: ${warning}`);
+        });
+      }
+      if (validation.errors.length > 0) {
+        validation.errors.forEach(error => {
+          errorLog('RootLayout', `Config Error: ${error}`);
+        });
+      }
+
+      // Timeout de seguridad: ocultar splash después de 5 segundos máximo
       splashTimeoutRef.current = setTimeout(() => {
-        devLog('RootLayout', 'Safety timeout reached (15s), hiding splash screen');
+        devLog('RootLayout', 'Safety timeout reached (5s), hiding splash screen');
         SplashScreen.hideAsync().catch(err =>
           errorLog('RootLayout', 'Failed to hide splash screen', err)
         );
-      }, 15000);
+      }, 5000);
 
       // Request tracking permissions first (iOS only), then initialize services
       requestTrackingPermissionsAndInitialize();
@@ -85,7 +99,7 @@ export default function RootLayout() {
         SplashScreen.hideAsync().catch(err =>
           errorLog('RootLayout', 'Failed to hide splash screen', err)
         );
-      }, 2500);
+      }, 1500);
 
       // Navigate to onboarding if not seen
       if (!isLoading && hasSeenOnboarding === false) {
@@ -142,29 +156,27 @@ export default function RootLayout() {
     devLog('RootLayout', 'Platform:', Platform.OS);
     devLog('RootLayout', 'APP_ENV:', process.env.EXPO_PUBLIC_APP_ENV || 'not set');
 
-    // Timeout extendido para modo preview: 20 segundos
+    // Timeout de inicialización: 8 segundos
     initTimeoutRef.current = setTimeout(() => {
-      errorLog('RootLayout', 'Service initialization timeout (20s) - continuing anyway');
+      errorLog('RootLayout', 'Service initialization timeout (8s) - continuing anyway');
       setInitializationError(null);
-    }, 20000);
+    }, 8000);
 
     try {
-      devLog('RootLayout', 'Initializing AdsManager...');
-      const adsResult = await adsManager.initialize().catch(err => {
-        errorLog('RootLayout', 'AdsManager initialization failed', err);
-        errorLog('RootLayout', 'Error details:', JSON.stringify(err, null, 2));
-        return null;
-      });
-      devLog('RootLayout', 'AdsManager initialization result:', adsResult);
+      // Inicializar servicios en paralelo para mayor velocidad
+      const [adsResult, unlockResult] = await Promise.allSettled([
+        adsManager.initialize().catch(err => {
+          errorLog('RootLayout', 'AdsManager initialization failed', err);
+          return false;
+        }),
+        unlockManager.initialize().catch(err => {
+          errorLog('RootLayout', 'UnlockManager initialization failed', err);
+          return false;
+        })
+      ]);
 
-      devLog('RootLayout', 'Initializing UnlockManager...');
-      const unlockResult = await unlockManager.initialize().catch(err => {
-        errorLog('RootLayout', 'UnlockManager initialization failed', err);
-        errorLog('RootLayout', 'Error details:', JSON.stringify(err, null, 2));
-        return null;
-      });
-      devLog('RootLayout', 'UnlockManager initialization result:', unlockResult);
-
+      devLog('RootLayout', 'AdsManager result:', adsResult.status === 'fulfilled' ? adsResult.value : 'failed');
+      devLog('RootLayout', 'UnlockManager result:', unlockResult.status === 'fulfilled' ? unlockResult.value : 'failed');
       devLog('RootLayout', 'All services initialization complete');
 
       if (initTimeoutRef.current) {
@@ -172,7 +184,6 @@ export default function RootLayout() {
       }
     } catch (error) {
       errorLog('RootLayout', 'Critical error during service initialization', error);
-      errorLog('RootLayout', 'Stack trace:', error instanceof Error ? error.stack : 'No stack');
       if (initTimeoutRef.current) {
         clearTimeout(initTimeoutRef.current);
       }
@@ -209,6 +220,7 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="light" />
+      {__DEV__ && <EnvironmentBanner />}
     </>
   );
 }

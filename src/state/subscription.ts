@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Platform } from 'react-native';
-import { devLog, errorLog, isExpoGo, getEnvironment } from '../utils/environment';
+import { devLog, errorLog, isExpoGo, getEnvironment, getAppEnvironment } from '../utils/environment';
+import { REVENUECAT_API_KEY, REVENUECAT_ENTITLEMENT, isRevenueCatConfigured } from '../config/revenuecatConfig';
 
 export interface CustomerInfo {
   entitlements: {
@@ -65,30 +66,41 @@ export function useRevenueCatIntegration(): RevenueCatState {
   const [currentOffering, setCurrentOffering] = useState<any>(null);
   const [purchases, setPurchases] = useState<any>(null);
 
-  const entitlement = process.env.EXPO_PUBLIC_RC_ENTITLEMENT || 'pro';
+  const entitlement = REVENUECAT_ENTITLEMENT;
   const environment = getEnvironment();
+  const appEnv = getAppEnvironment();
 
   useEffect(() => {
     initializeRevenueCat();
   }, []);
 
   const initializeRevenueCat = async () => {
-    devLog('RevenueCat', `Initializing in ${environment} environment`);
+    devLog('RevenueCat', `Initializing in ${environment} environment (app: ${appEnv})`);
     setLoading(true);
 
     if (Platform.OS === 'web') {
-      devLog('RevenueCat', 'Web platform - using mock subscription (active by default)');
-      setIsActive(true);
-      setCustomerInfo(MOCK_CUSTOMER_INFO);
+      devLog('RevenueCat', 'Web platform - using mock subscription (inactive by default)');
+      setIsActive(false);
+      setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setLoading(false);
       return;
     }
 
     if (isExpoGo()) {
-      devLog('RevenueCat', 'Expo Go - using mock subscription (active by default)');
-      setIsActive(true);
-      setCustomerInfo(MOCK_CUSTOMER_INFO);
+      devLog('RevenueCat', 'Expo Go - using mock subscription (inactive by default)');
+      setIsActive(false);
+      setCustomerInfo(null);
+      setCurrentOffering(MOCK_OFFERING);
+      setLoading(false);
+      return;
+    }
+
+    if (!isRevenueCatConfigured()) {
+      errorLog('RevenueCat', `Invalid or missing API key for ${Platform.OS} in ${appEnv} mode`);
+      errorLog('RevenueCat', 'Using mock mode - subscriptions will not work');
+      setIsActive(false);
+      setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setLoading(false);
       return;
@@ -99,21 +111,16 @@ export function useRevenueCatIntegration(): RevenueCatState {
         const { default: Purchases } = await import('react-native-purchases');
         setPurchases(Purchases);
 
-        const apiKey = Platform.OS === 'ios'
-          ? process.env.EXPO_PUBLIC_RC_API_KEY_IOS
-          : process.env.EXPO_PUBLIC_RC_API_KEY_ANDROID;
+        devLog('RevenueCat', `Configuring SDK with key: ${REVENUECAT_API_KEY.substring(0, 10)}...`);
 
-        if (!apiKey) {
-          errorLog('RevenueCat', 'No API key found - using mock mode');
-          setIsActive(true);
-          setCustomerInfo(MOCK_CUSTOMER_INFO);
-          setCurrentOffering(MOCK_OFFERING);
-          setLoading(false);
-          return;
-        }
+        const initTimeout = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('RevenueCat initialization timeout')), 8000)
+        );
 
-        devLog('RevenueCat', 'Configuring SDK...');
-        Purchases.configure({ apiKey });
+        await Promise.race([
+          Purchases.configure({ apiKey: REVENUECAT_API_KEY }),
+          initTimeout
+        ]);
 
         devLog('RevenueCat', 'Fetching customer info...');
         const info = await Purchases.getCustomerInfo();
@@ -133,6 +140,7 @@ export function useRevenueCatIntegration(): RevenueCatState {
           setCurrentOffering(offerings.current);
         } else {
           errorLog('RevenueCat', 'No current offering found');
+          setCurrentOffering(MOCK_OFFERING);
         }
 
         setLoading(false);
@@ -141,8 +149,8 @@ export function useRevenueCatIntegration(): RevenueCatState {
       }
     } catch (error) {
       errorLog('RevenueCat', 'Initialization error - falling back to mock', error);
-      setIsActive(true);
-      setCustomerInfo(MOCK_CUSTOMER_INFO);
+      setIsActive(false);
+      setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setLoading(false);
     }

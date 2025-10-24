@@ -1,15 +1,31 @@
 import { Platform } from 'react-native';
-import { getEnvironment } from '../utils/environment';
+import { getEnvironment, getAppEnvironment, isValidRevenueCatKey } from '../utils/environment';
 
-export const REVENUECAT_API_KEY = Platform.select({
-  ios: process.env.EXPO_PUBLIC_RC_API_KEY_IOS || process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV || '',
-  android: process.env.EXPO_PUBLIC_RC_API_KEY_ANDROID || process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV || '',
-  default: '',
-});
+function getRevenueCatKey(): string {
+  const appEnv = getAppEnvironment();
 
-export const REVENUECAT_ENTITLEMENT = process.env.EXPO_PUBLIC_RC_ENTITLEMENT || 'pro';
+  if (appEnv === 'production') {
+    const key = Platform.OS === 'ios'
+      ? process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY_PROD
+      : process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_PROD;
+    return key || '';
+  } else {
+    const key = Platform.OS === 'ios'
+      ? process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY_DEV
+      : process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY_DEV;
+    return key || '';
+  }
+}
 
-export const IS_DEV_REVENUECAT = process.env.EXPO_PUBLIC_APP_ENV !== 'production';
+export const REVENUECAT_API_KEY = getRevenueCatKey();
+
+export const REVENUECAT_ENTITLEMENT = process.env.EXPO_PUBLIC_RC_ENTITLEMENT || 'premium';
+
+export const IS_DEV_REVENUECAT = getAppEnvironment() !== 'production';
+
+export function isRevenueCatConfigured(): boolean {
+  return isValidRevenueCatKey(REVENUECAT_API_KEY);
+}
 
 export const REVENUECAT_PRODUCTS = {
   weekly: 'psico_weekly_399',

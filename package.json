@@ -11,7 +11,18 @@
     "clean": "rm -rf node_modules package-lock.json && npm cache clean --force",
     "reinstall": "npm run clean && npm install --legacy-peer-deps",
     "android": "expo run:android",
-    "ios": "expo run:ios"
+    "ios": "expo run:ios",
+    "prebuild": "npx expo prebuild --clean",
+    "prebuild:dev": "EXPO_PUBLIC_APP_ENV=development npx expo prebuild --clean",
+    "prebuild:prod": "EXPO_PUBLIC_APP_ENV=production npx expo prebuild --clean",
+    "build:dev:ios": "EXPO_PUBLIC_APP_ENV=development eas build --profile development --platform ios",
+    "build:dev:android": "EXPO_PUBLIC_APP_ENV=development eas build --profile development --platform android",
+    "build:preview:ios": "EXPO_PUBLIC_APP_ENV=development eas build --profile preview --platform ios",
+    "build:preview:android": "EXPO_PUBLIC_APP_ENV=development eas build --profile preview --platform android",
+    "build:prod:ios": "EXPO_PUBLIC_APP_ENV=production eas build --profile production --platform ios",
+    "build:prod:android": "EXPO_PUBLIC_APP_ENV=production eas build --profile production --platform android",
+    "build:prod:all": "EXPO_PUBLIC_APP_ENV=production eas build --profile production --platform all",
+    "validate:config": "node -e \"console.log('Environment:', process.env.EXPO_PUBLIC_APP_ENV || 'development'); console.log('Config validation would run here')\""
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.4.1",
