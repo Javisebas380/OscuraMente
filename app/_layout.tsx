@@ -62,31 +62,37 @@ export default function RootLayout() {
   useEffect(() => {
     if (fontsLoaded || fontError) {
       devLog('RootLayout', 'Fonts loaded, initializing app...');
+      devLog('RootLayout', 'Environment:', Platform.OS);
+      devLog('RootLayout', 'Onboarding status:', { hasSeenOnboarding, isLoading });
 
-      // Timeout de seguridad: ocultar splash después de 5 segundos máximo
+      // Timeout de seguridad extendido: ocultar splash después de 15 segundos máximo
       splashTimeoutRef.current = setTimeout(() => {
-        devLog('RootLayout', 'Safety timeout reached, hiding splash screen');
+        devLog('RootLayout', 'Safety timeout reached (15s), hiding splash screen');
         SplashScreen.hideAsync().catch(err =>
           errorLog('RootLayout', 'Failed to hide splash screen', err)
         );
-      }, 5000);
+      }, 15000);
 
       // Request tracking permissions first (iOS only), then initialize services
       requestTrackingPermissionsAndInitialize();
 
-      // Ocultar splash después de un breve delay para mejor UX
+      // Ocultar splash después de que los servicios estén inicializados
       setTimeout(() => {
         if (splashTimeoutRef.current) {
           clearTimeout(splashTimeoutRef.current);
         }
+        devLog('RootLayout', 'Hiding splash screen after initialization');
         SplashScreen.hideAsync().catch(err =>
           errorLog('RootLayout', 'Failed to hide splash screen', err)
         );
-      }, 1000);
+      }, 2500);
 
       // Navigate to onboarding if not seen
       if (!isLoading && hasSeenOnboarding === false) {
-        router.replace('/onboarding');
+        devLog('RootLayout', 'Navigating to onboarding');
+        setTimeout(() => {
+          router.replace('/onboarding');
+        }, 100);
       }
     }
 
@@ -133,41 +139,40 @@ export default function RootLayout() {
 
   const initializeServices = async () => {
     devLog('RootLayout', 'Starting service initialization...');
+    devLog('RootLayout', 'Platform:', Platform.OS);
+    devLog('RootLayout', 'APP_ENV:', process.env.EXPO_PUBLIC_APP_ENV || 'not set');
 
-    // Timeout para inicialización: si tarda más de 10 segundos, continuar igual
+    // Timeout extendido para modo preview: 20 segundos
     initTimeoutRef.current = setTimeout(() => {
-      errorLog('RootLayout', 'Service initialization timeout - continuing anyway');
-      setInitializationError(null); // Continuar aunque haya timeout
-    }, 10000);
+      errorLog('RootLayout', 'Service initialization timeout (20s) - continuing anyway');
+      setInitializationError(null);
+    }, 20000);
 
     try {
-      // Inicializar servicios con manejo individual de errores
-      const results = await Promise.allSettled([
-        adsManager.initialize().catch(err => {
-          errorLog('RootLayout', 'AdsManager initialization failed', err);
-          return null;
-        }),
-        unlockManager.initialize().catch(err => {
-          errorLog('RootLayout', 'UnlockManager initialization failed', err);
-          return null;
-        }),
-      ]);
+      devLog('RootLayout', 'Initializing AdsManager...');
+      const adsResult = await adsManager.initialize().catch(err => {
+        errorLog('RootLayout', 'AdsManager initialization failed', err);
+        errorLog('RootLayout', 'Error details:', JSON.stringify(err, null, 2));
+        return null;
+      });
+      devLog('RootLayout', 'AdsManager initialization result:', adsResult);
 
-      const failedServices = results.filter(r => r.status === 'rejected');
+      devLog('RootLayout', 'Initializing UnlockManager...');
+      const unlockResult = await unlockManager.initialize().catch(err => {
+        errorLog('RootLayout', 'UnlockManager initialization failed', err);
+        errorLog('RootLayout', 'Error details:', JSON.stringify(err, null, 2));
+        return null;
+      });
+      devLog('RootLayout', 'UnlockManager initialization result:', unlockResult);
 
-      if (failedServices.length > 0) {
-        errorLog('RootLayout', `${failedServices.length} service(s) failed to initialize`);
-        // No bloqueamos la app, solo registramos el error
-      } else {
-        devLog('RootLayout', 'All services initialized successfully');
-      }
+      devLog('RootLayout', 'All services initialization complete');
 
       if (initTimeoutRef.current) {
         clearTimeout(initTimeoutRef.current);
       }
     } catch (error) {
       errorLog('RootLayout', 'Critical error during service initialization', error);
-      // No establecemos error - dejamos que la app continúe
+      errorLog('RootLayout', 'Stack trace:', error instanceof Error ? error.stack : 'No stack');
       if (initTimeoutRef.current) {
         clearTimeout(initTimeoutRef.current);
       }
