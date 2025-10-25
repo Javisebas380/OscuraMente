@@ -45,8 +45,10 @@ export default function RootLayout() {
   useFrameworkReady();
   const { hasSeenOnboarding, isLoading } = useOnboardingSeen();
   const [initializationError, setInitializationError] = useState<string | null>(null);
+  const [isAppReady, setIsAppReady] = useState(false);
   const initTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const splashTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasInitialized = useRef(false);
 
   const [fontsLoaded, fontError] = useFonts({
     'Montserrat-SemiBold': Montserrat_600SemiBold,
@@ -79,27 +81,20 @@ export default function RootLayout() {
         });
       }
 
-      // Timeout de seguridad: ocultar splash después de 5 segundos máximo
+      // Timeout de seguridad: ocultar splash después de 3 segundos máximo
       splashTimeoutRef.current = setTimeout(() => {
-        devLog('RootLayout', 'Safety timeout reached (5s), hiding splash screen');
+        devLog('RootLayout', 'Safety timeout reached (3s), hiding splash screen');
+        setIsAppReady(true);
         SplashScreen.hideAsync().catch(err =>
           errorLog('RootLayout', 'Failed to hide splash screen', err)
         );
-      }, 5000);
+      }, 3000);
 
       // Request tracking permissions first (iOS only), then initialize services
-      requestTrackingPermissionsAndInitialize();
-
-      // Ocultar splash después de que los servicios estén inicializados
-      setTimeout(() => {
-        if (splashTimeoutRef.current) {
-          clearTimeout(splashTimeoutRef.current);
-        }
-        devLog('RootLayout', 'Hiding splash screen after initialization');
-        SplashScreen.hideAsync().catch(err =>
-          errorLog('RootLayout', 'Failed to hide splash screen', err)
-        );
-      }, 1500);
+      if (!hasInitialized.current) {
+        hasInitialized.current = true;
+        requestTrackingPermissionsAndInitialize();
+      }
 
       // Navigate to onboarding if not seen
       if (!isLoading && hasSeenOnboarding === false) {
@@ -156,11 +151,17 @@ export default function RootLayout() {
     devLog('RootLayout', 'Platform:', Platform.OS);
     devLog('RootLayout', 'APP_ENV:', process.env.EXPO_PUBLIC_APP_ENV || 'not set');
 
-    // Timeout de inicialización: 8 segundos
+    // Timeout de inicialización: 5 segundos
     initTimeoutRef.current = setTimeout(() => {
-      errorLog('RootLayout', 'Service initialization timeout (8s) - continuing anyway');
-      setInitializationError(null);
-    }, 8000);
+      errorLog('RootLayout', 'Service initialization timeout (5s) - continuing anyway');
+      setIsAppReady(true);
+      if (splashTimeoutRef.current) {
+        clearTimeout(splashTimeoutRef.current);
+      }
+      SplashScreen.hideAsync().catch(err =>
+        errorLog('RootLayout', 'Failed to hide splash screen', err)
+      );
+    }, 5000);
 
     try {
       // Inicializar servicios en paralelo para mayor velocidad
@@ -182,23 +183,48 @@ export default function RootLayout() {
       if (initTimeoutRef.current) {
         clearTimeout(initTimeoutRef.current);
       }
+      if (splashTimeoutRef.current) {
+        clearTimeout(splashTimeoutRef.current);
+      }
+
+      // Hide splash screen after successful initialization
+      setIsAppReady(true);
+      setTimeout(() => {
+        devLog('RootLayout', 'Hiding splash screen after initialization');
+        SplashScreen.hideAsync().catch(err =>
+          errorLog('RootLayout', 'Failed to hide splash screen', err)
+        );
+      }, 500);
     } catch (error) {
       errorLog('RootLayout', 'Critical error during service initialization', error);
       if (initTimeoutRef.current) {
         clearTimeout(initTimeoutRef.current);
       }
+      if (splashTimeoutRef.current) {
+        clearTimeout(splashTimeoutRef.current);
+      }
+      // Show app even if services fail
+      setIsAppReady(true);
+      SplashScreen.hideAsync().catch(err =>
+        errorLog('RootLayout', 'Failed to hide splash screen', err)
+      );
     }
   };
 
-  // Mostrar pantalla de carga mientras se cargan las fuentes
+  // Mostrar pantalla de carga mientras se cargan las fuentes o la app se inicializa
   if (!fontsLoaded && !fontError) {
     return null;
   }
 
-  // Si hay error de fuentes, mostrar error pero permitir continuar
+  // Si hay error de fuentes, registrar pero permitir continuar
   if (fontError) {
     errorLog('RootLayout', 'Font loading error', fontError);
-    // Continuamos igual - las fuentes del sistema serán el fallback
+    // Continuamos - las fuentes del sistema serán el fallback
+  }
+
+  // Si la app aún no está lista, mostrar null (splash screen sigue visible)
+  if (!isAppReady) {
+    return null;
   }
 
   // Si hay error crítico de inicialización, mostrar pantalla de error
