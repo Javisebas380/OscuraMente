@@ -28,6 +28,8 @@ import { unlockManager } from '../src/services/unlockManager';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import { devLog, errorLog, isExpoGo, validateEnvironmentConfig, getAppEnvironment } from '../src/utils/environment';
 import { EnvironmentBanner } from '../components/EnvironmentBanner';
+import { SubscriptionProvider } from '../src/contexts/SubscriptionContext';
+import { SubscriptionDebugPanel } from '../components/SubscriptionDebugPanel';
 
 // Importar TrackingTransparency solo si está disponible
 let TrackingTransparency: any = null;
@@ -241,13 +243,14 @@ export default function RootLayout() {
   }
 
   return (
-    <>
+    <SubscriptionProvider>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="light" />
       {__DEV__ && <EnvironmentBanner />}
-    </>
+      {__DEV__ && <SubscriptionDebugPanel />}
+    </SubscriptionProvider>
   );
 }
 

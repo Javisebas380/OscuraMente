@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import React from 'react';
 import { DeviceEventEmitter, Platform } from 'react-native';
-import { useRevenueCatIntegration } from '../src/state/subscription';
+import { useSubscriptionContext } from '../src/contexts/SubscriptionContext';
 
 export interface SubscriptionState {
   isActive: boolean;
@@ -12,15 +12,14 @@ export interface SubscriptionState {
 }
 
 export function useSubscription() {
-  const revenueCatState = useRevenueCatIntegration();
+  const context = useSubscriptionContext();
 
-  // Derive subscription state directly from RevenueCat state to avoid loops
-  const subscription = React.useMemo(() => {
+  const subscription = useMemo(() => {
     let currentPlan: 'monthly' | 'yearly' | null = null;
     let currentExpiresAt: string | null = null;
 
-    if (revenueCatState.isActive && revenueCatState.customerInfo) {
-      const entitlement = revenueCatState.customerInfo.entitlements.active[revenueCatState.entitlement || ''];
+    if (context.isActive && context.customerInfo) {
+      const entitlement = context.customerInfo.entitlements.active[context.entitlement || ''];
       if (entitlement) {
         if (entitlement.productIdentifier?.includes('weekly') || entitlement.productIdentifier?.includes('monthly')) {
           currentPlan = 'monthly';
@@ -32,31 +31,29 @@ export function useSubscription() {
     }
 
     return {
-      isActive: revenueCatState.isActive,
+      isActive: context.isActive,
       plan: currentPlan,
       expiresAt: currentExpiresAt,
-      isLoading: revenueCatState.loading,
-      isActiveChecked: !revenueCatState.loading,
+      isLoading: context.loading || context.initializing,
+      isActiveChecked: !context.initializing,
     };
-  }, [revenueCatState.isActive, revenueCatState.loading, revenueCatState.customerInfo, revenueCatState.entitlement]);
+  }, [context.isActive, context.loading, context.initializing, context.customerInfo, context.entitlement]);
 
   const refreshSubscription = useCallback(async () => {
-    await revenueCatState.refresh();
-    return revenueCatState.isActive;
-  }, [revenueCatState]);
+    await context.refresh();
+    return context.isActive;
+  }, [context]);
 
   const purchaseSubscription = useCallback(async (planType: 'monthly' | 'yearly') => {
     console.log('[useSubscription] purchaseSubscription - Starting purchase process');
     console.log('[useSubscription] Requested plan type:', planType);
-    console.log('[useSubscription] Current offering available:', !!revenueCatState.currentOffering);
+    console.log('[useSubscription] Current offering available:', !!context.currentOffering);
 
-    // Debug: Log all available offerings
-    if (revenueCatState.currentOffering) {
-      console.log('[useSubscription] Current offering identifier:', revenueCatState.currentOffering.identifier);
-      console.log('[useSubscription] Available packages count:', revenueCatState.currentOffering.availablePackages.length);
+    if (context.currentOffering) {
+      console.log('[useSubscription] Current offering identifier:', context.currentOffering.identifier);
+      console.log('[useSubscription] Available packages count:', context.currentOffering.availablePackages.length);
 
-      // Log each package for debugging
-      revenueCatState.currentOffering.availablePackages.forEach((pkg, index) => {
+      context.currentOffering.availablePackages.forEach((pkg: any, index: number) => {
         console.log(`[useSubscription] Package ${index + 1}:`);
         console.log(`  - Identifier: ${pkg.identifier}`);
         console.log(`  - Package Type: ${pkg.packageType}`);
@@ -75,7 +72,7 @@ export function useSubscription() {
       };
     }
 
-    const targetPackage = revenueCatState.currentOffering?.availablePackages.find(pkg => {
+    const targetPackage = context.currentOffering?.availablePackages.find((pkg: any) => {
       if (Platform.OS === 'web') {
         return (planType === 'monthly' && (pkg.packageType === 'WEEKLY' || pkg.packageType === 'MONTHLY')) ||
                (planType === 'yearly' && pkg.packageType === 'ANNUAL');
@@ -93,18 +90,9 @@ export function useSubscription() {
 
     if (!targetPackage) {
       console.error('[useSubscription] ❌ Package not found for plan type:', planType);
-      console.error('[useSubscription] Available package types:', revenueCatState.currentOffering?.availablePackages.map(p => p.packageType).join(', '));
-      console.error('[useSubscription] Expected package type:', planType === 'monthly' ? 'WEEKLY or MONTHLY' : 'ANNUAL');
-      console.error('[useSubscription] ');
-      console.error('[useSubscription] SOLUTION: Check RevenueCat Dashboard');
-      console.error('[useSubscription] 1. Go to https://app.revenuecat.com/');
-      console.error('[useSubscription] 2. Navigate to your project');
-      console.error('[useSubscription] 3. Check Offerings > default offering');
-      console.error('[useSubscription] 4. Ensure products are added to the offering');
-      console.error('[useSubscription] 5. Products must match: psico_weekly_399 and psico_annual_2499');
 
-      const availableTypes = revenueCatState.currentOffering?.availablePackages
-        .map(p => `${p.identifier} (${p.packageType})`)
+      const availableTypes = context.currentOffering?.availablePackages
+        .map((p: any) => `${p.identifier} (${p.packageType})`)
         .join(', ') || 'ninguno';
 
       return {
@@ -116,7 +104,7 @@ export function useSubscription() {
     console.log('[useSubscription] ✅ Target package found:', targetPackage.identifier);
     console.log('[useSubscription] Initiating purchase with RevenueCat...');
 
-    const result = await revenueCatState.purchase(targetPackage);
+    const result = await context.purchase(targetPackage);
 
     if (result.success) {
       console.log('[useSubscription] ✅ Purchase successful!');
@@ -134,20 +122,20 @@ export function useSubscription() {
         message: result.error || 'Error al procesar la compra. Verifica tu conexión e inténtalo de nuevo.'
       };
     }
-  }, [revenueCatState.currentOffering, revenueCatState.purchase]);
+  }, [context]);
 
   const restorePurchases = useCallback(async () => {
-    const result = await revenueCatState.restore();
+    const result = await context.restore();
     if (result.success) {
       return { success: true, message: 'Suscripción restaurada correctamente' };
     } else {
       return { success: false, message: result.error || 'No se encontraron compras previas' };
     }
-  }, [revenueCatState.restore]);
+  }, [context]);
 
   const cancelSubscription = useCallback(async () => {
     try {
-      const result = await revenueCatState.cancel();
+      const result = await context.cancel();
       
       if (result.success) {
         DeviceEventEmitter.emit('subscription-updated', {
@@ -163,7 +151,7 @@ export function useSubscription() {
     } catch (error) {
       return { success: false, message: 'Error al procesar la cancelación' };
     }
-  }, [revenueCatState]);
+  }, [context]);
 
   const refresh = refreshSubscription;
 
