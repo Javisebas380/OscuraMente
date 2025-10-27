@@ -32,7 +32,7 @@ module.exports = {
     icon: "./assets/images/oscuramente-icon.png",
     scheme: "oscuramente",
     userInterfaceStyle: "dark",
-    newArchEnabled: false,
+    newArchEnabled: true,
     splash: {
       image: "./assets/images/oscuramente-icon.png",
       resizeMode: "contain",
