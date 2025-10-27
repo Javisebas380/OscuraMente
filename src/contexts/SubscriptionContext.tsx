@@ -67,9 +67,9 @@ const SubscriptionContext = createContext<SubscriptionContextState | undefined>(
 export function SubscriptionProvider({ children }: { children: React.ReactNode }) {
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [initializing, setInitializing] = useState(true);
+  const [initializing, setInitializing] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
-  const [currentOffering, setCurrentOffering] = useState<any>(null);
+  const [currentOffering, setCurrentOffering] = useState<any>(MOCK_OFFERING);
   const [error, setError] = useState<string | null>(null);
   const [purchases, setPurchases] = useState<any>(null);
 
@@ -81,7 +81,9 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     if (!initializationAttempted.current) {
       initializationAttempted.current = true;
-      initializeRevenueCat();
+      setTimeout(() => {
+        initializeRevenueCat();
+      }, 100);
     }
   }, []);
 
