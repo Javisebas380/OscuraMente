@@ -131,7 +131,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
         devLog('SubscriptionContext', `Configuring SDK with key: ${REVENUECAT_API_KEY.substring(0, 10)}...`);
 
         const initTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('RevenueCat initialization timeout')), 3000)
+          setTimeout(() => reject(new Error('RevenueCat initialization timeout')), 2000)
         );
 
         await Promise.race([
@@ -150,7 +150,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
 
         devLog('SubscriptionContext', 'Fetching offerings...');
         const offeringsTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Offerings fetch timeout')), 5000)
+          setTimeout(() => reject(new Error('Offerings fetch timeout')), 3000)
         );
 
         const offerings = await Promise.race([

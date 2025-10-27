@@ -60,7 +60,7 @@ class AdsManager implements AdManagerInterface {
         devLog('AdsManager', `Initializing Google Mobile Ads with ID: ${currentAppId}`);
 
         const initTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('AdMob initialization timeout')), 8000)
+          setTimeout(() => reject(new Error('AdMob initialization timeout')), 3000)
         );
 
         await Promise.race([
