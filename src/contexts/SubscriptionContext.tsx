@@ -69,16 +69,18 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
   const [initializing, setInitializing] = useState(false);
-  const [isRevenueCatReady, setIsRevenueCatReady] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
   const [currentOffering, setCurrentOffering] = useState<any>(MOCK_OFFERING);
   const [error, setError] = useState<string | null>(null);
   const [purchases, setPurchases] = useState<any>(null);
 
   const initializationAttempted = useRef(false);
+  const purchasesRef = useRef<any>(null);
   const entitlement = REVENUECAT_ENTITLEMENT;
   const environment = getEnvironment();
   const appEnv = getAppEnvironment();
+
+  const isRevenueCatReady = Platform.OS === 'web' || isExpoGo() ? true : !!purchases;
 
   useEffect(() => {
     if (!initializationAttempted.current) {
@@ -100,7 +102,8 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setInitializing(false);
-      setIsRevenueCatReady(true);
+      setPurchases('MOCK_WEB');
+      purchasesRef.current = 'MOCK_WEB';
       return;
     }
 
@@ -110,7 +113,8 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setInitializing(false);
-      setIsRevenueCatReady(true);
+      setPurchases('MOCK_EXPO_GO');
+      purchasesRef.current = 'MOCK_EXPO_GO';
       return;
     }
 
@@ -122,7 +126,8 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCurrentOffering(MOCK_OFFERING);
       setError('RevenueCat not configured');
       setInitializing(false);
-      setIsRevenueCatReady(false);
+      setPurchases(null);
+      purchasesRef.current = null;
       return;
     }
 
@@ -145,7 +150,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
 
         devLog('SubscriptionContext', '✅ RevenueCat SDK configured successfully');
         setPurchases(Purchases);
-        setIsRevenueCatReady(true);
+        purchasesRef.current = Purchases;
 
         devLog('SubscriptionContext', 'Fetching customer info...');
         const info = await Purchases.getCustomerInfo();
@@ -187,8 +192,8 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCurrentOffering(MOCK_OFFERING);
       setError(error instanceof Error ? error.message : 'Unknown error');
       setInitializing(false);
-      setIsRevenueCatReady(false);
       setPurchases(null);
+      purchasesRef.current = null;
     }
   };
 
@@ -226,24 +231,29 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       return { success: true };
     }
 
-    if (!purchases || !isRevenueCatReady) {
-      errorLog('SubscriptionContext', '❌ Cannot purchase - RevenueCat not ready', {
+    const currentPurchases = purchasesRef.current || purchases;
+
+    if (!currentPurchases) {
+      errorLog('SubscriptionContext', '❌ Cannot purchase - SDK not available', {
         hasPurchases: !!purchases,
-        isReady: isRevenueCatReady,
-        initializing
+        hasPurchasesRef: !!purchasesRef.current,
+        initializing,
+        isConfigured: isRevenueCatConfigured()
       });
       return {
         success: false,
         error: initializing
-          ? 'RevenueCat aún se está inicializando. Espera unos segundos e inténtalo de nuevo.'
-          : 'RevenueCat no está inicializado. Por favor, reinicia la aplicación.'
+          ? 'Inicializando sistema de pagos... Espera unos segundos e inténtalo de nuevo.'
+          : !isRevenueCatConfigured()
+          ? 'Sistema de pagos no configurado. Contacta con soporte.'
+          : 'Sistema de pagos no disponible. Reinicia la aplicación e inténtalo de nuevo.'
       };
     }
 
     try {
       setLoading(true);
       devLog('SubscriptionContext', `Purchasing package: ${pkg.identifier}`);
-      const purchaseResult = await purchases.purchasePackage(pkg);
+      const purchaseResult = await currentPurchases.purchasePackage(pkg);
 
       const hasActiveEntitlement = purchaseResult.customerInfo.entitlements.active[entitlement] !== undefined;
       devLog('SubscriptionContext', `Purchase complete - Active: ${hasActiveEntitlement}`);
@@ -264,7 +274,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
     } finally {
       setLoading(false);
     }
-  }, [purchases, entitlement, isRevenueCatReady, initializing]);
+  }, [purchases, entitlement, initializing]);
 
   const restore = useCallback(async () => {
     if (Platform.OS === 'web' || isExpoGo()) {
@@ -275,19 +285,21 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       return { success: true };
     }
 
-    if (!purchases || !isRevenueCatReady) {
+    const currentPurchases = purchasesRef.current || purchases;
+
+    if (!currentPurchases) {
       return {
         success: false,
         error: initializing
-          ? 'RevenueCat aún se está inicializando. Espera unos segundos.'
-          : 'RevenueCat no está inicializado'
+          ? 'Inicializando sistema de pagos... Espera unos segundos.'
+          : 'Sistema de pagos no disponible. Reinicia la aplicación.'
       };
     }
 
     try {
       setLoading(true);
       devLog('SubscriptionContext', 'Restoring purchases...');
-      const info = await purchases.restorePurchases();
+      const info = await currentPurchases.restorePurchases();
 
       const hasActiveEntitlement = info.entitlements.active[entitlement] !== undefined;
       devLog('SubscriptionContext', `Restore complete - Active: ${hasActiveEntitlement}`);
@@ -307,7 +319,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
     } finally {
       setLoading(false);
     }
-  }, [purchases, entitlement, isRevenueCatReady, initializing]);
+  }, [purchases, entitlement, initializing]);
 
   const cancel = useCallback(async () => {
     devLog('SubscriptionContext', 'Cancel subscription requested');
