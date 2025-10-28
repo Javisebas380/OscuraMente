@@ -47,7 +47,25 @@ export function useSubscription() {
   const purchaseSubscription = useCallback(async (planType: 'monthly' | 'yearly') => {
     console.log('[useSubscription] purchaseSubscription - Starting purchase process');
     console.log('[useSubscription] Requested plan type:', planType);
+    console.log('[useSubscription] RevenueCat ready:', context.isRevenueCatReady);
+    console.log('[useSubscription] Initializing:', context.initializing);
     console.log('[useSubscription] Current offering available:', !!context.currentOffering);
+
+    if (context.initializing) {
+      console.warn('[useSubscription] ⚠️ RevenueCat is still initializing');
+      return {
+        success: false,
+        message: 'RevenueCat aún se está inicializando. Espera unos segundos e inténtalo de nuevo.'
+      };
+    }
+
+    if (!context.isRevenueCatReady) {
+      console.error('[useSubscription] ❌ RevenueCat not ready');
+      return {
+        success: false,
+        message: 'RevenueCat no está listo. Por favor, reinicia la aplicación.'
+      };
+    }
 
     if (context.currentOffering) {
       console.log('[useSubscription] Current offering identifier:', context.currentOffering.identifier);
@@ -103,6 +121,7 @@ export function useSubscription() {
 
     console.log('[useSubscription] ✅ Target package found:', targetPackage.identifier);
     console.log('[useSubscription] Initiating purchase with RevenueCat...');
+    console.log('[useSubscription] Final check - isRevenueCatReady:', context.isRevenueCatReady);
 
     const result = await context.purchase(targetPackage);
 

@@ -18,6 +18,7 @@ export interface SubscriptionContextState {
   isActive: boolean;
   loading: boolean;
   initializing: boolean;
+  isRevenueCatReady: boolean;
   customerInfo: CustomerInfo | null;
   currentOffering: any;
   entitlement: string;
@@ -68,6 +69,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
   const [initializing, setInitializing] = useState(false);
+  const [isRevenueCatReady, setIsRevenueCatReady] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
   const [currentOffering, setCurrentOffering] = useState<any>(MOCK_OFFERING);
   const [error, setError] = useState<string | null>(null);
@@ -98,6 +100,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setInitializing(false);
+      setIsRevenueCatReady(true);
       return;
     }
 
@@ -107,6 +110,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setInitializing(false);
+      setIsRevenueCatReady(true);
       return;
     }
 
@@ -118,6 +122,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCurrentOffering(MOCK_OFFERING);
       setError('RevenueCat not configured');
       setInitializing(false);
+      setIsRevenueCatReady(false);
       return;
     }
 
@@ -126,18 +131,21 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
         logRevenueCatStatus();
 
         const { default: Purchases } = await import('react-native-purchases');
-        setPurchases(Purchases);
 
         devLog('SubscriptionContext', `Configuring SDK with key: ${REVENUECAT_API_KEY.substring(0, 10)}...`);
 
         const initTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('RevenueCat initialization timeout')), 2000)
+          setTimeout(() => reject(new Error('RevenueCat initialization timeout')), 5000)
         );
 
         await Promise.race([
           Purchases.configure({ apiKey: REVENUECAT_API_KEY }),
           initTimeout
         ]);
+
+        devLog('SubscriptionContext', '✅ RevenueCat SDK configured successfully');
+        setPurchases(Purchases);
+        setIsRevenueCatReady(true);
 
         devLog('SubscriptionContext', 'Fetching customer info...');
         const info = await Purchases.getCustomerInfo();
@@ -159,25 +167,28 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
         ]) as any;
 
         if (offerings.current) {
-          devLog('SubscriptionContext', `Found offering: ${offerings.current.identifier}`);
-          devLog('SubscriptionContext', `Available packages: ${offerings.current.availablePackages.length}`);
+          devLog('SubscriptionContext', `✅ Found offering: ${offerings.current.identifier}`);
+          devLog('SubscriptionContext', `✅ Available packages: ${offerings.current.availablePackages.length}`);
           setCurrentOffering(offerings.current);
         } else {
-          errorLog('SubscriptionContext', 'No current offering found - using mock');
+          errorLog('SubscriptionContext', '⚠️ No current offering found - using mock');
           setCurrentOffering(MOCK_OFFERING);
         }
 
+        devLog('SubscriptionContext', '✅ RevenueCat initialization complete');
         setInitializing(false);
       } else {
         setInitializing(false);
       }
     } catch (error) {
-      errorLog('SubscriptionContext', 'Initialization error - falling back to mock', error);
+      errorLog('SubscriptionContext', '❌ Initialization error - falling back to mock', error);
       setIsActive(false);
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setError(error instanceof Error ? error.message : 'Unknown error');
       setInitializing(false);
+      setIsRevenueCatReady(false);
+      setPurchases(null);
     }
   };
 
@@ -215,8 +226,18 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       return { success: true };
     }
 
-    if (!purchases) {
-      return { success: false, error: 'RevenueCat not initialized' };
+    if (!purchases || !isRevenueCatReady) {
+      errorLog('SubscriptionContext', '❌ Cannot purchase - RevenueCat not ready', {
+        hasPurchases: !!purchases,
+        isReady: isRevenueCatReady,
+        initializing
+      });
+      return {
+        success: false,
+        error: initializing
+          ? 'RevenueCat aún se está inicializando. Espera unos segundos e inténtalo de nuevo.'
+          : 'RevenueCat no está inicializado. Por favor, reinicia la aplicación.'
+      };
     }
 
     try {
@@ -243,7 +264,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
     } finally {
       setLoading(false);
     }
-  }, [purchases, entitlement]);
+  }, [purchases, entitlement, isRevenueCatReady, initializing]);
 
   const restore = useCallback(async () => {
     if (Platform.OS === 'web' || isExpoGo()) {
@@ -254,8 +275,13 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       return { success: true };
     }
 
-    if (!purchases) {
-      return { success: false, error: 'RevenueCat not initialized' };
+    if (!purchases || !isRevenueCatReady) {
+      return {
+        success: false,
+        error: initializing
+          ? 'RevenueCat aún se está inicializando. Espera unos segundos.'
+          : 'RevenueCat no está inicializado'
+      };
     }
 
     try {
@@ -281,7 +307,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
     } finally {
       setLoading(false);
     }
-  }, [purchases, entitlement]);
+  }, [purchases, entitlement, isRevenueCatReady, initializing]);
 
   const cancel = useCallback(async () => {
     devLog('SubscriptionContext', 'Cancel subscription requested');
@@ -310,6 +336,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
     isActive,
     loading,
     initializing,
+    isRevenueCatReady,
     customerInfo,
     currentOffering,
     entitlement,

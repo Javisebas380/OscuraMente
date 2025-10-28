@@ -28,14 +28,18 @@ export function SubscriptionDebugPanel() {
   const getStatusColor = () => {
     if (context.error) return '#FF6B6B';
     if (context.initializing) return '#FFA500';
-    if (context.isActive) return '#4CAF50';
+    if (context.isRevenueCatReady && context.isActive) return '#4CAF50';
+    if (context.isRevenueCatReady && !context.isActive) return '#888888';
+    if (!context.isRevenueCatReady && !context.initializing) return '#FF6B6B';
     return '#666666';
   };
 
   const getStatusText = () => {
     if (context.error) return 'ERROR';
     if (context.initializing) return 'INITIALIZING';
-    if (context.isActive) return 'ACTIVE';
+    if (!context.isRevenueCatReady && !context.initializing) return 'NOT READY';
+    if (context.isRevenueCatReady && context.isActive) return 'ACTIVE';
+    if (context.isRevenueCatReady && !context.isActive) return 'READY';
     return 'INACTIVE';
   };
 
@@ -95,8 +99,16 @@ export function SubscriptionDebugPanel() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Status</Text>
             <View style={styles.row}>
+              <Text style={styles.label}>SDK Ready:</Text>
+              <Text style={[styles.value, { color: context.isRevenueCatReady ? '#4CAF50' : '#FF6B6B' }]}>
+                {context.isRevenueCatReady ? '✅ YES' : '❌ NO'}
+              </Text>
+            </View>
+            <View style={styles.row}>
               <Text style={styles.label}>Initializing:</Text>
-              <Text style={styles.value}>{context.initializing ? 'YES' : 'NO'}</Text>
+              <Text style={[styles.value, { color: context.initializing ? '#FFA500' : '#666666' }]}>
+                {context.initializing ? 'YES' : 'NO'}
+              </Text>
             </View>
             <View style={styles.row}>
               <Text style={styles.label}>Loading:</Text>
