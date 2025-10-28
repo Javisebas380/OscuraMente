@@ -40,7 +40,7 @@ module.exports = {
     },
     extra: {
       eas: {
-        projectId: "23e592fc-2da8-42d3-91eb-1f36d1179814"
+        projectId: "426a2164-e9b5-46bc-8310-754296371981"
       }
     },
     assetBundlePatterns: ["**/*"],
