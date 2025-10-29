@@ -53,28 +53,23 @@ class AdsManager implements AdManagerInterface {
     }
 
     try {
-      if (Platform.OS !== 'web') {
-        const { MobileAds } = await import('react-native-google-mobile-ads');
-        const mobileAdsInstance = MobileAds();
-        this.googleMobileAds = mobileAdsInstance;
+      const { MobileAds } = await import('react-native-google-mobile-ads');
+      const mobileAdsInstance = MobileAds();
+      this.googleMobileAds = mobileAdsInstance;
 
-        devLog('AdsManager', `Initializing Google Mobile Ads with ID: ${currentAppId}`);
+      devLog('AdsManager', `Initializing Google Mobile Ads with ID: ${currentAppId}`);
 
-        const initTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('AdMob initialization timeout')), 3000)
-        );
+      const initTimeout = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('AdMob initialization timeout')), 3000)
+      );
 
-        await Promise.race([
-          mobileAdsInstance.initialize(),
-          initTimeout
-        ]);
-
-        this.initialized = true;
-        devLog('AdsManager', 'Google Mobile Ads initialized successfully');
-        return true;
-      }
+      await Promise.race([
+        mobileAdsInstance.initialize(),
+        initTimeout
+      ]);
 
       this.initialized = true;
+      devLog('AdsManager', 'Google Mobile Ads initialized successfully');
       return true;
     } catch (error) {
       errorLog('AdsManager', 'Failed to initialize Google Mobile Ads', error);
@@ -139,7 +134,7 @@ class AdsManager implements AdManagerInterface {
         return { success: false, error: 'Ads not supported on web' };
       }
 
-      const { RewardedAd, RewardedAdEventType, TestIds } = await import('react-native-google-mobile-ads');
+      const { RewardedAd, RewardedAdEventType, AdEventType, TestIds } = await import('react-native-google-mobile-ads');
 
       let unitId: string;
       if (adUnitId) {
@@ -182,14 +177,16 @@ class AdsManager implements AdManagerInterface {
             this.lastAdTime = Date.now();
             unsubscribeLoaded();
             unsubscribeEarned();
+            unsubscribeClosed();
             resolve({ success: true });
           }
         );
 
-        rewarded.addAdEventListener(RewardedAdEventType.CLOSED, () => {
+        const unsubscribeClosed = rewarded.addAdEventListener(AdEventType.CLOSED, () => {
           devLog('AdsManager', 'Ad closed by user');
           unsubscribeLoaded();
           unsubscribeEarned();
+          unsubscribeClosed();
           if (!adLoaded || this.lastAdTime === null) {
             resolve({ success: false, error: 'Anuncio cerrado sin completar' });
           }
@@ -202,6 +199,7 @@ class AdsManager implements AdManagerInterface {
             errorLog('AdsManager', 'Ad load timeout (10s)');
             unsubscribeLoaded();
             unsubscribeEarned();
+            unsubscribeClosed();
             resolve({ success: false, error: 'Tiempo de espera agotado al cargar el anuncio' });
           }
         }, 10000);
