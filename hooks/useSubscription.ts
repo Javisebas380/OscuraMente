@@ -51,21 +51,17 @@ export function useSubscription() {
     console.log('[useSubscription] Initializing:', context.initializing);
     console.log('[useSubscription] Current offering available:', !!context.currentOffering);
 
-    if (context.initializing) {
-      console.warn('[useSubscription] ⚠️ RevenueCat is still initializing');
+    if (!context.isRevenueCatReady) {
+      console.error('[useSubscription] ❌ RevenueCat not ready');
+      const message = context.initializing
+        ? 'El sistema de pagos se está inicializando. Espera unos segundos e inténtalo de nuevo.'
+        : 'El sistema de pagos no está disponible. Por favor, reinicia la aplicación.';
       return {
         success: false,
-        message: 'RevenueCat aún se está inicializando. Espera unos segundos e inténtalo de nuevo.'
+        message
       };
     }
 
-    if (!context.isRevenueCatReady) {
-      console.error('[useSubscription] ❌ RevenueCat not ready');
-      return {
-        success: false,
-        message: 'RevenueCat no está listo. Por favor, reinicia la aplicación.'
-      };
-    }
 
     if (context.currentOffering) {
       console.log('[useSubscription] Current offering identifier:', context.currentOffering.identifier);

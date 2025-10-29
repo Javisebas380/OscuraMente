@@ -69,6 +69,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(false);
   const [initializing, setInitializing] = useState(false);
+  const [isSDKReady, setIsSDKReady] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
   const [currentOffering, setCurrentOffering] = useState<any>(MOCK_OFFERING);
   const [error, setError] = useState<string | null>(null);
@@ -80,7 +81,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   const environment = getEnvironment();
   const appEnv = getAppEnvironment();
 
-  const isRevenueCatReady = Platform.OS === 'web' || isExpoGo() ? true : !!purchases;
+  const isRevenueCatReady = Platform.OS === 'web' || isExpoGo() ? true : (isSDKReady && !!purchasesRef.current);
 
   useEffect(() => {
     if (!initializationAttempted.current) {
@@ -94,6 +95,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
   const initializeRevenueCat = async () => {
     devLog('SubscriptionContext', `Initializing in ${environment} environment (app: ${appEnv})`);
     setInitializing(true);
+    setIsSDKReady(false);
     setError(null);
 
     if (Platform.OS === 'web') {
@@ -102,6 +104,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setInitializing(false);
+      setIsSDKReady(true);
       setPurchases('MOCK_WEB');
       purchasesRef.current = 'MOCK_WEB';
       return;
@@ -113,6 +116,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
       setInitializing(false);
+      setIsSDKReady(true);
       setPurchases('MOCK_EXPO_GO');
       purchasesRef.current = 'MOCK_EXPO_GO';
       return;
@@ -126,6 +130,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
       setCurrentOffering(MOCK_OFFERING);
       setError('RevenueCat not configured');
       setInitializing(false);
+      setIsSDKReady(false);
       setPurchases(null);
       purchasesRef.current = null;
       return;
@@ -139,44 +144,45 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
 
         devLog('SubscriptionContext', `Configuring SDK with key: ${REVENUECAT_API_KEY.substring(0, 10)}...`);
 
-        const initTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('RevenueCat initialization timeout')), 5000)
-        );
-
-        await Promise.race([
-          Purchases.configure({ apiKey: REVENUECAT_API_KEY }),
-          initTimeout
-        ]);
+        await Purchases.configure({ apiKey: REVENUECAT_API_KEY });
 
         devLog('SubscriptionContext', '✅ RevenueCat SDK configured successfully');
+
         setPurchases(Purchases);
         purchasesRef.current = Purchases;
+        setIsSDKReady(true);
+
+        devLog('SubscriptionContext', '✅ SDK is now READY for purchases');
 
         devLog('SubscriptionContext', 'Fetching customer info...');
-        const info = await Purchases.getCustomerInfo();
+        try {
+          const info = await Purchases.getCustomerInfo();
 
-        const hasActiveEntitlement = info.entitlements.active[entitlement] !== undefined;
-        devLog('SubscriptionContext', `Active entitlement (${entitlement}):`, hasActiveEntitlement);
+          const hasActiveEntitlement = info.entitlements.active[entitlement] !== undefined;
+          devLog('SubscriptionContext', `Active entitlement (${entitlement}):`, hasActiveEntitlement);
 
-        setIsActive(hasActiveEntitlement);
-        setCustomerInfo(info);
+          setIsActive(hasActiveEntitlement);
+          setCustomerInfo(info);
+        } catch (customerError) {
+          errorLog('SubscriptionContext', '⚠️ Failed to fetch customer info - continuing with SDK ready', customerError);
+          setIsActive(false);
+          setCustomerInfo(null);
+        }
 
         devLog('SubscriptionContext', 'Fetching offerings...');
-        const offeringsTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Offerings fetch timeout')), 3000)
-        );
+        try {
+          const offerings = await Purchases.getOfferings();
 
-        const offerings = await Promise.race([
-          Purchases.getOfferings(),
-          offeringsTimeout
-        ]) as any;
-
-        if (offerings.current) {
-          devLog('SubscriptionContext', `✅ Found offering: ${offerings.current.identifier}`);
-          devLog('SubscriptionContext', `✅ Available packages: ${offerings.current.availablePackages.length}`);
-          setCurrentOffering(offerings.current);
-        } else {
-          errorLog('SubscriptionContext', '⚠️ No current offering found - using mock');
+          if (offerings.current) {
+            devLog('SubscriptionContext', `✅ Found offering: ${offerings.current.identifier}`);
+            devLog('SubscriptionContext', `✅ Available packages: ${offerings.current.availablePackages.length}`);
+            setCurrentOffering(offerings.current);
+          } else {
+            errorLog('SubscriptionContext', '⚠️ No current offering found - using mock');
+            setCurrentOffering(MOCK_OFFERING);
+          }
+        } catch (offeringsError) {
+          errorLog('SubscriptionContext', '⚠️ Failed to fetch offerings - using mock', offeringsError);
           setCurrentOffering(MOCK_OFFERING);
         }
 
@@ -186,12 +192,13 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
         setInitializing(false);
       }
     } catch (error) {
-      errorLog('SubscriptionContext', '❌ Initialization error - falling back to mock', error);
+      errorLog('SubscriptionContext', '❌ SDK Configuration failed', error);
       setIsActive(false);
       setCustomerInfo(null);
       setCurrentOffering(MOCK_OFFERING);
-      setError(error instanceof Error ? error.message : 'Unknown error');
+      setError(error instanceof Error ? error.message : 'SDK configuration failed');
       setInitializing(false);
+      setIsSDKReady(false);
       setPurchases(null);
       purchasesRef.current = null;
     }
@@ -233,10 +240,11 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
 
     const currentPurchases = purchasesRef.current || purchases;
 
-    if (!currentPurchases) {
-      errorLog('SubscriptionContext', '❌ Cannot purchase - SDK not available', {
+    if (!currentPurchases || !isSDKReady) {
+      errorLog('SubscriptionContext', '❌ Cannot purchase - SDK not ready', {
         hasPurchases: !!purchases,
         hasPurchasesRef: !!purchasesRef.current,
+        isSDKReady,
         initializing,
         isConfigured: isRevenueCatConfigured()
       });
@@ -274,7 +282,7 @@ export function SubscriptionProvider({ children }: { children: React.ReactNode }
     } finally {
       setLoading(false);
     }
-  }, [purchases, entitlement, initializing]);
+  }, [purchases, entitlement, initializing, isSDKReady]);
 
   const restore = useCallback(async () => {
     if (Platform.OS === 'web' || isExpoGo()) {
