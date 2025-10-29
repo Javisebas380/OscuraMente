@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 import { SubscriptionState } from './useSubscription';
+import { adsManager } from '../src/services/ads';
+import { devLog, errorLog } from '../src/utils/environment';
 
 interface UnlockState {
   [testId: string]: {
@@ -88,6 +90,32 @@ export function useUnlockState(subscription: SubscriptionState) {
 
   const unlockSection = async (testId: string, trait: string, section: string, method: 'ad' | 'premium' | 'free') => {
     try {
+      devLog('useUnlockState', `Attempting to unlock section: ${section} via ${method}`);
+
+      // If unlocking via ad, show the ad first
+      if (method === 'ad') {
+        devLog('useUnlockState', 'Showing rewarded ad...');
+
+        // Ensure ads are initialized
+        if (!adsManager.isInitialized()) {
+          errorLog('useUnlockState', 'Ads not initialized, initializing now...');
+          await adsManager.initialize();
+        }
+
+        // Show the rewarded ad
+        const adResult = await adsManager.showRewardedAd();
+
+        if (!adResult.success) {
+          errorLog('useUnlockState', 'Ad failed to show', adResult.error);
+          return {
+            success: false,
+            error: adResult.error || 'No se pudo mostrar el anuncio'
+          };
+        }
+
+        devLog('useUnlockState', 'Ad completed successfully, unlocking section');
+      }
+
       // Update unlocked sections
       const newUnlockedSections = {
         ...unlockedSections,
@@ -111,13 +139,15 @@ export function useUnlockState(subscription: SubscriptionState) {
           ...dailyFreeUsage,
           [key]: today,
         };
-        
+
         setDailyFreeUsage(newDailyUsage);
         await saveDailyFreeUsage(newDailyUsage);
       }
 
+      devLog('useUnlockState', `Section unlocked successfully via ${method}`);
       return { success: true };
     } catch (error) {
+      errorLog('useUnlockState', 'Error in unlockSection', error);
       return { success: false, error: 'Error al desbloquear contenido' };
     }
   };

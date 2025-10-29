@@ -61,6 +61,7 @@ export default function TestResults() {
   const [testConfig, setTestConfig] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [expandedTraits, setExpandedTraits] = useState<{ [key: string]: boolean }>({});
+  const [unlockingSection, setUnlockingSection] = useState<{ trait: string; section: string } | null>(null);
   const [toast, setToast] = useState<{ visible: boolean; message: string; type: 'success' | 'error' }>({
     visible: false,
     message: '',
@@ -179,25 +180,29 @@ export default function TestResults() {
 
   const handleUnlockSection = useCallback(async (trait: string, section: string) => {
     triggerHaptic();
-    
+
     if (section === 'premium') {
       router.push('/suscripcion');
       return;
     }
 
     if (section === 'ad_unlock') {
-      showToast('Cargando anuncio...', 'success');
-      
+      setUnlockingSection({ trait, section });
+      showToast('Preparando anuncio...', 'success');
+
       try {
         const result = await unlockSection(id as string, trait, 'ad_unlock', 'ad');
-        
+
         if (result.success) {
           showToast('¡Contenido desbloqueado!', 'success');
         } else {
-          showToast('Error al mostrar anuncio', 'error');
+          const errorMessage = result.error || 'No se pudo mostrar el anuncio';
+          showToast(errorMessage, 'error');
         }
       } catch (error) {
-        showToast('Error al cargar anuncio', 'error');
+        showToast('Error inesperado al cargar anuncio', 'error');
+      } finally {
+        setUnlockingSection(null);
       }
     }
   }, [id, triggerHaptic, unlockSection]);
@@ -413,6 +418,7 @@ export default function TestResults() {
                         lockType="ad"
                         onUnlockPress={() => handleUnlockSection(trait, 'ad_unlock')}
                         sectionName={`análisis de ${traitName.toLowerCase()}`}
+                        isLoading={unlockingSection?.trait === trait && unlockingSection?.section === 'ad_unlock'}
                       >
                         <View style={styles.adUnlockContent}>
                           <View style={styles.strengthsWeaknesses}>
