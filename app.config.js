@@ -51,7 +51,9 @@ module.exports = {
       infoPlist: {
         NSCameraUsageDescription: "Necesitamos acceso a tu cámara para actualizar tu foto de perfil",
         NSPhotoLibraryUsageDescription: "Necesitamos acceso a tu galería para seleccionar tu foto de perfil",
-        NSUserTrackingUsageDescription: "Usamos esto para personalizar anuncios y mejorar tu experiencia"
+        NSUserTrackingUsageDescription: "Usamos esto para personalizar anuncios y mejorar tu experiencia",
+        NSLocalNetworkUsageDescription: "La app necesita acceder a la red local para conectar con el servidor de desarrollo y mostrar la app en modo       depuración.",
+        NSBonjourServices: ["_http._tcp"]
       },
       config: {
         usesNonExemptEncryption: false
