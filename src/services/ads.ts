@@ -54,8 +54,9 @@ class AdsManager implements AdManagerInterface {
 
     try {
       if (Platform.OS !== 'web') {
-        const { default: mobileAds } = await import('react-native-google-mobile-ads');
-        this.googleMobileAds = mobileAds;
+        const { MobileAds } = await import('react-native-google-mobile-ads');
+        const mobileAdsInstance = MobileAds();
+        this.googleMobileAds = mobileAdsInstance;
 
         devLog('AdsManager', `Initializing Google Mobile Ads with ID: ${currentAppId}`);
 
@@ -64,7 +65,7 @@ class AdsManager implements AdManagerInterface {
         );
 
         await Promise.race([
-          mobileAds.initialize(),
+          mobileAdsInstance.initialize(),
           initTimeout
         ]);
 
