@@ -5,6 +5,7 @@
   "build": {
     "development": {
       "distribution": "internal",
+      "developmentClient": true,
       "env": {
         "EXPO_PUBLIC_APP_ENV": "development",
         "RCT_NEW_ARCH_ENABLED": "1"
