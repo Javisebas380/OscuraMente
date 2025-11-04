@@ -59,19 +59,17 @@ export const useResponsiveLayout = (): ResponsiveLayout => {
     contentMaxWidth = MAX_CONTENT_WIDTH_TABLET;
   }
 
-  const safeScreenWidth = dimensions.width - (SAFE_HORIZONTAL_MARGIN * 2);
-
-  let maxSlideWidth: number;
+  let slideWidth: number;
   if (isTabletLandscape) {
-    maxSlideWidth = dimensions.width * 0.85;
+    const safeScreenWidth = dimensions.width - (SAFE_HORIZONTAL_MARGIN * 2);
+    slideWidth = Math.min(safeScreenWidth, dimensions.width * 0.85);
   } else if (isTablet) {
-    maxSlideWidth = MAX_SLIDE_WIDTH;
+    const safeScreenWidth = dimensions.width - (SAFE_HORIZONTAL_MARGIN * 2);
+    slideWidth = Math.min(safeScreenWidth, MAX_SLIDE_WIDTH);
   } else {
-    // Mobile: use 90% of screen width for better containment
-    maxSlideWidth = dimensions.width * 0.90;
+    // Mobile: use exact screen width to prevent overflow
+    slideWidth = dimensions.width;
   }
-
-  const slideWidth = Math.min(safeScreenWidth, maxSlideWidth, dimensions.width);
 
   const horizontalPadding = isWideScreen ? 64 : isTablet ? 48 : 24;
   const verticalSpacing = isWideScreen ? 32 : isTabletLandscape ? 12 : isTablet ? 24 : 16;
