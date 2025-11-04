@@ -187,14 +187,14 @@ export default function Onboarding() {
                 colors={['rgba(200, 169, 81, 0.12)', 'rgba(200, 169, 81, 0.06)']}
                 style={styles.iconGradient}
               >
-                <IconComponent size={48} color="#C8A951" strokeWidth={1.5} />
+                <IconComponent size={layout.isTabletLandscape ? 40 : 48} color="#C8A951" strokeWidth={1.5} />
               </LinearGradient>
             </View>
 
             {/* Title and Subtitle */}
             <View style={styles.textSection}>
-              <Text style={styles.slideTitle}>{slide.title}</Text>
-              <Text style={styles.slideSubtitle}>{slide.subtitle}</Text>
+              <Text style={[styles.slideTitle, { fontSize: layout.titleFontSize, lineHeight: layout.titleFontSize * 1.25 }]}>{slide.title}</Text>
+              <Text style={[styles.slideSubtitle, { fontSize: layout.subtitleFontSize, lineHeight: layout.subtitleFontSize * 1.5 }]}>{slide.subtitle}</Text>
             </View>
 
             {/* Bullets */}
@@ -381,7 +381,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center' as const,
     paddingTop: 40,
     paddingBottom: 40,
-    minHeight: 600,
     overflow: 'hidden' as const,
   },
   slideInner: {
@@ -389,16 +388,16 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center' as const,
     justifyContent: 'center' as const,
-    paddingHorizontal: 24,
+    paddingHorizontal: 32,
   },
   slideContent: {
     alignItems: 'center' as const,
     justifyContent: 'center' as const,
-    gap: 20,
+    gap: 16,
   },
   iconGradient: {
-    width: 80, 
-    height: 80,
+    width: 72,
+    height: 72,
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 0,
@@ -427,40 +426,36 @@ const styles = StyleSheet.create({
   },
   textSection: {
     alignItems: 'center',
-    gap: 8,
+    gap: 6,
     width: '100%',
     paddingHorizontal: 0,
   },
   slideTitle: {
-    fontSize: 32,
     color: '#FFFFFF',
     fontFamily: 'Playfair-Bold',
     textAlign: 'center',
     letterSpacing: -0.8,
-    lineHeight: 40,
     width: '100%',
     paddingHorizontal: 8,
   },
   slideSubtitle: {
-    fontSize: 17,
     color: '#B3B3B3',
     fontFamily: 'Inter-Regular',
     textAlign: 'center',
-    lineHeight: 26,
     letterSpacing: 0.1,
     width: '100%',
     paddingHorizontal: 8,
   },
   bulletsContainer: {
     width: '100%',
-    gap: 16,
-    paddingHorizontal: 0,
+    gap: 12,
+    paddingHorizontal: 16,
   },
   bulletItem: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
-    paddingRight: 8,
+    paddingRight: 16,
   },
   bulletDot: {
     width: 6,
@@ -477,22 +472,22 @@ const styles = StyleSheet.create({
   },
   bulletText: {
     flex: 1,
-    fontSize: 15,
+    fontSize: 14,
     color: '#F5F5F5',
     fontFamily: 'Inter-Regular',
-    lineHeight: 24,
+    lineHeight: 22,
     letterSpacing: 0.1,
     flexWrap: 'wrap',
   },
   ctaContainer: {
     width: '100%',
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: 12,
     paddingHorizontal: 0,
   },
   primaryButton: {
     width: '100%',
-    maxWidth: 480,
+    maxWidth: 400,
     borderRadius: 20,
     overflow: 'hidden',
     shadowColor: '#C8A951',
@@ -500,7 +495,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 16,
     elevation: 8,
-    marginHorizontal: 8,
+    marginHorizontal: 16,
   },
   primaryGradient: {
     flexDirection: 'row',
