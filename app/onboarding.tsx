@@ -7,10 +7,9 @@ import { Brain, Eye, Shield, Users, Star, Sparkles, Crown, ArrowRight, Check, Lo
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useOnboardingSeen } from '../hooks/useOnboardingSeen';
 import { useAnalytics } from '../hooks/useAnalytics';
+import { useResponsiveLayout } from '../hooks/useResponsiveLayout';
 import * as Haptics from 'expo-haptics';
 import { Platform } from 'react-native';
-
-const { width: screenWidth } = Dimensions.get('window');
 
 const slides = [
   {
@@ -78,9 +77,10 @@ export default function Onboarding() {
   const { trackEvent } = useAnalytics();
   const { source } = useLocalSearchParams();
   const insets = useSafeAreaInsets();
+  const layout = useResponsiveLayout();
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollViewRef = useRef<ScrollView>(null);
-  
+
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
 
@@ -131,7 +131,7 @@ export default function Onboarding() {
     triggerHaptic();
     if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
-      scrollViewRef.current?.scrollTo({ x: (currentSlide + 1) * screenWidth, animated: true });
+      scrollViewRef.current?.scrollTo({ x: (currentSlide + 1) * layout.screenWidth, animated: true });
     }
   };
 
@@ -158,15 +158,26 @@ export default function Onboarding() {
 
   const renderSlide = (slide: any, index: number) => {
     const IconComponent = slide.icon;
-    
+
     return (
-      <View key={slide.id} style={styles.slideContainer}>
-        <Animated.View 
+      <View
+        key={slide.id}
+        style={[
+          styles.slideContainer,
+          {
+            width: layout.screenWidth,
+            paddingHorizontal: layout.horizontalPadding,
+            maxWidth: layout.isTablet ? layout.contentMaxWidth + (layout.horizontalPadding * 2) : layout.screenWidth,
+          }
+        ]}
+      >
+        <Animated.View
           style={[
             styles.slideContent,
             {
               opacity: fadeAnim,
-              transform: [{ translateY: slideAnim }]
+              transform: [{ translateY: slideAnim }],
+              maxWidth: layout.contentMaxWidth,
             }
           ]}
         >
@@ -188,7 +199,7 @@ export default function Onboarding() {
 
           {/* Bullets */}
           {slide.bullets.length > 0 && (
-            <View style={styles.bulletsContainer}>
+            <View style={[styles.bulletsContainer, { maxWidth: layout.contentMaxWidth }]}>
               {slide.bullets.map((bullet: string, bulletIndex: number) => (
                 <View key={bulletIndex} style={styles.bulletItem}>
                   <View style={styles.bulletDot} />
@@ -199,8 +210,8 @@ export default function Onboarding() {
           )}
 
           {/* CTAs */}
-          <View style={styles.ctaContainer}>
-            <TouchableOpacity 
+          <View style={[styles.ctaContainer, { maxWidth: layout.contentMaxWidth }]}>
+            <TouchableOpacity
               style={styles.primaryButton}
               onPress={handlePrimaryCta}
               accessibilityRole="button"
@@ -239,8 +250,14 @@ export default function Onboarding() {
       />
 
       {/* Skip Button */}
-      <TouchableOpacity 
-        style={styles.skipButton}
+      <TouchableOpacity
+        style={[
+          styles.skipButton,
+          {
+            top: insets.top + (layout.isTablet ? 60 : 40),
+            right: layout.horizontalPadding,
+          }
+        ]}
         onPress={handleSkip}
         accessibilityRole="button"
         accessibilityLabel="Saltar introducción"
@@ -250,7 +267,14 @@ export default function Onboarding() {
       </TouchableOpacity>
 
       {/* Progress Indicators */}
-      <View style={styles.progressContainer}>
+      <View
+        style={[
+          styles.progressContainer,
+          {
+            paddingTop: insets.top + (layout.isTablet ? 140 : 120),
+          }
+        ]}
+      >
         {slides.map((_, index) => (
           <View
             key={index}
@@ -267,11 +291,10 @@ export default function Onboarding() {
       <ScrollView
         ref={scrollViewRef}
         contentContainerStyle={{
-          paddingTop: insets?.top ? insets.top + 16 : 24,
-          paddingBottom: insets?.bottom ? Math.max(insets.bottom, 8) : 12,
+          paddingTop: layout.verticalSpacing,
+          paddingBottom: insets?.bottom ? Math.max(insets.bottom, 24) : 24,
           alignItems: 'center',
           justifyContent: 'flex-start',
-          rowGap: 12
         }}
         horizontal
         pagingEnabled
@@ -300,11 +323,9 @@ const styles = StyleSheet.create({
   },
   skipButton: {
     position: 'absolute',
-    top: 100,
-    right: 28,
     zIndex: 10,
     paddingHorizontal: 16,
-    paddingVertical: 8, 
+    paddingVertical: 8,
     borderRadius: 20,
     backgroundColor: 'rgba(26, 26, 26, 0.8)',
     borderWidth: 1,
@@ -325,8 +346,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     gap: 12,
-    paddingTop: 120, 
-    paddingBottom: 0,  
+    paddingBottom: 0,
     zIndex: 5,
   },
   progressDot: {
@@ -351,20 +371,18 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   slideContainer: {
-    width: screenWidth,
-    maxWidth: 720,
     alignSelf: 'center',
     alignItems: 'center' as const,
-    justifyContent: 'flex-start' as const,
-    paddingHorizontal: 24,
-    paddingTop: 0,
-    paddingBottom: 150,
+    justifyContent: 'center' as const,
+    paddingTop: 40,
+    paddingBottom: 40,
+    minHeight: 600,
   },
   slideContent: {
-    width: '92%',
+    width: '100%',
     alignItems: 'center' as const,
-    justifyContent: 'flex-start' as const,
-    gap: 12,
+    justifyContent: 'center' as const,
+    gap: 20,
   },
   iconGradient: {
     width: 80, 
@@ -398,6 +416,8 @@ const styles = StyleSheet.create({
   textSection: {
     alignItems: 'center',
     gap: 8,
+    paddingHorizontal: 16,
+    width: '100%',
   },
   slideTitle: {
     fontSize: 32,
@@ -405,7 +425,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Playfair-Bold',
     textAlign: 'center',
     letterSpacing: -0.8,
-    lineHeight: 38,
+    lineHeight: 40,
+    maxWidth: '100%',
   },
   slideSubtitle: {
     fontSize: 17,
@@ -414,43 +435,50 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 26,
     letterSpacing: 0.1,
+    maxWidth: '100%',
   },
   bulletsContainer: {
     width: '100%',
-    gap: 12,
+    gap: 16,
+    paddingHorizontal: 8,
   },
   bulletItem: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
+    width: '100%',
   },
   bulletDot: {
     width: 6,
     height: 6,
     borderRadius: 3,
     backgroundColor: '#C8A951',
-    marginTop: 6,
+    marginTop: 8,
     shadowColor: '#C8A951',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.4,
     shadowRadius: 4,
     elevation: 2,
+    flexShrink: 0,
   },
   bulletText: {
     flex: 1,
     fontSize: 15,
     color: '#F5F5F5',
     fontFamily: 'Inter-Regular',
-    lineHeight: 22,
+    lineHeight: 24,
     letterSpacing: 0.1,
+    flexWrap: 'wrap',
   },
   ctaContainer: {
     width: '100%',
     alignItems: 'center',
-    marginTop: 8,
+    marginTop: 16,
+    paddingHorizontal: 8,
   },
   primaryButton: {
     width: '100%',
+    maxWidth: 480,
     borderRadius: 20,
     overflow: 'hidden',
     shadowColor: '#C8A951',
@@ -464,8 +492,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 12,
-    paddingVertical: 16, 
-    paddingHorizontal: 20,
+    paddingVertical: 18,
+    paddingHorizontal: 24,
   },
   primaryButtonText: {
     fontSize: 17,
