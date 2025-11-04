@@ -166,67 +166,69 @@ export default function Onboarding() {
           styles.slideContainer,
           {
             width: layout.slideWidth,
-            paddingHorizontal: layout.horizontalPadding,
           }
         ]}
       >
-        <Animated.View
-          style={[
-            styles.slideContent,
-            {
-              opacity: fadeAnim,
-              transform: [{ translateY: slideAnim }],
-              maxWidth: layout.contentMaxWidth,
-            }
-          ]}
-        >
-          {/* Icon */}
-          <View style={styles.iconContainer}>
-            <LinearGradient
-              colors={['rgba(200, 169, 81, 0.12)', 'rgba(200, 169, 81, 0.06)']}
-              style={styles.iconGradient}
-            >
-              <IconComponent size={48} color="#C8A951" strokeWidth={1.5} />
-            </LinearGradient>
-          </View>
-
-          {/* Title and Subtitle */}
-          <View style={styles.textSection}>
-            <Text style={styles.slideTitle}>{slide.title}</Text>
-            <Text style={styles.slideSubtitle}>{slide.subtitle}</Text>
-          </View>
-
-          {/* Bullets */}
-          {slide.bullets.length > 0 && (
-            <View style={[styles.bulletsContainer, { maxWidth: layout.contentMaxWidth }]}>
-              {slide.bullets.map((bullet: string, bulletIndex: number) => (
-                <View key={bulletIndex} style={styles.bulletItem}>
-                  <View style={styles.bulletDot} />
-                  <Text style={styles.bulletText}>{bullet}</Text>
-                </View>
-              ))}
-            </View>
-          )}
-
-          {/* CTAs */}
-          <View style={[styles.ctaContainer, { maxWidth: layout.contentMaxWidth }]}>
-            <TouchableOpacity
-              style={styles.primaryButton}
-              onPress={handlePrimaryCta}
-              accessibilityRole="button"
-              accessibilityLabel={slide.primaryCta}
-              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-            >
+        <View style={styles.slideInner}>
+          <Animated.View
+            style={[
+              styles.slideContent,
+              {
+                opacity: fadeAnim,
+                transform: [{ translateY: slideAnim }],
+                width: '100%',
+                maxWidth: layout.contentMaxWidth,
+              }
+            ]}
+          >
+            {/* Icon */}
+            <View style={styles.iconContainer}>
               <LinearGradient
-                colors={['#C8A951', '#E6C068', '#C8A951']}
-                style={styles.primaryGradient}
+                colors={['rgba(200, 169, 81, 0.12)', 'rgba(200, 169, 81, 0.06)']}
+                style={styles.iconGradient}
               >
-                <Text style={styles.primaryButtonText}>{slide.primaryCta}</Text>
-                <ArrowRight size={18} color="#0D0D0D" strokeWidth={1.5} />
+                <IconComponent size={48} color="#C8A951" strokeWidth={1.5} />
               </LinearGradient>
-            </TouchableOpacity>
-          </View>
-        </Animated.View>
+            </View>
+
+            {/* Title and Subtitle */}
+            <View style={styles.textSection}>
+              <Text style={styles.slideTitle}>{slide.title}</Text>
+              <Text style={styles.slideSubtitle}>{slide.subtitle}</Text>
+            </View>
+
+            {/* Bullets */}
+            {slide.bullets.length > 0 && (
+              <View style={styles.bulletsContainer}>
+                {slide.bullets.map((bullet: string, bulletIndex: number) => (
+                  <View key={bulletIndex} style={styles.bulletItem}>
+                    <View style={styles.bulletDot} />
+                    <Text style={styles.bulletText}>{bullet}</Text>
+                  </View>
+                ))}
+              </View>
+            )}
+
+            {/* CTAs */}
+            <View style={styles.ctaContainer}>
+              <TouchableOpacity
+                style={styles.primaryButton}
+                onPress={handlePrimaryCta}
+                accessibilityRole="button"
+                accessibilityLabel={slide.primaryCta}
+                hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+              >
+                <LinearGradient
+                  colors={['#C8A951', '#E6C068', '#C8A951']}
+                  style={styles.primaryGradient}
+                >
+                  <Text style={styles.primaryButtonText}>{slide.primaryCta}</Text>
+                  <ArrowRight size={18} color="#0D0D0D" strokeWidth={1.5} />
+                </LinearGradient>
+              </TouchableOpacity>
+            </View>
+          </Animated.View>
+        </View>
       </View>
     );
   };
@@ -380,9 +382,16 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingBottom: 40,
     minHeight: 600,
+    overflow: 'hidden' as const,
+  },
+  slideInner: {
+    width: '100%',
+    height: '100%',
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    paddingHorizontal: 24,
   },
   slideContent: {
-    width: '100%',
     alignItems: 'center' as const,
     justifyContent: 'center' as const,
     gap: 20,
@@ -419,8 +428,8 @@ const styles = StyleSheet.create({
   textSection: {
     alignItems: 'center',
     gap: 8,
-    paddingHorizontal: 16,
     width: '100%',
+    paddingHorizontal: 0,
   },
   slideTitle: {
     fontSize: 32,
@@ -429,7 +438,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     letterSpacing: -0.8,
     lineHeight: 40,
-    maxWidth: '100%',
+    width: '100%',
+    paddingHorizontal: 8,
   },
   slideSubtitle: {
     fontSize: 17,
@@ -438,18 +448,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 26,
     letterSpacing: 0.1,
-    maxWidth: '100%',
+    width: '100%',
+    paddingHorizontal: 8,
   },
   bulletsContainer: {
     width: '100%',
     gap: 16,
-    paddingHorizontal: 8,
+    paddingHorizontal: 0,
   },
   bulletItem: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
-    width: '100%',
+    paddingRight: 8,
   },
   bulletDot: {
     width: 6,
@@ -477,7 +488,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     marginTop: 16,
-    paddingHorizontal: 8,
+    paddingHorizontal: 0,
   },
   primaryButton: {
     width: '100%',
@@ -489,6 +500,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
     shadowRadius: 16,
     elevation: 8,
+    marginHorizontal: 8,
   },
   primaryGradient: {
     flexDirection: 'row',
