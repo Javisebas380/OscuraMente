@@ -175,7 +175,7 @@ export default function Onboarding() {
         <View style={[
           styles.slideInner,
           {
-            paddingHorizontal: isCompact ? 20 : layout.isTablet ? 28 : 24,
+            paddingHorizontal: isCompact ? 20 : layout.isTablet ? 28 : 20,
           }
         ]}>
           <Animated.View
@@ -352,7 +352,8 @@ export default function Onboarding() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0D0D0D', 
+    backgroundColor: '#0D0D0D',
+    overflow: 'hidden',
   },
   backgroundGradient: {
     position: 'absolute',
@@ -410,6 +411,7 @@ const styles = StyleSheet.create({
   },
   slidesContainer: {
     flexGrow: 1,
+    overflow: 'hidden',
   },
   slideContainer: {
     alignSelf: 'center',

@@ -23,7 +23,7 @@ const MAX_CONTENT_WIDTH_TABLET = 600;
 const MAX_CONTENT_WIDTH_TABLET_LANDSCAPE = 440;
 const MAX_CONTENT_WIDTH_WIDE = 720;
 const MAX_SLIDE_WIDTH = 800;
-const SAFE_HORIZONTAL_MARGIN = 32;
+const SAFE_HORIZONTAL_MARGIN = 48;
 
 export const useResponsiveLayout = (): ResponsiveLayout => {
   const [dimensions, setDimensions] = useState(() => {
@@ -60,8 +60,18 @@ export const useResponsiveLayout = (): ResponsiveLayout => {
   }
 
   const safeScreenWidth = dimensions.width - (SAFE_HORIZONTAL_MARGIN * 2);
-  const maxSlideWidth = isTabletLandscape ? dimensions.width * 0.85 : MAX_SLIDE_WIDTH;
-  const slideWidth = Math.min(safeScreenWidth, maxSlideWidth);
+
+  let maxSlideWidth: number;
+  if (isTabletLandscape) {
+    maxSlideWidth = dimensions.width * 0.85;
+  } else if (isTablet) {
+    maxSlideWidth = MAX_SLIDE_WIDTH;
+  } else {
+    // Mobile: use 90% of screen width for better containment
+    maxSlideWidth = dimensions.width * 0.90;
+  }
+
+  const slideWidth = Math.min(safeScreenWidth, maxSlideWidth, dimensions.width);
 
   const horizontalPadding = isWideScreen ? 64 : isTablet ? 48 : 24;
   const verticalSpacing = isWideScreen ? 32 : isTabletLandscape ? 12 : isTablet ? 24 : 16;
