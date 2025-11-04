@@ -20,10 +20,10 @@ const TABLET_BREAKPOINT = 768;
 const WIDE_SCREEN_BREAKPOINT = 1024;
 const MAX_CONTENT_WIDTH_PHONE = 480;
 const MAX_CONTENT_WIDTH_TABLET = 600;
-const MAX_CONTENT_WIDTH_TABLET_LANDSCAPE = 520;
+const MAX_CONTENT_WIDTH_TABLET_LANDSCAPE = 440;
 const MAX_CONTENT_WIDTH_WIDE = 720;
 const MAX_SLIDE_WIDTH = 800;
-const SAFE_HORIZONTAL_MARGIN = 48;
+const SAFE_HORIZONTAL_MARGIN = 32;
 
 export const useResponsiveLayout = (): ResponsiveLayout => {
   const [dimensions, setDimensions] = useState(() => {
@@ -60,13 +60,14 @@ export const useResponsiveLayout = (): ResponsiveLayout => {
   }
 
   const safeScreenWidth = dimensions.width - (SAFE_HORIZONTAL_MARGIN * 2);
-  const slideWidth = Math.min(safeScreenWidth, MAX_SLIDE_WIDTH);
+  const maxSlideWidth = isTabletLandscape ? dimensions.width * 0.85 : MAX_SLIDE_WIDTH;
+  const slideWidth = Math.min(safeScreenWidth, maxSlideWidth);
 
   const horizontalPadding = isWideScreen ? 64 : isTablet ? 48 : 24;
-  const verticalSpacing = isWideScreen ? 32 : isTabletLandscape ? 16 : isTablet ? 24 : 16;
+  const verticalSpacing = isWideScreen ? 32 : isTabletLandscape ? 12 : isTablet ? 24 : 16;
 
-  const titleFontSize = isTabletLandscape ? 28 : 32;
-  const subtitleFontSize = isTabletLandscape ? 16 : 17;
+  const titleFontSize = isTabletLandscape ? 26 : 32;
+  const subtitleFontSize = isTabletLandscape ? 15 : 17;
 
   return {
     isTablet,

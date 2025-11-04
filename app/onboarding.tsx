@@ -158,6 +158,7 @@ export default function Onboarding() {
 
   const renderSlide = (slide: any, index: number) => {
     const IconComponent = slide.icon;
+    const isCompact = layout.isTabletLandscape;
 
     return (
       <View
@@ -166,10 +167,17 @@ export default function Onboarding() {
           styles.slideContainer,
           {
             width: layout.slideWidth,
+            paddingTop: isCompact ? 24 : 40,
+            paddingBottom: isCompact ? 24 : 40,
           }
         ]}
       >
-        <View style={styles.slideInner}>
+        <View style={[
+          styles.slideInner,
+          {
+            paddingHorizontal: isCompact ? 20 : layout.isTablet ? 28 : 24,
+          }
+        ]}>
           <Animated.View
             style={[
               styles.slideContent,
@@ -178,6 +186,7 @@ export default function Onboarding() {
                 transform: [{ translateY: slideAnim }],
                 width: '100%',
                 maxWidth: layout.contentMaxWidth,
+                gap: isCompact ? 12 : 16,
               }
             ]}
           >
@@ -185,9 +194,12 @@ export default function Onboarding() {
             <View style={styles.iconContainer}>
               <LinearGradient
                 colors={['rgba(200, 169, 81, 0.12)', 'rgba(200, 169, 81, 0.06)']}
-                style={styles.iconGradient}
+                style={[
+                  styles.iconGradient,
+                  isCompact && { width: 64, height: 64 }
+                ]}
               >
-                <IconComponent size={layout.isTabletLandscape ? 40 : 48} color="#C8A951" strokeWidth={1.5} />
+                <IconComponent size={isCompact ? 36 : 48} color="#C8A951" strokeWidth={1.5} />
               </LinearGradient>
             </View>
 
@@ -199,11 +211,23 @@ export default function Onboarding() {
 
             {/* Bullets */}
             {slide.bullets.length > 0 && (
-              <View style={styles.bulletsContainer}>
+              <View style={[
+                styles.bulletsContainer,
+                {
+                  paddingHorizontal: isCompact ? 8 : 16,
+                  gap: isCompact ? 10 : 12,
+                }
+              ]}>
                 {slide.bullets.map((bullet: string, bulletIndex: number) => (
-                  <View key={bulletIndex} style={styles.bulletItem}>
+                  <View key={bulletIndex} style={[
+                    styles.bulletItem,
+                    { paddingRight: isCompact ? 8 : 16 }
+                  ]}>
                     <View style={styles.bulletDot} />
-                    <Text style={styles.bulletText}>{bullet}</Text>
+                    <Text style={[
+                      styles.bulletText,
+                      isCompact && { fontSize: 13, lineHeight: 20 }
+                    ]}>{bullet}</Text>
                   </View>
                 ))}
               </View>
@@ -212,7 +236,10 @@ export default function Onboarding() {
             {/* CTAs */}
             <View style={styles.ctaContainer}>
               <TouchableOpacity
-                style={styles.primaryButton}
+                style={[
+                  styles.primaryButton,
+                  { maxWidth: isCompact ? 360 : 400 }
+                ]}
                 onPress={handlePrimaryCta}
                 accessibilityRole="button"
                 accessibilityLabel={slide.primaryCta}
@@ -220,9 +247,18 @@ export default function Onboarding() {
               >
                 <LinearGradient
                   colors={['#C8A951', '#E6C068', '#C8A951']}
-                  style={styles.primaryGradient}
+                  style={[
+                    styles.primaryGradient,
+                    {
+                      paddingVertical: isCompact ? 16 : 18,
+                      paddingHorizontal: isCompact ? 20 : 24,
+                    }
+                  ]}
                 >
-                  <Text style={styles.primaryButtonText}>{slide.primaryCta}</Text>
+                  <Text style={[
+                    styles.primaryButtonText,
+                    isCompact && { fontSize: 16 }
+                  ]}>{slide.primaryCta}</Text>
                   <ArrowRight size={18} color="#0D0D0D" strokeWidth={1.5} />
                 </LinearGradient>
               </TouchableOpacity>
@@ -293,7 +329,7 @@ export default function Onboarding() {
         ref={scrollViewRef}
         contentContainerStyle={{
           paddingTop: layout.verticalSpacing,
-          paddingBottom: insets?.bottom ? Math.max(insets.bottom, 24) : 24,
+          paddingBottom: insets?.bottom ? Math.max(insets.bottom, layout.isTabletLandscape ? 16 : 24) : layout.isTabletLandscape ? 16 : 24,
           alignItems: 'center',
           justifyContent: 'flex-start',
         }}
