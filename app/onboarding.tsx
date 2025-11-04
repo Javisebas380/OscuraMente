@@ -418,7 +418,7 @@ const styles = StyleSheet.create({
     alignItems: 'center' as const,
     justifyContent: 'center' as const,
     paddingTop: 40,
-    paddingBottom: 220,
+    paddingBottom: 40, 
     overflow: 'hidden' as const,
   },
   slideInner: {
