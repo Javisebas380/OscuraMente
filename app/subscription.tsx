@@ -1,12 +1,20 @@
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Animated } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Animated, ActivityIndicator } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { useEffect, useRef } from 'react';
-import { Crown, Check, ArrowLeft, Star, Download, ChartBar as BarChart, Users, Sparkles, Zap } from 'lucide-react-native';
+import { useEffect, useRef, useState } from 'react';
+import { Crown, Check, ArrowLeft, Star, Download, ChartBar as BarChart, Users, Sparkles, Zap, RotateCcw } from 'lucide-react-native';
 import { useTranslation } from '../hooks/useTranslation';
+import { useSubscription } from '../hooks/useSubscription';
+import Toast from '../components/Toast';
 
 export default function Subscription() {
   const { t } = useTranslation();
+  const { restorePurchases } = useSubscription();
+  const [isRestoring, setIsRestoring] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState<'success' | 'error' | 'info'>('info');
+
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.9)).current;
   const glowAnim = useRef(new Animated.Value(0)).current;
@@ -40,6 +48,37 @@ export default function Subscription() {
       ),
     ]).start();
   }, []);
+
+  const handleRestorePurchases = async () => {
+    if (isRestoring) return;
+
+    setIsRestoring(true);
+
+    try {
+      const result = await restorePurchases();
+
+      if (result.success) {
+        setToastType('success');
+        setToastMessage(result.message || 'Compras restauradas correctamente');
+        setToastVisible(true);
+
+        // Opcionalmente, navegar de regreso después de una restauración exitosa
+        setTimeout(() => {
+          router.back();
+        }, 2000);
+      } else {
+        setToastType('error');
+        setToastMessage(result.message || 'No se encontraron compras previas');
+        setToastVisible(true);
+      }
+    } catch (error) {
+      setToastType('error');
+      setToastMessage('Error al restaurar compras');
+      setToastVisible(true);
+    } finally {
+      setIsRestoring(false);
+    }
+  };
 
   const features = [
     { icon: BarChart, text: t('comprehensive_report'), premium: true },
@@ -265,6 +304,23 @@ export default function Subscription() {
           </LinearGradient>
         </TouchableOpacity>
 
+        {/* Restore Purchases Button */}
+        <TouchableOpacity
+          style={styles.restoreButton}
+          onPress={handleRestorePurchases}
+          disabled={isRestoring}
+          activeOpacity={0.7}
+        >
+          {isRestoring ? (
+            <ActivityIndicator size="small" color="#C8A951" />
+          ) : (
+            <RotateCcw size={16} color="#C8A951" strokeWidth={1.5} />
+          )}
+          <Text style={styles.restoreText}>
+            {isRestoring ? 'Restaurando...' : t('restore')}
+          </Text>
+        </TouchableOpacity>
+
         {/* Terms */}
         <View style={styles.termsSection}>
           <Text style={styles.termsText}>{t('trial_terms')}</Text>
@@ -272,13 +328,19 @@ export default function Subscription() {
             <Text style={styles.termsLink}>{t('terms_service')}</Text>
             <Text style={styles.termsSeparator}>•</Text>
             <Text style={styles.termsLink}>{t('privacy_policy')}</Text>
-            <Text style={styles.termsSeparator}>•</Text>
-            <Text style={styles.termsLink}>{t('restore')}</Text>
           </View>
         </View>
 
         <View style={styles.bottomSpace} />
       </ScrollView>
+
+      {/* Toast Notification */}
+      <Toast
+        visible={toastVisible}
+        message={toastMessage}
+        type={toastType}
+        onHide={() => setToastVisible(false)}
+      />
     </View>
   );
 }
@@ -567,5 +629,24 @@ const styles = StyleSheet.create({
   },
   bottomSpace: {
     height: 40,
+  },
+  restoreButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    backgroundColor: 'rgba(200, 169, 81, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(200, 169, 81, 0.3)',
+    borderRadius: 16,
+    marginBottom: 28,
+  },
+  restoreText: {
+    fontSize: 15,
+    color: '#C8A951',
+    fontFamily: 'Inter-Medium',
+    letterSpacing: 0.2,
   },
 });
