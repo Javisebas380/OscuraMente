@@ -575,6 +575,23 @@ export default function Suscripcion() {
 
         </View>
 
+        {/* Restore Purchases Button */}
+        <TouchableOpacity
+          style={styles.restoreButton}
+          onPress={handleRestore}
+          disabled={isRestoring}
+          activeOpacity={0.7}
+        >
+          {isRestoring ? (
+            <ActivityIndicator size="small" color="#C8A951" />
+          ) : (
+            <RefreshCw size={16} color="#C8A951" strokeWidth={1.5} />
+          )}
+          <Text style={styles.restoreText}>
+            {isRestoring ? 'Restaurando...' : 'Restaurar Compras'}
+          </Text>
+        </TouchableOpacity>
+
         {/* Urgency Section */}
         {!subscription.isActive && (
           <View style={styles.urgencySection}>
@@ -590,7 +607,7 @@ export default function Suscripcion() {
           </View>
         )}
 
-        
+
         {/* Testimonial */}
         <View style={styles.testimonialSection}>
           <LinearGradient
@@ -1278,5 +1295,24 @@ const styles = StyleSheet.create({
   },
   bottomSpace: {
     height: 40,
+  },
+  restoreButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    backgroundColor: 'rgba(200, 169, 81, 0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(200, 169, 81, 0.3)',
+    borderRadius: 16,
+    marginBottom: 28,
+  },
+  restoreText: {
+    fontSize: 15,
+    color: '#C8A951',
+    fontFamily: 'Inter-Medium',
+    letterSpacing: 0.2,
   },
 });
