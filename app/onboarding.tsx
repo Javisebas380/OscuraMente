@@ -131,7 +131,7 @@ export default function Onboarding() {
     triggerHaptic();
     if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
-      scrollViewRef.current?.scrollTo({ x: (currentSlide + 1) * layout.screenWidth, animated: true });
+      scrollViewRef.current?.scrollTo({ x: (currentSlide + 1) * layout.slideWidth, animated: true });
     }
   };
 
@@ -165,9 +165,8 @@ export default function Onboarding() {
         style={[
           styles.slideContainer,
           {
-            width: layout.screenWidth,
+            width: layout.slideWidth,
             paddingHorizontal: layout.horizontalPadding,
-            maxWidth: layout.isTablet ? layout.contentMaxWidth + (layout.horizontalPadding * 2) : layout.screenWidth,
           }
         ]}
       >
@@ -297,10 +296,14 @@ export default function Onboarding() {
           justifyContent: 'flex-start',
         }}
         horizontal
-        pagingEnabled
+        pagingEnabled={false}
+        snapToInterval={layout.slideWidth}
+        decelerationRate="fast"
+        snapToAlignment="center"
         showsHorizontalScrollIndicator={false}
         scrollEnabled={false}
         style={styles.slidesContainer}
+        contentOffset={{ x: 0, y: 0 }}
       >
         {slides.map((slide, index) => renderSlide(slide, index))}
       </ScrollView>
