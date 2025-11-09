@@ -323,9 +323,7 @@ No seremos responsables por incumplimiento debido a circunstancias fuera de nues
 
 Para preguntas sobre estos Términos:
 
-**Email:** [TU EMAIL]
-**Dirección:** [TU DIRECCIÓN]
-**Sitio Web:** [TU SITIO WEB]
+**Email:** oscuramentecontacto@gmail.com
 
 ## 19. Disposiciones Específicas por Plataforma
 
