@@ -275,8 +275,7 @@ Para ejercer estos derechos, contáctanos en oscuramentecontacto@gmail.com.
 
 ---
 
-**Fecha de entrada en vigor:** [FECHA]
-
+**Fecha de entrada en vigor:** 10 de Noviembre 2025
 **Versión:** 1.0
 
 Esta Política de Privacidad se proporciona en español. En caso de conflicto con traducciones, prevalecerá la versión en español.
