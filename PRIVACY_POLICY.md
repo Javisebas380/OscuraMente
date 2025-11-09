@@ -218,11 +218,9 @@ La App puede contener enlaces a sitios web o servicios de terceros. No somos res
 
 Si tienes preguntas sobre esta Política de Privacidad o nuestras prácticas de datos, contáctanos:
 
-**Email:** [TU EMAIL]
-**Dirección:** [TU DIRECCIÓN SI APLICA]
-**Sitio Web:** [TU SITIO WEB]
+**Email:** oscuramentecontacto@gmail.com
 
-Para usuarios en la UE, nuestro representante de protección de datos es: [NOMBRE/CONTACTO SI APLICA]
+Para usuarios en la UE, nuestro representante de protección de datos es: Javier Castillo Carrasco
 
 ## 15. Base Legal para el Procesamiento (GDPR)
 
