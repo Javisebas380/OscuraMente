@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Switch, Animated 
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { User, Settings, Crown, Bell, Shield, CircleHelp as HelpCircle, Mail, LogOut, ChevronRight, Sparkles, Star, CreditCard as Edit } from 'lucide-react-native';
+import { User, Settings, Crown, Bell, Shield, CircleHelp as HelpCircle, Mail, LogOut, ChevronRight, Sparkles, Star, CreditCard as Edit, FileText, Scale } from 'lucide-react-native';
 import { useFocusEffect } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNotifications } from '../../hooks/useNotifications';
@@ -175,13 +175,16 @@ export default function Profile() {
 
   const handleMenuAction = (action: string) => {
     triggerHaptic();
-    
+
     switch (action) {
       case 'subscription':
         router.push('/suscripcion');
         break;
       case 'privacy':
         router.push('/privacidad');
+        break;
+      case 'terms':
+        router.push('/terminos');
         break;
       case 'help':
         router.push('/ayuda');
@@ -222,6 +225,13 @@ export default function Profile() {
       subtitle: t('manage_data'),
       color: '#F5F5F5',
       action: 'privacy',
+    },
+    {
+      icon: FileText,
+      title: 'Términos de Uso',
+      subtitle: 'Condiciones y políticas',
+      color: '#B3B3B3',
+      action: 'terms',
     },
     {
       icon: HelpCircle,
