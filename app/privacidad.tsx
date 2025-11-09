@@ -119,7 +119,8 @@ export default function Privacidad() {
 • No vendemos ni compartimos información personal con terceros
 • Puedes eliminar todos tus datos en cualquier momento
 • Utilizamos encriptación para proteger tu información
-• Solo enviamos notificaciones si las has activado`}
+• Solo enviamos notificaciones si las has activado
+• Si tienes alguna pregunta sobre cómo gestionamos tu información, puedes escribirnos a oscuramentecontacto@gmail.com`}
             </Text>
           </View>
 
