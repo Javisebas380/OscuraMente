@@ -139,7 +139,7 @@ Para eliminar tus datos:
 3. Toca **Eliminar Todos mis Datos**
 4. Confirma la eliminación
 
-Para otros derechos, contáctanos en: [TU EMAIL]
+Para otros derechos, contáctanos en: oscuramentecontacto@gmail.com
 
 ### 6.3 Derechos Específicos por Región
 
