@@ -280,14 +280,14 @@ Tu uso continuado después de los cambios constituye aceptación de los nuevos T
 
 ### 16.1 Ley Aplicable
 
-Estos Términos se rigen por las leyes de [TU PAÍS/ESTADO] sin referencia a sus conflictos de leyes.
+Estos Términos se rigen por las leyes de Esàña sin referencia a sus conflictos de leyes.
 
 ### 16.2 Resolución de Disputas
 
 Para cualquier disputa:
-1. Primero intenta resolver contactándonos en [TU EMAIL]
+1. Primero intenta resolver contactándonos en oscuramentecontacto@gmail.com
 2. Si no se resuelve, puedes proceder con mediación o arbitraje
-3. Como último recurso, litigio en los tribunales de [TU JURISDICCIÓN]
+3. Como último recurso, litigio en los tribunales de Murcia, España.
 
 ### 16.3 Renuncia a Demandas Colectivas
 
@@ -364,7 +364,6 @@ Esta aplicación es una herramienta educativa y de entretenimiento. NO es una he
 - Si experimentas angustia emocional, busca ayuda profesional
 
 **Líneas de Ayuda de Emergencia:**
-- [TU PAÍS]: [NÚMERO DE LÍNEA DE CRISIS]
 - Internacional: https://www.iasp.info/resources/Crisis_Centres/
 
 ## 22. Aceptación
