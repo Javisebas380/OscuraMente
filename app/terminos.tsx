@@ -161,7 +161,7 @@ export default function Terminos() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Contacto</Text>
             <Text style={styles.sectionContent}>
-              Para preguntas sobre estos términos, contáctanos desde la sección de Ayuda en la aplicación.
+              Para preguntas sobre estos términos, puedes escribirnos a oscuramentecontacto@gmail.com
             </Text>
           </View>
 
