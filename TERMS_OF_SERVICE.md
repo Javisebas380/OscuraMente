@@ -1,10 +1,10 @@
-# Términos de Servicio - Psicología Oscura
+# Términos de Servicio - OscuraMente
 
 **Última actualización:** 10 de Noviembre 2025
 
 ## 1. Aceptación de los Términos
 
-Bienvenido a Psicología Oscura ("la App", "nosotros", "nuestro"). Estos Términos de Servicio ("Términos") rigen tu acceso y uso de nuestra aplicación móvil.
+Bienvenido a OscuraMente ("la App", "nosotros", "nuestro"). Estos Términos de Servicio ("Términos") rigen tu acceso y uso de nuestra aplicación móvil.
 
 Al descargar, instalar o usar la App, aceptas estar legalmente vinculado por estos Términos. Si no estás de acuerdo, no uses la App.
 
@@ -12,7 +12,7 @@ Al descargar, instalar o usar la App, aceptas estar legalmente vinculado por est
 
 ### 2.1 Qué Ofrecemos
 
-Psicología Oscura es una aplicación móvil educativa que proporciona:
+OscuraMente es una aplicación móvil educativa que proporciona:
 - Tests psicológicos basados en modelos científicos
 - Análisis de personalidad y rasgos psicológicos
 - Herramientas de autoconocimiento
@@ -102,13 +102,13 @@ Puedes cancelar tu suscripción en cualquier momento:
 
 **iOS:**
 1. Ve a Configuración > [Tu Nombre] > Suscripciones
-2. Selecciona Psicología Oscura
+2. Selecciona OscuraMente
 3. Toca "Cancelar Suscripción"
 
 **Android:**
 1. Abre Google Play Store
 2. Ve a Suscripciones
-3. Selecciona Psicología Oscura
+3. Selecciona OscuraMente
 4. Toca "Cancelar Suscripción"
 
 La cancelación será efectiva al final del período de facturación actual. No se emiten reembolsos por períodos parciales no utilizados.
@@ -170,7 +170,7 @@ Son propiedad nuestra o de nuestros licenciantes y están protegidos por leyes d
 
 ### 9.2 Marcas Comerciales
 
-"Psicología Oscura" y nuestros logos son marcas registradas (o pendientes de registro). No puedes usarlas sin nuestro permiso escrito.
+"OscuraMente" y nuestros logos son marcas registradas (o pendientes de registro). No puedes usarlas sin nuestro permiso escrito.
 
 ### 9.3 Base Científica
 
