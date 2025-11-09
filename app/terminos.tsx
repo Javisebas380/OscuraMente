@@ -169,7 +169,7 @@ export default function Terminos() {
             <Text style={styles.footerText}>
               Al usar OscuraMente, reconoces que has leído estos términos, los entiendes y aceptas estar legalmente vinculado por ellos.
             </Text>
-            <Text style={styles.footerDate}>Última actualización: Enero 2025</Text>
+            <Text style={styles.footerDate}>Última actualización: Noviembre 2025</Text>
           </View>
         </Animated.View>
 
