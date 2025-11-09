@@ -374,8 +374,8 @@ Si no estás de acuerdo con estos Términos, no uses la App.
 
 ---
 
-**Fecha de Entrada en Vigor:** [FECHA]
+**Fecha de Entrada en Vigor:** 10 de Noviembre 2025
 
 **Versión:** 1.0
 
-© [AÑO] [TU NOMBRE/EMPRESA]. Todos los derechos reservados.
+© 2025 OscuraMente. Todos los derechos reservados.
