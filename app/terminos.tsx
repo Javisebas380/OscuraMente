@@ -30,7 +30,7 @@ export default function Terminos() {
     {
       icon: FileText,
       title: 'Aceptación de los Términos',
-      content: 'Al usar Psicología Oscura, aceptas estar legalmente vinculado por estos Términos de Servicio. Si no estás de acuerdo, no uses la aplicación.'
+      content: 'Por favor, lee atentamente estos términos antes de usar la aplicación. Tu uso continuo de OscuraMente constituye tu aceptación de estos términos. Al usar OscuraMente, aceptas estar legalmente vinculado por estos Términos de Servicio. Si no estás de acuerdo, no uses la aplicación.'
     },
     {
       icon: Shield,
