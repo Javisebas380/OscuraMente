@@ -1,6 +1,6 @@
 # Términos de Servicio - Psicología Oscura
 
-**Última actualización:** [FECHA]
+**Última actualización:** 10 de Noviembre 2025
 
 ## 1. Aceptación de los Términos
 
