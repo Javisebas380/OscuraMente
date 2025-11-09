@@ -69,7 +69,7 @@ export default function Terminos() {
           <View style={styles.introSection}>
             <Text style={styles.introTitle}>Términos y Condiciones</Text>
             <Text style={styles.introText}>
-              Por favor, lee atentamente estos términos antes de usar la aplicación. Tu uso continuo de Psicología Oscura constituye tu aceptación de estos términos.
+              Por favor, lee atentamente estos términos antes de usar la aplicación. Tu uso continuo de OscuraMente constituye tu aceptación de estos términos.
             </Text>
           </View>
 
