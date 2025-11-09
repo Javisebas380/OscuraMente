@@ -90,7 +90,7 @@ export default function Privacidad() {
         >
           <ArrowLeft size={20} color="#F5F5F5" strokeWidth={1.5} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Configuración de Privacidad</Text>
+        <Text style={styles.headerTitle}>Política de Privacidad</Text>
         <View style={{ width: 44 }} />
       </View>
 
