@@ -232,7 +232,7 @@ Podemos suspender o discontinuar la App temporal o permanentemente sin previo av
 
 ## 12. Privacidad
 
-Tu privacidad es importante. Por favor revisa nuestra Política de Privacidad [ENLACE] que explica cómo recopilamos, usamos y protegemos tu información.
+Tu privacidad es importante. Por favor revisa nuestra Política de Privacidad "https://sites.google.com/view/oscuramente-policy-privacy" que explica cómo recopilamos, usamos y protegemos tu información.
 
 ## 13. Conducta Prohibida
 
