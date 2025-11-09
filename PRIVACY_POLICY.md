@@ -248,7 +248,7 @@ Puedes solicitar la eliminación de tus datos (con ciertas excepciones legales).
 ### Derecho a No Discriminación
 No te discriminaremos por ejercer tus derechos de privacidad.
 
-Para ejercer estos derechos, contáctanos en [TU EMAIL].
+Para ejercer estos derechos, contáctanos en oscuramentecontacto@gmail.com.
 
 ## 17. Resumen de Prácticas de Privacidad
 
