@@ -167,7 +167,7 @@ export default function Terminos() {
 
           <View style={styles.footerSection}>
             <Text style={styles.footerText}>
-              Al usar Psicología Oscura, reconoces que has leído estos términos, los entiendes y aceptas estar legalmente vinculado por ellos.
+              Al usar OscuraMente, reconoces que has leído estos términos, los entiendes y aceptas estar legalmente vinculado por ellos.
             </Text>
             <Text style={styles.footerDate}>Última actualización: Enero 2025</Text>
           </View>
