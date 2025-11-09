@@ -78,7 +78,7 @@ Usamos la información recopilada para:
 #### [Tu Servicio de Analytics - Si aplica]
 - **Propósito:** Análisis de uso y mejora del servicio
 - **Datos compartidos:** Eventos de uso anónimos, estadísticas agregadas
-- **Política:** [URL]
+- **Política:** https://sites.google.com/view/oscuramente-terms-of-services/inicio
 
 ### 4.2 NO Vendemos tus Datos
 
