@@ -1,6 +1,6 @@
 # Política de Privacidad - OscuraMente
 
-**Última actualización:** [FECHA]
+**Última actualización:** Noviembre 2025
 
 ## 1. Introducción
 
