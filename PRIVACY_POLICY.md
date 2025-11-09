@@ -1,16 +1,16 @@
-# Política de Privacidad - Psicología Oscura
+# Política de Privacidad - OscuraMente
 
 **Última actualización:** [FECHA]
 
 ## 1. Introducción
 
-Bienvenido a Psicología Oscura ("nosotros", "nuestro" o "la App"). Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta Política de Privacidad te informará sobre cómo manejamos tus datos personales cuando usas nuestra aplicación móvil y tus derechos de privacidad.
+Bienvenido a OscuraMente ("nosotros", "nuestro" o "la App"). Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta Política de Privacidad te informará sobre cómo manejamos tus datos personales cuando usas nuestra aplicación móvil y tus derechos de privacidad.
 
 ## 2. Información que Recopilamos
 
 ### 2.1 Información que Proporcionas Directamente
 
-Cuando usas Psicología Oscura, puedes proporcionar voluntariamente:
+Cuando usas OscuraMente, puedes proporcionar voluntariamente:
 
 - **Respuestas a Tests Psicológicos:** Tus respuestas a las preguntas de los tests se almacenan localmente en tu dispositivo.
 - **Información de Perfil (Opcional):** Nombre, alias, foto de perfil si decides personalizarla.
