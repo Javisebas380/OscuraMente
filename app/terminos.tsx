@@ -40,7 +40,7 @@ export default function Terminos() {
     {
       icon: Scale,
       title: 'Suscripciones',
-      content: 'Las suscripciones se renuevan automáticamente. Puedes cancelar en cualquier momento desde la configuración de tu cuenta en App Store o Google Play.'
+      content: 'La suscripción se renueva automáticamente, salvo que se cancele al menos 24 horas antes del final del período en curso. El usuario puede gestionar o cancelar su suscripción en cualquier momento desde la configuración de su cuenta.'
     }
   ];
 
