@@ -537,32 +537,38 @@ export default function Suscripcion() {
         {/* Action Buttons */}
         <View style={styles.actionsSection}>
           {!subscription.isActive ? (
-            <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
-              <TouchableOpacity 
-                style={styles.subscribeButton}
-                onPress={handlePurchase}
-                disabled={subscription.isLoading}
-              >
-                <LinearGradient
-                  colors={['#C8A951', '#E6C068', '#F4D484']}
-                  style={styles.subscribeGradient}
+            <>
+              <Animated.View style={{ transform: [{ scale: pulseAnim }] }}>
+                <TouchableOpacity
+                  style={styles.subscribeButton}
+                  onPress={handlePurchase}
+                  disabled={subscription.isLoading}
                 >
-                  {subscription.isLoading ? (
-                    <ActivityIndicator size="small" color="#0D0D0D" />
-                  ) : (
-                    <>
-                      <Crown size={20} color="#0D0D0D" strokeWidth={1.5} />
-                      <Text style={styles.subscribeText}>
-                        Comenzar con Premium ya
-                      </Text>
-                      <Sparkles size={18} color="#0D0D0D" strokeWidth={1.5} />
-                    </>
-                  )}
-                </LinearGradient>
-              </TouchableOpacity>
-            </Animated.View>
+                  <LinearGradient
+                    colors={['#C8A951', '#E6C068', '#F4D484']}
+                    style={styles.subscribeGradient}
+                  >
+                    {subscription.isLoading ? (
+                      <ActivityIndicator size="small" color="#0D0D0D" />
+                    ) : (
+                      <>
+                        <Crown size={20} color="#0D0D0D" strokeWidth={1.5} />
+                        <Text style={styles.subscribeText}>
+                          Comenzar con Premium ya
+                        </Text>
+                        <Sparkles size={18} color="#0D0D0D" strokeWidth={1.5} />
+                      </>
+                    )}
+                  </LinearGradient>
+                </TouchableOpacity>
+              </Animated.View>
+
+              <Text style={styles.renewalInfo}>
+                La suscripción se renueva automáticamente, salvo que se cancele al menos 24 horas antes del final del período en curso. El usuario puede gestionar o cancelar su suscripción en cualquier momento desde la configuración de su cuenta.
+              </Text>
+            </>
           ) : (
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.cancelButton}
               onPress={() => {
                 triggerHaptic();
@@ -637,11 +643,17 @@ export default function Suscripcion() {
             Al continuar, aceptas nuestros términos de servicio. La suscripción se renueva automáticamente. Cancela en cualquier momento desde configuración.
           </Text>
           <View style={styles.termsLinks}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              triggerHaptic();
+              router.push('/terminos');
+            }}>
               <Text style={styles.termsLink}>Términos de Servicio</Text>
             </TouchableOpacity>
             <Text style={styles.termsSeparator}>•</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              triggerHaptic();
+              router.push('/privacidad');
+            }}>
               <Text style={styles.termsLink}>Política de Privacidad</Text>
             </TouchableOpacity>
           </View>
@@ -1314,5 +1326,15 @@ const styles = StyleSheet.create({
     color: '#C8A951',
     fontFamily: 'Inter-Medium',
     letterSpacing: 0.2,
+  },
+  renewalInfo: {
+    fontSize: 11,
+    color: '#666666',
+    fontFamily: 'Inter-Regular',
+    textAlign: 'center',
+    lineHeight: 16,
+    letterSpacing: 0.1,
+    paddingHorizontal: 20,
+    marginTop: 16,
   },
 });
