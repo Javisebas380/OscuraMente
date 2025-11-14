@@ -224,7 +224,7 @@ export default function LockedSection({
             experimentalBlurMethod="dimezisBlurView"
             blurReductionFactor={4}
             style={StyleSheet.absoluteFillObject}
-            fallbackColor="rgba(13,13,13,0.35)"
+            fallbackColor="rgba(13,13,13,0.95)"
             onBlurError={() => {
               console.warn('[LockedSection] Android blur failed, switching to fallback');
               setAndroidBlurFailed(true);
