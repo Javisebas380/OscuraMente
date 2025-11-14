@@ -233,7 +233,7 @@ export default function LockedSection({
           <View
             style={[
               StyleSheet.absoluteFillObject,
-              { backgroundColor: 'rgba(13,13,13,0.65)' }
+              { backgroundColor: 'rgba(13,13,13,0.95)' }
             ]}
           />
         </Animated.View>
