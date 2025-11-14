@@ -219,7 +219,7 @@ export default function LockedSection({
           pointerEvents="none"
         >
           <SafeBlurView
-            intensity={20}
+            intensity={10}
             tint="dark"
             experimentalBlurMethod="dimezisBlurView"
             blurReductionFactor={4}
