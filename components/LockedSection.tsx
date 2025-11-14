@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Animated, ActivityIndicator, Platform, ScrollView } from 'react-native';
 import { BlurView } from 'expo-blur';
+import { SafeBlurView } from './SafeBlurView';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Lock, Play, Crown, RefreshCw } from 'lucide-react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -48,6 +49,7 @@ export default function LockedSection({
   const [scrollY, setScrollY] = React.useState(0);
   const [contentHeight, setContentHeight] = React.useState(0);
   const [containerHeight, setContainerHeight] = React.useState(0);
+  const [androidBlurFailed, setAndroidBlurFailed] = React.useState(false);
 
   // CTA animations
   const topCtaAnim = React.useRef(new Animated.Value(0)).current;
@@ -174,110 +176,71 @@ export default function LockedSection({
         {children}
       </View>
 
-      {/* Blur Effects - Platform Specific */}
-      {!isUnlocked && (
-        <>
-          {Platform.OS === 'ios' && (
-            <Animated.View
-              style={[
-                StyleSheet.absoluteFillObject,
-                {
-                  opacity: overlayOpacity,
-                  zIndex: 5,
-                  borderRadius: 16,
-                  overflow: 'hidden',
-                }
-              ]}
-              pointerEvents="none"
-            >
-              <BlurView
-                intensity={20}
-                tint="systemMaterialDark"
-                style={StyleSheet.absoluteFillObject}
-              />
-              <View 
-                style={[
-                  StyleSheet.absoluteFillObject, 
-                  { backgroundColor: 'rgba(13,13,13,0.6)' }
-                ]} 
-              />
-            </Animated.View>
-          )}
-
-          {Platform.OS === 'android' && (
-            <Animated.View
-              style={[
-                StyleSheet.absoluteFillObject,
-                {
-                  opacity: overlayOpacity,
-                  backgroundColor: 'rgba(13,13,13,0.96)',
-                  zIndex: 5,
-                  borderRadius: 16,
-                }
-              ]}
-              pointerEvents="none"
-            />
-          )}
-
-          {Platform.OS === 'web' && (
-            <>
-              <View
-                style={[
-                  StyleSheet.absoluteFillObject,
-                  {
-                    filter: 'blur(22px) brightness(0.15)',
-                    zIndex: 5,
-                    borderRadius: 16,
-                  }
-                ]}
-                pointerEvents="none"
-              />
-              <Animated.View
-                style={[
-                  StyleSheet.absoluteFillObject,
-                  {
-                    opacity: dimOpacity,
-                    backgroundColor: 'rgba(13,13,13,0.7)',
-                    zIndex: 6,
-                    borderRadius: 16,
-                  }
-                ]}
-                pointerEvents="none"
-              />
-            </>
-          )}
-        </>
-      )}
-
-      {/* iOS Blur Overlay */}
+      {/* Blur Overlay - iOS */}
       {!isUnlocked && Platform.OS === 'ios' && (
         <Animated.View
           style={[
             StyleSheet.absoluteFillObject,
-            { opacity: overlayOpacity }
+            {
+              opacity: overlayOpacity,
+              zIndex: 5,
+              borderRadius: 16,
+              overflow: 'hidden',
+            }
           ]}
           pointerEvents="none"
         >
-          {/* iOS – frosted más translúcido */}
-        <BlurView
-          intensity={1}                           // más blur (0–100)
-          tint={Platform.OS === 'ios' ? 'systemThinMaterialDark' : 'dark'}
-          style={[StyleSheet.absoluteFillObject, { borderRadius: 16 }]}
-        />
-        
-        {/* capa sutil para contraste y legibilidad del CTA */}
-        <View
-          pointerEvents="none"
-          style={[
-            StyleSheet.absoluteFillObject,
-            { backgroundColor: 'rgba(14,14,14,0.05)', borderRadius: 16 }
-          ]}
-        />
+          <BlurView
+            intensity={25}
+            tint="systemThinMaterialDark"
+            style={StyleSheet.absoluteFillObject}
+          />
+          <View
+            style={[
+              StyleSheet.absoluteFillObject,
+              { backgroundColor: 'rgba(13,13,13,0.5)' }
+            ]}
+          />
         </Animated.View>
       )}
 
-      {/* Android Solid Overlay */}
-      {!isUnlocked && Platform.OS === 'android' && (
+      {/* Blur Overlay - Android */}
+      {!isUnlocked && Platform.OS === 'android' && !androidBlurFailed && (
+        <Animated.View
+          style={[
+            StyleSheet.absoluteFillObject,
+            {
+              opacity: overlayOpacity,
+              zIndex: 5,
+              borderRadius: 16,
+              overflow: 'hidden',
+            }
+          ]}
+          pointerEvents="none"
+        >
+          <SafeBlurView
+            intensity={35}
+            tint="dark"
+            experimentalBlurMethod="dimezisBlurView"
+            blurReductionFactor={4}
+            style={StyleSheet.absoluteFillObject}
+            fallbackColor="rgba(13,13,13,0.95)"
+            onBlurError={() => {
+              console.warn('[LockedSection] Android blur failed, switching to fallback');
+              setAndroidBlurFailed(true);
+            }}
+          />
+          <View
+            style={[
+              StyleSheet.absoluteFillObject,
+              { backgroundColor: 'rgba(13,13,13,0.65)' }
+            ]}
+          />
+        </Animated.View>
+      )}
+
+      {/* Android Fallback - Solid Overlay */}
+      {!isUnlocked && Platform.OS === 'android' && androidBlurFailed && (
         <Animated.View
           style={[
             styles.androidSolidOverlay,
@@ -287,12 +250,22 @@ export default function LockedSection({
         />
       )}
 
-      {/* Dim Overlay for Web only */}
+      {/* Web Blur Effect */}
       {!isUnlocked && Platform.OS === 'web' && (
         <Animated.View
           style={[
-            styles.dimOverlay,
-            { opacity: dimOpacity }
+            StyleSheet.absoluteFillObject,
+            {
+              opacity: overlayOpacity,
+              backgroundColor: 'rgba(13,13,13,0.85)',
+              zIndex: 5,
+              borderRadius: 16,
+            },
+            // @ts-ignore - Web-specific CSS properties
+            Platform.OS === 'web' && {
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+            }
           ]}
           pointerEvents="none"
         />
