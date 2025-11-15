@@ -5,7 +5,7 @@ import { useSubscriptionContext } from '../src/contexts/SubscriptionContext';
 
 export interface SubscriptionState {
   isActive: boolean;
-  plan: 'monthly' | 'yearly' | null;
+  plan: 'weekly' | 'annual' | null;
   expiresAt: string | null;
   isLoading: boolean;
   isActiveChecked: boolean;
@@ -15,16 +15,16 @@ export function useSubscription() {
   const context = useSubscriptionContext();
 
   const subscription = useMemo(() => {
-    let currentPlan: 'monthly' | 'yearly' | null = null;
+    let currentPlan: 'weekly' | 'annual' | null = null;
     let currentExpiresAt: string | null = null;
 
     if (context.isActive && context.customerInfo) {
       const entitlement = context.customerInfo.entitlements.active[context.entitlement || ''];
       if (entitlement) {
-        if (entitlement.productIdentifier?.includes('weekly') || entitlement.productIdentifier?.includes('monthly')) {
-          currentPlan = 'monthly';
+        if (entitlement.productIdentifier?.includes('weekly')) {
+          currentPlan = 'weekly';
         } else if (entitlement.productIdentifier?.includes('annual')) {
-          currentPlan = 'yearly';
+          currentPlan = 'annual';
         }
         currentExpiresAt = entitlement.expirationDate;
       }
@@ -44,7 +44,7 @@ export function useSubscription() {
     return context.isActive;
   }, [context]);
 
-  const purchaseSubscription = useCallback(async (planType: 'monthly' | 'yearly') => {
+  const purchaseSubscription = useCallback(async (planType: 'weekly' | 'annual') => {
     console.log('[useSubscription] purchaseSubscription - Starting purchase process');
     console.log('[useSubscription] Requested plan type:', planType);
     console.log('[useSubscription] RevenueCat ready:', context.isRevenueCatReady);
@@ -88,16 +88,16 @@ export function useSubscription() {
 
     const targetPackage = context.currentOffering?.availablePackages.find((pkg: any) => {
       if (Platform.OS === 'web') {
-        return (planType === 'monthly' && (pkg.packageType === 'WEEKLY' || pkg.packageType === 'MONTHLY')) ||
-               (planType === 'yearly' && pkg.packageType === 'ANNUAL');
+        return (planType === 'weekly' && pkg.packageType === 'WEEKLY') ||
+               (planType === 'annual' && pkg.packageType === 'ANNUAL');
       } else {
         try {
           const { PurchasesPackageType } = require('react-native-purchases');
-          return (planType === 'monthly' && (pkg.packageType === PurchasesPackageType.WEEKLY || pkg.packageType === PurchasesPackageType.MONTHLY)) ||
-                 (planType === 'yearly' && pkg.packageType === PurchasesPackageType.ANNUAL);
+          return (planType === 'weekly' && pkg.packageType === PurchasesPackageType.WEEKLY) ||
+                 (planType === 'annual' && pkg.packageType === PurchasesPackageType.ANNUAL);
         } catch {
-          return (planType === 'monthly' && (pkg.packageType === 'WEEKLY' || pkg.packageType === 'MONTHLY')) ||
-                 (planType === 'yearly' && pkg.packageType === 'ANNUAL');
+          return (planType === 'weekly' && pkg.packageType === 'WEEKLY') ||
+                 (planType === 'annual' && pkg.packageType === 'ANNUAL');
         }
       }
     });
@@ -127,7 +127,7 @@ export function useSubscription() {
       DeviceEventEmitter.emit('subscription-updated', {
         isActive: true,
         plan: planType,
-        expiresAt: new Date(Date.now() + (planType === 'yearly' ? 365 : 7) * 24 * 60 * 60 * 1000).toISOString(),
+        expiresAt: new Date(Date.now() + (planType === 'annual' ? 365 : 7) * 24 * 60 * 60 * 1000).toISOString(),
       });
       return { success: true, message: 'Suscripción activada correctamente' };
     } else {

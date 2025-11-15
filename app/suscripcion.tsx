@@ -15,7 +15,7 @@ const { width: screenWidth } = Dimensions.get('window');
 export default function Suscripcion() {
   const { subscription, refresh, refreshSubscription, purchaseSubscription, restorePurchases, cancelSubscription } = useSubscription();
   const { trackEvent } = useAnalytics();
-  const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'yearly'>('yearly');
+  const [selectedPlan, setSelectedPlan] = useState<'weekly' | 'annual'>('annual');
   const [isRestoring, setIsRestoring] = useState(false);
   const [isCancelling, setIsCancelling] = useState(false);
   const [showCancelModal, setShowCancelModal] = useState(false);
@@ -155,18 +155,18 @@ export default function Suscripcion() {
 
   const plans = [
     {
-      id: 'monthly',
+      id: 'weekly',
       title: 'Semanal',
       subtitle: 'Perfecto para empezar',
       price: '$3.99',
       period: '/semana',
-      
+
       savings: null,
       popular: false,
       badge: null,
     },
     {
-      id: 'yearly',
+      id: 'annual',
       title: 'Anual',
       subtitle: 'Máximo valor',
       price: '$2.08',
@@ -311,7 +311,7 @@ export default function Suscripcion() {
               </View>
               <Text style={styles.statusTitle}>¡Eres Premium!</Text>
               <Text style={styles.statusText}>
-                Plan {subscription.plan === 'yearly' ? 'Anual' : 'Mensual'} Activo
+                Plan {subscription.plan === 'annual' ? 'Anual' : 'Semanal'} Activo
               </Text>
               <Text style={styles.expiryText}>
                 Renovación: {subscription.expiresAt ? new Date(subscription.expiresAt).toLocaleDateString('es-ES') : 'N/A'}
@@ -458,7 +458,7 @@ export default function Suscripcion() {
                     ]}
                     onPress={() => {
                       triggerHaptic();
-                      setSelectedPlan(plan.id as 'monthly' | 'yearly');
+                      setSelectedPlan(plan.id as 'weekly' | 'annual');
                     }}
                     activeOpacity={0.9}
                   >

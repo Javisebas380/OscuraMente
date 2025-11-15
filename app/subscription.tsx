@@ -90,7 +90,7 @@ export default function Subscription() {
 
   const plans = [
     {
-      id: 'monthly',
+      id: 'weekly',
       title: t('monthly'),
       price: '$7.99',
       period: '/mes',
@@ -98,7 +98,7 @@ export default function Subscription() {
       popular: false,
     },
     {
-      id: 'yearly',
+      id: 'annual',
       title: t('yearly'),
       price: '$49.99',
       period: '/año',
